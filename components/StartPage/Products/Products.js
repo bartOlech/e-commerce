@@ -18,7 +18,7 @@ const ButtonsBox = styled.div`
 `
 const Button = styled.div`
     width: 120px;
-    height: 30px;
+    height: 29px;
     font-family: ${FontStyle.family};
     color: ${props => props.color};
     background-color: ${props => props.background};
@@ -27,7 +27,7 @@ const Button = styled.div`
     outline: none;
     cursor: pointer;
     text-align: center;
-    padding-top: 9px;
+    padding-top: 7px;
 `
 
 const Products = () => {
