@@ -42,12 +42,12 @@ const SlideThree = styled.div`
     animation: 1s ${fadeInAnimation};
 `
 const Dots = styled.ul`
-    width: 100%;
     display: flex;
     justify-content: center;
     margin-top: 20px;
 `
 const Dot = styled.li`
+    opacity: .8;
     cursor: pointer;
     height: 10px;
     width: 10px;
