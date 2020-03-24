@@ -41,13 +41,13 @@ const SlideThree = styled.div`
     display: ${props => props.display};
     animation: 1s ${fadeInAnimation};
 `
-const Dots = styled.div`
+const Dots = styled.ul`
     width: 100%;
     display: flex;
     justify-content: center;
     margin-top: 20px;
 `
-const Dot = styled.div`
+const Dot = styled.li`
     cursor: pointer;
     height: 10px;
     width: 10px;
@@ -69,25 +69,25 @@ const ImageSlider = () => {
     const [counter, setCounter] = useState(0);
     const incrementValue = () => setCounter(counter + 1)
 
-    useEffect(() => {
-        const interval = setInterval(incrementValue, 5000);
-        if(counter === 3) {
-            setCounter(0)
-        }
-        return () => {
-            clearInterval(interval)
-        }
-    }, [counter])
+    // useEffect(() => {
+    //     const interval = setInterval(incrementValue, 5000);
+    //     if(counter === 3) {
+    //         setCounter(0)
+    //     }
+    //     return () => {
+    //         clearInterval(interval)
+    //     }
+    // }, [counter])
     
 
     return (
         <Container>
             <SliderBox>
-                <SlideOne display={counter === 0 ? 'flex' : 'none'}></SlideOne>
+                <SlideOne data-testid='slide' display={counter === 0 ? 'flex' : 'none'}></SlideOne>
                 <SlideTwo display={counter === 1 ? 'flex' : 'none'}></SlideTwo>
                 <SlideThree display={counter === 2 || counter === 3 ? 'flex' : 'none'}></SlideThree>
             </SliderBox>
-            <Dots>
+            <Dots data-testid='dots'>
                 <Dot background={counter === 0 ? '#717171' : '#bbb'}></Dot>
                 <Dot background={counter === 1 ? '#717171' : '#bbb'}></Dot>
                 <Dot background={counter === 2 || counter === 3 ? '#717171' : '#bbb'}></Dot>
