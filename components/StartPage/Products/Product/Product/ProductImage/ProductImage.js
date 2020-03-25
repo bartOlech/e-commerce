@@ -14,7 +14,7 @@ const Container = styled.div`
 
 const ProductImage = (props) => {
     return (
-        <Container  image={props.image}>
+        <Container data-testid='productImage' image={props.image}>
 
         </Container>
     )
