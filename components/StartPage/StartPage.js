@@ -7,6 +7,8 @@ import MainText from './MainText/MainText';
 import Products from './Products/Products';
 
 const Container = styled.div`
+    display: flex;
+    flex-direction: column;
     width: 100%;
     height: 100%;
 `
