@@ -10,7 +10,9 @@ const Container = styled.div`
     justify-content: space-around;
     flex-wrap: wrap;
     margin-top: 70px;
+    position: relative;
 `
+
 
 const ProductContainer = (props) => {
 
@@ -18,7 +20,7 @@ const ProductContainer = (props) => {
         <Container>
             {props.products.map((val, index) => {
                 return (
-                    <Product key={index} image={val.image} name={val.name} size={val.size} price={val.price}></Product>
+                    <Product hoverImage={val.hoverImage} key={index} image={val.image} name={val.name} size={val.size} price={val.price}></Product>
                 )
             })}
         </Container>

@@ -11,12 +11,14 @@ const Container = styled.div`
     align-items: center;
     margin: 10px 10px 30px 10px;
     position: relative;
+    cursor: pointer;
+    transition: 1s;
 `
 
 const Product = (props) => {
     return (
         <Container>
-            <ProductImage image={props.image}></ProductImage>
+            <ProductImage hoverImage={props.hoverImage} image={props.image}></ProductImage>
             <ProductText name={props.name} size={props.size} price={props.price}></ProductText>
         </Container>
     )

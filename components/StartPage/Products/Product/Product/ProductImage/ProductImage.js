@@ -10,11 +10,16 @@ const Container = styled.div`
     position: absolute;
     top: 0;
     left: 0;
+    transition: .5s;
+    &&:hover {
+        background-image: url(${props => props.hoverImage});
+        background-size: 155px 205px;
+    }
 `
 
 const ProductImage = (props) => {
     return (
-        <Container data-testid='productImage' image={props.image}>
+        <Container data-testid='productImage' hoverImage={props.hoverImage} image={props.image}>
 
         </Container>
     )

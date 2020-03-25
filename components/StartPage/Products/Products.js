@@ -7,23 +7,22 @@ import { Small } from '../../../assets/FramesData/Small';
 import { All } from '../../../assets/FramesData/All';
 import { Large } from '../../../assets/FramesData/Large';
 
-import Product from './Product/Product/Product'
-
 const Container = styled.div`
     width: 100%;
-    height: 65px;
-    background-color: #F7F7F7;
     display: flex;
     align-items: center;
     margin-top: 20px;
     display: flex;
     flex-direction: column;
+    position: relative;
 `
 const ButtonsBox = styled.div`
     width: 100%;
+    height: 65px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    background-color: #F7F7F7;
 `
 const Button = styled.div`
     width: 120px;
