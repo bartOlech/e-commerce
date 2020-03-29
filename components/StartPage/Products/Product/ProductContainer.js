@@ -20,7 +20,7 @@ const ProductContainer = (props) => {
         <Container>
             {props.products.map((val, index) => {
                 return (
-                    <Product hoverImage={val.hoverImage} key={index} image={val.image} name={val.name} size={val.size} price={val.price}></Product>
+                    <Product id={val.id} hoverImage={val.hoverImage} key={index} image={val.image} name={val.name} size={val.size} price={val.price}></Product>
                 )
             })}
         </Container>

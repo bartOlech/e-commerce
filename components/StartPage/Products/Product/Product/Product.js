@@ -2,6 +2,7 @@ import React from 'react';
 import ProductImage from './ProductImage/ProductImage';
 import ProductText from './ProductText/ProductText';
 import styled, { keyframes } from 'styled-components';
+import Router from 'next/router'
 
 const Container = styled.div`
     width: 160px;
@@ -16,8 +17,13 @@ const Container = styled.div`
 `
 
 const Product = (props) => {
+
+    const handleProduct = (id) => {
+        Router.push(`/product?id=${id}`)
+    }
+
     return (
-        <Container>
+        <Container onClick={() => {handleProduct(props.id)}}>
             <ProductImage hoverImage={props.hoverImage} image={props.image}></ProductImage>
             <ProductText name={props.name} size={props.size} price={props.price}></ProductText>
         </Container>
