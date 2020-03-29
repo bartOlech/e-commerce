@@ -5,7 +5,8 @@ export const All = [
         size: '12 x 18 cm',
         price: '31',
         image: '../../../../../../static/frame1.png',
-        hoverImage: '../../../../../../static/frame2.jpg'
+        hoverImage: '../../../../../../static/frame2.jpg',
+        color: 'czarny'
     },
     {
         id: 2,
@@ -13,7 +14,8 @@ export const All = [
         size: '23 x 15 cm',
         price: '12',
         image: '../../../../../../static/frame1.png',
-        hoverImage: '../../../../../../static/frame2.jpg'
+        hoverImage: '../../../../../../static/frame2.jpg',
+        color: 'czarny'
     },
     {
         id: 3,
@@ -21,7 +23,8 @@ export const All = [
         size: '8 x 12 cm',
         price: '36',
         image: '../../../../../../static/frame1.png',
-        hoverImage: '../../../../../../static/frame2.jpg'
+        hoverImage: '../../../../../../static/frame2.jpg',
+        color: 'czarny'
     },
     {
         id: 4,
@@ -29,7 +32,8 @@ export const All = [
         size: '16 x 20 cm',
         price: '54',
         image: '../../../../../../static/frame1.png',
-        hoverImage: '../../../../../../static/frame2.jpg'
+        hoverImage: '../../../../../../static/frame2.jpg',
+        color: 'czarny'
     },
     {
         id: 5,
@@ -37,7 +41,8 @@ export const All = [
         size: '42 x 28 cm',
         price: '31',
         image: '../../../../../../static/frame1.png',
-        hoverImage: '../../../../../../static/frame2.jpg'
+        hoverImage: '../../../../../../static/frame2.jpg',
+        color: 'biały'
     },
     {
         id: 6,
@@ -45,7 +50,8 @@ export const All = [
         size: '32 x 20 cm',
         price: '12',
         image: '../../../../../../static/frame1.png',
-        hoverImage: '../../../../../../static/frame2.jpg'
+        hoverImage: '../../../../../../static/frame2.jpg',
+        color: 'biały'
     },
     {
         id: 7,
@@ -53,7 +59,8 @@ export const All = [
         size: '34 x 38 cm',
         price: '36',
         image: '../../../../../../static/frame1.png',
-        hoverImage: '../../../../../../static/frame2.jpg'
+        hoverImage: '../../../../../../static/frame2.jpg',
+        color: 'biały'
     },
     {
         id: 8,
@@ -61,6 +68,7 @@ export const All = [
         size: '52 x 48 cm',
         price: '54',
         image: '../../../../../../static/frame1.png',
-        hoverImage: '../../../../../../static/frame2.jpg'
+        hoverImage: '../../../../../../static/frame2.jpg',
+        color: 'biały'
     }
 ]
