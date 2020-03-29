@@ -67,7 +67,7 @@ const AttributeSection = () => {
             {AllData.map((el, index) => {
                 if(el.id == id) {
                     return (
-                        <div key={index}>
+                        <div data-testid='attribute-section' key={index}>
                             <AttributeName name={el.name}></AttributeName>
                             <Details>
                                 <ImageBox>
