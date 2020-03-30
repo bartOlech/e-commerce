@@ -14,6 +14,7 @@ const Image = styled.div`
     margin-left: 10px;
     cursor: pointer;
     transition: .3s;
+    border-radius: 2px;
 `
 const ImagesBox = styled.div`
     margin-top: 10px;

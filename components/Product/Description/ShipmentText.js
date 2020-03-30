@@ -8,7 +8,7 @@ const Container = styled.div`
     font-size: 1.1em;
     color: #959595;
     font-weight: 500;
-    margin-top: 20px;
+    margin-top: 15px;
     text-align: right;
 `
 

@@ -24,6 +24,17 @@ const Line = styled.div`
     position: absolute;
     top: 14px;
     left: 180px;
+    &&:before {
+        content: '';
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        background-image: url('../../../static/callendar.svg');
+        background-repeat: no-repeat;
+        background-size: 25px 25px;
+        top: -7px;
+        left: 20px;
+    }
 `
 
 const Logo = () => {

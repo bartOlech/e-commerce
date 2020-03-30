@@ -46,7 +46,7 @@ const HeartIco = styled.div`
     box-shadow: 0 1px 8px #FB5C43;
     position: absolute;
     bottom: -30px;
-    right: 10px;
+    right: 19px;
     &&:before {
         content: '';
         width: 28px;
