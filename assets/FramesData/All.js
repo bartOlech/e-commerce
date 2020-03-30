@@ -6,7 +6,9 @@ export const All = [
         price: '31',
         image: '../../../../../../static/frame1.png',
         hoverImage: '../../../../../../static/frame2.jpg',
-        color: 'czarny'
+        color: 'czarny',
+        description: ' Nasze wysokiej jakości ramki do plakatow i zdjec i stwórz kompletną galerię na ścianie. Oferujemy eleganckie ramki do zdjęć w kolorze czarnym, białym i kolorze dębu, a także ramki metalowe w kolorze złotym, srebrnym i miedzianym. Ramki są dostępne w ośmiu rozmiarach, od małych ramek do zdjęć o wymiarach 13 x',
+        shipment: 'Wysyłka w ciągu 28 godzin'
     },
     {
         id: 2,
@@ -15,7 +17,9 @@ export const All = [
         price: '12',
         image: '../../../../../../static/frame1.png',
         hoverImage: '../../../../../../static/frame2.jpg',
-        color: 'czarny'
+        color: 'czarny',
+        description: ' Nasze wysokiej jakości ramki do plakatow i zdjec i stwórz kompletną galerię na ścianie. Oferujemy eleganckie ramki do zdjęć w kolorze czarnym, białym i kolorze dębu, a także ramki metalowe w kolorze złotym, srebrnym i miedzianym. Ramki są dostępne w ośmiu rozmiarach, od małych ramek do zdjęć o wymiarach 13 x',
+        shipment: 'Wysyłka w ciągu 48 godzin'
     },
     {
         id: 3,
@@ -24,7 +28,9 @@ export const All = [
         price: '36',
         image: '../../../../../../static/frame1.png',
         hoverImage: '../../../../../../static/frame2.jpg',
-        color: 'czarny'
+        color: 'czarny',
+        description: ' Nasze wysokiej jakości ramki do plakatow i zdjec i stwórz kompletną galerię na ścianie. Oferujemy eleganckie ramki do zdjęć w kolorze czarnym, białym i kolorze dębu, a także ramki metalowe w kolorze złotym, srebrnym i miedzianym. Ramki są dostępne w ośmiu rozmiarach, od małych ramek do zdjęć o wymiarach 13 x',
+        shipment: 'Wysyłka w ciągu 48 godzin'
     },
     {
         id: 4,
@@ -33,7 +39,9 @@ export const All = [
         price: '54',
         image: '../../../../../../static/frame1.png',
         hoverImage: '../../../../../../static/frame2.jpg',
-        color: 'czarny'
+        color: 'czarny',
+        description: 'Wykorzystaj nasze wysokiej jakości ramki do plakatow i zdjec i stwórz kompletną galerię na ścianie. Oferujemy eleganckie ramki do zdjęć w kolorze czarnym, białym i kolorze dębu, a także ramki metalowe w kolorze złotym, srebrnym i miedzianym. Ramki są dostępne w ośmiu rozmiarach, od małych ramek do zdjęć o wymiarach 13 x',
+        shipment: 'Wysyłka w ciągu 24 godzin'
     },
     {
         id: 5,
@@ -42,7 +50,9 @@ export const All = [
         price: '31',
         image: '../../../../../../static/frame1.png',
         hoverImage: '../../../../../../static/frame2.jpg',
-        color: 'biały'
+        color: 'biały',
+        description: ' Nasze wysokiej jakości ramki do plakatow i zdjec i stwórz kompletną galerię na ścianie. Oferujemy eleganckie ramki do zdjęć w kolorze czarnym, białym i kolorze dębu, a także ramki metalowe w kolorze złotym, srebrnym i miedzianym. Ramki są dostępne w ośmiu rozmiarach, od małych ramek do zdjęć o wymiarach 13 x',
+        shipment: 'Wysyłka w ciągu 48 godzin'
     },
     {
         id: 6,
@@ -51,7 +61,9 @@ export const All = [
         price: '12',
         image: '../../../../../../static/frame1.png',
         hoverImage: '../../../../../../static/frame2.jpg',
-        color: 'biały'
+        color: 'biały',
+        description: 'Wykorzystaj nasze wysokiej jakości ramki do plakatow i zdjec i stwórz kompletną galerię na ścianie. Oferujemy eleganckie ramki do zdjęć w kolorze czarnym, białym i kolorze dębu, a także ramki metalowe w kolorze złotym, srebrnym i miedzianym. Ramki są dostępne w ośmiu rozmiarach, od małych ramek do zdjęć o wymiarach 13 x',
+        shipment: 'Wysyłka w ciągu 24 godzin'
     },
     {
         id: 7,
@@ -60,7 +72,9 @@ export const All = [
         price: '36',
         image: '../../../../../../static/frame1.png',
         hoverImage: '../../../../../../static/frame2.jpg',
-        color: 'biały'
+        color: 'biały',
+        description: ' Nasze wysokiej jakości ramki do plakatow i zdjec i stwórz kompletną galerię na ścianie. Oferujemy eleganckie ramki do zdjęć w kolorze czarnym, białym i kolorze dębu, a także ramki metalowe w kolorze złotym, srebrnym i miedzianym. Ramki są dostępne w ośmiu rozmiarach, od małych ramek do zdjęć o wymiarach 13 x',
+        shipment: 'Wysyłka w ciągu 48 godzin'
     },
     {
         id: 8,
@@ -69,6 +83,8 @@ export const All = [
         price: '54',
         image: '../../../../../../static/frame1.png',
         hoverImage: '../../../../../../static/frame2.jpg',
-        color: 'biały'
+        color: 'biały',
+        description: 'Wykorzystaj nasze wysokiej jakości ramki do plakatow i zdjec i stwórz kompletną galerię na ścianie. Oferujemy eleganckie ramki do zdjęć w kolorze czarnym, białym i kolorze dębu, a także ramki metalowe w kolorze złotym, srebrnym i miedzianym. Ramki są dostępne w ośmiu rozmiarach, od małych ramek do zdjęć o wymiarach 13 x',
+        shipment: 'Wysyłka w ciągu 24 godzin'
     }
 ]
