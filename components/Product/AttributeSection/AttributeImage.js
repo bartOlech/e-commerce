@@ -56,7 +56,7 @@ const AttributeImage = (props) => {
     return (
         <Container >
             <Image image={clickedImage}></Image>
-            <ImagesBox>
+            <ImagesBox data-testid='small-images-box'>
                 {props.images.map((el, index) => {
                     return (
                         <SmallImageBox onClick={() => setClickedImage(el)} key={index}>
