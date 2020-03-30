@@ -13,8 +13,10 @@ const Container = styled.div`
     width: 100%;
     height: 100%;
     background-color: rgba(233, 232, 235, .5);
-    padding-bottom: 90px;
+    padding-bottom: 20px;
     position: relative;
+    /* box-shadow: 0 2px 12px -8px rgba(59, 71, 90, .2); */
+    box-shadow: 0 3px 5px rgb(245, 243, 243, .7);
 `
 const Details = styled.div`
     width: 100%;
@@ -28,6 +30,7 @@ const ImageBox = styled.div`
 `
 const TextDetails = styled.div`
     width: 150px;
+    height: 300px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -71,7 +74,7 @@ const AttributeSection = () => {
                             <AttributeName name={el.name}></AttributeName>
                             <Details>
                                 <ImageBox>
-                                    <AttributeImage image={el.image}></AttributeImage>
+                                    <AttributeImage images={el.images} image={el.image}></AttributeImage>
                                 </ImageBox>
                                 <TextDetails>
                                     <AttributePrice price={el.price}></AttributePrice>

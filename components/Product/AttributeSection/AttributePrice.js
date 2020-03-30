@@ -17,7 +17,6 @@ const Price = styled.div`
     font-family: ${FontStyle.family};
     color: #3B475A;
     font-size: 1.3em;
-    
 `
 
 const AttributePrice = (props) => {
