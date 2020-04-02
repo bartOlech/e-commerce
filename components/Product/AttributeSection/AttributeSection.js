@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import AttributeName from './AttributeName';
 import AttributePrice from './AttributePrice';
@@ -35,7 +35,7 @@ const TextDetails = styled.div`
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
-    margin-left: 25px;
+    margin-left: 20px;
 `
 const HeartIco = styled.div`
     width: 60px;
@@ -64,7 +64,12 @@ const HeartIco = styled.div`
 
 const AttributeSection = () => {
     const {query: {id}} = useRouter();
+    const [selectPrice, setSelectPrice] = useState('')
 
+    const setPrice = (val) => {
+        setSelectPrice(val)
+    }
+   
     return (
         <Container>
             {AllData.map((el, index) => {
@@ -77,9 +82,9 @@ const AttributeSection = () => {
                                     <AttributeImage images={el.images} image={el.image}></AttributeImage>
                                 </ImageBox>
                                 <TextDetails>
-                                    <AttributePrice price={el.price}></AttributePrice>
+                                    <AttributePrice price={selectPrice}></AttributePrice>
                                     <AttributeColor color={el.color}></AttributeColor>
-                                    <AttributeSize size={el.size}></AttributeSize>
+                                    <AttributeSize setPrice={setPrice} sizeWithPrice={el.sizeWithPrice}></AttributeSize>
                                 </TextDetails>
                             </Details>
                             <HeartIco></HeartIco>

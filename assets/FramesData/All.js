@@ -2,12 +2,17 @@ export const All = [
     {
         id: 1,
         name: 'Ramka drewniana',
-        size: '12 x 18 cm',
-        price: '31',
+        sizeWithPrice: {
+            // price with the size
+            31: '21 x 34 cm',
+            20: '17 x 14 cm',
+            25: '34 x 9 cm',
+            10: '12 x 12 cm',
+        },
         image: '../../../../../../static/frame1.png',
         images: ['../../../../../../static/frame1.png', '../../../../../../static/frame2.jpg', '../../../../../../static/frame3.png'],
         hoverImage: '../../../../../../static/frame2.jpg',
-        color: 'czarny',
+        color: 'Czarny',
         description: ' Nasze wysokiej jakości ramki do plakatow i zdjec i stwórz kompletną galerię na ścianie.stwórz kompletną galerię na ścianie. Nasze wysokiej jakości ramki do plakatow i zdjec i stwórz',
         shipment: 'Wysyłka w ciągu 28 godzin',
         additionalData: [
@@ -24,7 +29,7 @@ export const All = [
         image: '../../../../../../static/frame1.png',
         images: ['../../../../../../static/frame1.png', '../../../../../../static/frame2.jpg', '../../../../../../static/frame3.png'],
         hoverImage: '../../../../../../static/frame2.jpg',
-        color: 'czarny',
+        color: 'Czarny',
         description: ' Nasze wysokiej jakości ramki do plakatow i zdjec i stwórz kompletną galerię na ścianie.stwórz kompletną galerię na ścianie. Nasze wysokiej jakości ramki do plakatow i zdjec i stwórz',
         shipment: 'Wysyłka w ciągu 48 godzin',
         additionalData: [

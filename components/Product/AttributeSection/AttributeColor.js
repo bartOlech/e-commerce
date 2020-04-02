@@ -17,7 +17,7 @@ const Name = styled.div`
 const Color = styled.div`
     font-family: ${FontStyle.family};
     color: #3B475A;
-    font-size: 1.3em;
+    font-size: 1.2em;
 `
 const AttributeColor = (props) => {
     return (
