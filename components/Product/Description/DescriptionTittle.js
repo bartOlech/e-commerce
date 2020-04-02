@@ -4,15 +4,15 @@ import { FontStyle } from '../../../assets/style/style';
 
 const Container = styled.div`
     font-family: ${FontStyle.family};
-    font-size: 1.4em;
+    font-size: 1.3em;
     color: #3B475A;
     font-weight: 400;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 `
 
-const DescriptionTittle = () => {
+const DescriptionTittle = (props) => {
     return (
-        <Container>Opis</Container>
+        <Container>{props.tittle}</Container>
     )
 }
 

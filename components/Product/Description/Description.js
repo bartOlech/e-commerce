@@ -6,6 +6,7 @@ import ShipmentText from './ShipmentText';
  // import locally data, change in the future
  import { All as AllData } from '../../../assets/FramesData/All'; 
  import {useRouter, withRouter} from 'next/router';
+ import AdditionalData from './AdditionalData';
 
 const Container = styled.div`
     display: flex;
@@ -27,8 +28,10 @@ const Description = () => {
                 if(el.id == id) {
                     return (
                         <ProductData key={index}>
-                            <DescriptionTittle></DescriptionTittle>
+                            <DescriptionTittle tittle='Opis'></DescriptionTittle>
                             <DescriptionText description={el.description}></DescriptionText>
+                            <DescriptionTittle tittle='Dodatkowe informacje'></DescriptionTittle>
+                            <AdditionalData additionalData={el.additionalData}></AdditionalData>
                             <ShipmentText shipment={el.shipment}></ShipmentText>
                         </ProductData>
                     )
