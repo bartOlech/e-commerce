@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Header from './Header/Header';
 import AttributeSection from './AttributeSection/AttributeSection';
 import Description from './Description/Description';
+import SelectDate from './SelectDate/SelectDate';
 
 const Container = styled.div`
     width: 100%;
@@ -15,6 +16,7 @@ const Product = () => {
             <Header></Header>
             <AttributeSection></AttributeSection>
             <Description></Description>
+            <SelectDate></SelectDate>
         </Container>
     )
 }

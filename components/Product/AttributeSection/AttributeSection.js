@@ -64,7 +64,7 @@ const HeartIco = styled.div`
 
 const AttributeSection = () => {
     const {query: {id}} = useRouter();
-    const [selectPrice, setSelectPrice] = useState('')
+    const [selectPrice, setSelectPrice] = useState('1')
 
     const setPrice = (val) => {
         setSelectPrice(val)

@@ -63,7 +63,7 @@ const AttributeSize = (props) => {
     return (
         <Container>
             <Label htmlFor='sizes'>Rozmiar</Label>
-            <Select onChange={(val) => handlePrice(val)} id='sizes'>
+            <Select data-testid='select-size' onChange={(val) => handlePrice(val)} id='sizes'>
                 {selectSize()}
             </Select>
         </Container>

@@ -1,9 +1,11 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, fireEvent, cleanup} from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import AttributeSize from '../AttributeSize';
+import AttributePrice from '../AttributePrice';
+
+afterEach(cleanup)
 
 test('Should have text from props', () => {
-    const { getByText } = render(<AttributeSize size='12 x 31 cm'/>)
-    expect(getByText('12 x 31 cm').innerHTML).toBe('12 x 31 cm')
+    const { getByText } = render(<AttributePrice price='12'/>)
+    expect(getByText('12 zł').innerHTML).toBe('12 zł')
 })
