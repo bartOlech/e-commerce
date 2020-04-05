@@ -55,9 +55,9 @@ const DateResult = (props) => {
             </TextBox>
             <AlternateTextBox>
                 <AlternateText>Brak wybranej daty, </AlternateText>
-                <AlternateDateText>dostępny rok: {props.availableYears.map((el, index) => {
+                <AlternateDateText data-testid='alternate-date'>dostępny rok: {props.availableYears.map((el, index) => {
                     return (
-                        <Year key={index}>{el}, </Year>
+                        <Year data-testid='year' key={index}>{el}, </Year>
                     )
                 })}</AlternateDateText>
             </AlternateTextBox>
