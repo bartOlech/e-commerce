@@ -1,16 +1,27 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import DateResult from '../DateResult';
 
-test('should have text from props', () => {
-    const arr = ['2002']
-    const { getByText } = render(<DateResult availableYears={arr} date='12.11.2020'></DateResult>)
-    expect(getByText('12.11.2020').innerHTML).toBe('12.11.2020');
+afterEach(cleanup);
+
+const setup = () => {
+    const utils = render(<DateResult day='1' month='2' year='2020'></DateResult>);
+    const textBox = utils.getAllByTestId('text-box');
+    const date = utils.getAllByTestId('date');
+    return {
+        date,
+        textBox,
+        ...utils,
+    }
+}
+
+test('should have a child', () => {
+    const { textBox } = setup();
+    expect(textBox).not.toEqual(null);
 })
 
-test('should return years from array', () => {
-    const arr = ['2002, 2010']
-    const { getByTestId } = render(<DateResult availableYears={arr}></DateResult>)
-    expect(getByTestId('year').innerHTML).toBe('2002, 2010, ');
+test('should give 0 number before day and month', () => {
+    const { getByTestId } = render(<DateResult day='1' month='2' year='2020'></DateResult>);
+    expect(getByTestId('date').innerHTML).toBe('01.02.2020');
 })

@@ -50,9 +50,9 @@ const DateResult = (props) => {
     return (
         <Container>
             {props.day && 
-            <TextBox>
+            <TextBox data-testid='text-box'>
                 <Text>Wybrana data: </Text>
-                <Date>{props.day.length == 1 ? `0${props.day}` : props.day}.{props.month.length == 1 ? `0${props.month}` : props.month}.{props.year}</Date>
+                <Date data-testid='date'>{props.day.length == 1 ? `0${props.day}` : props.day}.{props.month.length == 1 ? `0${props.month}` : props.month}.{props.year}</Date>
             </TextBox>}
             
             {/* <AlternateTextBox>
