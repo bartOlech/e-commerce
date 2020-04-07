@@ -49,10 +49,12 @@ const DateResult = (props) => {
 
     return (
         <Container>
+            {props.day && 
             <TextBox>
                 <Text>Wybrana data: </Text>
-                <Date>{props.date}</Date>
-            </TextBox>
+                <Date>{props.day.length == 1 ? `0${props.day}` : props.day}.{props.month.length == 1 ? `0${props.month}` : props.month}.{props.year}</Date>
+            </TextBox>}
+            
             <AlternateTextBox>
                 <AlternateText>Brak wybranej daty, </AlternateText>
                 <AlternateDateText data-testid='alternate-date'>dostępny rok: {props.availableYears.map((el, index) => {

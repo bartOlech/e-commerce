@@ -4,8 +4,7 @@ import TittleText from './TittleText';
 import Buttons from './Buttons/Buttons';
 import DateResult from './DateResult/DateResult';
 // redux
-// import {connect} from 'react-redux';
-// import {decrementCounter, incrementCounter} from '../redux/actions/counterActions';
+import {connect} from 'react-redux';
 
 const Container = styled.div`
     display: flex;
@@ -14,15 +13,21 @@ const Container = styled.div`
     margin-bottom: 30px;
 `
 
-const SelectDate = () => {
+const SelectDate = (props) => {
 
     return (
         <Container>
             <TittleText text={'Dostosuj swoją kartkę'}></TittleText>
             <Buttons></Buttons>
-            <DateResult availableYears={['2001', '2020']} date='21.03.2020'></DateResult>
+            <DateResult availableYears={['2001', '2020']} day={props.day} month={props.month} year={props.year}></DateResult>
         </Container>
     )
 }
 
-export default SelectDate;
+const mapStateToProps = state => ({
+    day: state.date.day,
+    month: state.date.month,
+    year: state.date.year
+})
+
+export default connect(mapStateToProps)(SelectDate);

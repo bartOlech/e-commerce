@@ -1,13 +1,20 @@
 import * as constants from '../actions/constants';
 
 const initialState = {
-    selectedDate: 'Bart'
+    day: '',
+    month: '',
+    year: ''
   };
 
 const dateReducer = (state = initialState, action) => {
     switch (action.type) {
         case constants.SELECT_DATE:
-            return {...state, selectedDate: action.payload.date}
+            return {
+                ...state,
+                day: action.payload.day,
+                month: action.payload.month,
+                year: action.payload.year
+            }
         default:
             return {...state};
     }

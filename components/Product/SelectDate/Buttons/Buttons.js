@@ -31,14 +31,16 @@ const Buttons = (props) => {
 
     const handleChange = date => {
         setStartDate(date)
-        // console.log('date')
-        props.setDate('asfasf')
+        const day = date.getDate().toString();
+        const month = String(date.getMonth() + 1);
+        const year = date.getFullYear().toString();
+
+        props.setDate(day, month, year)
       };
 
     return (
         <Container>
             <Text>Wybierz datę</Text>
-            <div>{props.value}</div>
             <DatePicker
                 selected={startDate}
                 onChange={handleChange}
@@ -55,7 +57,9 @@ const mapDispatchToProps = {
 }
 
 const mapStateToProps = state => ({
-    value: state.date.selectedDate
+    day: state.date.day,
+    month: state.date.month,
+    year: state.date.year
 })
 
 export default connect( mapStateToProps, mapDispatchToProps)(Buttons);
