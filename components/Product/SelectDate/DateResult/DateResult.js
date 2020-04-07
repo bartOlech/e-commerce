@@ -9,6 +9,7 @@ const Container = styled.div`
 `
 const TextBox = styled.div`
     display: flex;
+    margin-top: 10px;
 `
 const Text = styled.div`
     font-family: ${FontStyle.family};
@@ -44,7 +45,6 @@ const Year = styled.div `
     font-weight: 600;
 `
 
-
 const DateResult = (props) => {
 
     return (
@@ -55,14 +55,14 @@ const DateResult = (props) => {
                 <Date>{props.day.length == 1 ? `0${props.day}` : props.day}.{props.month.length == 1 ? `0${props.month}` : props.month}.{props.year}</Date>
             </TextBox>}
             
-            <AlternateTextBox>
+            {/* <AlternateTextBox>
                 <AlternateText>Brak wybranej daty, </AlternateText>
                 <AlternateDateText data-testid='alternate-date'>dostępny rok: {props.availableYears.map((el, index) => {
                     return (
                         <Year data-testid='year' key={index}>{el}, </Year>
                     )
                 })}</AlternateDateText>
-            </AlternateTextBox>
+            </AlternateTextBox> */}
         </Container>
     )
 }

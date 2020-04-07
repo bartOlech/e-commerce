@@ -4,6 +4,7 @@ import Header from './Header/Header';
 import AttributeSection from './AttributeSection/AttributeSection';
 import Description from './Description/Description';
 import SelectDate from './SelectDate/SelectDate';
+import BuyButton from './BuyButton/BuyButton';
 
 const Container = styled.div`
     width: 100%;
@@ -17,6 +18,7 @@ const Product = () => {
             <AttributeSection></AttributeSection>
             <Description></Description>
             <SelectDate></SelectDate>
+            <BuyButton></BuyButton>
         </Container>
     )
 }

@@ -8,7 +8,7 @@ const Container = styled.div`
 const Text = styled.p`
     font-family: ${FontStyle.family};
     font-size: 1.2em;
-    color: #A2A2A2;
+    color: #808080;
     font-weight: 300;
     line-height: 1.2em;
     margin-top: -3px;

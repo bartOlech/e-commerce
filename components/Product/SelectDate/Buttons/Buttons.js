@@ -24,6 +24,7 @@ const Text = styled.span`
     color: #3B475A;
     font-size: 1em;
     margin-bottom: 2px;
+    margin-left: -15px;
 `
 
 const Buttons = (props) => {
