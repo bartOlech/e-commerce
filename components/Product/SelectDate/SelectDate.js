@@ -3,6 +3,9 @@ import styled from 'styled-components';
 import TittleText from './TittleText';
 import Buttons from './Buttons/Buttons';
 import DateResult from './DateResult/DateResult';
+// redux
+// import {connect} from 'react-redux';
+// import {decrementCounter, incrementCounter} from '../redux/actions/counterActions';
 
 const Container = styled.div`
     display: flex;

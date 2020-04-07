@@ -4,6 +4,9 @@ import React from 'react';
 import withRedux from "next-redux-wrapper";
 import store from '../redux/store';
 
+import '../assets/style/style.css'
+import "react-datepicker/dist/react-datepicker.css";
+
 class MyApp extends App {
 
     static async getInitialProps({Component, ctx}) {

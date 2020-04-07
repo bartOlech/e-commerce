@@ -1,8 +1,8 @@
-import counterReducer from './counterReducer';
+import dateReducer from './dateReducer';
 import {combineReducers} from 'redux';
 
 const rootReducer = combineReducers({
-    counter: counterReducer
+    date: dateReducer
 });
 
 export default rootReducer;

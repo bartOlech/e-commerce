@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../../assets/style/style';
 
+// redux
+import {connect} from 'react-redux';
+import { setDate } from '../../../../redux/actions/setDateActions';
+
 // calendar
 
 import DatePicker, { registerLocale } from "react-datepicker";
@@ -22,16 +26,19 @@ const Text = styled.span`
     margin-bottom: 2px;
 `
 
-const Buttons = () => {
+const Buttons = (props) => {
     const [startDate, setStartDate] = useState(new Date());
 
     const handleChange = date => {
         setStartDate(date)
+        // console.log('date')
+        props.setDate('asfasf')
       };
 
     return (
         <Container>
             <Text>Wybierz datę</Text>
+            <div>{props.value}</div>
             <DatePicker
                 selected={startDate}
                 onChange={handleChange}
@@ -43,4 +50,12 @@ const Buttons = () => {
     )
 }
 
-export default Buttons;
+const mapDispatchToProps = {
+    setDate: setDate
+}
+
+const mapStateToProps = state => ({
+    value: state.date.selectedDate
+})
+
+export default connect( mapStateToProps, mapDispatchToProps)(Buttons);
