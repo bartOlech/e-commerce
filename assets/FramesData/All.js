@@ -4,7 +4,7 @@ export const All = [
         name: 'Ramka drewniana',
         size: '12 x 12 cm',
         price: '10',
-        sizeWithPrice: {
+        priceWithSize: {
             // price with the size
             31: '21 x 34 cm',
             20: '17 x 14 cm',

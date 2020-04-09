@@ -5,9 +5,8 @@ import AttributePrice from './AttributePrice';
 import AttributeImage from './AttributeImage';
 import AttributeSize from './AttributeSize';
 import AttributeColor from './AttributeColor';
-// import locally data, change in the future
-import { All as AllData} from '../../../assets/FramesData/All';
-import {useRouter, withRouter} from 'next/router';
+import { connect } from 'react-redux';
+import { setPrice } from '../../../redux/actions/setPriceAction';
 
 const Container = styled.div`
     width: 100%;
@@ -62,38 +61,46 @@ const HeartIco = styled.div`
 
 `
 
-const AttributeSection = () => {
-    const {query: {id}} = useRouter();
-    const [selectPrice, setSelectPrice] = useState('1')
+const AttributeSection = (props) => {
+    const [selectedPrice, setSelectedPrice] = useState('')
 
     const setPrice = (val) => {
-        setSelectPrice(val)
+        setSelectedPrice(val)
+        props.setPrice(val)
     }
    
     return (
         <Container>
-            {AllData.map((el, index) => {
-                if(el.id == id) {
-                    return (
-                        <div data-testid='attribute-section' key={index}>
-                            <AttributeName name={el.name}></AttributeName>
-                            <Details>
-                                <ImageBox>
-                                    <AttributeImage images={el.images} image={el.image}></AttributeImage>
-                                </ImageBox>
-                                <TextDetails>
-                                    <AttributePrice price={selectPrice}></AttributePrice>
-                                    <AttributeColor color={el.color}></AttributeColor>
-                                    <AttributeSize setPrice={setPrice} sizeWithPrice={el.sizeWithPrice}></AttributeSize>
-                                </TextDetails>
-                            </Details>
-                            <HeartIco></HeartIco>
-                        </div>
-                    )
-                }
-            })}
+            <AttributeName name={props.name}></AttributeName>
+            <Details>
+                <ImageBox>
+                    <AttributeImage images={props.images} image={props.image}></AttributeImage>
+                </ImageBox>
+                <TextDetails>
+                    <AttributePrice price={selectedPrice ? selectedPrice : props.initialPrice}></AttributePrice>
+                    <AttributeColor color={props.color}></AttributeColor>
+                    <AttributeSize setPrice={setPrice} sizeWithPrice={props.sizeWithPrice}></AttributeSize>
+                </TextDetails>
+            </Details>
+            <HeartIco></HeartIco>
         </Container>
     )
 }
 
-export default AttributeSection;
+const mapStateToProps = state => ({
+    name: state.frameData.name,
+    color: state.frameData.color,
+    image: state.frameData.image,
+    images: state.frameData.images,
+    size: state.size.size,
+    price: state.price.price,
+    id: state.frameData.id,
+    description: state.frameData.description,
+    additionalData: state.frameData.additionalData,
+})
+
+const mapDispatchToProps = {
+    setPrice
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AttributeSection);

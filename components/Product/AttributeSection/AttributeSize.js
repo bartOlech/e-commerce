@@ -1,6 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { FontStyle } from '../../../assets/style/style'
+import { FontStyle } from '../../../assets/style/style';
+import { connect } from 'react-redux';
+import { setSize } from '../../../redux/actions/setSizeActions';
 
 const Container = styled.div`
     display: flex;
@@ -31,17 +33,6 @@ const Select = styled.select`
 
 const AttributeSize = (props) => {
 
-    useEffect(() => {
-        // set initial price
-        let lastPrice = '';
-        for (let [key, value] of Object.entries(props.sizeWithPrice)) {
-            if(lastPrice === '') {
-                lastPrice = key
-            }
-        }
-        props.setPrice(lastPrice)
-    }, [])
-
     const selectSize = () => {
         // append childs to the Select element
         const options = []
@@ -56,6 +47,7 @@ const AttributeSize = (props) => {
         for (let [key, value] of Object.entries(props.sizeWithPrice)) {
             if(val.target.value === value) {
                 props.setPrice(key)
+                props.setSize(val.target.value)
             }
         }
     }
@@ -70,4 +62,12 @@ const AttributeSize = (props) => {
     )
 }
 
-export default AttributeSize;
+const mapDispatchToProps = {
+    setSize
+}
+
+const mapStateToProps = state => ({
+    size: state.size.size
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(AttributeSize);

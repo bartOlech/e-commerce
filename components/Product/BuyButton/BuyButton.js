@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../assets/style/style';
+import { connect } from 'react-redux';
 
 const Container = styled.div`
     display: flex;
@@ -24,12 +25,26 @@ const Button = styled.div`
     cursor: pointer;
 `
 
-const BuyButton = () => {
+const BuyButton = (props) => {
+
+    const buyProduct = () => {
+        console.log('click')
+    }
+
     return (
         <Container>
-            <Button>Zamów teraz</Button>
+            <Button onClick={buyProduct}>Zamów teraz</Button>
         </Container>
     )
 }
 
-export default BuyButton;
+const mapStateToProps = state => ({
+    id: state.frameData.id,
+    name: state.frameData.name,
+    color: state.frameData.color,
+    image: state.frameData.image,
+    size: state.size.size
+})
+
+
+export default connect(mapStateToProps)(BuyButton);

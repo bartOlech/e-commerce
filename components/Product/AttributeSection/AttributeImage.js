@@ -55,13 +55,19 @@ const AttributeImage = (props) => {
 
     return (
         <Container >
-            <Image image={clickedImage}></Image>
+            <Image image={clickedImage ? clickedImage : props.image}></Image>
             <ImagesBox data-testid='small-images-box'>
                 {props.images.map((el, index) => {
                     return (
                         <SmallImageBox onClick={() => setClickedImage(el)} key={index}>
                             <SmallImage image={el}></SmallImage>
-                            <ColorBox opacity={el === clickedImage ? '0' : '.5'}></ColorBox>
+                            {/* first getting image to useState is null */}
+                            {clickedImage ? (
+                                <ColorBox opacity={el === clickedImage ? '0' : '.5'}></ColorBox>
+                            ) : (
+                                <ColorBox opacity={el === props.image ? '0' : '.5'}></ColorBox>    
+                            )}
+                            
                         </SmallImageBox>
                     )
                 })}

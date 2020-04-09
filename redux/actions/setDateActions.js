@@ -1,8 +1,7 @@
-//Action Types
-export const SELECT_DATE = "SELECT_DATE";
+import * as constants from './constants';
 
 export const setDate = (day, month, year) => ({
-    type: SELECT_DATE,
+    type: constants.SELECT_DATE,
     payload: {
         day,
         month,
