@@ -3,7 +3,7 @@ import * as constants from '../actions/constants';
 const initialState = {
     day: '',
     month: '',
-    year: ''
+    year: '',
   };
 
 const dateReducer = (state = initialState, action) => {

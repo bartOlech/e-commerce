@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../assets/style/style';
 import { connect } from 'react-redux';
+import Router from 'next/router'
 
 const Container = styled.div`
     display: flex;
@@ -28,7 +29,17 @@ const Button = styled.div`
 const BuyButton = (props) => {
 
     const buyProduct = () => {
-        console.log('click')
+        Router.push({
+            pathname: '/orderform',
+            query: { 
+                id: props.id,
+                name: props.name,
+                color: props.color,
+                image: props.image,
+                size: props.size,
+                price: props.price
+             },
+        })
     }
 
     return (
@@ -43,7 +54,8 @@ const mapStateToProps = state => ({
     name: state.frameData.name,
     color: state.frameData.color,
     image: state.frameData.image,
-    size: state.size.size
+    size: state.size.size,
+    price: state.price.price
 })
 
 
