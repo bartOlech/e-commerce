@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../../assets/style/style';
 
@@ -48,17 +48,29 @@ const Number = styled.div`
 `
 
 const Address = () => {
+    const [street, setStreet] = useState('')
+    const [number, setNumber] = useState('')
+
+    const handleStreet = (e) => {
+        setStreet(e.target.value)
+       
+    }
+
+    const handleNumber = (e) => {
+        setNumber(e.target.value)
+        console.log(number)
+    }
 
     return (
         <Container>
             <AddressBox>
                 <Street>
                     <Label htmlFor='street'>Ulica</Label>
-                    <Input type='text' id='street'></Input>
+                    <Input onChange={handleStreet} type='text' id='street'></Input>
                 </Street>
                 <Number>
                     <Label htmlFor='housenumber'>Numer</Label>
-                    <Input style={{ width: '84%'}} type='text' id='number'></Input>
+                    <Input onChange={handleNumber} style={{ width: '84%'}} type='text' id='number'></Input>
                 </Number>
             </AddressBox>
         </Container>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../../assets/style/style';
 import InputMask from 'react-input-mask';
@@ -37,33 +37,44 @@ const Input = styled.input`
     padding-left: 5px;
 `
 const Code = styled.div`
-    width: 40%;
+    width: 37%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 `
-const CityNumber = styled.div`
-    width: 60%;
+const PostCity = styled.div`
+    width: 63%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 `
 
 const City = () => {
+    const [code, setCode] = useState('')
+    const [city, setCity] = useState('')
+
+    const handleCode = (e) => {
+        setCode(e.target.value)
+    }
+
+    const handleCity = (e) => {
+        setCity(e.target.value)    
+    }
 
     return (
         <Container>
             <AddressBox>
+                {console.log(city)}
                 <Code>
                     <Label htmlFor='zip'>Kod pocztowy</Label>
-                    <InputMask mask="99-999" >
+                    <InputMask onChange={handleCode} mask="99-999" >
                         {(inputProps) => <Input type='text' id='zip'></Input>}   
                     </InputMask>
                 </Code>
-                <CityNumber>
+                <PostCity>
                     <Label htmlFor='city'>Miasto</Label>
-                    <Input style={{ width: '92%'}} type='text' id='city'></Input>
-                </CityNumber>
+                    <Input onChange={handleCity} style={{ width: '92%'}} type='text' id='city'></Input>
+                </PostCity>
             </AddressBox>
         </Container>
     )

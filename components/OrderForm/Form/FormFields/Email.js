@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../../assets/style/style';
 
@@ -35,12 +35,17 @@ const Input = styled.input`
 `
 
 const Email = () => {
+    const [email, setEmail] = useState('')
+
+    const handleEmail = (e) => {
+        setEmail(e.target.value)
+    }
 
     return (
         <Container>
             <EmailBox>
                 <Label htmlFor='email'>Email</Label>
-                <Input type='text' id='email'></Input>
+                <Input onChange={handleEmail} type='text' id='email'></Input>
             </EmailBox>
         </Container>
     )

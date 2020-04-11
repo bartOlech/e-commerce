@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../../assets/style/style';
 
@@ -35,12 +35,17 @@ const Textarea = styled.textarea`
 `
 
 const ExtraMessage = () => {
+    const [message, setMessage] = useState('');
+
+    const handleMessage = (e) => {
+        setMessage(e.target.value);
+    }
 
     return (
         <Container>
             <ExtraMessageBox>
                 <Label htmlFor='extra message'>Dodatkowe informacje</Label>
-                <Textarea  id='extra message'></Textarea>
+                <Textarea onChange={handleMessage} id='extra message'></Textarea>
             </ExtraMessageBox>
         </Container>
     )

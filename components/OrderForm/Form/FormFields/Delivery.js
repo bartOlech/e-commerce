@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../../assets/style/style';
 
@@ -48,19 +48,39 @@ const Delivery = () => {
         20: 'Kurier DPD pobranie - 20zł',
     }
 
+    const [delivery, setDelivery] = useState('')
+    const [deliveryPrice, setDeliveryPrice] = useState('')
+
+    // set initial value to options
+    useEffect(() => {
+        setDeliveryPrice(Object.keys(StaticData)[0]);
+        setDelivery(StaticData[Object.keys(StaticData)[0]])
+    }, [])
+
     const getOptions = () => {
         const oprions = [];
         for( let[key, value] of Object.entries(StaticData)) {
-            oprions.push(<Option key={value} value={value}>{value}</Option>)
+            oprions.push(<Option key={key} value={value}>{value}</Option>)
         }
         return oprions;
+    }
+    
+    const handleDelivery = (e) => {
+        setDelivery(e.target.value)
+
+        // set delivery price
+        for( let[key, value] of Object.entries(StaticData)) {
+            if(e.target.value === value) {
+                setDeliveryPrice(key)
+            }
+        }
     }
 
     return (
         <Container>
             <DeliveryBox>
                 <Label htmlFor='email'>Metoda dostawy</Label>
-                <Select type='text' id='email'>
+                <Select onChange={handleDelivery} type='text' id='email'>
                     {getOptions(StaticData)}
                 </Select>
             </DeliveryBox>

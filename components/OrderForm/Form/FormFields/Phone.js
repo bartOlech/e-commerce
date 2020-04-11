@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../../assets/style/style';
 import InputMask from 'react-input-mask';
@@ -36,12 +36,18 @@ const Input = styled.input`
 `
 
 const Phone = () => {
+    const[phone, setPhone] = useState('');
+
+    const handlePhone = (e) => {
+        setPhone(e.target.value)
+    }
 
     return (
         <Container>
+            {console.log(phone)}
             <PhoneBox>
                 <Label htmlFor='phone'>Telefon</Label>
-                <InputMask mask="+4\8 999 999 999" >
+                <InputMask onChange={handlePhone} mask="+4\8 999 999 999" >
                     {(inputProps) => <Input type='text' id='phone'></Input>}   
                 </InputMask>
             </PhoneBox>

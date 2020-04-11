@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../../assets/style/style';
 
@@ -35,12 +35,17 @@ const Input = styled.input`
 `
 
 const Name = () => {
+    const [name, setName] = useState('');
+
+    const handleName = (e) => {
+        setName(e.target.value)
+    }
 
     return (
         <Container>
             <NameBox>
                 <Label htmlFor='name'>Imię i Nazwisko</Label>
-                <Input type='text' id='name'></Input>
+                <Input onChange={handleName} type='text' id='name'></Input>
             </NameBox>
         </Container>
     )
