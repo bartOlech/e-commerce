@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../../assets/style/style';
+import InputMask from 'react-input-mask';
 
 const Container = styled.div`
     width: 100%;
@@ -40,7 +41,9 @@ const Phone = () => {
         <Container>
             <PhoneBox>
                 <Label htmlFor='phone'>Telefon</Label>
-                <Input type='text' id='phone'></Input>
+                <InputMask mask="+4\8 999 999 999" >
+                    {(inputProps) => <Input type='text' id='phone'></Input>}   
+                </InputMask>
             </PhoneBox>
         </Container>
     )

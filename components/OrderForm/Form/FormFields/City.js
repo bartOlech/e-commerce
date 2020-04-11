@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../../assets/style/style';
+import InputMask from 'react-input-mask';
+
 
 const Container = styled.div`
     width: 100%;
@@ -54,7 +56,9 @@ const City = () => {
             <AddressBox>
                 <Code>
                     <Label htmlFor='zip'>Kod pocztowy</Label>
-                    <Input  pattern="[A-Za-z]{3}" type='text' id='zip'></Input>
+                    <InputMask mask="99-999" >
+                        {(inputProps) => <Input type='text' id='zip'></Input>}   
+                    </InputMask>
                 </Code>
                 <CityNumber>
                     <Label htmlFor='city'>Miasto</Label>
