@@ -1,18 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 import {useRouter} from 'next/router';
+import Form from './Form/Form';
 
 const Container = styled.div`
 
 `
 
 const OrderForm = () => {
-    const router = useRouter()
+    // get query
+    // const router = useRouter()
 
     return (
         <Container>
-            order form...
-            {console.log(router.query)}
+            <Form></Form>
         </Container>
     )
 }

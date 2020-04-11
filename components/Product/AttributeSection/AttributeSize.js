@@ -19,7 +19,6 @@ const Option = styled.option`
     font-family: ${FontStyle.family};
     color: #3B475A;
     font-size: 1.6em;
-    
 `
 const Select = styled.select`
     width: 110px;
