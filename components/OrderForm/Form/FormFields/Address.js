@@ -58,7 +58,6 @@ const Address = () => {
 
     const handleNumber = (e) => {
         setNumber(e.target.value)
-        console.log(number)
     }
 
     return (
@@ -70,7 +69,7 @@ const Address = () => {
                 </Street>
                 <Number>
                     <Label htmlFor='housenumber'>Numer</Label>
-                    <Input onChange={handleNumber} style={{ width: '84%'}} type='text' id='number'></Input>
+                    <Input onChange={handleNumber} style={{ width: '84%'}} type='text' id='housenumber'></Input>
                 </Number>
             </AddressBox>
         </Container>

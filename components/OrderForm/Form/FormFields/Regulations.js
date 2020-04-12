@@ -29,12 +29,14 @@ const Checkbox = styled.input`
 
 const Name = () => {
 
-  
+  const handleCheckbox = (e) => {
+    // console.log(e.target.checked)
+  }
 
     return (
         <Container>
             <CheckRegulationsSection>
-                <Checkbox id='regulations' type='checkbox'></Checkbox>
+                <Checkbox onChange={handleCheckbox} id='regulations' type='checkbox'></Checkbox>
                 <Label style={{fontSize: '1.2em', paddingRight: '10px'}} htmlFor='regulations'>
                     Zaakceptuj
                     <Link href='/regulations'>
