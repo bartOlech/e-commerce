@@ -25,7 +25,7 @@ const DeliveryCost = (props) => {
     return (
         <Container>
             <Text>Koszt wysyłki</Text>
-            <Price>{props.price} zł</Price>
+            <Price data-testid='price'>{props.price} zł</Price>
         </Container>
     )
 }

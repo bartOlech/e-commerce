@@ -1,9 +1,10 @@
 import React from 'react';
 import { render, cleanup, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import Delivery from '../Delivery';
+import TotalCost from '../TotalCost';
 import {Provider} from 'react-redux';
 import store from '../../../../../redux/store';
+import Delivery from '../../FormFields/Delivery';
 
 afterEach(cleanup);
 
@@ -23,9 +24,9 @@ const setup = () => {
     }
   }
 
-  test('It should change the selected value', () => {
+test('it should return total cost of order', () => {
     const { deliveryInput } = setup()
-    expect(deliveryInput.value).toBe('Paczkomat inPost - 14zł') 
+    const { getByTestId } = render(<Provider store={store}><TotalCost orderPrice='20'></TotalCost></Provider>)
     fireEvent.change(deliveryInput, { target: { value: 'Kurier DPD - 15zł' } })
-    expect(deliveryInput.value).toBe('Kurier DPD - 15zł')
-  })
+    expect(getByTestId('total-price').innerHTML).toBe('35 zł') //empty from the begining
+})

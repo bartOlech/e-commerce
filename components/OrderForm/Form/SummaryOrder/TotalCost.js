@@ -28,7 +28,7 @@ const TotalCost = (props) => {
     return (
         <Container>
             <Text>Razem</Text>
-            <Price>{sumCost(props.orderPrice, props.price)} zł</Price>
+            <Price data-testid='total-price'>{sumCost(props.orderPrice, props.price)} zł</Price>
         </Container>
     )
 }

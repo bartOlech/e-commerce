@@ -18,7 +18,7 @@ const HorizontalLine = styled.div`
 
 const SummaryOrder = (props) => {
     return (
-        <Container>
+        <Container data-testid='summary-order-container'>
             <Tittle></Tittle>
             <OrderCost ordersAmount={`(1 produkt)`} orderPrice={props.orderPrice}></OrderCost>
             <DeliveryCost deliveryPrice='12 zł'></DeliveryCost>
