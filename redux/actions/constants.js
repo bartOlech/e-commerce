@@ -2,3 +2,4 @@ export const SELECT_DATE = "SELECT_DATE";
 export const SELECT_SIZE = "SELECT_SIZE";
 export const SET_FRAME_DETAILS = "SET_FRAME_DETAILS";
 export const SET_PRICE = "GET_PRICE_WITH_SIZE";
+export const SET_DELIVERY = 'SET_DELIVERY';

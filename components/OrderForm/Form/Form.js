@@ -18,7 +18,7 @@ const FormBox = styled.form`
 const Form = () => {
     // from database in the future
     const StaticDeliveryData = {
-        13: 'Paczkomat inPost - 14zł',
+        13: 'Paczkomat inPost - 13zł',
         18: 'Paczkomat inPost, Kurier - 18zł',
         15: 'Kurier DPD - 15zł',
         20: 'Kurier DPD pobranie - 20zł',

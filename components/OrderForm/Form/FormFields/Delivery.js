@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../../assets/style/style';
+import { connect } from 'react-redux';
+import { setDeliveryMethod } from '../../../../redux/actions/setDelivery';
 
 const Container = styled.div`
     width: 100%;
@@ -46,8 +48,14 @@ const Delivery = (props) => {
 
     // set initial value to options
     useEffect(() => {
-        setDeliveryPrice(Object.keys(props.deliveryData)[0]);
-        setDelivery(props.deliveryData[Object.keys(props.deliveryData)[0]])
+        const initialDeliveryPrice = Object.keys(props.deliveryData)[0];
+        const initialDeliveryMethod = props.deliveryData[Object.keys(props.deliveryData)[0]];
+
+        setDeliveryPrice(initialDeliveryPrice);
+        setDelivery(initialDeliveryMethod)
+        console.log()
+        // send data to redux store
+        props.setDeliveryMethod(initialDeliveryMethod, initialDeliveryPrice)
     }, [])
 
     const getOptions = () => {
@@ -61,10 +69,13 @@ const Delivery = (props) => {
     const handleDelivery = (e) => {
         setDelivery(e.target.value)
 
+        
+
         // set delivery price
         for( let[key, value] of Object.entries(props.deliveryData)) {
             if(e.target.value === value) {
                 setDeliveryPrice(key)
+                props.setDeliveryMethod(e.target.value, key)
             }
         }
     }
@@ -81,4 +92,8 @@ const Delivery = (props) => {
     )
 }
 
-export default Delivery;
+const mapDispatchToProps = {
+    setDeliveryMethod
+}
+
+export default connect(null, mapDispatchToProps)(Delivery);
