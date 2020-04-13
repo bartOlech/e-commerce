@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../../assets/style/style';
+import { connect } from 'react-redux';
+import { setNameValidation } from '../../../../redux/actions/FormFields/setNameValidation';
 
 const Container = styled.div`
     width: 100%;
@@ -32,23 +34,27 @@ const Input = styled.input`
     color: #3B475A;
     font-size: 1.1em;
     padding-left: 5px;
+    border: ${props => props.border};
 `
 
-const Name = () => {
-    const [name, setName] = useState('');
+const Name = (props) => {
 
     const handleName = (e) => {
-        setName(e.target.value)
+        props.setNameValidation(e.target.value)
     }
 
     return (
         <Container>
             <NameBox>
                 <Label htmlFor='name'>Imię i Nazwisko</Label>
-                <Input onChange={handleName} type='text' id='name'></Input>
+                <Input border={props.nameValidate ? 'none' : '1px solid #f5587b'} onChange={handleName} type='text' id='name'></Input>
             </NameBox>
         </Container>
     )
 }
 
-export default Name;
+const mapDispatchToProps = {
+    setNameValidation
+}
+
+export default connect(null, mapDispatchToProps)(Name);

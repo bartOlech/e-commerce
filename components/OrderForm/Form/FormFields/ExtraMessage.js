@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../../assets/style/style';
+import { connect } from 'react-redux';
+import { setExtraMessageValidation } from '../../../../redux/actions/FormFields/setExtraMessageValidation';
 
 const Container = styled.div`
     width: 100%;
@@ -34,11 +36,10 @@ const Textarea = styled.textarea`
     padding-left: 5px;
 `
 
-const ExtraMessage = () => {
-    const [message, setMessage] = useState('');
+const ExtraMessage = (props) => {
 
     const handleMessage = (e) => {
-        setMessage(e.target.value);
+        props.setExtraMessageValidation(e.target.value);
     }
 
     return (
@@ -51,4 +52,8 @@ const ExtraMessage = () => {
     )
 }
 
-export default ExtraMessage;
+const mapDispatchToProps = {
+    setExtraMessageValidation
+}
+
+export default connect(null, mapDispatchToProps)(ExtraMessage);

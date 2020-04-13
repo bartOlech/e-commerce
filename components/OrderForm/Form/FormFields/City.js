@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../../assets/style/style';
 import InputMask from 'react-input-mask';
+import { connect } from 'react-redux';
+import { setCityValidation } from '../../../../redux/actions/FormFields/setCityValidation';
+import { setCodeValidation } from '../../../../redux/actions/FormFields/setCodeValidation';
 
 
 const Container = styled.div`
@@ -35,6 +38,7 @@ const Input = styled.input`
     color: #3B475A;
     font-size: 1.1em;
     padding-left: 5px;
+    border: ${props => props.border};
 `
 const Code = styled.div`
     width: 37%;
@@ -49,35 +53,38 @@ const PostCity = styled.div`
     align-items: flex-start;
 `
 
-const City = () => {
-    const [code, setCode] = useState('')
-    const [city, setCity] = useState('')
+const City = (props) => {
 
     const handleCode = (e) => {
-        setCode(e.target.value)
+        props.setCodeValidation(e.target.value);  
     }
 
     const handleCity = (e) => {
-        setCity(e.target.value)    
+        props.setCityValidation(e.target.value);  
+        
     }
 
     return (
         <Container>
             <AddressBox>
-                {console.log(city)}
                 <Code>
                     <Label htmlFor='zip'>Kod pocztowy</Label>
                     <InputMask onChange={handleCode} mask="99-999" >
-                        {(inputProps) => <Input type='text' id='zip'></Input>}   
+                        {(inputProps) => <Input border={props.codeValidate ? 'none' : '1px solid #f5587b'} type='text' id='zip'></Input>}   
                     </InputMask>
                 </Code>
                 <PostCity>
                     <Label htmlFor='city'>Miasto</Label>
-                    <Input onChange={handleCity} style={{ width: '92%'}} type='text' id='city'></Input>
+                    <Input border={props.cityValidate ? 'none' : '1px solid #f5587b'} onChange={handleCity} style={{ width: '92%'}} type='text' id='city'></Input>
                 </PostCity>
             </AddressBox>
         </Container>
     )
 }
 
-export default City;
+const mapDispatchToProps = {
+    setCityValidation,
+    setCodeValidation
+}
+
+export default connect(null, mapDispatchToProps)(City);

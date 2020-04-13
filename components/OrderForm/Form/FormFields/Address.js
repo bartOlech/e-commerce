@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../../assets/style/style';
+// redux
+import { connect } from 'react-redux';
+import { setNumberValidation } from '../../../../redux/actions/FormFields/setNumberValidation';
+import { setStreetValidation } from '../../../../redux/actions/FormFields/setStreetValidation';
 
 const Container = styled.div`
     width: 100%;
@@ -26,7 +30,8 @@ const Input = styled.input`
     width: 94%;
     height: 40px;
     background-color: #F0F0F0;
-    border: none; 
+    border: none;
+    border: ${props => props.border};
     border-radius: 1px;
     outline: none;
     font-family: ${FontStyle.family};
@@ -47,17 +52,14 @@ const Number = styled.div`
     align-items: flex-start;
 `
 
-const Address = () => {
-    const [street, setStreet] = useState('')
-    const [number, setNumber] = useState('')
+const Address = (props) => {
 
     const handleStreet = (e) => {
-        setStreet(e.target.value)
-       
+        props.setStreetValidation(e.target.value)
     }
 
     const handleNumber = (e) => {
-        setNumber(e.target.value)
+        props.setNumberValidation(e.target.value)
     }
 
     return (
@@ -65,15 +67,24 @@ const Address = () => {
             <AddressBox>
                 <Street>
                     <Label htmlFor='street'>Ulica</Label>
-                    <Input onChange={handleStreet} type='text' id='street'></Input>
+                    <Input border={props.streetValidate ? 'none' : '1px solid #f5587b'} onChange={handleStreet} type='text' id='street'></Input>
                 </Street>
                 <Number>
                     <Label htmlFor='housenumber'>Numer</Label>
-                    <Input onChange={handleNumber} style={{ width: '84%'}} type='text' id='housenumber'></Input>
+                    <Input border={props.numberValidate ? 'none' : '1px solid #f5587b'} onChange={handleNumber} style={{ width: '84%'}} type='text' id='housenumber'></Input>
                 </Number>
             </AddressBox>
         </Container>
     )
 }
 
-export default Address;
+const mapDispatchToProps = {
+    setNumberValidation,
+    setStreetValidation
+}
+const mapStateToProps = state => ({
+    streetValidation: state.validation.street,
+    numberValidation: state.validation.number
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Address);

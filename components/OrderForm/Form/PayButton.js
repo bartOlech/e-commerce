@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../assets/style/style';
+import { connect } from 'react-redux';
 
 const Button = styled.div`
     width: 290px;
@@ -22,10 +23,36 @@ const Button = styled.div`
     cursor: pointer;
 `
 
-const PayButton = () => {
+const PayButton = (props) => {
+
+    const goToPayment = () => {
+        props.checkValidation()
+        // console.log(`street: ${props.street}`)
+        // console.log(`number: ${props.number}`)
+        // console.log(`code: ${props.code}`)
+        // console.log(`city: ${props.city}`)
+        // console.log(`email: ${props.email}`)
+        // console.log(`name: ${props.name}`)
+        // console.log(`phone: ${props.phone}`)
+        console.log(`extraMessage: ${props.message}`)
+        // console.log(`delivery: ${props.delivery}`)
+    }
+
     return (
-        <Button>Przejdź do płatności</Button>
+        <Button onClick={goToPayment}>Przejdź do płatności</Button>
     )
 }
 
-export default PayButton
+const mapStateToProps = state => ({
+    street: state.validation.street,
+    number: state.validation.number,
+    code: state.validation.code,
+    city: state.validation.city,
+    email: state.validation.email,
+    name: state.validation.name,
+    phone: state.validation.phone,
+    message: state.validation.message,
+    delivery: state.delivery.delivery,
+})
+
+export default connect(mapStateToProps)(PayButton);

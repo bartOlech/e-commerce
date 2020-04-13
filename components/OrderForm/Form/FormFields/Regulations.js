@@ -32,7 +32,7 @@ const Name = () => {
   const handleCheckbox = (e) => {
     // console.log(e.target.checked)
   }
-
+  
     return (
         <Container>
             <CheckRegulationsSection>

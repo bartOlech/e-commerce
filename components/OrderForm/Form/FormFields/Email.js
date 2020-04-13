@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../../assets/style/style';
+import { connect } from 'react-redux';
+import { setEmailValidation } from '../../../../redux/actions/FormFields/setEmailValidation';
 
 const Container = styled.div`
     width: 100%;
@@ -32,23 +34,27 @@ const Input = styled.input`
     color: #3B475A;
     font-size: 1.1em;
     padding-left: 5px;
+    border: ${props => props.border};
 `
 
-const Email = () => {
-    const [email, setEmail] = useState('')
+const Email = (props) => {
 
     const handleEmail = (e) => {
-        setEmail(e.target.value)
+       props.setEmailValidation(e.target.value);
     }
 
     return (
         <Container>
             <EmailBox>
                 <Label htmlFor='email'>Email</Label>
-                <Input onChange={handleEmail} type='text' id='email'></Input>
+                <Input border={props.emailValidate ? 'none' : '1px solid #f5587b'} onChange={handleEmail} type='text' id='email'></Input>
             </EmailBox>
         </Container>
     )
 }
 
-export default Email;
+const mapDispatchToProps = {
+    setEmailValidation
+}
+
+export default connect(null, mapDispatchToProps)(Email);

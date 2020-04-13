@@ -15,7 +15,7 @@ const FormBox = styled.form`
     margin-left: 10px;
 `
 
-const Form = () => {
+const Form = (props) => {
     // from database in the future
     const StaticDeliveryData = {
         13: 'Paczkomat inPost - 13zł',
@@ -27,11 +27,11 @@ const Form = () => {
     return (
         <FormBox>
             <Tittle></Tittle>
-            <Name></Name>
-            <Address></Address>
-            <City></City>
+            <Name nameValidate={props.nameValidate}></Name>
+            <Address streetValidate={props.streetValidate} numberValidate={props.numberValidate}></Address>
+            <City codeValidate={props.codeValidate} cityValidate={props.cityValidate}></City>
             <Phone></Phone>
-            <Email></Email>
+            <Email emailValidate={props.emailValidate}></Email>
             <Delivery deliveryData={StaticDeliveryData}></Delivery>
             <ExtraMessage></ExtraMessage>
             <Regulations></Regulations>

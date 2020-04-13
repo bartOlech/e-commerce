@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../../assets/style/style';
 import InputMask from 'react-input-mask';
+import { connect } from 'react-redux';
+import { setPhoneValidation } from '../../../../redux/actions/FormFields/setPhoneValidation';
 
 const Container = styled.div`
     width: 100%;
@@ -35,16 +37,14 @@ const Input = styled.input`
     padding-left: 5px;
 `
 
-const Phone = () => {
-    const[phone, setPhone] = useState('');
+const Phone = (props) => {
 
     const handlePhone = (e) => {
-        setPhone(e.target.value)
+        props.setPhoneValidation(e.target.value)
     }
 
     return (
         <Container>
-            {console.log(phone)}
             <PhoneBox>
                 <Label htmlFor='phone'>Telefon</Label>
                 <InputMask onChange={handlePhone} mask="+4\8 999 999 999" >
@@ -55,4 +55,8 @@ const Phone = () => {
     )
 }
 
-export default Phone;
+const mapDispatchToProps = {
+    setPhoneValidation
+}
+
+export default connect(null, mapDispatchToProps)(Phone);
