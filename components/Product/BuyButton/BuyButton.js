@@ -37,7 +37,10 @@ const BuyButton = (props) => {
                 color: props.color,
                 image: props.image,
                 size: props.size,
-                price: props.price
+                price: props.price,
+                day: props.day,
+                month: props.month,
+                year: props.year
              },
         })
     }
@@ -55,7 +58,10 @@ const mapStateToProps = state => ({
     color: state.frameData.color,
     image: state.frameData.image,
     size: state.size.size,
-    price: state.price.price
+    price: state.price.price,
+    day: state.date.day,
+    month: state.date.month,
+    year: state.date.year
 })
 
 

@@ -4,6 +4,7 @@ import Tittle from './Tittle';
 import OrderCost from './OrderCost';
 import DeliveryCost from './DeliveryCost';
 import TotalCost from './TotalCost';
+import Name from './Name';
 
 const Container = styled.div`
     margin: 20px 10px 20px 10px;
@@ -20,6 +21,7 @@ const SummaryOrder = (props) => {
     return (
         <Container data-testid='summary-order-container'>
             <Tittle></Tittle>
+            <Name></Name>
             <OrderCost ordersAmount={`(1 produkt)`} orderPrice={props.orderPrice}></OrderCost>
             <DeliveryCost deliveryPrice='12 zł'></DeliveryCost>
             <HorizontalLine></HorizontalLine>

@@ -16,7 +16,6 @@ jest.mock("next/router", () => ({
 }));
 
 
-
 test('should have a child', () => {
     const { queryByTestId } = render(<AttributeImage images={['Image1', 'Image2', 'Image3']}/>)
     expect(queryByTestId('small-images-box')).not.toEqual(null);

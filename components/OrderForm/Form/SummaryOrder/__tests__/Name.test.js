@@ -1,11 +1,9 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import SummaryOrder from '../SummaryOrder';
-import {Provider} from 'react-redux';
-import store from '../../../../../redux/store';
+import Name from '../Name';
 
-afterEach(cleanup);
+afterEach(cleanup)
 
 jest.mock("next/router", () => ({
     useRouter() {
@@ -23,7 +21,8 @@ jest.mock("next/router", () => ({
         };
     },
 }));
-test('should have childs', () => {
-    const { getByTestId } = render(<Provider store={store}><SummaryOrder></SummaryOrder></Provider>)
-    expect(getByTestId('summary-order-container')).not.toEqual(null);
+
+test('Should have text from query', () => {
+    const { getByTestId } = render(<Name></Name>)
+    expect(getByTestId('text-name').innerHTML).toBe('Ramka drewniana 12 x 13 cm (04.03.2020)');
 })
