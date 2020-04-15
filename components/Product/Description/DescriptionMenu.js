@@ -46,7 +46,6 @@ const DescriptionMenu = (props) => {
 
     return (
         <Container>
-            { console.log(isClicked)}
             <Line></Line>
             <Tittle 
                 borderBottom={isClicked === 'description' ? '1px solid #6F7982' : '1px solid #E4E7EB'} 

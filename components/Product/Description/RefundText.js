@@ -23,13 +23,13 @@ const RefundText = (props) => {
             <Text>
                 Koszt zwrotu pokrywa kupujący, a produkt należy odesłać pod adres :
             </Text>
-            <Text>
+            <Text style={{fontWeight: '400', marginBottom: '3px'}}>
                 Kartka z kalendarza
             </Text>
-            <Text>
+            <Text style={{fontWeight: '400', marginBottom: '3px'}}>
                 Pocztowa 123 c
             </Text>
-            <Text>
+            <Text style={{fontWeight: '400', marginBottom: '3px'}}>
                 33-122, Kraków
             </Text>
         </Container>
