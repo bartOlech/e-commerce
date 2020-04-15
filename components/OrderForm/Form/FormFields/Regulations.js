@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../../assets/style/style';
 import Link from 'next/link'
+import { connect } from 'react-redux';
+import { setRegulationsValidation } from '../../../../redux/actions/FormFields/setRegulationsValidation';
 
 const Container = styled.div`
     width: 100%;
@@ -25,14 +27,23 @@ const CheckRegulationsSection = styled.div`
 const Checkbox = styled.input`
     width: 20px;
     height: 20px;
+    border: ${props => props.border};
+`
+const CheckboxAlert = styled.div`
+    font-family: ${FontStyle.family};
+    color: #d72323;
+    font-size: 1em;
+    margin-left: 5px;
+    margin-top: -5px;
+    display: ${props => props.display};
 `
 
-const Name = () => {
+const Regulations = (props) => {
 
   const handleCheckbox = (e) => {
-    // console.log(e.target.checked)
+    props.setRegulationsValidation(e.target.checked)
   }
-  
+ 
     return (
         <Container>
             <CheckRegulationsSection>
@@ -43,11 +54,15 @@ const Name = () => {
                         <a target="_blank"style={{color: '#FB5C43', cursor: 'pointer', textDecoration: 'none', margin: '0 5px 0 5px'}}>Regulamin</a>
                     </Link>  
                     sklepu
-                </Label>
-            
+                </Label>   
             </CheckRegulationsSection>
+            <CheckboxAlert display={props.regulationsValidate ? 'none' : 'inline'}>*Musisz zaakceptować regulamin</CheckboxAlert>
         </Container>
     )
 }
 
-export default Name;
+const mapDispatchToProps = {
+    setRegulationsValidation
+}
+
+export default connect(null, mapDispatchToProps)(Regulations);

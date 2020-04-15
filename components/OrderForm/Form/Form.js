@@ -34,7 +34,7 @@ const Form = (props) => {
             <Email emailValidate={props.emailValidate}></Email>
             <Delivery deliveryData={StaticDeliveryData}></Delivery>
             <ExtraMessage></ExtraMessage>
-            <Regulations></Regulations>
+            <Regulations regulationsValidate={props.regulationsValidate}></Regulations>
         </FormBox>
     )
 }

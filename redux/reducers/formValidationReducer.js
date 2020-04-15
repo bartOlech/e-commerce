@@ -8,7 +8,8 @@ const initialState = {
     email: '',
     message: '',
     name: '',
-    phone: ''
+    phone: '',
+    regulations: ''
 }
 
 const formValidationReducer = (state = initialState, action) => {
@@ -52,6 +53,11 @@ const formValidationReducer = (state = initialState, action) => {
             return {
                 ...state,
                 phone: action.payload.phone
+            }
+        case constants.REGULATION_VALIDATION: 
+            return {
+                ...state,
+                regulations: action.payload.regulations
             }
         default: 
             return {

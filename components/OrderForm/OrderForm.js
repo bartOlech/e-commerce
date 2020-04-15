@@ -18,6 +18,7 @@ const OrderForm = (props) => {
     const [cityValidate, setCityValidate] = useState(true);
     const [emailValidate, setEmailValidate] = useState(true);
     const [nameValidate, setNameValidate] = useState(true);
+    const [regulationsValidate, setRegulationsValidate] = useState(true);
 
     const router = useRouter()
 
@@ -28,6 +29,7 @@ const OrderForm = (props) => {
         props.cityValidation ? setCityValidate(true) : setCityValidate(false);
         props.emailValidation ? setEmailValidate(true) : setEmailValidate(false);
         props.nameValidation ? setNameValidate(true) : setNameValidate(false);
+        props.regulationsValidation ? setRegulationsValidate(true) : setRegulationsValidate(false);
     }
 
     return (
@@ -39,6 +41,7 @@ const OrderForm = (props) => {
                 cityValidate={cityValidate}
                 emailValidate={emailValidate}
                 nameValidate={nameValidate}
+                regulationsValidate={regulationsValidate}
             ></Form>
             <SummaryOrder orderPrice={router.query.price}></SummaryOrder>
             <PayButton checkValidation={checkValidation}></PayButton>
@@ -52,7 +55,8 @@ const mapStateToProps = state => ({
     codeValidation: state.validation.code,
     cityValidation: state.validation.city,
     emailValidation: state.validation.email,
-    nameValidation: state.validation.name
+    nameValidation: state.validation.name,
+    regulationsValidation: state.validation.regulations
 })
 
 export default connect(mapStateToProps)(OrderForm);

@@ -8,6 +8,7 @@ const Text = styled.div`
     font-size: 1.5em;
     font-weight: 600;
     margin-bottom: 8px;
+    margin-top: 30px;
 `
 
 const Tittle = () => {

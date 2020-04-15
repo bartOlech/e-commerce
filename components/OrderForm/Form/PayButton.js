@@ -34,7 +34,7 @@ const PayButton = (props) => {
         // console.log(`email: ${props.email}`)
         // console.log(`name: ${props.name}`)
         // console.log(`phone: ${props.phone}`)
-        console.log(`extraMessage: ${props.message}`)
+        // console.log(`extraMessage: ${props.message}`)
         // console.log(`delivery: ${props.delivery}`)
     }
 
