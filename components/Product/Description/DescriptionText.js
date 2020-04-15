@@ -14,7 +14,7 @@ const Text = styled.p`
     margin-top: -3px;
 `
 
-const DescriptionTittle = (props) => {
+const DescriptionText = (props) => {
     return (
         <Container>
             <Text>{props.description}</Text>
@@ -22,4 +22,4 @@ const DescriptionTittle = (props) => {
     )
 }
 
-export default DescriptionTittle;
+export default DescriptionText;

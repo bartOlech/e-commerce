@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import DescriptionText from './DescriptionText';
-import DescriptionTittle from './DescriptionTittle';
+import DescriptionMenu from './DescriptionMenu';
+import DeliveryText from './DeliveryText';
+import RefundText from './RefundText';
 import ShipmentText from './ShipmentText';
  // import locally data, change in the future
  import { All as AllData } from '../../../assets/FramesData/All'; 
@@ -28,6 +30,11 @@ const Text = styled.div`
 
 const Description = () => {
     const {query: {id}} = useRouter();
+    const [isClicked, setIsClicked] = useState('description')
+
+    const setText = (val) => {
+        setIsClicked(val)
+    }
 
     return (
         <Container data-testid='description'>
@@ -35,11 +42,17 @@ const Description = () => {
                 if(el.id == id) {
                     return (
                         <ProductData key={index}>
-                            <DescriptionTittle tittle='Opis'></DescriptionTittle>
-                            <DescriptionText description={el.description}></DescriptionText>
-                            <Text tittle='Dodatkowe informacje'>Dodatkowe informacje</Text>
-                            <AdditionalData additionalData={el.additionalData}></AdditionalData>
-                            <ShipmentText shipment={el.shipment}></ShipmentText>
+                            <DescriptionMenu setText={setText} tittle='Opis'></DescriptionMenu>
+                            {isClicked === 'description' ? (
+                                <React.Fragment>
+                                    <DescriptionText description={el.description}></DescriptionText>
+                                    <Text tittle='Dodatkowe informacje'>Dodatkowe informacje</Text>
+                                    <AdditionalData additionalData={el.additionalData}></AdditionalData>
+                                    <ShipmentText shipment={el.shipment}></ShipmentText>
+                                </React.Fragment>
+                            ) : null}
+                          {isClicked === 'delivery' && <DeliveryText></DeliveryText>}
+                          {isClicked === 'refund' && <RefundText></RefundText>}
                         </ProductData>
                     )
                 }

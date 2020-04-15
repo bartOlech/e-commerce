@@ -27,8 +27,8 @@ const Text = styled.span`
     margin-left: -15px;
 `
 const Tooltip = styled.div`
-    width: 23px;
-    height: 23px;
+    width: 20px;
+    height: 20px;
     font-family: ${FontStyle.family};
     color: #000;
     font-size: 1em;
@@ -36,7 +36,7 @@ const Tooltip = styled.div`
     margin-bottom: -7px;
     background-image: url('../../../../static/question.svg');
     background-repeat: no-repeat;
-    background-size: 23px 23px;
+    background-size: 20px 20px;
     cursor: pointer;
 `
 const TooltipText = styled.span`

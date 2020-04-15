@@ -36,12 +36,12 @@ const Line = styled.div`
     z-index: -1;
 `
 
-const DescriptionTittle = (props) => {
+const DescriptionMenu = (props) => {
     const [isClicked, setIsClicked] = useState('description')
 
     const selectField = (val) => {
         setIsClicked(val)
-       
+        props.setText(val)
     }
 
     return (
@@ -67,4 +67,4 @@ const DescriptionTittle = (props) => {
     )
 }
 
-export default DescriptionTittle;
+export default DescriptionMenu;
