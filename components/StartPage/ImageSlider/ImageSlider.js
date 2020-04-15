@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { fadeIn } from 'react-animations';
+import { FontStyle } from '../../../assets/style/style';
+import Router from 'next/router'
 
 const fadeInAnimation = keyframes`${fadeIn}`;
 
@@ -45,6 +47,7 @@ const Dots = styled.ul`
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    margin-left: -42px;
 `
 const Dot = styled.li`
     opacity: .8;
@@ -64,6 +67,33 @@ const Dot = styled.li`
         background-color: #717171;
     }
 `
+const MoreInfoButton = styled.div`
+    width: 190px;
+    height: 40px;
+    border: none;
+    background-color: #3C3C3C;
+    font-family: ${FontStyle.family};
+    font-size: 1em;
+    font-weight: 600;
+    border-radius: 1px;
+    cursor: pointer;
+    outline: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    opacity: .9;
+    transition: .5s;
+    &&:hover {
+        opacity: 1;
+        background-color: #fb5c43;
+    }
+`
 
 const ImageSlider = () => {
     const [counter, setCounter] = useState(0);
@@ -78,6 +108,10 @@ const ImageSlider = () => {
     //         clearInterval(interval)
     //     }
     // }, [counter])
+
+    const getMoreInfo = () => {
+        Router.push(`/moreInformation`)
+    }
     
 
     return (
@@ -86,6 +120,7 @@ const ImageSlider = () => {
                 <SlideOne data-testid='slide' display={counter === 0 ? 'flex' : 'none'}></SlideOne>
                 <SlideTwo display={counter === 1 ? 'flex' : 'none'}></SlideTwo>
                 <SlideThree display={counter === 2 || counter === 3 ? 'flex' : 'none'}></SlideThree>
+                <MoreInfoButton onClick={getMoreInfo}>Dowiedz się więcej</MoreInfoButton>
             </SliderBox>
             <Dots data-testid='dots'>
                 <Dot background={counter === 0 ? '#717171' : '#bbb'}></Dot>

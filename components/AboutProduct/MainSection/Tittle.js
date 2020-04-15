@@ -4,17 +4,20 @@ import { FontStyle } from '../../../assets/style/style';
 
 const Container = styled.div`
     font-family: ${FontStyle.family};
-    color: #8E8E8E;
-    font-size: 1.2em;
-    
+    color: #EB482F;
+    font-size: 1.4em;
+    font-weight: 600;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-top: 20px;
 `
 
-const AdditionalText = (props) => {
+const Tittle = () => {
     return (
         <Container>
-            {props.text}
+            KARTKA Z KALENDARZA - CO TO TAKIEGO?
         </Container>
     )
 }
 
-export default AdditionalText;
+export default Tittle;

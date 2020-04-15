@@ -4,8 +4,8 @@ import { FontStyle } from '../../../assets/style/style';
 
 const Container = styled.div`
     font-family: ${FontStyle.family};
-    color: #0B0B0B;
-    font-size: 1.8em;
+    color: #3B475A;
+    font-size: 1.7em;
     margin-bottom: 8px;
 `
 
