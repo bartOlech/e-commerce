@@ -5,9 +5,9 @@ import { FontStyle } from '../../../assets/style/style';
 const Container = styled.div`
     width: 100%;
     font-family: ${FontStyle.family};
-    font-size: 1.1em;
+    font-size: 1em;
     color: #BABABA;
-    font-weight: 500;
+    font-weight: 300;
     margin-top: 15px;
     text-align: right;
 `

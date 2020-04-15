@@ -7,6 +7,7 @@ import ShipmentText from './ShipmentText';
  import { All as AllData } from '../../../assets/FramesData/All'; 
  import {useRouter, withRouter} from 'next/router';
  import AdditionalData from './AdditionalData';
+ import { FontStyle } from '../../../assets/style/style';
 
 const Container = styled.div`
     display: flex;
@@ -17,6 +18,12 @@ const Container = styled.div`
 `
 const ProductData = styled.div`
 
+`
+const Text = styled.div`
+    font-family: ${FontStyle.family};
+    color: #3B475A;
+    font-size: 1.3em;
+    font-weight: 300;
 `
 
 const Description = () => {
@@ -30,7 +37,7 @@ const Description = () => {
                         <ProductData key={index}>
                             <DescriptionTittle tittle='Opis'></DescriptionTittle>
                             <DescriptionText description={el.description}></DescriptionText>
-                            <DescriptionTittle tittle='Dodatkowe informacje'></DescriptionTittle>
+                            <Text tittle='Dodatkowe informacje'>Dodatkowe informacje</Text>
                             <AdditionalData additionalData={el.additionalData}></AdditionalData>
                             <ShipmentText shipment={el.shipment}></ShipmentText>
                         </ProductData>

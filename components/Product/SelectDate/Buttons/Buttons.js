@@ -26,6 +26,22 @@ const Text = styled.span`
     margin-bottom: 2px;
     margin-left: -15px;
 `
+const Tooltip = styled.div`
+    width: 23px;
+    height: 23px;
+    font-family: ${FontStyle.family};
+    color: #000;
+    font-size: 1em;
+    margin-left: 106px;
+    margin-bottom: -7px;
+    background-image: url('../../../../static/question.svg');
+    background-repeat: no-repeat;
+    background-size: 23px 23px;
+    cursor: pointer;
+`
+const TooltipText = styled.span`
+
+  `
 
 const Buttons = (props) => {
     const [startDate, setStartDate] = useState(new Date());
@@ -41,6 +57,9 @@ const Buttons = (props) => {
 
     return (
         <Container>
+            <Tooltip className="tooltip">
+                <TooltipText className="tooltiptext">Zakupiona kartka z kalendarza będzie miała wybraną datę</TooltipText>
+            </Tooltip>
             <Text>Wybierz datę</Text>
             <DatePicker
                 selected={startDate}
