@@ -2,11 +2,13 @@ import React from 'react';
 import { render, cleanup, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import ExtraMessage from '../ExtraMessage';
+import {Provider} from 'react-redux';
+import store from '../../../../../redux/store';
 
 afterEach(cleanup);
 
 const setup = () => {
-    const utils = render(<ExtraMessage />)
+    const utils = render(<Provider store={store}><ExtraMessage /></Provider>)
     const messageInput = utils.getByLabelText('Dodatkowe informacje')
     return {
         messageInput,
