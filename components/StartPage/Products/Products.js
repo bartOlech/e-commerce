@@ -11,32 +11,32 @@ const Container = styled.div`
     width: 100%;
     display: flex;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     position: relative;
 `
 const ButtonsBox = styled.div`
     width: 100%;
-    height: 65px;
+    height: 50px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    background-color: #F7F7F7;
+    border-top: 1px solid #272727;
+    border-bottom: 1px solid #272727;
 `
 const Button = styled.div`
-    width: 120px;
-    height: 29px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
     font-family: ${FontStyle.family};
     color: ${props => props.color};
     background-color: ${props => props.background};
     border: none;
-    border-radius: 25px;
     outline: none;
     cursor: pointer;
     text-align: center;
-    padding-top: 7px;
-    margin-top: 14px;
+    padding-top: 14px;
     transition: .3s;
 `
 
@@ -52,22 +52,22 @@ const Products = () => {
                     setDimension('all')
                     setProducts(All)
                 }} 
-                    color={dimension === 'all' ? '#fff' : '#808080'} 
-                    background={dimension === 'all' ? '#FB5C43' : '#F7F7F7'}
+                    color={dimension === 'all' ? '#fff' : '#141414'} 
+                    background={dimension === 'all' ? '#141414' : '#fff'}
                 >Wszystkie</Button>
                 <Button onClick={() => {
                     setDimension('small')
                     setProducts(Small)
                 }}
-                    color={dimension === 'small' ? '#fff' : '#808080'} 
-                    background={dimension === 'small' ? '#FB5C43' : '#F7F7F7'}
+                    color={dimension === 'small' ? '#fff' : '#141414'} 
+                    background={dimension === 'small' ? '#141414' : '#fff'}
                 >Mała</Button>
                 <Button onClick={() => {
                     setDimension('large')
                     setProducts(Large)
                 }}
-                    color={dimension === 'large' ? '#fff' : '#808080'} 
-                    background={dimension === 'large' ? '#FB5C43' : '#F7F7F7'}
+                    color={dimension === 'large' ? '#fff' : '#141414'} 
+                    background={dimension === 'large' ? '#141414' : '#fff'}
                 >Duża</Button>
             </ButtonsBox>
             <ProductContainer products={products}></ProductContainer>

@@ -75,7 +75,6 @@ const MoreInfoButton = styled.div`
     font-family: ${FontStyle.family};
     font-size: 1em;
     font-weight: 600;
-    border-radius: 1px;
     cursor: pointer;
     outline: none;
     position: absolute;

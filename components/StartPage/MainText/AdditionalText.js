@@ -4,9 +4,10 @@ import { FontStyle } from '../../../assets/style/style';
 
 const Container = styled.div`
     font-family: ${FontStyle.family};
-    color: #8E8E8E;
     font-size: 1.2em;
-    
+    font-weight: 300;
+    color: #BCBCBC;
+    margin-bottom: -15px;
 `
 
 const AdditionalText = (props) => {

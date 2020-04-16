@@ -22,6 +22,7 @@ const Text = styled.div`
     font-size: 1.3em;
     color: #5F5F5F;
     margin-top: -2px;
+    font-weight: 300;
 `
 
 const Policy = () => {

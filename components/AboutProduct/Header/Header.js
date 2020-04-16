@@ -13,7 +13,7 @@ const Container = styled.div`
 const HorizontalLine = styled.div`
     width: 100%;
     height: 7px;
-    background-color: #EAEAEA;
+    background-color: #F5F5F5;
     position: absolute;
     bottom: 0;
 `
@@ -26,19 +26,27 @@ const ButtonBox = styled.div`
     display: flex;
     justify-content: space-between;
 `
-const ReturnButton = styled.div`
-    width: 100px;
+const ReturnButton = styled.button`
+    width: 125px;
     height: 35px;
-    border-radius: 3px;
-    background-color: #EB482F;
+    background-color: #272727;
+    color: #fff;
+    font-size: 1.3em;
+    font-weight: 300;
     cursor: pointer;
     font-family: ${FontStyle.family};
-    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 25px;
     margin-right: 5%;
+    transition: .6s;
+    outline: none;
+    &&:hover {
+        border: 1px solid #000;
+        background-color: #fff;
+        color: #000;
+    }
 `
 
 const Header = () => {

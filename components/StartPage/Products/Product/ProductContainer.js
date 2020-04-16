@@ -9,7 +9,7 @@ const Container = styled.div`
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin-top: 70px;
+    margin-top: 35px;
     position: relative;
 `
 

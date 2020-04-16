@@ -22,7 +22,7 @@ const Text = styled.div`
     font-weight: 300;
     color: #fff;
     position: absolute;
-    width: 400px;
+    width: 100%;
     text-align: center;
     top: 50%;
     left: 50%;
@@ -46,6 +46,11 @@ const Button = styled.button`
     align-items: center;
     cursor: pointer;
     outline: none;
+    transition: .6s;
+    &&:hover {
+        background-color: #272727;
+        color: #fff;
+    }
 `
 
 const Image = () => {

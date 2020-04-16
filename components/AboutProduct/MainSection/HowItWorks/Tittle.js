@@ -6,15 +6,16 @@ const Text = styled.div`
     font-family: ${FontStyle.family};
     color: #3B475A;
     padding-left: 5%;
-    font-size: 1.7em;
+    font-size: 1.8em;
     margin-top: 10px;
     margin-bottom: 20px;
+    font-weight: 300;
 `
 
 const Tittle = () => {
     return (
         <Text>
-            3 proste kroki
+            Jak złożyć zamówienie
         </Text>
     )
 }
