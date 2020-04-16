@@ -24,6 +24,13 @@ const Button = styled.div`
     text-align: center;
     padding-top: 13px;
     cursor: pointer;
+    transition: .5s;
+    border: 1px solid #fff;
+    &&:hover {
+        background-color: #fff;
+        border: 1px solid #1C1C1C;
+        color: #1C1C1C;
+    }
 `
 
 const BuyButton = (props) => {

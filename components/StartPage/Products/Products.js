@@ -37,7 +37,11 @@ const Button = styled.div`
     cursor: pointer;
     text-align: center;
     padding-top: 14px;
-    transition: .3s;
+    transition: .4s;
+    &&:hover {
+        background-color: #141414;
+        color: #fff;
+    }
 `
 
 const Products = () => {

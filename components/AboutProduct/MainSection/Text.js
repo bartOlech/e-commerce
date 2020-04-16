@@ -4,10 +4,11 @@ import { FontStyle } from '../../../assets/style/style'
 
 const Container = styled.p`
     font-family: ${FontStyle.family};
-    color: #3B475A;
+    font-size: 1.2em;
+    font-weight: 300;
+    color: #BCBCBC;
     padding-left: 5%;
     padding-right: 5%;
-    font-size: 1.1em;
 `
 
 const Text = (props) => {

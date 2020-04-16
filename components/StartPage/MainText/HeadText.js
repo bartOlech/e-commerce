@@ -17,7 +17,7 @@ const Container = styled.div`
         top: 12px;
         right: 105px;
         background-color: #FB5C43;
-        opacity: .15;
+        opacity: .1;
         z-index: -1;
     }
 `

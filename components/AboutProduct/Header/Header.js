@@ -28,7 +28,7 @@ const ButtonBox = styled.div`
 `
 const ReturnButton = styled.button`
     width: 125px;
-    height: 35px;
+    height: 38px;
     background-color: #272727;
     color: #fff;
     font-size: 1.3em;
