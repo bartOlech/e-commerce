@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import MainText from './MainText';
 import ExtraText from './ExtraText';
+import Ico from './Ico';
 
 const Container = styled.div`
     width: 90%;
@@ -11,12 +12,14 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 `
 
 const Box = (props) => {
     return (
         <div  style={{display: 'flex', justifyContent: 'center'}}>
             <Container>
+                <Ico image={props.image}></Ico>
                 <MainText mainText={props.mainText}></MainText>
                 <ExtraText extraText={props.extraText}></ExtraText>
             </Container>

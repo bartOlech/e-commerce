@@ -6,7 +6,7 @@ const Container = styled.p`
     font-family: ${FontStyle.family};
     color: #3B475A;
     font-size: 2em;
-    padding-top: 28px;
+    padding-top: 65px;
     margin-bottom: 10px;
 `
 
