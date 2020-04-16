@@ -18,7 +18,7 @@ const SelectDate = (props) => {
     return (
         <Container>
             <TittleText text={'Dostosuj swoją kartkę'}></TittleText>
-            <Buttons></Buttons>
+            <Buttons dateIsSelected={props.dateIsSelected}></Buttons>
             <DateResult availableYears={['2001', '2020']} day={props.day} month={props.month} year={props.year}></DateResult>
         </Container>
     )

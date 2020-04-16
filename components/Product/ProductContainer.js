@@ -21,6 +21,11 @@ const Product = (props) => {
     const {query: {id}} = useRouter();
     const [sizeWithPrice, setSizeWithPrice] = useState('');
     const [initialPrice, setInitialPrice] = useState('')
+    const [dateIsSelected, setDateIsSelected] = useState(true)
+
+    const checkProduct = (val) => {
+        setDateIsSelected(val)
+    }
 
     // in the future, here getting from database
     useEffect(() => {
@@ -56,8 +61,8 @@ const Product = (props) => {
             <Header></Header>
             <AttributeSection initialPrice={initialPrice} sizeWithPrice={sizeWithPrice}></AttributeSection>
             <Description></Description>
-            <SelectDate></SelectDate>
-            <BuyButton></BuyButton>
+            <SelectDate dateIsSelected={dateIsSelected}></SelectDate>
+            <BuyButton checkProduct={checkProduct}></BuyButton>
         </Container>
     )
 }

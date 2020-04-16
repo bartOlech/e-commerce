@@ -21,7 +21,7 @@ const Container = styled.div`
 `
 const Text = styled.span`
     font-family: ${FontStyle.family};
-    color: #3B475A;
+    color: ${props => props.color};
     font-size: 1em;
     margin-bottom: 2px;
     margin-left: -15px;
@@ -57,10 +57,11 @@ const Buttons = (props) => {
 
     return (
         <Container>
+            {console.log(props.day)}
             <Tooltip className="tooltip">
                 <TooltipText className="tooltiptext">Zakupiona kartka z kalendarza będzie miała wybraną datę</TooltipText>
             </Tooltip>
-            <Text>Wybierz datę</Text>
+            <Text color={props.dateIsSelected ? '#3B475A' : 'red'}>Wybierz datę</Text>
             <DatePicker
                 selected={startDate}
                 onChange={handleChange}

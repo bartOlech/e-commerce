@@ -36,20 +36,25 @@ const Button = styled.div`
 const BuyButton = (props) => {
 
     const buyProduct = () => {
-        Router.push({
-            pathname: '/orderform',
-            query: { 
-                id: props.id,
-                name: props.name,
-                color: props.color,
-                image: props.image,
-                size: props.size,
-                price: props.price,
-                day: props.day,
-                month: props.month,
-                year: props.year
-             },
-        })
+        if(props.day) {
+            props.checkProduct(true)
+            Router.push({
+                pathname: '/orderform',
+                query: { 
+                    id: props.id,
+                    name: props.name,
+                    color: props.color,
+                    image: props.image,
+                    size: props.size,
+                    price: props.price,
+                    day: props.day,
+                    month: props.month,
+                    year: props.year
+                 },
+            })
+        } else {
+            props.checkProduct(false)
+        }
     }
 
     return (
