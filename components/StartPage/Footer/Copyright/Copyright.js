@@ -8,7 +8,7 @@ const Container = styled.div`
     background-color: #3C3C3C;
     color: #fff;
     font-family: ${FontStyle.family};
-    font-size: 1.1em;
+    font-size: 1em;
     display: flex;
     align-items: center;
     justify-content: center;

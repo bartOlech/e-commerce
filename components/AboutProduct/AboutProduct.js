@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Header from './Header/Header';
 import MainSection from './MainSection/MainSection';
 import HowItWorks from './MainSection/HowItWorks/HowItWorks';
+import Footer from './Footer/Footer';
 
 const Container = styled.div`
     width: 100%;
@@ -25,6 +26,7 @@ const AboutProduct = () => {
             <MainSection></MainSection>
             <HorizontalLine></HorizontalLine>
             <HowItWorks></HowItWorks>
+            <Footer></Footer>
         </Container>
     )
 }
