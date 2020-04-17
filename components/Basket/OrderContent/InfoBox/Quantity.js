@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const Input = styled.input`
@@ -13,9 +13,15 @@ const Input = styled.input`
     outline: none;
 `
 
-const Image = () => {
+const Image = (props) => {
+    const [quantity, setQuantity] = useState(props.quantity)
+
+    const handleQuantity = (e) => {
+        setQuantity(e.target.value)
+    }
+
     return (
-        <Input value='1' type='number'></Input>
+        <Input onChange={handleQuantity} value={quantity} type='number'></Input>
     )
 }
 

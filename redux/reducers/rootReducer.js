@@ -5,6 +5,7 @@ import priceReducer from './priceReducer';
 import deliveryReducer from './deliveryReducer';
 import formValidationReducer from './formValidationReducer';
 import basketReducer from './basketReducer';
+import productsReducer from './productsReducer';
 import {combineReducers} from 'redux';
 
 const rootReducer = combineReducers({
@@ -14,7 +15,8 @@ const rootReducer = combineReducers({
     frameData: frameReducer,
     delivery: deliveryReducer,
     validation: formValidationReducer,
-    basket: basketReducer
+    basket: basketReducer,
+    product: productsReducer
 });
 
 export default rootReducer;

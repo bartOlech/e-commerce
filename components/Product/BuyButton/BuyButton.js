@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../assets/style/style';
 import { connect } from 'react-redux';
-import Router from 'next/router'
+import { setBasket } from '../../../redux/actions/Basket/setBasket';
+import { setAddProduct } from '../../../redux/actions/Product/setAddProduct';
 
 const Container = styled.div`
     display: flex;
@@ -35,23 +36,22 @@ const Button = styled.div`
 
 const BuyButton = (props) => {
 
-    const buyProduct = () => {
+    const addToBasket = () => {
+        const obj = {
+            id: props.id,
+            name: props.name,
+            image: props.image,
+            price: props.price,
+            size: props.size,
+            quantity: 1,
+            additionalData: []
+        };
+
         if(props.day) {
             props.checkProduct(true)
-            Router.push({
-                pathname: '/orderform',
-                query: { 
-                    id: props.id,
-                    name: props.name,
-                    color: props.color,
-                    image: props.image,
-                    size: props.size,
-                    price: props.price,
-                    day: props.day,
-                    month: props.month,
-                    year: props.year
-                 },
-            })
+            props.setBasket(true)
+            // add product data to store
+            props.setAddProduct(obj)
         } else {
             props.checkProduct(false)
         }
@@ -59,7 +59,7 @@ const BuyButton = (props) => {
 
     return (
         <Container>
-            <Button onClick={buyProduct}>Zamów teraz</Button>
+            <Button onClick={addToBasket}>Dodaj do koszyka</Button>
         </Container>
     )
 }
@@ -75,6 +75,10 @@ const mapStateToProps = state => ({
     month: state.date.month,
     year: state.date.year
 })
+const mapDispatchToProps = {
+    setBasket,
+    setAddProduct
+}
 
 
-export default connect(mapStateToProps)(BuyButton);
+export default connect(mapStateToProps, mapDispatchToProps)(BuyButton);

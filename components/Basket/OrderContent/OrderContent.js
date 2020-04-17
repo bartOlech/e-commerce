@@ -29,19 +29,27 @@ const LeftSection = styled.div`
     display: flex;
 `
 
-const Basket = () => {
+const Basket = (props) => {
+
+ 
+
     return (
         <Container>
             <Line></Line>
-            <MainSection>
-                <LeftSection>
-                    <Image></Image>
-                    <InfoBox></InfoBox>
-                </LeftSection>
-                <SummaryBox></SummaryBox>
-            </MainSection>
-            <Line></Line>
-            <SummaryCost></SummaryCost>
+            {props.products.map((el, index) => {
+                return(
+                    <div key={index} style={{width: '100%', paddingLeft: '10%'}}>
+                        <MainSection>
+                            <LeftSection>
+                                <Image image={el.image}></Image>
+                                <InfoBox name={el.name} quantity={el.quantity}></InfoBox>
+                            </LeftSection>
+                            <SummaryBox price={el.price}></SummaryBox>
+                        </MainSection>
+                        <Line style={{marginTop: '20px'}}></Line>
+                    </div>
+                )})}
+            <SummaryCost products={props.products}></SummaryCost>
             <Line></Line>
             <FooterButtons></FooterButtons>
         </Container>

@@ -6,7 +6,7 @@ import Header from './Header/Header'
 import InfoText from './InfoText';
 import OrderContent from './OrderContent/OrderContent';
 import { connect } from 'react-redux';
-import { fadeInRight } from 'react-animations'
+import { fadeInRight } from 'react-animations';
 
 const bounceAnimation = keyframes`${fadeInRight}`;
 
@@ -25,19 +25,24 @@ const Container = styled.div`
 const Basket = (props) => {
     return (
         <Container display={props.isVisible ? 'inline' : 'none'}>
+            {console.log(props.products)}
             <Header></Header>
-            <InfoText></InfoText>
-            <OrderContent></OrderContent>
-
-
-            {/* Conditional here */}
-            {/* <EmptyBasket></EmptyBasket> */}
+            {props.products.length > 0 ? (
+                <div>
+                    <InfoText products={props.products}></InfoText>
+                    <OrderContent products={props.products}></OrderContent>
+                </div>
+            ) : (
+                <EmptyBasket></EmptyBasket>
+            )}
+            
         </Container>
     )
 }
 
 const mapStateToProps = state => ({
-    isVisible: state.basket.isVisible
+    isVisible: state.basket.isVisible,
+    products: state.product.products
 })
 
 export default connect(mapStateToProps)(Basket);

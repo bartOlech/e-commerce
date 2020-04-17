@@ -10,10 +10,17 @@ const Container = styled.div`
     margin-top: 1px;
 `
 
-const Price = () => {
+const Price = (props) => {
+    const totalCostArr = [];
+
+    const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
     return (
         <Container>
-            312.21 zł
+            {props.products.map(el => {
+                totalCostArr.push(+el.price)
+            })}
+            {totalCostArr.length > 0 ? totalCostArr.reduce(reducer) : null} zł
         </Container>
     )
 }

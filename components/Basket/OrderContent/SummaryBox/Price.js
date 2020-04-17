@@ -12,10 +12,10 @@ const PriceText = styled.div`
     right: 0;
 `
 
-const Price = () => {
+const Price = (props) => {
     return (
         <PriceText>
-            21.43 zł
+            {props.price} zł
         </PriceText>
     )
 }

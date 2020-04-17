@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { setBasket } from '../../redux/actions/Basket/setBasket';
+import { FontStyle } from '../../assets/style/style';
 
 const Conatiner = styled.div`
     width: 25px;
@@ -33,13 +34,14 @@ const Counter = styled.div`
     position: absolute;
     left: 18px;
     top: 18px;
+    font-family: ${FontStyle.family};
 `
 
 const BasketIco = (props) => {
     return (
         <Conatiner onClick={() => props.setBasket(true)}>
             <Ico></Ico>
-            <Counter>1</Counter>
+            <Counter>{props.products.length}</Counter>
         </Conatiner>
     )
 }
@@ -47,5 +49,8 @@ const BasketIco = (props) => {
 const mapDispatchToProps = {
     setBasket
 }
+const mapStateToProps = state => ({
+    products: state.product.products
+})
 
-export default connect(null, mapDispatchToProps)(BasketIco);
+export default connect(mapStateToProps, mapDispatchToProps)(BasketIco);

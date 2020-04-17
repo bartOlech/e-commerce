@@ -5,6 +5,7 @@ import AttributeSection from './AttributeSection/AttributeSection';
 import Description from './Description/Description';
 import SelectDate from './SelectDate/SelectDate';
 import BuyButton from './BuyButton/BuyButton';
+import Basket from '../Basket/Basket';
 import { connect } from 'react-redux';
 import { setFrameDetails } from '../../redux/actions/setFrameDetails';
 import { setPrice } from '../../redux/actions/setPriceAction';
@@ -58,6 +59,7 @@ const Product = (props) => {
 
     return (
         <Container>
+            <Basket></Basket>
             <Header></Header>
             <AttributeSection initialPrice={initialPrice} sizeWithPrice={sizeWithPrice}></AttributeSection>
             <Description></Description>

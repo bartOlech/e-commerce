@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../../assets/style/style';
+import Router from 'next/router'
 
 const Ico = styled.div`
     width: 20px;
@@ -40,8 +41,26 @@ const Text = styled.div`
 `
 
 const FooterButtons = () => {
+
+    const payButton = () => {
+        // Router.push({
+        //     pathname: '/orderform',
+        //     query: { 
+        //         id: props.id,
+        //         name: props.name,
+        //         color: props.color,
+        //         image: props.image,
+        //         size: props.size,
+        //         price: props.price,
+        //         day: props.day,
+        //         month: props.month,
+        //         year: props.year
+        //      },
+        // })
+    }
+
     return (
-        <Container>
+        <Container onClick={payButton}>
             <Text>Zamawiam</Text>
             <Ico></Ico>
         </Container>

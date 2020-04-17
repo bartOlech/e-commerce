@@ -9,11 +9,11 @@ const Container = styled.div`
     padding-left: 15px;
 `
 
-const InfoBox = () => {
+const InfoBox = (props) => {
     return (
         <Container>
-            <Tittle></Tittle>
-            <Quantity></Quantity>
+            <Tittle name={props.name}></Tittle>
+            <Quantity quantity={props.quantity}></Quantity>
         </Container>
     )
 }

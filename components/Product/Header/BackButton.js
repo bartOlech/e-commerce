@@ -11,7 +11,7 @@ const Container = styled.div`
     transform: rotate(180deg);
     cursor: pointer;
     margin-left: -12px;
-    margin-top: 6px;
+    margin-top: -6px;
 `
 
 const BackButton = () => {

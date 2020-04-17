@@ -14,16 +14,6 @@ const Text = styled.b`
     font-size: 1.1em;
     font-weight: 300;
     display: flex;
-    /* padding-left: 15px;
-    @media (min-width: 350px) {
-        padding-left: 25px;
-        padding-right: 25px;
-    }
-    @media (min-width: 350px) {
-        padding-left: 35px;
-        padding-right: 25px;
-    } */
-    /* margin-top: 10px; */
 `
 const OrderCost = styled.b`
     font-family: ${FontStyle.family};
@@ -32,11 +22,35 @@ const OrderCost = styled.b`
     font-weight: 400;
     margin: 0 5px 0px 5px;
 `
+const Bold = styled.div`
+    width: 90%;
+    font-family: ${FontStyle.family};
+    color: ${FontStyle.color};
+    font-size: 1.1em;
+    font-weight: 400;
+    margin-left: 4px;
+    margin-right: 4px;
+`
 
-const InfoText = () => {
+const InfoText = (props) => {
+    const totalCostArr = [];
+
+    const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
     return (
         <Container>
-            <Text>Jeszcze<OrderCost>23.3</OrderCost><OrderCost style={{margin: '0 5px 0 0'}}>zł</OrderCost>i skorzystasz z bezpłatnej dostawy.</Text>
+            {props.products.map(el => {
+                totalCostArr.push(+el.price)
+            })}
+            {totalCostArr.length > 0 ? (
+                50 - totalCostArr.reduce(reducer) < 0 ? (
+                    <Bold>Na twoje zamówienie obowiązuje darmowa dostawa</Bold>
+                ) : (
+                    <Text>Jeszcze<OrderCost>{50 - totalCostArr.reduce(reducer)}</OrderCost><OrderCost style={{margin: '0 5px 0 0'}}>zł</OrderCost>i skorzystasz z bezpłatnej dostawy.</Text>
+                )
+            ) : null}
+            
+           
         </Container>
     )
 }

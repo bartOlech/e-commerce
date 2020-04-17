@@ -10,11 +10,11 @@ const Container = styled.div`
     margin-top: 4px;
 `
 
-const SummaryBox = () => {
+const SummaryBox = (props) => {
     return (
         <Container>
             <CloseButton></CloseButton>
-            <Price></Price>
+            <Price price={props.price}></Price>
         </Container>
     )
 }

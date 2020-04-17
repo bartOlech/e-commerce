@@ -18,7 +18,7 @@ const Container = styled.div`
 `
 const ButtonsBox = styled.div`
     width: 100%;
-    height: 50px;
+    height: 45px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -36,7 +36,7 @@ const Button = styled.div`
     outline: none;
     cursor: pointer;
     text-align: center;
-    padding-top: 14px;
+    padding-top: 12px;
     transition: .4s;
     &&:hover {
         background-color: #141414;
@@ -57,21 +57,21 @@ const Products = () => {
                     setProducts(All)
                 }} 
                     color={dimension === 'all' ? '#fff' : '#141414'} 
-                    background={dimension === 'all' ? '#141414' : '#fff'}
+                    background={dimension === 'all' ? '#2c3238' : '#fff'}
                 >Wszystkie</Button>
                 <Button onClick={() => {
                     setDimension('small')
                     setProducts(Small)
                 }}
                     color={dimension === 'small' ? '#fff' : '#141414'} 
-                    background={dimension === 'small' ? '#141414' : '#fff'}
+                    background={dimension === 'small' ? '#2c3238' : '#fff'}
                 >Mała</Button>
                 <Button onClick={() => {
                     setDimension('large')
                     setProducts(Large)
                 }}
                     color={dimension === 'large' ? '#fff' : '#141414'} 
-                    background={dimension === 'large' ? '#141414' : '#fff'}
+                    background={dimension === 'large' ? '#2c3238' : '#fff'}
                 >Duża</Button>
             </ButtonsBox>
             <ProductContainer products={products}></ProductContainer>

@@ -9,10 +9,10 @@ const Text = styled.div`
     font-weight: 300;
 `
 
-const Tittle = () => {
+const Tittle = (props) => {
     return (
         <Text>
-            Obrazek drewniany AZT
+            {props.name}
         </Text>
     )
 }
