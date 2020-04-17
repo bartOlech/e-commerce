@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
+import { setBasket } from '../../../redux/actions/Basket/setBasket';
 
 const Container = styled.div`
     width: 20px;
@@ -7,16 +9,19 @@ const Container = styled.div`
     background-image: url('../../../static/close.svg');
     background-repeat: no-repeat;
     background-size: 20px 20px;
-    padding-right: 30px;
     cursor: pointer;
 `
 
-const CloseButton = () => {
+const CloseButton = (props) => {
     return (
-        <Container>
+        <Container onClick={() => props.setBasket(false)}>
 
         </Container>
     )
 }
 
-export default CloseButton;
+const mapDispatchToProps = {
+    setBasket
+}
+
+export default connect(null, mapDispatchToProps)(CloseButton);

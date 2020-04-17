@@ -1,20 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FontStyle } from '../../../assets/style/style';
+import { FontStyle } from '../../../../assets/style/style';
 
 const Container = styled.div`
     font-family: ${FontStyle.family};
     color: ${FontStyle.color};
-    font-size: 1.3em;
+    font-size: .96em;
     font-weight: 400;
+    margin-top: 1px;
 `
 
-const Tittle = () => {
+const Price = () => {
     return (
         <Container>
-            Koszyk
+            312.21 zł
         </Container>
     )
 }
 
-export default Tittle;
+export default Price;

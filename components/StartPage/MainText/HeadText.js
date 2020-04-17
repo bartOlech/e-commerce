@@ -9,7 +9,7 @@ const Container = styled.div`
     color: #202020;
     margin-bottom: 8px;
     position: relative;
-    &&:after {
+    /* &&:after {
         content: '';
         width: 80px; 
         height: 26px;
@@ -19,7 +19,7 @@ const Container = styled.div`
         background-color: #FB5C43;
         opacity: .1;
         z-index: -1;
-    }
+    } */
 `
 
 const HeadText = (props) => {

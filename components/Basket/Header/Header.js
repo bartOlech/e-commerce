@@ -3,20 +3,25 @@ import styled from 'styled-components';
 import Tittle from './Tittle';
 import CloseButton from './CloseButton';
 
+
 const Container = styled.div`
-    width: 100%;
+    width: 90%;
     height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: -20px;
 `
 
 const Header = () => {
     return (
-        <Container>
-            <Tittle></Tittle>
-            <CloseButton></CloseButton>
-        </Container>
+        <div style={{display: 'flex', justifyContent: 'center'}}>
+            <Container>
+                <Tittle></Tittle>
+                <CloseButton></CloseButton>
+            </Container>
+        </div>
+       
     )
 }
 
