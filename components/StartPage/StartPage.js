@@ -1,11 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+
 // import { FontStyle } from '../../assets/style/style';
 import Header from '../Header/Header';
 import ImageSlider from './ImageSlider/ImageSlider';
 import MainText from './MainText/MainText';
 import Products from './Products/Products';
 import Footer from './Footer/Footer';
+import Basket from '../Basket/Basket';
 
 const Container = styled.div`
     display: flex;
@@ -25,6 +27,7 @@ const HorizontalLine = styled.div`
 const StartPage = () => {
     return (
         <Container>
+            <Basket></Basket>
             <Header></Header>
             <ImageSlider></ImageSlider>
             <MainText></MainText>
