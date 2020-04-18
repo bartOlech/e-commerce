@@ -13,7 +13,7 @@ const Container = styled.div`
 const SummaryBox = (props) => {
     return (
         <Container>
-            <CloseButton></CloseButton>
+            <CloseButton id={props.id}></CloseButton>
             <Price price={props.price}></Price>
         </Container>
     )

@@ -4,6 +4,7 @@ import { FontStyle } from '../../../assets/style/style';
 import { connect } from 'react-redux';
 import { setBasket } from '../../../redux/actions/Basket/setBasket';
 import { setAddProduct } from '../../../redux/actions/Product/setAddProduct';
+import { setIncreaseQuantity } from '../../../redux/actions/Product/setIncreaseQuantity';
 
 const Container = styled.div`
     display: flex;
@@ -37,7 +38,7 @@ const Button = styled.div`
 const BuyButton = (props) => {
 
     const addToBasket = () => {
-        const obj = {
+        let obj = {
             id: props.id,
             name: props.name,
             image: props.image,
@@ -51,7 +52,24 @@ const BuyButton = (props) => {
             props.checkProduct(true)
             props.setBasket(true)
             // add product data to store
-            props.setAddProduct(obj)
+            // Check does the object exists already
+            if(props.product.length == 0) {
+                props.setAddProduct(obj, false)
+            } else {
+                // Don't add to array, instead increase quantity
+                const arr = props.product;
+                props.product.map((el, index) => {
+                    //if id exists
+                    if(el.id === props.id) {
+                        
+                        arr[index].quantity += 1
+                        props.setIncreaseQuantity(arr)
+                    } else {
+                        props.setAddProduct(obj, false)
+                    }
+                })
+            }
+           
         } else {
             props.checkProduct(false)
         }
@@ -73,11 +91,13 @@ const mapStateToProps = state => ({
     price: state.price.price,
     day: state.date.day,
     month: state.date.month,
-    year: state.date.year
+    year: state.date.year,
+    product: state.product.products
 })
 const mapDispatchToProps = {
     setBasket,
-    setAddProduct
+    setAddProduct,
+    setIncreaseQuantity
 }
 
 
