@@ -14,7 +14,7 @@ const SummaryBox = (props) => {
     return (
         <Container>
             <CloseButton id={props.id}></CloseButton>
-            <Price price={props.price}></Price>
+            <Price quantity={props.quantity} price={props.price}></Price>
         </Container>
     )
 }

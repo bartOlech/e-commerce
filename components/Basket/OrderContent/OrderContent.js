@@ -44,7 +44,7 @@ const Basket = (props) => {
                                 <Image image={el.image}></Image>
                                 <InfoBox size={el.size} id={el.id} name={el.name} quantity={el.quantity}></InfoBox>
                             </LeftSection>
-                            <SummaryBox id={el.id} price={el.price}></SummaryBox>
+                            <SummaryBox quantity={el.quantity} id={el.id} price={el.initialPrice}></SummaryBox>
                         </MainSection>
                         <Line style={{marginTop: '20px'}}></Line>
                     </div>

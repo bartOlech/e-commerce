@@ -45,6 +45,7 @@ const BuyButton = (props) => {
             name: props.name,
             image: props.image,
             price: props.price,
+            initialPrice: props.price,
             size: props.size,
             quantity: 1,
             additionalData: []
@@ -68,7 +69,7 @@ const BuyButton = (props) => {
                         if(el.id === props.id) {
                             if(el.size === props.size) {
                                 arr[index].quantity += 1
-                                arr[index].price = +props.price + +arr[index].price
+                                arr[index].price = +arr[index].initialPrice + +arr[index].price
                                 props.setQuantity(arr)
                                 ar.push('arrayIncludeSize')
                             } else {
@@ -106,6 +107,7 @@ const mapStateToProps = state => ({
     image: state.frameData.image,
     size: state.size.size,
     price: state.price.price,
+    initialPrice: state.frameData.initialPrice,
     day: state.date.day,
     month: state.date.month,
     year: state.date.year,

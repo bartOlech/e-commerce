@@ -12,27 +12,17 @@ const PriceText = styled.div`
     bottom: 0;
     right: 0;
 `
-const AdditionalText = styled.div`
-    width: 100px;
-    font-family: ${FontStyle.family};
-    color: grey;
-    font-size: 1em;
-    font-weight: 200;
-    position: absolute;
-    bottom: 0;
-    right: 15px;
-`
 
 const Price = (props) => {
     return (
         <PriceText>
-            <AdditionalText></AdditionalText>{props.price} zł
+            {props.price} zł
         </PriceText>
     )
 }
 
 const mapStateToProps = state => ({
-    price: state.price.price,
+    price1: state.frameData.price,
 })
 
-export default Price;
+export default connect(mapStateToProps)(Price);

@@ -32,9 +32,9 @@ const Image = (props) => {
                     if(e.target.value > 0) {
                         // increase or decrease price
                         if(e.target.value < arr[index].quantity) {
-                            arr[index].price =  +arr[index].price - +props.price;
+                            arr[index].price =  +arr[index].price - +arr[index].initialPrice;
                         } else {
-                            arr[index].price =  +arr[index].price + +props.price;
+                            arr[index].price =  +arr[index].price + +arr[index].initialPrice;
                         }
                         arr[index].quantity = +e.target.value;
                         props.setQuantity(arr)

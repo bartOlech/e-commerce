@@ -48,7 +48,7 @@ const Product = (props) => {
                     price
                 } = el;
 
-                props.setFrameDetails(id, name, image, images, description, shipment, additionalData, color, size);
+                props.setFrameDetails(id, name, image, images, description, shipment, additionalData, color, price);
                 setSizeWithPrice(priceWithSize);
                 setInitialPrice(price)
                 props.setPrice(price)

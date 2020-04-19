@@ -9,7 +9,7 @@ const initialState = {
     shipment: '',
     additionalData: '',
     color: '',
-    price: '',
+    initialPrice: '',
 }
 
 const frameReducer = (state = initialState, action) => {
@@ -25,7 +25,7 @@ const frameReducer = (state = initialState, action) => {
                 shipment: action.payload.shipment,
                 additionalData: action.payload.additionalData,
                 color: action.payload.color,
-                price: action.payload.price,
+                initialPrice: action.payload.initialPrice,
             }
         default: {
             return {
