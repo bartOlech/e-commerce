@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
+import { setQuantity } from '../../../../redux/actions/Product/setQuantity';
 
 const Input = styled.input`
     width: 38px;
@@ -16,8 +18,24 @@ const Input = styled.input`
 const Image = (props) => {
     const [quantity, setQuantity] = useState(props.quantity)
 
+    useEffect(() => {
+        console.log(props.quantity)
+        setQuantity(props.quantity)
+    }, [props.quantity])
+
     const handleQuantity = (e) => {
-        setQuantity(e.target.value)
+        const arr = props.product
+
+        props.product.map((el, index) => {
+            if(props.id === el.id ) {
+                if(e.target.value > 1) {
+                    arr[index].quantity = +e.target.value
+                    props.setQuantity(arr)
+                    setQuantity(e.target.value)
+                }
+            }
+        })
+
     }
 
     return (
@@ -25,4 +43,12 @@ const Image = (props) => {
     )
 }
 
-export default Image;
+const mapStateToProps = state => ({
+    product: state.product.products
+})
+
+const mapDispatchToProps = {
+    setQuantity
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Image);   

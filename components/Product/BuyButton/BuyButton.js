@@ -4,7 +4,7 @@ import { FontStyle } from '../../../assets/style/style';
 import { connect } from 'react-redux';
 import { setBasket } from '../../../redux/actions/Basket/setBasket';
 import { setAddProduct } from '../../../redux/actions/Product/setAddProduct';
-import { setIncreaseQuantity } from '../../../redux/actions/Product/setIncreaseQuantity';
+import { setQuantity } from '../../../redux/actions/Product/setQuantity';
 
 const Container = styled.div`
     display: flex;
@@ -61,9 +61,12 @@ const BuyButton = (props) => {
                 props.product.map((el, index) => {
                     //if id exists
                     if(el.id === props.id) {
-                        
-                        arr[index].quantity += 1
-                        props.setIncreaseQuantity(arr)
+                        if(el.size === props.size) {
+                            arr[index].quantity += 1
+                            props.setQuantity(arr)
+                        } else {
+                            props.setAddProduct(obj, false)
+                        }                                       
                     } else {
                         props.setAddProduct(obj, false)
                     }
@@ -97,7 +100,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = {
     setBasket,
     setAddProduct,
-    setIncreaseQuantity
+    setQuantity
 }
 
 

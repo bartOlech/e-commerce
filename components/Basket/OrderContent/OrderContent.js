@@ -42,7 +42,7 @@ const Basket = (props) => {
                         <MainSection>
                             <LeftSection>
                                 <Image image={el.image}></Image>
-                                <InfoBox name={el.name} quantity={el.quantity}></InfoBox>
+                                <InfoBox id={el.id} name={el.name} quantity={el.quantity}></InfoBox>
                             </LeftSection>
                             <SummaryBox id={el.id} price={el.price}></SummaryBox>
                         </MainSection>
