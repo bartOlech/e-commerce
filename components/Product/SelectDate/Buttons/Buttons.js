@@ -57,7 +57,6 @@ const Buttons = (props) => {
 
     return (
         <Container>
-            {console.log(props.day)}
             <Tooltip className="tooltip">
                 <TooltipText className="tooltiptext">Zakupiona kartka z kalendarza będzie miała wybraną datę</TooltipText>
             </Tooltip>

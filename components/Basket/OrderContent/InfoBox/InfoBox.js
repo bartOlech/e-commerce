@@ -13,7 +13,7 @@ const InfoBox = (props) => {
     return (
         <Container>
             <Tittle name={props.name}></Tittle>
-            <Quantity id={props.id} quantity={props.quantity}></Quantity>
+            <Quantity size={props.size} id={props.id} quantity={props.quantity}></Quantity>
         </Container>
     )
 }

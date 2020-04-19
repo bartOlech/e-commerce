@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { setQuantity } from '../../../../redux/actions/Product/setQuantity';
+import { setBasket } from '../../../../redux/actions/Basket/setBasket';
 
 const Input = styled.input`
     width: 38px;
@@ -19,7 +20,6 @@ const Image = (props) => {
     const [quantity, setQuantity] = useState(props.quantity)
 
     useEffect(() => {
-        console.log(props.quantity)
         setQuantity(props.quantity)
     }, [props.quantity])
 
@@ -27,12 +27,25 @@ const Image = (props) => {
         const arr = props.product
 
         props.product.map((el, index) => {
-            if(props.id === el.id ) {
-                if(e.target.value > 1) {
-                    arr[index].quantity = +e.target.value
-                    props.setQuantity(arr)
-                    setQuantity(e.target.value)
+            if(props.id === el.id) {
+                if(el.size === props.size) {
+                    if(e.target.value > 0) {
+                        // increase or decrease price
+                        if(e.target.value < arr[index].quantity) {
+                            arr[index].price =  +arr[index].price - +props.price;
+                        } else {
+                            arr[index].price =  +arr[index].price + +props.price;
+                        }
+                        arr[index].quantity = +e.target.value;
+                        props.setQuantity(arr)
+                        setQuantity(e.target.value)
+    
+                        props.setBasket(false);
+                        props.setBasket(true);
+                    }
                 }
+                // block button if value is < than 1
+                
             }
         })
 
@@ -44,11 +57,13 @@ const Image = (props) => {
 }
 
 const mapStateToProps = state => ({
-    product: state.product.products
+    product: state.product.products,
+    price: state.price.price,
 })
 
 const mapDispatchToProps = {
-    setQuantity
+    setQuantity,
+    setBasket
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Image);   

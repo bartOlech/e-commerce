@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../assets/style/style';
 import { connect } from 'react-redux';
 import { setBasket } from '../../../redux/actions/Basket/setBasket';
 import { setAddProduct } from '../../../redux/actions/Product/setAddProduct';
 import { setQuantity } from '../../../redux/actions/Product/setQuantity';
+import _ from 'lodash';
 
 const Container = styled.div`
     display: flex;
@@ -36,6 +37,7 @@ const Button = styled.div`
 `
 
 const BuyButton = (props) => {
+    // const [counter, setCounter] = useState(true)
 
     const addToBasket = () => {
         let obj = {
@@ -58,19 +60,31 @@ const BuyButton = (props) => {
             } else {
                 // Don't add to array, instead increase quantity
                 const arr = props.product;
+                // array that include duplicate size of product
+                let ar = [];
+
                 props.product.map((el, index) => {
-                    //if id exists
-                    if(el.id === props.id) {
-                        if(el.size === props.size) {
-                            arr[index].quantity += 1
-                            props.setQuantity(arr)
-                        } else {
-                            props.setAddProduct(obj, false)
-                        }                                       
-                    } else {
-                        props.setAddProduct(obj, false)
-                    }
+                       //if id exists add quantity and price
+                        if(el.id === props.id) {
+                            if(el.size === props.size) {
+                                arr[index].quantity += 1
+                                arr[index].price = +props.price + +arr[index].price
+                                props.setQuantity(arr)
+                                ar.push('arrayIncludeSize')
+                            } else {
+                                ar.push('ArrayDontIncludeSize')
+                                // props.setAddProduct(obj, false)
+                            }                                    
+                        } 
                 })
+
+                const sizeIsInArray = ar.includes('arrayIncludeSize');
+                // If sizes is in basket, only add 1 quantity
+                if(!sizeIsInArray) {
+                    props.setAddProduct(obj, false)
+                } else {
+
+                }
             }
            
         } else {

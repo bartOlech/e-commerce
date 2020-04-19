@@ -1,7 +1,7 @@
 import * as constants from '../actions/constants';
 
 const initialState = {
-    isVisible: false
+    isVisible: false, 
 }
 
 const basketReducer = (state = initialState, action) => {
