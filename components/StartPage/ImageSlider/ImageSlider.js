@@ -1,43 +1,43 @@
 import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { fadeIn } from 'react-animations';
-import { FontStyle } from '../../../assets/style/style';
-import Router from 'next/router'
+import LearnMore from './LearnMore/LearnMore';
 
 const fadeInAnimation = keyframes`${fadeIn}`;
 
 const Container = styled.div`
     width: 100%;
     height: 250px;
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-bottom: 100px;
 `
 const SliderBox = styled.div`
     width: 100%;
-    height: 250px;
+    height: auto;
     position: relative;
     margin: auto;
 `
-const SlideOne = styled.div`
+const SlideOne = styled.img`
     width: 100%;
-    height: 250px;
-    background-image: url('../../../static/slideOne.jpg');
+    height: auto;
     background-repeat: no-repeat;
     background-size: 100% 250px;
     display: ${props => props.display};
     animation: 1s ${fadeInAnimation};
 `
-const SlideTwo = styled.div`
+const SlideTwo = styled.img`
     width: 100%;
-    height: 250px;
-    background-image: url('../../../static/slideTwo.jpg');
+    height: auto;
     background-repeat: no-repeat;
     background-size: 100% 250px;
     display: ${props => props.display};
     animation: 1s ${fadeInAnimation};
 `
-const SlideThree = styled.div`
+const SlideThree = styled.img`
     width: 100%;
-    height: 250px;
-    background-image: url('../../../static/slideThree.jpg');
+    height: auto;
     background-repeat: no-repeat;
     background-size: 100% 250px;
     display: ${props => props.display};
@@ -67,32 +67,6 @@ const Dot = styled.li`
         background-color: #717171;
     }
 `
-const MoreInfoButton = styled.div`
-    width: 190px;
-    height: 40px;
-    border: none;
-    background-color: #3C3C3C;
-    font-family: ${FontStyle.family};
-    font-size: 1em;
-    font-weight: 600;
-    cursor: pointer;
-    outline: none;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: auto;
-    bottom: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    opacity: .9;
-    transition: .5s;
-    &&:hover {
-        opacity: 1;
-        background-color: #fb5c43;
-    }
-`
 
 const ImageSlider = () => {
     const [counter, setCounter] = useState(0);
@@ -107,25 +81,21 @@ const ImageSlider = () => {
     //         clearInterval(interval)
     //     }
     // }, [counter])
-
-    const getMoreInfo = () => {
-        Router.push(`/moreInformation`)
-    }
     
 
     return (
         <Container>
             <SliderBox>
-                <SlideOne data-testid='slide' display={counter === 0 ? 'flex' : 'none'}></SlideOne>
-                <SlideTwo display={counter === 1 ? 'flex' : 'none'}></SlideTwo>
-                <SlideThree display={counter === 2 || counter === 3 ? 'flex' : 'none'}></SlideThree>
-                <MoreInfoButton onClick={getMoreInfo}>Dowiedz się więcej</MoreInfoButton>
+                <SlideOne src='../../../static/slideOne.jpg' data-testid='slide' display={counter === 0 ? 'flex' : 'none'}></SlideOne>
+                <SlideTwo src='../../../static/slideTwo.jpg' display={counter === 1 ? 'flex' : 'none'}></SlideTwo>
+                <SlideThree src='../../../static/slideThree.jpg' display={counter === 2 || counter === 3 ? 'flex' : 'none'}></SlideThree>
             </SliderBox>
             <Dots data-testid='dots'>
                 <Dot background={counter === 0 ? '#717171' : '#bbb'}></Dot>
                 <Dot background={counter === 1 ? '#717171' : '#bbb'}></Dot>
                 <Dot background={counter === 2 || counter === 3 ? '#717171' : '#bbb'}></Dot>
             </Dots>
+            <LearnMore></LearnMore>
 
         </Container>
     )
