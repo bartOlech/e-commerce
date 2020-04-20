@@ -8,7 +8,7 @@ import MainText from './MainText/MainText';
 import Products from './Products/Products';
 import Footer from './Footer/Footer';
 import Basket from '../Basket/Basket';
-import Menu from './Menu/Menu';
+import MenuLinks from './Menu/MenuLinks';
 
 const Container = styled.div`
     display: flex;
@@ -31,7 +31,7 @@ const StartPage = () => {
             <Basket></Basket>
             <Header></Header>
             <ImageSlider></ImageSlider>
-            <Menu></Menu>
+            <MenuLinks></MenuLinks>
             <MainText></MainText>
             <Products></Products>
             <HorizontalLine></HorizontalLine>

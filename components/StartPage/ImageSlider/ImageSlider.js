@@ -6,11 +6,10 @@ import LearnMore from './LearnMore/LearnMore';
 const fadeInAnimation = keyframes`${fadeIn}`;
 
 const Container = styled.div`
-    width: 100%;
-    height: 250px;
     position: relative;
     width: 100%;
     height: auto;
+    max-width: 1000px;
     margin-bottom: 100px;
 `
 const SliderBox = styled.div`

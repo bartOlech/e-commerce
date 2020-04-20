@@ -5,7 +5,7 @@ import UpperText from './UpperText';
 import MainText from './MainText';
 
 const Container = styled.div`
-    width: 70%;
+    width: 75%;
     max-width: 500px;
     height: 180px;
     background-color: #fff;
