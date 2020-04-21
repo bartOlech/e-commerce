@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-
 // import { FontStyle } from '../../assets/style/style';
 import Header from '../Header/Header';
 import ImageSlider from './ImageSlider/ImageSlider';
@@ -9,6 +8,7 @@ import Products from './Products/Products';
 import Footer from './Footer/Footer';
 import Basket from '../Basket/Basket';
 import MenuLinks from './Menu/MenuLinks';
+import BenefitsInfo from '../BenefitsInfo/BenefitsInfo';
 
 const Container = styled.div`
     display: flex;
@@ -19,7 +19,7 @@ const Container = styled.div`
 const HorizontalLine = styled.div`
     width: 100%;
     height: 1px;
-    background-color: #D0D0D0;
+    background-color: #E0E0E0;
     margin-top: -35px;
     margin-bottom: 10px;
 `
@@ -34,6 +34,8 @@ const StartPage = () => {
             <MenuLinks></MenuLinks>
             <MainText></MainText>
             <Products></Products>
+            <HorizontalLine></HorizontalLine>
+            <BenefitsInfo margin='0 0 60px 0'></BenefitsInfo>
             <HorizontalLine></HorizontalLine>
             <Footer></Footer>
         </Container>

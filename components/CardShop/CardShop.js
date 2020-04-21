@@ -5,6 +5,8 @@ import Product from '../StartPage/Products/Product/Product/Product';
 // In the future getting from database
 import { All as AllData } from '../../assets/FramesData/All';
 import HeaderText from './HeaderText/HeaderText';
+import BenefitsInfo from '../BenefitsInfo/BenefitsInfo';
+import Copyright from '../StartPage/Footer/Copyright/Copyright';
 
 const Container = styled.div`
    
@@ -14,6 +16,13 @@ const ProductSection = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 50px;
+`
+const HorizontalLine = styled.div`
+    width: 100%;
+    height: 1px;
+    background-color: #E0E0E0;
+    margin-top: -35px;
+    margin-bottom: 10px;
 `
 
 const CardShop = () => {
@@ -28,6 +37,9 @@ const CardShop = () => {
                     )
                 })}
             </ProductSection>
+            <HorizontalLine></HorizontalLine>
+            <BenefitsInfo margin='0 0 30px 0'></BenefitsInfo>
+            <Copyright></Copyright>
         </Container>
     )
 }
