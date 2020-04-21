@@ -9,6 +9,7 @@ import Footer from './Footer/Footer';
 import Basket from '../Basket/Basket';
 import MenuLinks from './Menu/MenuLinks';
 import BenefitsInfo from '../BenefitsInfo/BenefitsInfo';
+import GoToShop from './Button/GoToShop';
 
 const Container = styled.div`
     display: flex;
@@ -20,8 +21,7 @@ const HorizontalLine = styled.div`
     width: 100%;
     height: 1px;
     background-color: #E0E0E0;
-    margin-top: -35px;
-    margin-bottom: 10px;
+    margin: ${props => props.margin};
 `
 
 
@@ -34,9 +34,10 @@ const StartPage = () => {
             <MenuLinks></MenuLinks>
             <MainText></MainText>
             <Products></Products>
-            <HorizontalLine></HorizontalLine>
+            <GoToShop></GoToShop>
+            <HorizontalLine margin='20px 0 0 0'></HorizontalLine>
             <BenefitsInfo margin='0 0 60px 0'></BenefitsInfo>
-            <HorizontalLine></HorizontalLine>
+            <HorizontalLine margin='-45px 0 0 0'></HorizontalLine>
             <Footer></Footer>
         </Container>
     )
