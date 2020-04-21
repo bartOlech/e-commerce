@@ -60,7 +60,7 @@ const Product = (props) => {
     return (
         <Container>
             <Basket></Basket>
-            <Header></Header>
+            <Header background='rgba(233, 232, 235, .5)'></Header>
             <AttributeSection initialPrice={initialPrice} sizeWithPrice={sizeWithPrice}></AttributeSection>
             <Description></Description>
             <SelectDate dateIsSelected={dateIsSelected}></SelectDate>

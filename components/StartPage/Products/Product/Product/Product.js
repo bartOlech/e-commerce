@@ -9,8 +9,8 @@ const Container = styled.div`
     height: 350px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin: 10px 10px 30px 10px;
+    /* align-items: center; */
+    margin: ${props => props.margin};
     position: relative;
     cursor: pointer;
     transition: 1s;
@@ -23,7 +23,7 @@ const Product = (props) => {
     }
 
     return (
-        <Container onClick={() => {handleProduct(props.id)}}>
+        <Container margin={props.margin} onClick={() => {handleProduct(props.id)}}>
             <ProductImage hoverImage={props.hoverImage} image={props.image}></ProductImage>
             <ProductText name={props.name} size={props.size} price={props.price}></ProductText>
         </Container>

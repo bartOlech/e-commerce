@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../assets/style/style';
+import Router from 'next/router'
 
 const Container = styled.div`
     width: 100%;
@@ -40,10 +41,15 @@ const Button = styled.button`
 `
 
 const ShopLink = () => {
+
+    const goToShopSection = () => {
+        Router.push('/cardshop')
+    }
+    
     return (
         <Container>
             <Img src='../../../static/MenuPictures/shop.jpg'></Img>
-            <Button>KUP KARTKĘ</Button>
+            <Button onClick={goToShopSection}>KUP KARTKĘ</Button>
         </Container>
     )
 }

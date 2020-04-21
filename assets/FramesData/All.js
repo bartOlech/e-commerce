@@ -25,15 +25,70 @@ export const All = [
     },
     {
         id: 2,
-        name: 'Ramka plastik',
-        size: '23 x 15 cm',
-        price: '12',
+        name: 'Ramka metalowa',
+        size: '12 x 12 cm',
+        price: '10',
+        priceWithSize: {
+            // price with the size
+            31: '21 x 34 cm',
+            20: '17 x 14 cm',
+            25: '34 x 9 cm',
+            10: '12 x 12 cm',
+        },
         image: '../../../../../../static/frame1.png',
         images: ['../../../../../../static/frame1.png', '../../../../../../static/frame2.jpg', '../../../../../../static/frame3.png'],
         hoverImage: '../../../../../../static/frame2.jpg',
         color: 'Czarny',
         description: ' Nasze wysokiej jakości ramki do plakatow i zdjec i stwórz kompletną galerię na ścianie.stwórz kompletną galerię na ścianie. Nasze wysokiej jakości ramki do plakatow i zdjec i stwórz',
-        shipment: 'Wysyłka w ciągu 48 godzin',
+        shipment: 'Wysyłka w ciągu 28 godzin',
+        additionalData: [
+            'Sprzedawana jest bez passe-partout, a jeśli chcesz zamówić ją wraz z passe-partout, złóż zamówienie w dziale na wymiar.',
+            'Rama najwyższej jakości, pochodząca od renomowanego producenta „Fud-men”.',
+            'Każda ramka do formatu 24x24 cm posiada nóżkę, pozostałe rozmiary nadają się jedynie do zawieszenia.'
+        ]
+    },
+    {
+        id: 3,
+        name: 'Ramka papierowa',
+        size: '12 x 12 cm',
+        price: '10',
+        priceWithSize: {
+            // price with the size
+            31: '21 x 34 cm',
+            20: '17 x 14 cm',
+            25: '34 x 9 cm',
+            10: '12 x 12 cm',
+        },
+        image: '../../../../../../static/frame1.png',
+        images: ['../../../../../../static/frame1.png', '../../../../../../static/frame2.jpg', '../../../../../../static/frame3.png'],
+        hoverImage: '../../../../../../static/frame2.jpg',
+        color: 'Czarny',
+        description: ' Nasze wysokiej jakości ramki do plakatow i zdjec i stwórz kompletną galerię na ścianie.stwórz kompletną galerię na ścianie. Nasze wysokiej jakości ramki do plakatow i zdjec i stwórz',
+        shipment: 'Wysyłka w ciągu 28 godzin',
+        additionalData: [
+            'Sprzedawana jest bez passe-partout, a jeśli chcesz zamówić ją wraz z passe-partout, złóż zamówienie w dziale na wymiar.',
+            'Rama najwyższej jakości, pochodząca od renomowanego producenta „Fud-men”.',
+            'Każda ramka do formatu 24x24 cm posiada nóżkę, pozostałe rozmiary nadają się jedynie do zawieszenia.'
+        ]
+    },
+    {
+        id: 4,
+        name: 'Ramka szklana',
+        size: '12 x 12 cm',
+        price: '10',
+        priceWithSize: {
+            // price with the size
+            31: '21 x 34 cm',
+            20: '17 x 14 cm',
+            25: '34 x 9 cm',
+            10: '12 x 12 cm',
+        },
+        image: '../../../../../../static/frame1.png',
+        images: ['../../../../../../static/frame1.png', '../../../../../../static/frame2.jpg', '../../../../../../static/frame3.png'],
+        hoverImage: '../../../../../../static/frame2.jpg',
+        color: 'Czarny',
+        description: ' Nasze wysokiej jakości ramki do plakatow i zdjec i stwórz kompletną galerię na ścianie.stwórz kompletną galerię na ścianie. Nasze wysokiej jakości ramki do plakatow i zdjec i stwórz',
+        shipment: 'Wysyłka w ciągu 28 godzin',
         additionalData: [
             'Sprzedawana jest bez passe-partout, a jeśli chcesz zamówić ją wraz z passe-partout, złóż zamówienie w dziale na wymiar.',
             'Rama najwyższej jakości, pochodząca od renomowanego producenta „Fud-men”.',
