@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import InstagramLink from './InstagramLink';
-import ShopLink from './ShopLink';
-import Gadgets from './GadgetsLink';
+import ExtraProducts from './ExtraProducts';
+import ClassicCard from './ClassicCard';
+import OwnCard from './OwnCard';
 
 const Container = styled.div`
    width: 100%;
@@ -17,9 +17,9 @@ const Container = styled.div`
 const MenuLinks = () => {
     return (
         <Container>
-            <ShopLink></ShopLink>
-            <Gadgets></Gadgets>
-            <InstagramLink></InstagramLink>
+            <ClassicCard></ClassicCard>
+            <OwnCard></OwnCard>
+            <ExtraProducts></ExtraProducts>
         </Container>
     )
 }

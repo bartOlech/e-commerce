@@ -39,13 +39,13 @@ const Button = styled.button`
     }
 `
 
-const GadgetsLink = () => {
+const OwnCard = () => {
     return (
         <Container>
             <Img src='../../../static/MenuPictures/gadgets.jpg'></Img>
-            <Button>KUP DODATKI</Button>
+            <Button>SKOMPONUJ KARTKĘ</Button>
         </Container>
     )
 }
 
-export default GadgetsLink;
+export default OwnCard;
