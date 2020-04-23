@@ -9,8 +9,7 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     position: relative;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 40px;
 `
 const Img = styled.img`
     width: 100%;
@@ -40,13 +39,13 @@ const Button = styled.button`
     }
 `
 
-const ExtraProducts = () => {
+const Birthday = () => {
     return (
         <Container>
             <Img src='../../../static/MenuPictures/instagram.jpg'></Img>
-            <Button>KUP DODATKI</Button>
+            <Button>URODZINY</Button>
         </Container>
     )
 }
 
-export default ExtraProducts;
+export default Birthday;

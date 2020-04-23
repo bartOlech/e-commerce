@@ -18,3 +18,5 @@ export const SHOW_BASKET = 'SHOW_BASKET';
 export const ADD_PRODUCT = 'ADD_PRODUCT';
 export const REMOVE_PRODUCT = 'REMOVE_PRODUCT';
 export const INCREASE_QUANTITY = 'INCREASE_QUANTITY';
+// Shop
+export const SET_SHOP_SECTION = 'SET_SHOP_SECTION';

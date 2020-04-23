@@ -6,6 +6,7 @@ import deliveryReducer from './deliveryReducer';
 import formValidationReducer from './formValidationReducer';
 import basketReducer from './basketReducer';
 import productsReducer from './productsReducer';
+import shopReducer from './shopReducer';
 import {combineReducers} from 'redux';
 
 const rootReducer = combineReducers({
@@ -16,7 +17,8 @@ const rootReducer = combineReducers({
     delivery: deliveryReducer,
     validation: formValidationReducer,
     basket: basketReducer,
-    product: productsReducer
+    product: productsReducer,
+    shop: shopReducer
 });
 
 export default rootReducer;

@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import ExtraProducts from './ExtraProducts';
-import ClassicCard from './ClassicCard';
-import OwnCard from './OwnCard';
+import Birthday from './Birthday';
+import Anniversary from './Anniversary';
+import Birth from './Birth';
 
 const Container = styled.div`
    width: 100%;
@@ -17,9 +17,10 @@ const Container = styled.div`
 const MenuLinks = () => {
     return (
         <Container>
-            <ClassicCard></ClassicCard>
-            <OwnCard></OwnCard>
-            <ExtraProducts></ExtraProducts>
+            <Birthday></Birthday>
+            <Anniversary></Anniversary>
+            <Birth></Birth>
+          
         </Container>
     )
 }

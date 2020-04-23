@@ -1,17 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import CardShopBox from '../components/CardShop/CardShop';
+import ShopSection from '../components/Shop/Shop';
 
 const Container = styled.div`
 
 `
 
-const CardShop = () => {
+const Shop = () => {
     return (
         <Container>
-            <CardShopBox></CardShopBox>
+            <ShopSection></ShopSection>
         </Container>
     )
 }
 
-export default CardShop;
+export default Shop;

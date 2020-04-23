@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../assets/style/style';
+import Router from 'next/router'
 
 const Container = styled.div`
     width: 100%;
@@ -39,13 +40,18 @@ const Button = styled.button`
     }
 `
 
-const OwnCard = () => {
+const Anniversary = () => {
+
+    const goToShopSection = () => {
+        Router.push('/cardshop')
+    }
+    
     return (
         <Container>
-            <Img src='../../../static/MenuPictures/gadgets.jpg'></Img>
-            <Button>SKOMPONUJ KARTKĘ</Button>
+            <Img src='../../../static/MenuPictures/shop.jpg'></Img>
+            <Button onClick={goToShopSection}>ROCZNICA</Button>
         </Container>
     )
 }
 
-export default OwnCard;
+export default Anniversary;

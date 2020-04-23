@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../assets/style/style';
-import Router from 'next/router'
 
 const Container = styled.div`
     width: 100%;
@@ -11,6 +10,7 @@ const Container = styled.div`
     justify-content: center;
     position: relative;
     margin-top: 50px;
+    margin-bottom: 50px;
 `
 const Img = styled.img`
     width: 100%;
@@ -40,18 +40,13 @@ const Button = styled.button`
     }
 `
 
-const ClassicCard = () => {
-
-    const goToShopSection = () => {
-        Router.push('/cardshop')
-    }
-    
+const Birth = () => {
     return (
         <Container>
-            <Img src='../../../static/MenuPictures/shop.jpg'></Img>
-            <Button onClick={goToShopSection}>KLASYCZNA KARTKA</Button>
+            <Img src='../../../static/MenuPictures/gadgets.jpg'></Img>
+            <Button>NARODZINY</Button>
         </Container>
     )
 }
 
-export default ClassicCard;
+export default Birth;
