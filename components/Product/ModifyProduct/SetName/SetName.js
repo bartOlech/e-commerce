@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../../assets/style/style';
 import ToolTipMessage from '../ToolTip/ToolTip';
+import { connect } from 'react-redux';
+import { setClientNameToProduct } from '../../../../redux/actions/Product/setClientNameToProduct';
 
 const Container = styled.div`
     display: flex;
@@ -11,7 +13,7 @@ const Container = styled.div`
 `
 const Label = styled.label`
     font-family: ${FontStyle.family};
-    color: #3B475A;
+    color: ${props => props.color};
     font-size: 1em;
     margin-bottom: 5px;
 `
@@ -28,14 +30,27 @@ const Input = styled.input`
     padding-left: 3px;
 `
 
-const SetName = () => {
+const SetName = (props) => {
+
+    const handleName = (e) => {
+        props.setClientNameToProduct(e.target.value);
+    }
+
     return (
         <Container>
             <ToolTipMessage marginLeft='72px' msg='Zakupiony produkt będzie miał podane imię'></ToolTipMessage>
-            <Label>Podaj imię</Label>
-            <Input></Input>
+            <Label color={props.nameIsFill ? '#3B475A' : 'red'}>Podaj imię</Label>
+            <Input onChange={handleName}></Input>
         </Container>
     )
 }
 
-export default SetName;
+const mapStateToProps = state => ({
+    clientName: state.clientName.clientName
+})
+
+const mapDispatchToProps = {
+    setClientNameToProduct
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SetName);

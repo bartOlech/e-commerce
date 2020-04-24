@@ -6,6 +6,7 @@ import { setBasket } from '../../../redux/actions/Basket/setBasket';
 import { setAddProduct } from '../../../redux/actions/Product/setAddProduct';
 import { setQuantity } from '../../../redux/actions/Product/setQuantity';
 import _ from 'lodash';
+import {useRouter} from 'next/router';
 
 const Container = styled.div`
     display: flex;
@@ -38,6 +39,7 @@ const Button = styled.div`
 
 const BuyButton = (props) => {
     // const [counter, setCounter] = useState(true)
+    const Router = useRouter();
 
     const addToBasket = () => {
         let obj = {
@@ -50,46 +52,59 @@ const BuyButton = (props) => {
             quantity: 1,
             additionalData: []
         };
-
+        // validate a client name field
+       if(Router.query.clientDateIsRequired) {
+        if(props.clientName) {
+            props.setNameFieldAlert(true)
+        } else {
+            props.setNameFieldAlert(false)
+            return;
+        }
+       }
+       // validate date field
+       if(Router.query.clientDateIsRequired) {
         if(props.day) {
-            props.checkProduct(true)
-            props.setBasket(true)
-            // add product data to store
-            // Check does the object exists already
-            if(props.product.length == 0) {
+            props.setDateAlert(true)
+        } else {
+            props.setDateAlert(false)
+            return;
+        }
+       }
+       
+    //    EVERYTHING IS VALIDATE, GO TO BASKET
+        props.setBasket(true)
+        // add product data to store
+        // Check does the object exists already
+        if(props.product.length == 0) {
+            props.setAddProduct(obj, false)
+        } else {
+            // Don't add to array, instead increase quantity
+            const arr = props.product;
+            // array that include duplicate size of product
+            let ar = [];
+
+            props.product.map((el, index) => {
+                    //if id exists add quantity and price
+                    if(el.id === props.id) {
+                        if(el.size === props.size) {
+                            arr[index].quantity += 1
+                            arr[index].price = +arr[index].initialPrice + +arr[index].price
+                            props.setQuantity(arr)
+                            ar.push('arrayIncludeSize')
+                        } else {
+                            ar.push('ArrayDontIncludeSize')
+                            // props.setAddProduct(obj, false)
+                        }                                    
+                    } 
+            })
+
+            const sizeIsInArray = ar.includes('arrayIncludeSize');
+            // If sizes is in basket, only add 1 quantity
+            if(!sizeIsInArray) {
                 props.setAddProduct(obj, false)
             } else {
-                // Don't add to array, instead increase quantity
-                const arr = props.product;
-                // array that include duplicate size of product
-                let ar = [];
 
-                props.product.map((el, index) => {
-                       //if id exists add quantity and price
-                        if(el.id === props.id) {
-                            if(el.size === props.size) {
-                                arr[index].quantity += 1
-                                arr[index].price = +arr[index].initialPrice + +arr[index].price
-                                props.setQuantity(arr)
-                                ar.push('arrayIncludeSize')
-                            } else {
-                                ar.push('ArrayDontIncludeSize')
-                                // props.setAddProduct(obj, false)
-                            }                                    
-                        } 
-                })
-
-                const sizeIsInArray = ar.includes('arrayIncludeSize');
-                // If sizes is in basket, only add 1 quantity
-                if(!sizeIsInArray) {
-                    props.setAddProduct(obj, false)
-                } else {
-
-                }
             }
-           
-        } else {
-            props.checkProduct(false)
         }
     }
 
@@ -111,7 +126,8 @@ const mapStateToProps = state => ({
     day: state.date.day,
     month: state.date.month,
     year: state.date.year,
-    product: state.product.products
+    product: state.product.products,
+    clientName: state.clientName.clientName
 })
 const mapDispatchToProps = {
     setBasket,

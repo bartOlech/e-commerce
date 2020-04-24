@@ -14,7 +14,7 @@ const ModifyProduct = (props) => {
         <Container>
             <TittleText text={'Dostosuj swoje zamówienie'}></TittleText>
 
-            <SetName></SetName>
+            <SetName nameIsFill={props.nameIsFill}></SetName>
             <SelectDate dateIsSelected={props.dateIsSelected}></SelectDate>
         </Container>
     )

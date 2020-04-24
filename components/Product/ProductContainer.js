@@ -24,9 +24,14 @@ const Product = (props) => {
     const [sizeWithPrice, setSizeWithPrice] = useState('');
     const [initialPrice, setInitialPrice] = useState('')
     const [dateIsSelected, setDateIsSelected] = useState(true)
+    const [nameIsFill, setNameIsFill] = useState(true)
 
-    const checkProduct = (val) => {
+    const setDateAlert = (val) => {
         setDateIsSelected(val)
+    }
+
+    const setNameFieldAlert = (val) => {
+        setNameIsFill(val)
     }
 
     // in the future, here getting from database
@@ -67,8 +72,8 @@ const Product = (props) => {
             <Header background='rgba(233, 232, 235, .5)'></Header>
             <AttributeSection initialPrice={initialPrice} sizeWithPrice={sizeWithPrice}></AttributeSection>
             <Description></Description>
-            <ModifyProduct dateIsSelected={dateIsSelected}></ModifyProduct>
-            <BuyButton checkProduct={checkProduct}></BuyButton>
+            <ModifyProduct nameIsFill={nameIsFill} dateIsSelected={dateIsSelected}></ModifyProduct>
+            <BuyButton setNameFieldAlert={setNameFieldAlert} setDateAlert={setDateAlert}></BuyButton>
         </Container>
     )
 }

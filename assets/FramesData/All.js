@@ -22,7 +22,9 @@ export const All = [
             'Sprzedawana jest bez passe-partout, a jeśli chcesz zamówić ją wraz z passe-partout, złóż zamówienie w dziale na wymiar.',
             'Rama najwyższej jakości, pochodząca od renomowanego producenta „Fud-men”.',
             'Każda ramka do formatu 24x24 cm posiada nóżkę, pozostałe rozmiary nadają się jedynie do zawieszenia.'
-        ]
+        ],
+        clientNameIsRequired: true,
+        clientDateIsRequired: true
     },
     {
         id: 2,

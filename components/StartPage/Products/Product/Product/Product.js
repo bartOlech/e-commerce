@@ -19,7 +19,14 @@ const Container = styled.div`
 const Product = (props) => {
 
     const handleProduct = (id) => {
-        Router.push(`/product?id=${id}`)
+        Router.push({
+            pathname: '/product',
+            query: { 
+                id,
+                clientDateIsRequired: props.clientDateIsRequired,
+                clientNameIsRequired: props.clientNameIsRequired
+             },
+        })
     }
 
     return (

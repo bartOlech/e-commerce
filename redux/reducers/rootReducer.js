@@ -7,6 +7,7 @@ import formValidationReducer from './formValidationReducer';
 import basketReducer from './basketReducer';
 import productsReducer from './productsReducer';
 import shopReducer from './shopReducer';
+import setClientNameReducer from './setClientNameReducer';
 import {combineReducers} from 'redux';
 
 const rootReducer = combineReducers({
@@ -18,7 +19,8 @@ const rootReducer = combineReducers({
     validation: formValidationReducer,
     basket: basketReducer,
     product: productsReducer,
-    shop: shopReducer
+    shop: shopReducer,
+    clientName: setClientNameReducer
 });
 
 export default rootReducer;
