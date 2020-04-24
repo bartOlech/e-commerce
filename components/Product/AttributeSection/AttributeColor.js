@@ -40,7 +40,7 @@ const AttributeColor = (props) => {
 
     return (
         <Container>
-           <Label htmlFor='color'>Kolor</Label>
+           <Label htmlFor='color'>Kolor ramy</Label>
             <Select data-testid='select-size' onChange={handleColor} id='color'>
                 {props.frameColorsArr.map((el, index) => {
                     return (

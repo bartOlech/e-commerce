@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../../../assets/style/style';
+import ToolTipMessage from '../../ToolTip/ToolTip';
 
 // redux
 import {connect} from 'react-redux';
@@ -16,32 +17,17 @@ const Container = styled.div`
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     margin-top: 10px;
 `
 const Text = styled.span`
     font-family: ${FontStyle.family};
     color: ${props => props.color};
     font-size: 1em;
-    margin-bottom: 2px;
-    margin-left: -15px;
+    margin-bottom: 7px;
+    /* margin-left: -220px; */
 `
-const Tooltip = styled.div`
-    width: 20px;
-    height: 20px;
-    font-family: ${FontStyle.family};
-    color: #000;
-    font-size: 1em;
-    margin-left: 106px;
-    margin-bottom: -7px;
-    background-image: url('../../../../static/question.svg');
-    background-repeat: no-repeat;
-    background-size: 20px 20px;
-    cursor: pointer;
-`
-const TooltipText = styled.span`
 
-  `
 
 const Buttons = (props) => {
     const [startDate, setStartDate] = useState(new Date());
@@ -57,9 +43,7 @@ const Buttons = (props) => {
 
     return (
         <Container>
-            <Tooltip className="tooltip">
-                <TooltipText className="tooltiptext">Zakupiona kartka z kalendarza będzie miała wybraną datę</TooltipText>
-            </Tooltip>
+           <ToolTipMessage marginLeft='90px' msg='Zakupiona kartka z kalendarza będzie miała wybraną datę'></ToolTipMessage>
             <Text color={props.dateIsSelected ? '#3B475A' : 'red'}>Wybierz datę</Text>
             <DatePicker
                 selected={startDate}

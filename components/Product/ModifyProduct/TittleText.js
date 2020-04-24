@@ -8,6 +8,7 @@ const Container = styled.div`
     color: #3B475A;
     font-weight: 400;
     margin-left: 15px;
+    margin-bottom: 15px;
 `
 
 const TittleText = (props) => {
