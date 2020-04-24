@@ -10,6 +10,8 @@ const initialState = {
     additionalData: '',
     color: '',
     initialPrice: '',
+    frameColorsArr: [],
+    frameColor: ''
 }
 
 const frameReducer = (state = initialState, action) => {
@@ -26,6 +28,13 @@ const frameReducer = (state = initialState, action) => {
                 additionalData: action.payload.additionalData,
                 color: action.payload.color,
                 initialPrice: action.payload.initialPrice,
+                frameColors: action.payload.color,
+                frameColorsArr: action.payload.frameColorsArr
+            }
+        case constants.SET_FRAME_COLOR: 
+            return {
+                ...state,
+                frameColors: action.payload.color
             }
         default: {
             return {

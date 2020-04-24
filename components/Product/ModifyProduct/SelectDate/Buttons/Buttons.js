@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { FontStyle } from '../../../../assets/style/style';
+import { FontStyle } from '../../../../../assets/style/style';
 
 // redux
 import {connect} from 'react-redux';
-import { setDate } from '../../../../redux/actions/setDateActions';
+import { setDate } from '../../../../../redux/actions/setDateActions';
 
 // calendar
 

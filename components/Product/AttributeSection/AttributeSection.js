@@ -78,7 +78,7 @@ const AttributeSection = (props) => {
                 </ImageBox>
                 <TextDetails>
                     <AttributePrice data-testid='attribute-section-price'  price={selectedPrice ? selectedPrice : props.initialPrice}></AttributePrice>
-                    <AttributeColor color={props.color}></AttributeColor>
+                    <AttributeColor frameColors={props.frameColors} color={props.color}></AttributeColor>
                     <AttributeSize setPrice={setPrice} sizeWithPrice={props.sizeWithPrice}></AttributeSize>
                 </TextDetails>
             </Details>

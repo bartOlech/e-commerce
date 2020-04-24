@@ -15,6 +15,7 @@ export const All = [
         images: ['../../../../../../static/frame1.png', '../../../../../../static/frame2.jpg', '../../../../../../static/frame3.png'],
         hoverImage: '../../../../../../static/frame2.jpg',
         color: 'Czarny',
+        frameColors: ['Czarny', 'Biały'],
         description: ' Nasze wysokiej jakości ramki do plakatow i zdjec i stwórz kompletną galerię na ścianie.stwórz kompletną galerię na ścianie. Nasze wysokiej jakości ramki do plakatow i zdjec i stwórz',
         shipment: 'Wysyłka w ciągu 28 godzin',
         additionalData: [

@@ -7,6 +7,7 @@ const Container = styled.div`
     font-size: 1.3em;
     color: #3B475A;
     font-weight: 400;
+    margin-left: 15px;
 `
 
 const TittleText = (props) => {

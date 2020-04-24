@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import TittleText from './TittleText';
 import Buttons from './Buttons/Buttons';
 import DateResult from './DateResult/DateResult';
 // redux
@@ -17,7 +16,6 @@ const SelectDate = (props) => {
 
     return (
         <Container>
-            <TittleText text={'Dostosuj swoją kartkę'}></TittleText>
             <Buttons dateIsSelected={props.dateIsSelected}></Buttons>
             <DateResult availableYears={['2001', '2020']} day={props.day} month={props.month} year={props.year}></DateResult>
         </Container>
