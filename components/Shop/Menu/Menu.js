@@ -3,11 +3,13 @@ import styled from 'styled-components';
 import { FontStyle } from '../../../assets/style/style';
 import { connect } from 'react-redux';
 import { setShopSection } from '../../../redux/actions/Shop/setShopSection';
+import MoreCategory from './MoreCategory/MoreCategory';
 
 const Container = styled.div`
-    display: flex;
-    justify-content: center;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
     margin-top: 10px;
     margin-bottom: 20px;
 `
@@ -73,6 +75,7 @@ const Menu = (props) => {
                     onClick={() => setCategory('wedding')}
                 >Ślub</Li>
             </List>
+            <MoreCategory></MoreCategory>
         </Container>
     )
 }
