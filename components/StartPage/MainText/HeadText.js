@@ -7,7 +7,7 @@ const Container = styled.div`
     font-size: 2em;
     font-weight: 300;
     color: #202020;
-    margin-bottom: 8px;
+    margin-bottom: -10px;
     position: relative;
     /* &&:after {
         content: '';

@@ -14,8 +14,8 @@ const MainText = () => {
     return (
         <Container>
             <TextBox></TextBox>
-            <HeadText text='Stwórz swoją kartkę'/>
-            <AdditionalText text='Wybierz ramkę'/>
+            <HeadText text='Najpopularniejesze produkty'/>
+            {/* <AdditionalText text='Wybierz ramkę'/> */}
         </Container>
     )
 }

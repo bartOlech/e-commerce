@@ -22,8 +22,8 @@ const ButtonsBox = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    border-top: 1px solid #272727;
-    border-bottom: 1px solid #272727;
+    border-top: 1px solid #F8AEA2;
+    border-bottom: 1px solid #F8AEA2;
 `
 const Button = styled.div`
     box-sizing: border-box;
@@ -39,7 +39,7 @@ const Button = styled.div`
     padding-top: 12px;
     transition: .4s;
     &&:hover {
-        background-color: #141414;
+        background-color: #FF8D7B;
         color: #fff;
     }
 `
@@ -57,22 +57,22 @@ const Products = () => {
                     setProducts(All)
                 }} 
                     color={dimension === 'all' ? '#fff' : '#141414'} 
-                    background={dimension === 'all' ? '#2c3238' : '#fff'}
-                >Wszystkie</Button>
+                    background={dimension === 'all' ? '#fb5c43' : '#fff'}
+                >Urodziny</Button>
                 <Button onClick={() => {
                     setDimension('small')
                     setProducts(Small)
                 }}
                     color={dimension === 'small' ? '#fff' : '#141414'} 
-                    background={dimension === 'small' ? '#2c3238' : '#fff'}
-                >Mała</Button>
+                    background={dimension === 'small' ? '#fb5c43' : '#fff'}
+                >Narodziny</Button>
                 <Button onClick={() => {
                     setDimension('large')
                     setProducts(Large)
                 }}
                     color={dimension === 'large' ? '#fff' : '#141414'} 
-                    background={dimension === 'large' ? '#2c3238' : '#fff'}
-                >Duża</Button>
+                    background={dimension === 'large' ? '#fb5c43' : '#fff'}
+                >Rocznica</Button>
             </ButtonsBox>
             <ProductContainer products={products}></ProductContainer>
             
