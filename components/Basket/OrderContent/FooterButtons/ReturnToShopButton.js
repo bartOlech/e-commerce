@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../../assets/style/style';
+import Router from 'next/router';
 
 const Container = styled.u`
     font-family: ${FontStyle.family};
@@ -11,8 +12,13 @@ const Container = styled.u`
 `
 
 const FooterButtons = () => {
+
+    const continueShoping = () => {
+        Router.push('/shop')
+    }
+
     return (
-        <Container>
+        <Container onClick={continueShoping}>
             Kontynuuj zakupy
         </Container>
     )
