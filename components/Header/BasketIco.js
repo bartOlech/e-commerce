@@ -39,7 +39,7 @@ const Counter = styled.div`
 
 const BasketIco = (props) => {
     return (
-        <Conatiner onClick={() => props.setBasket(true)}>
+        <Conatiner data-testid='basket-ico' onClick={() => props.setBasket(true)}>
             <Ico></Ico>
             <Counter>{props.products.length}</Counter>
         </Conatiner>

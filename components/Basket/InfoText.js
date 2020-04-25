@@ -38,15 +38,15 @@ const InfoText = (props) => {
     const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
     return (
-        <Container>
+        <Container >
             {props.products.map(el => {
                 totalCostArr.push(+el.price)
             })}
             {totalCostArr.length > 0 ? (
                 50 - totalCostArr.reduce(reducer) < 0 ? (
-                    <Bold>Na twoje zamówienie obowiązuje darmowa dostawa</Bold>
+                    <Bold data-testid='free-delivery'>Na twoje zamówienie obowiązuje darmowa dostawa</Bold>
                 ) : (
-                    <Text>Jeszcze<OrderCost>{50 - totalCostArr.reduce(reducer)}</OrderCost><OrderCost style={{margin: '0 5px 0 0'}}>zł</OrderCost>i skorzystasz z bezpłatnej dostawy.</Text>
+                    <Text>Jeszcze<OrderCost data-testid='not-free-delivery'>{50 - totalCostArr.reduce(reducer)}</OrderCost><OrderCost style={{margin: '0 5px 0 0'}}>zł</OrderCost>i skorzystasz z bezpłatnej dostawy.</Text>
                 )
             ) : null}
             

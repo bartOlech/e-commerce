@@ -24,7 +24,7 @@ const Container = styled.div`
 
 const Basket = (props) => {
     return (
-        <Container display={props.isVisible ? 'inline' : 'none'}>
+        <Container data-testid='basket-container' display={props.isVisible ? 'inline' : 'none'}>
             <Header></Header>
             {props.products.length > 0 ? (
                 <div>
