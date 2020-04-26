@@ -6,8 +6,12 @@ const dev = process.env.NODE_DEV !== 'production' //true false
 const nextApp = next({ dev })
 const handle = nextApp.getRequestHandler() //part of next config
 const mongoose = require('mongoose')
+require('dotenv').config();
 
-const db = mongoose.connect('*')
+mongoose.connect(process.env.MONGODB_LINK, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
 
 nextApp.prepare().then(() => {
     // express code here
