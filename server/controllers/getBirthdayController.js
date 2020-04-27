@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-const productShema = require('../models/products');
+const BirthdayData = require('../models/birthdaySchema');
 
-exports.data = (req, res) => {
+exports.getData = (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
 
     mongoose.connect(process.env.MONGODB_LINK, {
@@ -10,9 +10,9 @@ exports.data = (req, res) => {
     })
     .then(console.log('MongoDB conected')).catch(err => console.log(err))
 mongoose.Promise = global.Promise;
-    productShema.find({
-        type: 'question'
-    }).then((userName) => {
-        res.send(userName)
+BirthdayData.find({
+        type: 'birthday'
+    }).then((data) => {
+        res.send(data)
     })
 }

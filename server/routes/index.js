@@ -1,9 +1,9 @@
 const express = require('express')
 const router = express.Router()
 const homeController = require('../controllers/homeController');
-const getProducts = require('../controllers/getProducts');
+const getBirthdayController = require('../controllers/getBirthdayController');
 
 router.get('/', homeController.home)
-router.get('/getProducts', getProducts.data)
+router.get('/getBirthdayData', getBirthdayController.getData)
 
 module.exports = router;
