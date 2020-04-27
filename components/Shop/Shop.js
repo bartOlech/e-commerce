@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import Header from '../Product/Header/Header';
 import BenefitsInfo from '../BenefitsInfo/BenefitsInfo';
 import Copyright from '../StartPage/Footer/Copyright/Copyright';
 import BirthdayShop from './Products/BirthdayShop/BirthdayShop';
-import Menu from './Menu/Menu'
+import BirthShop from './Products/BirthShop/BirthShop';
+import AnniversaryShop from './Products/AnniversaryShop/AnniversaryShop';
+import WeddingShop from './Products/WeddingShop/WeddingShop';
+import Menu from './Menu/Menu';
+import { connect } from 'react-redux';
+import { getBirthday } from '../../redux/actions/GetFromDatabase/getBirthday';
 
 const Container = styled.div`
    
@@ -17,12 +22,15 @@ const HorizontalLine = styled.div`
     margin-bottom: 10px;
 `
 
-const Shop = () => {
+const Shop = (props) => {
     return (
         <Container>
             <Header background='#fff'></Header>
             <Menu></Menu>
-            <BirthdayShop></BirthdayShop>
+            {props.category === 'birthday' ? <BirthdayShop birthday={props.birthday}></BirthdayShop> : null}
+            {props.category === 'anniversary' ? <AnniversaryShop></AnniversaryShop> : null}
+            {props.category === 'birth' ? <BirthShop></BirthShop> : null}
+            {props.category === 'wedding' ? <WeddingShop></WeddingShop> : null}
             <HorizontalLine></HorizontalLine>
             <BenefitsInfo margin='0 0 30px 0'></BenefitsInfo>
             <Copyright></Copyright>
@@ -30,4 +38,12 @@ const Shop = () => {
     )
 }
 
-export default Shop;
+const mapStateToProps = state => ({
+    birthday: state.products.birthdayProducts,
+    category: state.shop.category
+})
+const mapDispatchToProps = {
+    getBirthday
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Shop);

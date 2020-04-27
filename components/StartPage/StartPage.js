@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 // import { FontStyle } from '../../assets/style/style';
 import Header from '../Header/Header';
@@ -10,6 +10,9 @@ import Basket from '../Basket/Basket';
 import MenuLinks from './Menu/MenuLinks';
 import BenefitsInfo from '../BenefitsInfo/BenefitsInfo';
 import GoToShop from './Button/GoToShop';
+// redux
+import { connect } from 'react-redux';
+import { getBirthday } from '../../redux/actions/GetFromDatabase/getBirthday';
 
 const Container = styled.div`
     display: flex;
@@ -24,8 +27,15 @@ const HorizontalLine = styled.div`
     margin: ${props => props.margin};
 `
 
+const StartPage = (props) => {
+    
+    useEffect(() => {
+        // get products from database
+        fetch('http://localhost:3001/api/getBirthdayData').then(res => res.json()).then(json => {
+           props.getBirthday(json)
+        }).catch(err => console.log(err))
+    }, [])
 
-const StartPage = () => {
     return (
         <Container>
             <Basket></Basket>
@@ -43,4 +53,8 @@ const StartPage = () => {
     )
 }
 
-export default StartPage;
+const mapDispatchToProps = {
+    getBirthday
+}
+
+export default connect(null, mapDispatchToProps)(StartPage);

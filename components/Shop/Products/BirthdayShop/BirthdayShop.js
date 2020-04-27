@@ -1,8 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import HeaderText from '../../HeaderText/HeaderText';
-
-import { All as AllData } from '../../../../assets/FramesData/All';
 import Product from '../../../StartPage/Products/Product/Product/Product';
 
 const Container = styled.div`
@@ -15,7 +13,7 @@ const ProductSection = styled.div`
     margin-top: 50px;
 `
 
-const BirthdayShop = () => {
+const BirthdayShop = (props) => {
     return (
         <Container>
             <HeaderText 
@@ -25,7 +23,7 @@ const BirthdayShop = () => {
                 Ramki są dostępne w ośmiu rozmiarach, od małych ramek do zdjęć o wymiarach 13 x 18 cm, po'
             ></HeaderText>
             <ProductSection>
-                {AllData.map((val, index) => {
+                {Object.values(props.birthday).map((val, index) => {
                     return (
                         <Product margin='0px 20px 20px 20px' id={val.id} hoverImage={val.hoverImage} key={index} image={val.image} name={val.name} size={val.size} price={val.price}></Product>
                     )

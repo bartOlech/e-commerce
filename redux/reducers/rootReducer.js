@@ -8,6 +8,7 @@ import basketReducer from './basketReducer';
 import productsReducer from './productsReducer';
 import shopReducer from './shopReducer';
 import setClientNameReducer from './setClientNameReducer';
+import getDataFromDatabaseReducer from './getDataFromDatabaseReducer';
 import {combineReducers} from 'redux';
 
 const rootReducer = combineReducers({
@@ -20,7 +21,8 @@ const rootReducer = combineReducers({
     basket: basketReducer,
     product: productsReducer,
     shop: shopReducer,
-    clientName: setClientNameReducer
+    clientName: setClientNameReducer,
+    products: getDataFromDatabaseReducer
 });
 
 export default rootReducer;
