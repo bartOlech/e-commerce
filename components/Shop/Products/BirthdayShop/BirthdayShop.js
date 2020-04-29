@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import HeaderText from '../../HeaderText/HeaderText';
 import Product from '../../../StartPage/Products/Product/Product/Product';
+import { connect } from 'react-redux';
+import { getBirthday } from '../../../../redux/actions/GetFromDatabase/getBirthday';
 
 const Container = styled.div`
 
@@ -14,6 +16,15 @@ const ProductSection = styled.div`
 `
 
 const BirthdayShop = (props) => {
+
+    useEffect(() => {
+        // get products from database if user refresh page
+        // get birth products
+        fetch('http://localhost:3001/api/getBirthdayData').then(res => res.json()).then(json => {
+           props.getBirthday(json)
+        }).catch(err => console.log(err))
+    }, [])
+
     return (
         <Container>
             <HeaderText 
@@ -33,4 +44,8 @@ const BirthdayShop = (props) => {
     )
 }
 
-export default BirthdayShop;
+const mapDispatchToProps = {
+    getBirthday
+}
+
+export default connect(null, mapDispatchToProps)(BirthdayShop);

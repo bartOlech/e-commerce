@@ -29,7 +29,7 @@ const Shop = (props) => {
             <Menu></Menu>
             {props.category === 'birthday' ? <BirthdayShop birthday={props.birthday}></BirthdayShop> : null}
             {props.category === 'anniversary' ? <AnniversaryShop></AnniversaryShop> : null}
-            {props.category === 'birth' ? <BirthShop></BirthShop> : null}
+            {props.category === 'birth' ? <BirthShop birthProducts={props.birthProducts}></BirthShop> : null}
             {props.category === 'wedding' ? <WeddingShop></WeddingShop> : null}
             <HorizontalLine></HorizontalLine>
             <BenefitsInfo margin='0 0 30px 0'></BenefitsInfo>
@@ -40,6 +40,7 @@ const Shop = (props) => {
 
 const mapStateToProps = state => ({
     birthday: state.products.birthdayProducts,
+    birthProducts: state.products.birthProducts,
     category: state.shop.category
 })
 const mapDispatchToProps = {

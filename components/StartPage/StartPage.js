@@ -13,6 +13,7 @@ import GoToShop from './Button/GoToShop';
 // redux
 import { connect } from 'react-redux';
 import { getBirthday } from '../../redux/actions/GetFromDatabase/getBirthday';
+import { getBirth } from '../../redux/actions/GetFromDatabase/getBirth';
 
 const Container = styled.div`
     display: flex;
@@ -31,8 +32,13 @@ const StartPage = (props) => {
     
     useEffect(() => {
         // get products from database
+        // get birthday products
         fetch('http://localhost:3001/api/getBirthdayData').then(res => res.json()).then(json => {
            props.getBirthday(json)
+        }).catch(err => console.log(err))
+        // get birth products
+        fetch('http://localhost:3001/api/getBirthData').then(res => res.json()).then(json => {
+           props.getBirth(json)
         }).catch(err => console.log(err))
     }, [])
 
@@ -54,7 +60,8 @@ const StartPage = (props) => {
 }
 
 const mapDispatchToProps = {
-    getBirthday
+    getBirthday,
+    getBirth
 }
 
 export default connect(null, mapDispatchToProps)(StartPage);

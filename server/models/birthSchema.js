@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const birthdaySchema = new Schema({
+const birthSchema = new Schema({
     productId: {
         type: String
     },
@@ -48,5 +48,5 @@ const birthdaySchema = new Schema({
         type: Boolean
     },
 })
-const BirthdayData = mongoose.model('birthday', birthdaySchema, 'birthday')
-module.exports = BirthdayData;
+const BirthSchema = mongoose.model('birth', birthSchema, 'birth')
+module.exports = BirthSchema;

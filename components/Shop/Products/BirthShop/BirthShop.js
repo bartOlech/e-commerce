@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import HeaderText from '../../HeaderText/HeaderText';
-
-import { All as AllData } from '../../../../assets/FramesData/All';
 import Product from '../../../StartPage/Products/Product/Product/Product';
+import { connect } from 'react-redux';
+import { getBirth } from '../../../../redux/actions/GetFromDatabase/getBirth';
 
 const Container = styled.div`
 
@@ -15,7 +15,16 @@ const ProductSection = styled.div`
     margin-top: 50px;
 `
 
-const BirthShop = () => {
+const BirthShop = (props) => {
+
+    useEffect(() => {
+        // get products from database if user refresh page
+        // get birth products
+        fetch('http://localhost:3001/api/getBirthData').then(res => res.json()).then(json => {
+           props.getBirth(json)
+        }).catch(err => console.log(err))
+    }, [])
+
     return (
         <Container>
             <HeaderText 
@@ -25,7 +34,7 @@ const BirthShop = () => {
                 Ramki są dostępne w ośmiu rozmiarach, od małych ramek do zdjęć o wymiarach 13 x 18 cm, po'
             ></HeaderText>
             <ProductSection>
-                {AllData.map((val, index) => {
+                {Object.values(props.birthProducts).map((val, index) => {
                     return (
                         <Product margin='0px 20px 20px 20px' id={val.id} hoverImage={val.hoverImage} key={index} image={val.image} name={val.name} size={val.size} price={val.price}></Product>
                     )
@@ -35,4 +44,8 @@ const BirthShop = () => {
     )
 }
 
-export default BirthShop;
+const mapDispatchToProps = {
+    getBirth
+}
+
+export default connect(null, mapDispatchToProps)(BirthShop);

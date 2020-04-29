@@ -1,7 +1,8 @@
 import * as constants from '../actions/constants';
 
 const initialState = {
-    birthdayProducts: ''
+    birthdayProducts: '',
+    birthProducts: ''
 }
 
 const getDataFromDatabaseReducer = (state = initialState, action) => {
@@ -10,6 +11,11 @@ const getDataFromDatabaseReducer = (state = initialState, action) => {
             return {
                 ...state,
                 birthdayProducts: action.payload.data
+            }
+        case constants.GET_BIRTH_DATA:
+            return {
+                ...state,
+                birthProducts: action.payload.data
             }
         default: 
             return {
