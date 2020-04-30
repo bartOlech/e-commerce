@@ -20,11 +20,13 @@ const AdditionalData = (props) => {
     return (
         <Container>
             <List data-tesid='list-of-sizes'>
-            {props.additionalData.map((el, index) => {
-                return (
-                    <Element key={index}>{el}</Element>
-                )
-            })}
+                {props.additionalData ? (
+                    props.additionalData.map((el, index) => {
+                        return (
+                            <Element key={index}>{el}</Element>
+                        )
+                    })
+                ) : null}
             </List>
         </Container>
     )

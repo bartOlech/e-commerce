@@ -11,7 +11,7 @@ exports.getData = (req, res) => {
     .then(console.log('MongoDB conected')).catch(err => console.log(err))
 mongoose.Promise = global.Promise;
 BirthdayData.find({
-        type: 'birthday'
+        type: 'getBirthdayData'
     }).then((data) => {
         res.send(data)
     })

@@ -5,11 +5,9 @@ import DescriptionMenu from './DescriptionMenu';
 import DeliveryText from './DeliveryText';
 import RefundText from './RefundText';
 import ShipmentText from './ShipmentText';
- // import locally data, change in the future
- import { All as AllData } from '../../../assets/FramesData/All'; 
- import {useRouter, withRouter} from 'next/router';
- import AdditionalData from './AdditionalData';
- import { FontStyle } from '../../../assets/style/style';
+import AdditionalData from './AdditionalData';
+import { FontStyle } from '../../../assets/style/style';
+import { connect } from 'react-redux'
 
 const Container = styled.div`
     display: flex;
@@ -28,8 +26,7 @@ const Text = styled.div`
     font-weight: 300;
 `
 
-const Description = () => {
-    const {query: {id}} = useRouter();
+const Description = (props) => {
     const [isClicked, setIsClicked] = useState('description')
 
     const setText = (val) => {
@@ -38,28 +35,27 @@ const Description = () => {
 
     return (
         <Container data-testid='description'>
-            {AllData.map((el, index) => {
-                if(el.id == id) {
-                    return (
-                        <ProductData key={index}>
+                        <ProductData>
                             <DescriptionMenu setText={setText} tittle='Opis'></DescriptionMenu>
                             {isClicked === 'description' ? (
                                 <React.Fragment>
-                                    <DescriptionText description={el.description}></DescriptionText>
+                                    <DescriptionText description={props.description}></DescriptionText>
                                     <Text tittle='Dodatkowe informacje'>Dodatkowe informacje</Text>
-                                    <AdditionalData additionalData={el.additionalData}></AdditionalData>
-                                    <ShipmentText shipment={el.shipment}></ShipmentText>
+                                    <AdditionalData additionalData={props.additionalData}></AdditionalData>
+                                    <ShipmentText shipment={props.shipment}></ShipmentText>
                                 </React.Fragment>
                             ) : null}
                           {isClicked === 'delivery' && <DeliveryText></DeliveryText>}
                           {isClicked === 'refund' && <RefundText></RefundText>}
                         </ProductData>
-                    )
-                }
-            })}
-                
         </Container>
     )
 }
 
-export default Description;
+const mapStateToProps = state => ({
+    description: state.frameData.description,
+    additionalData: state.frameData.additionalData,
+    shipment: state.frameData.shipment
+})
+
+export default connect(mapStateToProps)(Description);

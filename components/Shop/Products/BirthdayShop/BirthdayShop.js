@@ -36,7 +36,7 @@ const BirthdayShop = (props) => {
             <ProductSection>
                 {Object.values(props.birthday).map((val, index) => {
                     return (
-                        <Product margin='0px 20px 20px 20px' id={val.id} hoverImage={val.hoverImage} key={index} image={val.image} name={val.name} size={val.size} price={val.price}></Product>
+                        <Product margin='0px 20px 20px 20px' type={val.type} id={val.productId} hoverImage={val.hoverImage} key={index} image={val.image} name={val.name} size={val.size} price={val.price}></Product>
                     )
                 })}
             </ProductSection>

@@ -95,8 +95,6 @@ const mapStateToProps = state => ({
     size: state.size.size,
     price: state.price.price,
     id: state.frameData.id,
-    description: state.frameData.description,
-    additionalData: state.frameData.additionalData,
 })
 
 const mapDispatchToProps = {

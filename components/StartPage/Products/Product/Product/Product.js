@@ -24,7 +24,8 @@ const Product = (props) => {
             query: { 
                 id,
                 clientDateIsRequired: props.clientDateIsRequired,
-                clientNameIsRequired: props.clientNameIsRequired
+                clientNameIsRequired: props.clientNameIsRequired,
+                type: props.type
              },
         })
     }

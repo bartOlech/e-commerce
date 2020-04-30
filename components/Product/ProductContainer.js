@@ -10,7 +10,6 @@ import { connect } from 'react-redux';
 import { setFrameDetails } from '../../redux/actions/setFrameDetails';
 import { setPrice } from '../../redux/actions/setPriceAction';
 import { setSize } from '../../redux/actions/setSizeActions';
-import { All as AllData } from '../../assets/FramesData/All';
 import {useRouter, withRouter} from 'next/router';
 import ModifyProduct from './ModifyProduct/ModifyProduct';
 
@@ -20,11 +19,12 @@ const Container = styled.div`
 `
 
 const Product = (props) => {
-    const {query: {id}} = useRouter();
+    const {query: {id, type}} = useRouter();
     const [sizeWithPrice, setSizeWithPrice] = useState('');
     const [initialPrice, setInitialPrice] = useState('')
     const [dateIsSelected, setDateIsSelected] = useState(true)
     const [nameIsFill, setNameIsFill] = useState(true)
+
 
     const setDateAlert = (val) => {
         setDateIsSelected(val)
@@ -34,36 +34,41 @@ const Product = (props) => {
         setNameIsFill(val)
     }
 
-    // in the future, here getting from database
     useEffect(() => {
         // set initial data from selected product
-        AllData.map((el, index) => {
-            if(id == el.id) {
-                // ZROB DESTRUKTURYZACJE
-                const { 
-                    id,
-                    name,
-                    image,
-                    images,
-                    description,
-                    shipment,
-                    additionalData,
-                    color,
-                    size,
-                    priceWithSize,
-                    price,
-                } = el;
 
-                const frameColorsArr = el.frameColors;
-                const frameColors = el.frameColors[0];
-
-                props.setFrameDetails(id, name, image, images, description, shipment, additionalData, color, price, frameColors, frameColorsArr);
-                setSizeWithPrice(priceWithSize);
-                setInitialPrice(price)
-                props.setPrice(price)
-                props.setSize(size)
-            }
-        })
+// if product data is available in the store, get data. If not, fetch from database
+         // fetch data from database
+        //  this data can be available in the store if the page has not been refreshed. Use it!!!
+         console.log('get data from database!!!')
+         fetch(`http://localhost:3001/api/${type}`).then(res => res.json()).then(json => {
+             Object.values(json).map(el => {
+                 if(id == el.productId) {
+                     const { 
+                         id,
+                         name,
+                         image,
+                         images,
+                         description,
+                         shipment,
+                         additionalData,
+                         color,
+                         size,
+                         priceWithSize,
+                         price,
+                     } = el;
+     
+                     const frameColorsArr = el.frameColors;
+                     const frameColors = el.frameColors[0];
+     
+                     props.setFrameDetails(id, name, image, images, description, shipment, additionalData, color, price, frameColors, frameColorsArr);
+                     setSizeWithPrice(priceWithSize);
+                     setInitialPrice(price)
+                     props.setPrice(price)
+                     props.setSize(size)
+                 }
+             })
+         }).catch(err => console.log(err))
     }, [])
 
     return (
@@ -79,7 +84,8 @@ const Product = (props) => {
 }
 
 const mapStateToProps = state => ({
-
+    birthday: state.products.birthdayProducts,
+    birthProducts: state.products.birthProducts,
 })
 
 const mapDispatchToProps = {
