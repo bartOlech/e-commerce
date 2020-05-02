@@ -40,18 +40,22 @@ const Button = styled.div`
 const BuyButton = (props) => {
     // const [counter, setCounter] = useState(true)
     const Router = useRouter();
+    const{ day, month, year, id, name, image, price, initialPrice, size} = props;
 
     const addToBasket = () => {
+        const date = `${day.length == 1 ? `0${day}` : day}.${month.length == 1 ? `0${month}` : month}.${year}`;
+
         let obj = {
-            id: props.id,
-            name: props.name,
-            image: props.image,
-            price: props.price,
-            initialPrice: props.price,
-            size: props.size,
+            id,
+            name,
+            image,
+            price,
+            initialPrice: price,
+            size,
             color: [props.color],
             quantity: 1,
-            additionalData: []
+            additionalData: [],
+            date: [date]
         };
         // validate a client name field
        if(props.clientNameIsRequired) {
@@ -92,6 +96,8 @@ const BuyButton = (props) => {
                             arr[index].price = +arr[index].initialPrice + +arr[index].price
                             // add color
                             arr[index].color.push(props.color)
+                            // add date
+                            arr[index].date.push(date)
                             props.setQuantity(arr)
                             ar.push('arrayIncludeSize')
                         } else {
