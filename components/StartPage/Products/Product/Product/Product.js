@@ -23,8 +23,6 @@ const Product = (props) => {
             pathname: '/product',
             query: { 
                 id,
-                clientDateIsRequired: props.clientDateIsRequired,
-                clientNameIsRequired: props.clientNameIsRequired,
                 type: props.type
              },
         })

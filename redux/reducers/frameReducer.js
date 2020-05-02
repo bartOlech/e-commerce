@@ -11,7 +11,9 @@ const initialState = {
     color: '',
     initialPrice: '',
     frameColorsArr: [],
-    frameColor: ''
+    frameColor: '',
+    clientDateIsRequired: false,
+    clientNameIsRequired: false
 }
 
 const frameReducer = (state = initialState, action) => {
@@ -29,7 +31,9 @@ const frameReducer = (state = initialState, action) => {
                 color: action.payload.color,
                 initialPrice: action.payload.initialPrice,
                 frameColors: action.payload.color,
-                frameColorsArr: action.payload.frameColorsArr
+                frameColorsArr: action.payload.frameColorsArr,
+                clientDateIsRequired: action.payload.clientDateIsRequired,
+                clientNameIsRequired: action.payload.clientNameIsRequired
             }
         case constants.SET_FRAME_COLOR: 
             return {

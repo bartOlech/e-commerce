@@ -53,7 +53,7 @@ const BuyButton = (props) => {
             additionalData: []
         };
         // validate a client name field
-       if(Router.query.clientDateIsRequired) {
+       if(props.clientNameIsRequired) {
         if(props.clientName) {
             props.setNameFieldAlert(true)
         } else {
@@ -62,7 +62,7 @@ const BuyButton = (props) => {
         }
        }
        // validate date field
-       if(Router.query.clientDateIsRequired) {
+       if(props.clientDateIsRequired) {
         if(props.day) {
             props.setDateAlert(true)
         } else {
@@ -127,7 +127,9 @@ const mapStateToProps = state => ({
     month: state.date.month,
     year: state.date.year,
     product: state.product.products,
-    clientName: state.clientName.clientName
+    clientName: state.clientName.clientName,
+    clientDateIsRequired: state.frameData.clientDateIsRequired,
+    clientNameIsRequired: state.frameData.clientNameIsRequired
 })
 const mapDispatchToProps = {
     setBasket,

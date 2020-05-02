@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import TittleText from './TittleText'
 import SelectDate from './SelectDate/SelectDate';
 import SetName from './SetName/SetName';
+import { connect } from 'react-redux'
 
 const Container = styled.div`
     display: flex;
@@ -13,11 +14,15 @@ const ModifyProduct = (props) => {
     return (
         <Container>
             <TittleText text={'Dostosuj swoje zamówienie'}></TittleText>
-
-            <SetName nameIsFill={props.nameIsFill}></SetName>
-            <SelectDate dateIsSelected={props.dateIsSelected}></SelectDate>
+            {props.clientNameIsRequired && <SetName nameIsFill={props.nameIsFill}></SetName>}
+            {props.clientDateIsRequired && <SelectDate dateIsSelected={props.dateIsSelected}></SelectDate>}
         </Container>
     )
 }
 
-export default ModifyProduct;
+const mapStateToProps = state => ({
+    clientDateIsRequired: state.frameData.clientDateIsRequired,
+    clientNameIsRequired: state.frameData.clientNameIsRequired
+})
+
+export default connect(mapStateToProps)(ModifyProduct);

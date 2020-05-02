@@ -22,8 +22,6 @@ const ProductContainer = (props) => {
                 return (
                     <Product 
                         margin='10px 10px 30px 10px' 
-                        clientDateIsRequired={val.clientDateIsRequired} 
-                        clientNameIsRequired={val.clientNameIsRequired} 
                         id={val.id} 
                         hoverImage={val.hoverImage} 
                         key={index} 

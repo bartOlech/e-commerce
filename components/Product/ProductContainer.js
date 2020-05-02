@@ -56,12 +56,14 @@ const Product = (props) => {
                          size,
                          priceWithSize,
                          price,
+                         clientDateIsRequired,
+                         clientNameIsRequired
                      } = el;
      
                      const frameColorsArr = el.frameColors;
                      const frameColors = el.frameColors[0];
      
-                     props.setFrameDetails(id, name, image, images, description, shipment, additionalData, color, price, frameColors, frameColorsArr);
+                     props.setFrameDetails(id, name, image, images, description, shipment, additionalData, color, price, frameColors, frameColorsArr, clientDateIsRequired, clientNameIsRequired);
                      setSizeWithPrice(priceWithSize);
                      setInitialPrice(price)
                      props.setPrice(price)
