@@ -17,10 +17,6 @@ const StaticText = styled.div`
     color: #3B475A;
     font-size: 1.1em;
 `
-const AmountOfOrders = styled.div`
-    font-family: ${FontStyle.family};
-    color: #A8A8A8;
-`
 const Price = styled.div`
     font-family: ${FontStyle.family};
     color: #3B475A;
@@ -32,7 +28,6 @@ const OrderCost = (props) => {
         <Container>
             <Text>
                 <StaticText>Koszt zamówienia</StaticText>
-                <AmountOfOrders>{props.ordersAmount} </AmountOfOrders>
             </Text>
             <Price>{props.orderPrice} zł</Price>
         </Container>

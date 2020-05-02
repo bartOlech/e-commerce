@@ -45,7 +45,6 @@ const OrderForm = (props) => {
             ></Form>
             <SummaryOrder orderPrice={router.query.price}></SummaryOrder>
             <PayButton checkValidation={checkValidation}></PayButton>
-            {console.log(props.product)}
         </Container>
     )
 }

@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Tittle from './Tittle';
 import OrderCost from './OrderCost';
 import DeliveryCost from './DeliveryCost';
 import TotalCost from './TotalCost';
 import Name from './Name';
+import { connect } from 'react-redux'
 
 const Container = styled.div`
     margin: 20px 10px 20px 10px;
@@ -18,16 +19,31 @@ const HorizontalLine = styled.div`
 `
 
 const SummaryOrder = (props) => {
+
+    let productCounter = 0;
+    let productPrice = 0;
+
     return (
         <Container data-testid='summary-order-container'>
             <Tittle></Tittle>
-            <Name></Name>
-            <OrderCost ordersAmount={`(1 produkt)`} orderPrice={props.orderPrice}></OrderCost>
+            {props.product.map((el, index) => {
+                productCounter++
+                productPrice += +el.price;
+
+                return (
+                    <Name quantity={el.quantity} date={el.date} image={el.image} name={el.name} size={el.size} key={index}></Name>
+                )
+            })}
+            <OrderCost orderPrice={productPrice}></OrderCost>
             <DeliveryCost deliveryPrice='12 zł'></DeliveryCost>
             <HorizontalLine></HorizontalLine>
-            <TotalCost orderPrice={props.orderPrice}></TotalCost>
+            <TotalCost orderPrice={productPrice}></TotalCost>
         </Container>
     )
 }
 
-export default SummaryOrder;
+const mapStateToProps = state => ({
+    product: state.product.products
+})
+
+export default connect(mapStateToProps)(SummaryOrder);

@@ -55,9 +55,9 @@ const FooterButtons = (props) => {
                 // image: props.image,
                 // size: props.size,
                 price: props.price,
-                day: props.day,
-                month: props.month,
-                year: props.year,
+                // day: props.day,
+                // month: props.month,
+                // year: props.year,
                 // clientName: props.clientName,
                 // date: date,
                 product: props.product
