@@ -45,7 +45,7 @@ const Product = (props) => {
              Object.values(json).map(el => {
                  if(id == el.productId) {
                      const { 
-                         id,
+                         productId,
                          name,
                          image,
                          images,
@@ -63,7 +63,7 @@ const Product = (props) => {
                      const frameColorsArr = el.frameColors;
                      const frameColors = el.frameColors[0];
      
-                     props.setFrameDetails(id, name, image, images, description, shipment, additionalData, color, price, frameColors, frameColorsArr, clientDateIsRequired, clientNameIsRequired);
+                     props.setFrameDetails(productId, name, image, images, description, shipment, additionalData, color, price, frameColors, frameColorsArr, clientDateIsRequired, clientNameIsRequired);
                      setSizeWithPrice(priceWithSize);
                      setInitialPrice(price)
                      props.setPrice(price)
@@ -88,6 +88,7 @@ const Product = (props) => {
 const mapStateToProps = state => ({
     birthday: state.products.birthdayProducts,
     birthProducts: state.products.birthProducts,
+    frameColor: state.frameData.frameColor,
 })
 
 const mapDispatchToProps = {

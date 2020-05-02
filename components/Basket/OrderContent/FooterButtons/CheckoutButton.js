@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../../assets/style/style';
-import Router from 'next/router'
+import Router from 'next/router';
+import { connect } from 'react-redux';
 
 const Ico = styled.div`
     width: 20px;
@@ -40,23 +41,28 @@ const Text = styled.div`
     left: 25px;
 `
 
-const FooterButtons = () => {
+const FooterButtons = (props) => {
 
     const payButton = () => {
-        // Router.push({
-        //     pathname: '/orderform',
-        //     query: { 
-        //         id: props.id,
-        //         name: props.name,
-        //         color: props.color,
-        //         image: props.image,
-        //         size: props.size,
-        //         price: props.price,
-        //         day: props.day,
-        //         month: props.month,
-        //         year: props.year
-        //      },
-        // })
+        const date = props.day + props.month + props.year;
+
+        Router.push({
+            pathname: '/orderform',
+            query: { 
+                // id: props.id,
+                name: props.name,
+                // color: props.frameColor,
+                // image: props.image,
+                // size: props.size,
+                price: props.price,
+                day: props.day,
+                month: props.month,
+                year: props.year,
+                // clientName: props.clientName,
+                // date: date,
+                product: props.product
+             },
+        })
     }
 
     return (
@@ -67,4 +73,19 @@ const FooterButtons = () => {
     )
 }
 
-export default FooterButtons;
+const mapStateToProps = state => ({
+    id: state.frameData.id,
+    name: state.frameData.name,
+    image: state.frameData.image,
+    frameColor: state.frameData.color,
+    size: state.size.size,
+    clientName: state.clientName.clientName,
+    day: state.date.day,
+    month: state.date.month,
+    year: state.date.year,
+    price: state.price.price,
+    product: state.product.products
+
+})
+
+export default connect(mapStateToProps)(FooterButtons);

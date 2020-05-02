@@ -11,7 +11,7 @@ import {useRouter} from 'next/router';
 const Container = styled.div`
     display: flex;
     justify-content: center;
-    margin-top: -5px;
+    margin-top: 35px;
     margin-bottom: 40px;
 `
 
@@ -49,6 +49,7 @@ const BuyButton = (props) => {
             price: props.price,
             initialPrice: props.price,
             size: props.size,
+            color: [props.color],
             quantity: 1,
             additionalData: []
         };
@@ -89,6 +90,8 @@ const BuyButton = (props) => {
                         if(el.size === props.size) {
                             arr[index].quantity += 1
                             arr[index].price = +arr[index].initialPrice + +arr[index].price
+                            // add color
+                            arr[index].color.push(props.color)
                             props.setQuantity(arr)
                             ar.push('arrayIncludeSize')
                         } else {
@@ -134,7 +137,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = {
     setBasket,
     setAddProduct,
-    setQuantity
+    setQuantity,
 }
 
 

@@ -9,7 +9,6 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     margin-left: 14px;
-    margin-bottom: 30px;
 `
 
 const SelectDate = (props) => {

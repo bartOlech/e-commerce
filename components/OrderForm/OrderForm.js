@@ -45,6 +45,7 @@ const OrderForm = (props) => {
             ></Form>
             <SummaryOrder orderPrice={router.query.price}></SummaryOrder>
             <PayButton checkValidation={checkValidation}></PayButton>
+            {console.log(props.product)}
         </Container>
     )
 }
@@ -56,7 +57,8 @@ const mapStateToProps = state => ({
     cityValidation: state.validation.city,
     emailValidation: state.validation.email,
     nameValidation: state.validation.name,
-    regulationsValidation: state.validation.regulations
+    regulationsValidation: state.validation.regulations,
+    product: state.product.products
 })
 
 export default connect(mapStateToProps)(OrderForm);
