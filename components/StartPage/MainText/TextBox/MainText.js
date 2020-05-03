@@ -7,6 +7,7 @@ const Container = styled.div`
    font-size: 1.2em;
    font-weight: 300;
    color: #BCBCBC;
+   max-width: 600px; 
 `
 
 const MainText = () => {

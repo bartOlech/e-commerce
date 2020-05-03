@@ -9,6 +9,9 @@ const Container = styled.div`
     color: #202020;
     margin-bottom: -10px;
     position: relative;
+    @media (min-width: 400px) {
+        margin-left: 20px;
+    }
     /* &&:after {
         content: '';
         width: 80px; 
