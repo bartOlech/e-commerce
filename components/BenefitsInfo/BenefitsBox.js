@@ -8,6 +8,9 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     margin: 20px 20px 20px 20px;
+    @media(min-width: 1000px) {
+        margin: 20px 50px 20px 50px;
+    }
 `
 
 const BenefitsBox = (props) => {

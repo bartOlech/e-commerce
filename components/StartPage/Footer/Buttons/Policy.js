@@ -11,15 +11,15 @@ const Container = styled.div`
     cursor: pointer;
 `
 const Ico = styled.div`
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     background-image: url('../../../../static/arrow.svg');
     background-repeat: no-repeat;
-    background-size: 20px 20px;
+    background-size: 15px 15px;
 `
 const Text = styled.div`
     font-family: ${FontStyle.family};
-    font-size: 1.3em;
+    font-size: 1.1em;
     color: #5F5F5F;
     margin-top: -2px;
     font-weight: 300;
