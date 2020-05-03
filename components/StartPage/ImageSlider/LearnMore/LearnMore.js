@@ -17,6 +17,11 @@ const Container = styled.div`
     margin-right: auto;
     display: flex;
     flex-direction: column;
+    border: 1px solid rgba(222, 224, 227, .1);
+    @media (min-width: 1000px) {
+        max-width: 750px;
+        height: 230px;
+    }
 `
 
 const LearnMore = () => {

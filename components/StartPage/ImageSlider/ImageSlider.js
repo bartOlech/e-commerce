@@ -9,20 +9,21 @@ const Container = styled.div`
     position: relative;
     width: 100%;
     height: auto;
-    max-width: 1000px;
+    /* max-width: 1000px; */
     margin-bottom: 100px;
 `
 const SliderBox = styled.div`
     width: 100%;
-    height: auto;
+    /* height: auto; */
     position: relative;
     margin: auto;
 `
 const SlideOne = styled.img`
     width: 100%;
-    height: auto;
+    /* height: auto; */
+
     background-repeat: no-repeat;
-    background-size: 100% 250px;
+    /* background-size: cover; */
     display: ${props => props.display};
     animation: 1s ${fadeInAnimation};
 `
@@ -66,6 +67,22 @@ const Dot = styled.li`
         background-color: #717171;
     }
 `
+const SliderPhone = styled.div`
+    @media (max-width: 1000px) {
+        display: inline
+    }
+    @media (min-width: 1000px) {
+        display: none
+    }
+`
+const SliderDesktop = styled.div`
+    @media (max-width: 1000px) {
+        display: none
+    }
+    @media (min-width: 1000px) {
+        display: inline
+    }
+`
 
 const ImageSlider = () => {
     const [counter, setCounter] = useState(0);
@@ -84,11 +101,22 @@ const ImageSlider = () => {
 
     return (
         <Container>
-            <SliderBox>
-                <SlideOne src='../../../static/slideOne.jpg' data-testid='slide' display={counter === 0 ? 'flex' : 'none'}></SlideOne>
-                <SlideTwo src='../../../static/slideTwo.jpg' display={counter === 1 ? 'flex' : 'none'}></SlideTwo>
-                <SlideThree src='../../../static/slideThree.jpg' display={counter === 2 || counter === 3 ? 'flex' : 'none'}></SlideThree>
-            </SliderBox>
+            {/* Phone */}
+            <SliderPhone>
+                <SliderBox>
+                    <SlideOne src='../../../static/PhoneSlider/slideOne.jpg' data-testid='slide' display={counter === 0 ? 'flex' : 'none'}></SlideOne>
+                    <SlideTwo src='../../../static/slideTwo.jpg' display={counter === 1 ? 'flex' : 'none'}></SlideTwo>
+                    <SlideThree src='../../../static/slideThree.jpg' display={counter === 2 || counter === 3 ? 'flex' : 'none'}></SlideThree>
+                </SliderBox>
+            </SliderPhone>
+            {/* Desktop */}
+            <SliderDesktop>
+                <SliderBox>
+                    <SlideOne src='../../../static/DesktopSlider/slideOne.png' data-testid='slide' display={counter === 0 ? 'flex' : 'none'}></SlideOne>
+                    <SlideTwo src='../../../static/slideTwo.jpg' display={counter === 1 ? 'flex' : 'none'}></SlideTwo>
+                    <SlideThree src='../../../static/slideThree.jpg' display={counter === 2 || counter === 3 ? 'flex' : 'none'}></SlideThree>
+                </SliderBox>
+            </SliderDesktop>
             <Dots data-testid='dots'>
                 <Dot background={counter === 0 ? '#717171' : '#bbb'}></Dot>
                 <Dot background={counter === 1 ? '#717171' : '#bbb'}></Dot>

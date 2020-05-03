@@ -31,6 +31,10 @@ const Button = styled.div`
         color: #000;
         border: 1px solid #000;
     }
+    @media (min-width: 1000px) {
+        width: 250px;
+        height: 50px;
+    }
 `
 
 const LearnMoreBtn = () => {

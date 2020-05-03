@@ -11,6 +11,10 @@ const Container = styled.div`
     position: relative;
     margin-top: 50px;
     margin-bottom: 50px;
+    @media (min-width: 1000px) {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
 `
 const Img = styled.img`
     width: 100%;
