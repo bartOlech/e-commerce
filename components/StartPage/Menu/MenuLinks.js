@@ -14,7 +14,7 @@ const Container = styled.div`
    align-items: center;
    @media (min-width: 1000px) {
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: center;
         height: 290px;
     }
 `
