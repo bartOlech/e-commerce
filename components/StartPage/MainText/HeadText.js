@@ -12,6 +12,9 @@ const Container = styled.div`
     @media (min-width: 400px) {
         margin-left: 20px;
     }
+    @media (max-width: 1000px) {
+        margin-top: 20px;
+    }
     /* &&:after {
         content: '';
         width: 80px; 
