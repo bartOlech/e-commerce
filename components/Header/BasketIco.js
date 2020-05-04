@@ -10,6 +10,7 @@ const Conatiner = styled.div`
     position: relative;
     padding-right: 20px;
     cursor: pointer;
+    margin-right: 180px;
 `
 const Ico = styled.div`
     width: 25px;

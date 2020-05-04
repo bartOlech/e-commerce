@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import Logo from './Logo';
 import BasketIco from './BasketIco';
+import HeaderMenu from './HeaderMenu/HeaderMenu';
+import CheckoutButton from './CheckoutButton';
 
 const Conatiner = styled.div`
     width: 100%;
@@ -11,13 +13,16 @@ const Conatiner = styled.div`
     justify-content: space-between;
     padding-top: 17px;
     box-sizing: border-box;
+    position: relative;
 `
 
 const Header = () => {
     return (
         <Conatiner>
             <Logo></Logo>
+            <HeaderMenu></HeaderMenu>
             <BasketIco></BasketIco>
+            <CheckoutButton></CheckoutButton>
         </Conatiner>
     )
 }
