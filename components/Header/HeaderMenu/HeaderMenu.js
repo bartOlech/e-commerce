@@ -7,6 +7,9 @@ const List = styled.div`
     position: absolute;
     left: 170px;
     top: 21px;
+    @media (max-width: 500px) {
+        display: none;
+    }
 `
 const Li = styled.div`
     font-family: ${FontStyle.family};

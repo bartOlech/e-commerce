@@ -11,6 +11,9 @@ const Conatiner = styled.div`
     padding-right: 20px;
     cursor: pointer;
     margin-right: 180px;
+    @media (max-width: 800px) {
+        margin-right: 10px;
+    }
 `
 const Ico = styled.div`
     width: 25px;

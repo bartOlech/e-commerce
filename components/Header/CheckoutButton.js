@@ -21,10 +21,14 @@ const Button = styled.button`
     outline: none;
     transition: .3s;
     border: 1px solid #000;
+    display: none;
     &&:hover {
         border: 1px solid ${FontStyle.color};
         color: #000;
         background-color: #fff;
+    }
+    @media (min-width: 800px) {
+        display: inline
     }
 `
 
