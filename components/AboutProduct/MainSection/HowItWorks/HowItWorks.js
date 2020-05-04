@@ -9,6 +9,9 @@ const Container = styled.div`
     height: 100%;
     margin-top: 10px;
     margin-bottom: 30px;
+    @media (min-width: 1000px) {
+        margin-top: 650px;
+    }
 `
 
 const HowItWorks = () => {

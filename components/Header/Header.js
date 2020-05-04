@@ -8,7 +8,7 @@ import CheckoutButton from './CheckoutButton';
 const Conatiner = styled.div`
     width: 100%;
     height: 65px;
-    background-color: #F7F7F7;
+    background-color: #fff;
     display: flex;
     justify-content: space-between;
     padding-top: 17px;
@@ -20,7 +20,7 @@ const Header = () => {
     return (
         <Conatiner>
             <Logo></Logo>
-            <HeaderMenu></HeaderMenu>
+            <HeaderMenu top='21px' left='170px'></HeaderMenu>
             <BasketIco></BasketIco>
             <CheckoutButton></CheckoutButton>
         </Conatiner>

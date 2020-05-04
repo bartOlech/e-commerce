@@ -5,8 +5,8 @@ import { FontStyle } from '../../../assets/style/style';
 const List = styled.div`
     display: flex;
     position: absolute;
-    left: 170px;
-    top: 21px;
+    left: ${props => props.left};
+    top: ${props => props.top};
     @media (max-width: 500px) {
         display: none;
     }
@@ -24,9 +24,9 @@ const Li = styled.div`
     }
 `
 
-const HeaderMenu = () => {
+const HeaderMenu = (props) => {
     return (
-        <List>
+        <List top={props.top} left={props.left}>
             <Li>SKLEP</Li>
             <Li>O NAS</Li>
             <Li>PROMOCJE</Li>
