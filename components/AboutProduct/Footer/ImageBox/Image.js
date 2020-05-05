@@ -11,10 +11,22 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
 `
-const Img = styled.img`
+const PhoneImg = styled.img`
     width: 100%;
     height: auto;
-    filter: grayscale(50%) brightness(50%);
+    filter: grayscale(40%) brightness(60%);
+    @media (min-width: 1000px) {
+        display: none;
+    }
+`
+const DesktopImg = styled.img`
+    width: 100%;
+    height: auto;
+    filter: grayscale(40%) brightness(60%);
+    display: none;
+    @media (min-width: 1000px) {
+        display: inline;
+    }
 `
 const Text = styled.div`
     font-family: ${FontStyle.family};
@@ -27,9 +39,13 @@ const Text = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    @media (min-width: 700px) {
+        font-size: 3em;
+        top: 63%;
+    }
 `
 const Button = styled.button`
-    width: 210px;
+    width: 220px;
     height: 45px;
     border: none;
     background-color: #fff;
@@ -47,16 +63,21 @@ const Button = styled.button`
     cursor: pointer;
     outline: none;
     transition: .6s;
-    &&:hover {
-        background-color: #272727;
-        color: #fff;
+    @media (min-width: 700px) {
+        width: 300px;
+        height: 55px;
+        font-size: 1.4em;
     }
+    /* &&:hover {
+        border: 1px solid ${FontStyle.color};
+    } */
 `
 
 const Image = () => {
     return (
         <Container>
-            <Img src='../../../../static/slideThree.jpg'></Img>
+            <PhoneImg src='../../../../static/AboutPhoto/footer-image.jpg'></PhoneImg>
+            <DesktopImg src='../../../../static/AboutPhoto/fotter-image-desktop.png'></DesktopImg>
             <Text>Skomponuj swoją kartkę</Text>
             <Button onClick={() => Router.push('/')}>Przejdź do sklepu</Button>
         </Container>

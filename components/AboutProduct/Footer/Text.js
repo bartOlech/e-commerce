@@ -8,13 +8,18 @@ const Container = styled.div`
     font-weight: 300;
     color: #202020;
     text-align: center;
-    margin: 30px 0 45px 0;
+    margin: 30px 0 60px 0;
+    font-style: italic;
+    letter-spacing: .3px;
+    @media (min-width: 1000px) {
+        font-size: 2.5em;
+    }
 `
 
 const Text = () => {
     return (
         <Container>
-            Najpiękniejsze prezenty to te najprostsze
+            &rdquo;Najpiękniejsze prezenty to te najprostsze&bdquo;
         </Container>
     )
 }
