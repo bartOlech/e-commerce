@@ -13,28 +13,39 @@ const Container = styled.div`
         margin-top: 650px;
     }
 `
+const StepsBox = styled.div`
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 1000px) {
+        flex-direction: row;
+        justify-content: center;
+    }
+`
 
 const HowItWorks = () => {
     return (
         <Container>
             <Tittle></Tittle>
-            <Box
-                image='../../../../static/3Steps/frame.svg'
-                mainText='Wybierz ramkę'
-                extraText='W naszym sklepie jest dostępne ponad 10 rodzai obramowań oraz rozmiarów'
-            ></Box>
-            <VerticalLine></VerticalLine>
-            <Box
-                image='../../../../static/3Steps/calendar.svg'
-                mainText='Dopasuj datę'
-                extraText='W łatwy sposób wybierz datę, która ma być na kartce z kalendarza'
-            ></Box>
-            <VerticalLine></VerticalLine>
-            <Box
-                image='../../../../static/3Steps/buy.svg'
-                mainText='Zamów'
-                extraText='Zamów wybrany produkt bez konieczności zakładania konta'
-            ></Box>
+            <StepsBox>
+                <Box
+                    image='../../../../static/3Steps/frame.svg'
+                    mainText='Wybierz ramkę'
+                    extraText='W naszym sklepie jest dostępne ponad 10 rodzai obramowań oraz rozmiarów'
+                ></Box>
+                <VerticalLine></VerticalLine>
+                <Box
+                    image='../../../../static/3Steps/calendar.svg'
+                    mainText='Dopasuj datę'
+                    extraText='W łatwy sposób wybierz datę, która ma być na kartce z kalendarza'
+                ></Box>
+                <VerticalLine></VerticalLine>
+                <Box
+                    image='../../../../static/3Steps/buy.svg'
+                    mainText='Zamów'
+                    extraText='Zamów wybrany produkt bez konieczności zakładania konta'
+                ></Box>
+            </StepsBox>
+          
         </Container>
     )
 }

@@ -8,6 +8,9 @@ const Container = styled.div`
     margin: 0 auto;
     margin-top: 10px;
     margin-bottom: 10px;
+    @media (min-width: 1000px) {
+        display: none;
+    }
 `
 
 const VerticalLine = () => {

@@ -13,17 +13,25 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     position: relative;
+    @media (min-width: 1000px) {
+        /* display: none; */
+    }
+`
+const BoxContainer = styled.div`
+    display: flex;
+    justify-content: center;
+
 `
 
 const Box = (props) => {
     return (
-        <div  style={{display: 'flex', justifyContent: 'center'}}>
+        <BoxContainer>
             <Container>
                 <Ico image={props.image}></Ico>
                 <MainText mainText={props.mainText}></MainText>
                 <ExtraText extraText={props.extraText}></ExtraText>
             </Container>
-        </div>
+        </BoxContainer>
     )
 }
 
