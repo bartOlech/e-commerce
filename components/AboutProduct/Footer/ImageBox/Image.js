@@ -68,9 +68,6 @@ const Button = styled.button`
         height: 55px;
         font-size: 1.4em;
     }
-    /* &&:hover {
-        border: 1px solid ${FontStyle.color};
-    } */
 `
 
 const Image = () => {

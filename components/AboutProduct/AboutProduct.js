@@ -5,6 +5,8 @@ import Header from '../Header/Header';
 import MainSection from './MainSection/MainSection';
 import HowItWorks from './MainSection/HowItWorks/HowItWorks';
 import Footer from './Footer/Footer';
+import Basket from '../Basket/Basket';
+import BlurScreen from '../BlurScreen/BlurScreen';
 
 const Container = styled.div`
     width: 100%;
@@ -26,6 +28,8 @@ const HorizontalLine = styled.div`
 const AboutProduct = () => {
     return (
         <Container>
+            <BlurScreen></BlurScreen>
+            <Basket></Basket>
             <Header></Header>
             <MainSection></MainSection>
             <HorizontalLine></HorizontalLine>

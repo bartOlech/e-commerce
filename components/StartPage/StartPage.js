@@ -10,6 +10,7 @@ import Basket from '../Basket/Basket';
 import MenuLinks from './Menu/MenuLinks';
 import BenefitsInfo from '../BenefitsInfo/BenefitsInfo';
 import GoToShop from './Button/GoToShop';
+import BlurScreen from '../BlurScreen/BlurScreen';
 // redux
 import { connect } from 'react-redux';
 import { getBirthday } from '../../redux/actions/GetFromDatabase/getBirthday';
@@ -44,6 +45,7 @@ const StartPage = (props) => {
 
     return (
         <Container>
+            <BlurScreen></BlurScreen>
             <Basket></Basket>
             <Header></Header>
             <ImageSlider></ImageSlider>
@@ -63,5 +65,6 @@ const mapDispatchToProps = {
     getBirthday,
     getBirth
 }
+
 
 export default connect(null, mapDispatchToProps)(StartPage);

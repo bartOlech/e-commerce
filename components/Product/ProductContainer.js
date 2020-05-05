@@ -12,6 +12,7 @@ import { setPrice } from '../../redux/actions/setPriceAction';
 import { setSize } from '../../redux/actions/setSizeActions';
 import {useRouter, withRouter} from 'next/router';
 import ModifyProduct from './ModifyProduct/ModifyProduct';
+import BlurScreen from '../BlurScreen/BlurScreen';
 
 const Container = styled.div`
     width: 100%;
@@ -75,6 +76,7 @@ const Product = (props) => {
 
     return (
         <Container>
+            <BlurScreen></BlurScreen>
             <Basket></Basket>
             <Header background='rgba(233, 232, 235, .5)'></Header>
             <AttributeSection initialPrice={initialPrice} sizeWithPrice={sizeWithPrice}></AttributeSection>

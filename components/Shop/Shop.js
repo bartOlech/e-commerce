@@ -10,6 +10,8 @@ import WeddingShop from './Products/WeddingShop/WeddingShop';
 import Menu from './Menu/Menu';
 import { connect } from 'react-redux';
 import { getBirthday } from '../../redux/actions/GetFromDatabase/getBirthday';
+import Basket from '../Basket/Basket';
+import BlurScreen from '../BlurScreen/BlurScreen';
 
 const Container = styled.div`
    
@@ -25,6 +27,8 @@ const HorizontalLine = styled.div`
 const Shop = (props) => {
     return (
         <Container>
+            <BlurScreen></BlurScreen>
+            <Basket></Basket>
             <Header background='#fff'></Header>
             <Menu></Menu>
             {props.category === 'birthday' ? <BirthdayShop birthday={props.birthday}></BirthdayShop> : null}
