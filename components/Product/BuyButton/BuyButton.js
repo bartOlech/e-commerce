@@ -18,7 +18,7 @@ const Container = styled.div`
     }
 `
 
-const Button = styled.div`
+const Button = styled.button`
     box-sizing: border-box;
     width: 300px;
     height: 60px;
@@ -29,14 +29,20 @@ const Button = styled.div`
     background-color: #1C1C1C;
     font-weight: 300;
     text-align: center;
-    padding-top: 13px;
     cursor: pointer;
     transition: .5s;
     border: 1px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     &&:hover {
         background-color: #fff;
         border: 1px solid #1C1C1C;
         color: #1C1C1C;
+    }
+    @media(min-width: 1000px) {
+        width: 250px;
+        height: 50px;
     }
 `
 

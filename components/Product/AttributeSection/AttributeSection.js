@@ -17,6 +17,9 @@ const Container = styled.div`
     position: relative;
     /* box-shadow: 0 2px 12px -8px rgba(59, 71, 90, .2); */
     box-shadow: 0 3px 5px rgb(245, 243, 243, .7);
+    @media (min-width: 1000px) {
+        box-shadow: none;
+    }
 `
 const Details = styled.div`
     width: 100%;
@@ -57,6 +60,19 @@ const HeartIco = styled.div`
         position: absolute;
         top: 17px;
         left: 17px;
+    }
+    @media (min-width: 1000px) {
+        content: '';
+        width: 28px;
+        height: 28px;
+        background-image: url('../../../static/heart.svg');
+        background-repeat: no-repeat;
+        background-size: 28px 28px;
+        position: absolute;
+        top: 17px;
+        left: 17px;
+        display: none;
+    }
     }
 ;
 

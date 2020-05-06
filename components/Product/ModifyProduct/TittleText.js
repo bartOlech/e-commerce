@@ -4,11 +4,12 @@ import { FontStyle } from '../../../assets/style/style';
 
 const Container = styled.div`
     font-family: ${FontStyle.family};
-    font-size: 1.3em;
     color: #3B475A;
-    font-weight: 400;
+    font-size: 1.3em;
+    font-weight: 300;
     margin-left: 15px;
     margin-bottom: 15px;
+    margin-top: 5px;
 `
 
 const TittleText = (props) => {

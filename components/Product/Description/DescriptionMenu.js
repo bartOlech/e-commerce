@@ -5,10 +5,13 @@ import { FontStyle } from '../../../assets/style/style';
 const Container = styled.div`
     margin-bottom: 10px;
     width: 99%;
-    max-width: 500px;
+    max-width: 700px;
     display: flex;
     margin-top: -15px;
     position: relative;
+    @media (min-width: 1000px) {
+        margin-bottom: 20px;
+    }
 `
 const Tittle = styled.div`
     font-family: ${FontStyle.family};
@@ -29,7 +32,7 @@ const Tittle = styled.div`
 const Line = styled.div`
     width: 99%;
     height: 1px;
-    max-width: 500px;
+    max-width: 700px;
     background-color: #E4E7EB;
     position: absolute;
     bottom: 0;

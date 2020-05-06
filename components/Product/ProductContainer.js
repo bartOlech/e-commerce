@@ -13,6 +13,8 @@ import {useRouter, withRouter} from 'next/router';
 import ModifyProduct from './ModifyProduct/ModifyProduct';
 import BlurScreen from '../BlurScreen/BlurScreen';
 import Header from '../Header/Header';
+import Footer from './Footer/Footer';
+import Copyright from '../StartPage/Footer/Copyright/Copyright';
 
 const Container = styled.div`
     width: 100%;
@@ -46,6 +48,16 @@ const HorizontalLine = styled.div`
     height: 1px;
     margin-bottom: 15px;
     background: #E4E7EB;
+    @media(max-width: 1000px) {
+            display: none;
+        }
+`
+const HorizontalLineHeader = styled.div`
+    width: 100%;
+    height: 1px;
+    margin-bottom: 7px;
+    margin-top: 7px;
+    background: rgba(228, 231, 235, .5);
     @media(max-width: 1000px) {
             display: none;
         }
@@ -111,6 +123,7 @@ const Product = (props) => {
             <BlurScreen></BlurScreen>
             <Basket></Basket>
             <Header></Header>
+            <HorizontalLineHeader></HorizontalLineHeader>
             <ContentBox>
                 <AttributeSection initialPrice={initialPrice} sizeWithPrice={sizeWithPrice}></AttributeSection>
                 <BottomContent>
@@ -122,6 +135,8 @@ const Product = (props) => {
                     </Box>
                 </BottomContent>
             </ContentBox>
+            <Footer></Footer>
+            <Copyright></Copyright>
         </Container>
     )
 }
