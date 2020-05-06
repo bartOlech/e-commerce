@@ -9,6 +9,9 @@ const Container = styled.div`
     padding-top: 10px;
     margin-left: 10px;
     font-weight: 500;
+    @media (min-width: 1000px) {
+        display: none;
+    }
 `
 
 const AttributeName = (props) => {

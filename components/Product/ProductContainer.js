@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import Header from './Header/Header';
 import AttributeSection from './AttributeSection/AttributeSection';
 import Description from './Description/Description';
 import SelectDate from './ModifyProduct/SelectDate/SelectDate';
@@ -13,10 +12,43 @@ import { setSize } from '../../redux/actions/setSizeActions';
 import {useRouter, withRouter} from 'next/router';
 import ModifyProduct from './ModifyProduct/ModifyProduct';
 import BlurScreen from '../BlurScreen/BlurScreen';
+import Header from '../Header/Header';
 
 const Container = styled.div`
     width: 100%;
     height: 100%;
+`
+const ContentBox = styled.div`
+    display: flex;
+    flex-direction: column;
+    @media(min-width: 1000px) {
+        flex-direction: row;
+    }
+`
+const BottomContent = styled.div`
+    display: flex;
+    flex-direction: column; 
+    @media(min-width: 1000px) {
+        margin-left: 50px;
+
+    }
+`
+const Box = styled.div`
+    display: flex;
+    flex-direction: column;
+    @media(min-width: 1000px) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+`
+const HorizontalLine = styled.div`
+    width: 100%;
+    height: 1px;
+    margin-bottom: 15px;
+    background: #E4E7EB;
+    @media(max-width: 1000px) {
+            display: none;
+        }
 `
 
 const Product = (props) => {
@@ -78,11 +110,18 @@ const Product = (props) => {
         <Container>
             <BlurScreen></BlurScreen>
             <Basket></Basket>
-            <Header background='rgba(233, 232, 235, .5)'></Header>
-            <AttributeSection initialPrice={initialPrice} sizeWithPrice={sizeWithPrice}></AttributeSection>
-            <Description></Description>
-            <ModifyProduct nameIsFill={nameIsFill} dateIsSelected={dateIsSelected}></ModifyProduct>
-            <BuyButton setNameFieldAlert={setNameFieldAlert} setDateAlert={setDateAlert}></BuyButton>
+            <Header></Header>
+            <ContentBox>
+                <AttributeSection initialPrice={initialPrice} sizeWithPrice={sizeWithPrice}></AttributeSection>
+                <BottomContent>
+                    <Description></Description>
+                    <HorizontalLine></HorizontalLine>
+                    <Box>
+                        <ModifyProduct nameIsFill={nameIsFill} dateIsSelected={dateIsSelected}></ModifyProduct>
+                        <BuyButton setNameFieldAlert={setNameFieldAlert} setDateAlert={setDateAlert}></BuyButton>
+                    </Box>
+                </BottomContent>
+            </ContentBox>
         </Container>
     )
 }

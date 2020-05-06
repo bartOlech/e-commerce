@@ -10,6 +10,8 @@ import { FontStyle } from '../../../assets/style/style';
 import { connect } from 'react-redux'
 
 const Container = styled.div`
+    width: 100%;
+    max-width: 700px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -25,6 +27,18 @@ const Text = styled.div`
     font-size: 1.3em;
     font-weight: 300;
 `
+const DesktopName = styled.div`
+    font-family: ${FontStyle.family};
+    color: #3B475A;
+    font-size: 2em;
+    font-weight: 400;
+    margin-top: -7px;
+    margin-bottom: 35px;
+    display: none;
+    @media(min-width: 1000px) {
+        display: flex
+    }
+`
 
 const Description = (props) => {
     const [isClicked, setIsClicked] = useState('description')
@@ -35,25 +49,27 @@ const Description = (props) => {
 
     return (
         <Container data-testid='description'>
-                        <ProductData>
-                            <DescriptionMenu setText={setText} tittle='Opis'></DescriptionMenu>
-                            {isClicked === 'description' ? (
-                                <React.Fragment>
-                                    <DescriptionText description={props.description}></DescriptionText>
-                                    <Text tittle='Dodatkowe informacje'>Dodatkowe informacje</Text>
-                                    <AdditionalData additionalData={props.additionalData}></AdditionalData>
-                                    <ShipmentText shipment={props.shipment}></ShipmentText>
-                                </React.Fragment>
-                            ) : null}
-                          {isClicked === 'delivery' && <DeliveryText></DeliveryText>}
-                          {isClicked === 'refund' && <RefundText></RefundText>}
-                        </ProductData>
+            <ProductData>
+                <DesktopName>{props.name}</DesktopName>
+                <DescriptionMenu setText={setText} tittle='Opis'></DescriptionMenu>
+                {isClicked === 'description' ? (
+                    <React.Fragment>
+                        <DescriptionText description={props.description}></DescriptionText>
+                        <Text tittle='Dodatkowe informacje'>Dodatkowe informacje</Text>
+                        <AdditionalData additionalData={props.additionalData}></AdditionalData>
+                        <ShipmentText shipment={props.shipment}></ShipmentText>
+                    </React.Fragment>
+                ) : null}
+                {isClicked === 'delivery' && <DeliveryText></DeliveryText>}
+                {isClicked === 'refund' && <RefundText></RefundText>}
+            </ProductData>
         </Container>
     )
 }
 
 const mapStateToProps = state => ({
     description: state.frameData.description,
+    name: state.frameData.name,
     additionalData: state.frameData.additionalData,
     shipment: state.frameData.shipment
 })

@@ -13,6 +13,9 @@ const Container = styled.div`
     justify-content: center;
     margin-top: 35px;
     margin-bottom: 40px;
+    @media(min-width: 1000px) {
+        margin-top: 5px;
+    }
 `
 
 const Button = styled.div`
