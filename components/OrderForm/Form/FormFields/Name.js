@@ -35,6 +35,7 @@ const Input = styled.input`
     font-size: 1.1em;
     padding-left: 5px;
     border: ${props => props.border};
+    border-radius: 4px;
 `
 
 const Name = (props) => {
@@ -47,7 +48,7 @@ const Name = (props) => {
         <Container>
             <NameBox>
                 <Label htmlFor='name'>Imię i Nazwisko</Label>
-                <Input border={props.nameValidate ? 'none' : '1px solid #f5587b'} onChange={handleName} type='text' id='name'></Input>
+                <Input border={props.nameValidate ? '1px solid rgba(217, 217, 217, .5)' : '1px solid #f5587b'} onChange={handleName} type='text' id='name'></Input>
             </NameBox>
         </Container>
     )

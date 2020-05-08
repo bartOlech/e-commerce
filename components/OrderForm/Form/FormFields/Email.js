@@ -35,6 +35,7 @@ const Input = styled.input`
     font-size: 1.1em;
     padding-left: 5px;
     border: ${props => props.border};
+    border-radius: 4px;
 `
 
 const Email = (props) => {
@@ -47,7 +48,7 @@ const Email = (props) => {
         <Container>
             <EmailBox>
                 <Label htmlFor='email'>Email</Label>
-                <Input border={props.emailValidate ? 'none' : '1px solid #f5587b'} onChange={handleEmail} type='text' id='email'></Input>
+                <Input border={props.emailValidate ? '1px solid rgba(217, 217, 217, .5)' : '1px solid #f5587b'} onChange={handleEmail} type='text' id='email'></Input>
             </EmailBox>
         </Container>
     )

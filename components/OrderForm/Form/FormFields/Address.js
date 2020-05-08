@@ -11,6 +11,9 @@ const Container = styled.div`
     max-width: 450px;
     height: 80px;
     margin-top: 13px;
+    @media (min-width: 1000px) {
+        margin-top: 30px;
+    }
 `   
 const AddressBox = styled.div`
     width: 100%;
@@ -38,6 +41,7 @@ const Input = styled.input`
     color: #3B475A;
     font-size: 1.1em;
     padding-left: 5px;
+    border-radius: 4px;
 `
 const Street = styled.div`
     width: 70%;
@@ -67,11 +71,11 @@ const Address = (props) => {
             <AddressBox>
                 <Street>
                     <Label htmlFor='street'>Ulica</Label>
-                    <Input border={props.streetValidate ? 'none' : '1px solid #f5587b'} onChange={handleStreet} type='text' id='street'></Input>
+                    <Input border={props.streetValidate ? '1px solid rgba(217, 217, 217, .5)' : '1px solid #f5587b'} onChange={handleStreet} type='text' id='street'></Input>
                 </Street>
                 <Number>
                     <Label htmlFor='housenumber'>Numer</Label>
-                    <Input border={props.numberValidate ? 'none' : '1px solid #f5587b'} onChange={handleNumber} style={{ width: '84%'}} type='text' id='housenumber'></Input>
+                    <Input border={props.numberValidate ? '1px solid rgba(217, 217, 217, .5)' : '1px solid #f5587b'} onChange={handleNumber} style={{ width: '84%'}} type='text' id='housenumber'></Input>
                 </Number>
             </AddressBox>
         </Container>

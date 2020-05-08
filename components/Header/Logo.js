@@ -8,6 +8,7 @@ const Conatiner = styled.div`
     font-size: 1.7em;
     color: #3C3C3C;
     padding-left: 15px;
+    z-index: 2;
 `
 
 const Logo = () => {

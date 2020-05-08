@@ -7,7 +7,16 @@ import PayButton from './Form/PayButton';
 import { connect } from 'react-redux';
 
 const Container = styled.div`
-
+    background: red;
+    width: 100%;
+    @media (min-width: 1000px) {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #F5F6F8
+    }
 `
 
 const OrderForm = (props) => {
@@ -43,7 +52,7 @@ const OrderForm = (props) => {
                 nameValidate={nameValidate}
                 regulationsValidate={regulationsValidate}
             ></Form>
-            <SummaryOrder orderPrice={router.query.price}></SummaryOrder>
+            {/* <SummaryOrder orderPrice={router.query.price}></SummaryOrder> */}
             <PayButton checkValidation={checkValidation}></PayButton>
         </Container>
     )

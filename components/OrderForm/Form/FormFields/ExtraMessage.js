@@ -8,6 +8,9 @@ const Container = styled.div`
     width: 100%;
     height: 80px;
     margin-top: 20px;
+    @media (min-width: 1000px) {
+        margin-top: 30px;
+    }
 `   
 const ExtraMessageBox = styled.div`
     display: flex;
@@ -34,6 +37,11 @@ const Textarea = styled.textarea`
     color: #3B475A;
     font-size: 1.1em;
     padding-left: 5px;
+    border: 1px solid rgba(217, 217, 217, .5);
+    border-radius: 4px;
+    @media (min-width: 1000px) {
+        height: 147px;
+    }
 `
 
 const ExtraMessage = (props) => {
