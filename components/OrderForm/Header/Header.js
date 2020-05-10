@@ -20,6 +20,9 @@ const Container = styled.div`
         top: 0;
         background-color: #fff;
     }
+    @media (max-width: 1000px) {
+        display: none;
+    }
 `
 
 const Header = () => {

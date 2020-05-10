@@ -23,6 +23,9 @@ const DesktopBox = styled.div`
     margin-top: 80px;
     display: flex;
     justify-content: space-around;
+    @media (max-width: 1000px) {
+        display: none;
+    }
 `
 const DesktopTittle = styled.div`
     font-family: ${FontStyle.family};
@@ -89,7 +92,7 @@ const Form = (props) => {
                   
                 </LeftBox>
             </DesktopBox>
-            {/* <Tittle></Tittle>
+            <Tittle></Tittle>
             <Name nameValidate={props.nameValidate}></Name>
             <Address streetValidate={props.streetValidate} numberValidate={props.numberValidate}></Address>
             <City codeValidate={props.codeValidate} cityValidate={props.cityValidate}></City>
@@ -97,7 +100,7 @@ const Form = (props) => {
             <Email emailValidate={props.emailValidate}></Email>
             <Delivery deliveryData={StaticDeliveryData}></Delivery>
             <ExtraMessage></ExtraMessage>
-            <Regulations regulationsValidate={props.regulationsValidate}></Regulations> */}
+            <Regulations regulationsValidate={props.regulationsValidate}></Regulations>
         </FormBox>
     )
 }

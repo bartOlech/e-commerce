@@ -9,11 +9,11 @@ import { connect } from 'react-redux'
 
 const Container = styled.div`
     margin: 20px 10px 20px 10px;
-
+    max-width: 550px;
 `
 const HorizontalLine = styled.div`
     width: 100%;
-    max-width: 450px;
+    
     height: 1px;
     background-color: #AFAFAF;
 `

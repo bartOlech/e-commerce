@@ -3,10 +3,18 @@ import styled from 'styled-components';
 import Regulations from '../FormFields/Regulations';
 import SummaryOrder from '../SummaryOrder/SummaryOrder';
 import {useRouter} from 'next/router';
+import PayButton from '../PayButton'
 
 const Container = styled.div`
     width: 40%;
-    height: 100%;
+    height: 480px;
+    @media (max-width: 1000px) {
+        display: none;
+    }
+`
+const Box = styled.div`
+    width: 100%;
+    height: 330px;
     border: 1px solid #D9D9D9;
     border-radius: 5px;
     padding: 10px;
@@ -19,8 +27,11 @@ const LeftBox = (props) => {
 
     return (
         <Container>
-            <SummaryOrder orderPrice={router.query.price}></SummaryOrder>
+            <Box>
+                <SummaryOrder orderPrice={router.query.price}></SummaryOrder>
+            </Box>
             <Regulations regulationsValidate={props.regulationsValidate}></Regulations>
+            <PayButton></PayButton>
         </Container>
     )
 }

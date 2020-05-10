@@ -9,6 +9,9 @@ const Container = styled.div`
     width: 100%;
     height: 30px;
     margin-top: 20px;
+    @media (min-width: 1000px) {
+        /* width: 100px; */
+    }
 `   
 const Label = styled.label`
     font-family: ${FontStyle.family};

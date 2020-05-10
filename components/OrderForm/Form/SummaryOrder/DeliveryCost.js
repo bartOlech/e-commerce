@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 const Container = styled.div`
     width: 100%;
-    max-width: 450px;
+    max-width: 550px;
     display: flex;
     justify-content: space-between;
     margin-bottom: 6px;

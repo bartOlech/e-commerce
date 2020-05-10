@@ -5,7 +5,7 @@ import Resamble from './Recommend/Resamble/Resamble';
 
 const Container = styled.div`
     width: 100%;
-    margin-top: -10px;
+    margin-top: 60px;
 `
 const HorizontalLine = styled.div`
     width: 95%;
@@ -18,6 +18,7 @@ const HorizontalLine = styled.div`
 const Footer = () => {
     return (
         <Container>
+            <HorizontalLine></HorizontalLine>
             <AdditionalItems></AdditionalItems>
             <HorizontalLine></HorizontalLine>
             <Resamble></Resamble>

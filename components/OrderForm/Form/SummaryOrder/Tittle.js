@@ -9,6 +9,9 @@ const Text = styled.div`
     font-weight: 600;
     margin-bottom: 8px;
     margin-top: 30px;
+    @media (min-width: 1000px) {
+        margin-top: -3px;
+    }
 `
 
 const Tittle = () => {
