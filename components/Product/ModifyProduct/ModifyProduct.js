@@ -22,7 +22,13 @@ const ModifyProduct = (props) => {
 
 const mapStateToProps = state => ({
     clientDateIsRequired: state.frameData.clientDateIsRequired,
-    clientNameIsRequired: state.frameData.clientNameIsRequired
+    clientNameIsRequired: state.frameData.clientNameIsRequired,
+    clientWeightIsRequired: state.frameData.clientWeightIsRequired,
+    clientGrowthIsRequired: state.frameData.clientGrowthIsRequired,
+    clientPlaceIsRequired: state.frameData.clientPlaceIsRequired,
+    clientFatherNameIsRequired: state.frameData.clientFatherNameIsRequired,
+    clientMotherNameIsRequired: state.frameData.clientMotherNameIsRequired,
+
 })
 
 export default connect(mapStateToProps)(ModifyProduct);

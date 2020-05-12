@@ -1,6 +1,25 @@
 import * as constants from './constants';
 
-export const setFrameDetails = (id, name, image, images, description, shipment, additionalData, color, initialPrice, frameColors, frameColorsArr, clientDateIsRequired, clientNameIsRequired) => ({
+export const setFrameDetails = (
+    id, 
+    name, 
+    image, 
+    images, 
+    description, 
+    shipment, 
+    additionalData, 
+    color, 
+    initialPrice, 
+    frameColors, 
+    frameColorsArr, 
+    clientDateIsRequired, 
+    clientNameIsRequired,
+    clientWeightIsRequired,
+    clientGrowthIsRequired,
+    clientPlaceIsRequired,
+    clientFatherNameIsRequired,
+    clientMotherNameIsRequired
+    ) => ({
     type: constants.SET_FRAME_DETAILS,
     payload: {
         id,
@@ -15,6 +34,11 @@ export const setFrameDetails = (id, name, image, images, description, shipment, 
         frameColors,
         frameColorsArr,
         clientDateIsRequired,
-        clientNameIsRequired
+        clientNameIsRequired,
+        clientWeightIsRequired,
+        clientGrowthIsRequired,
+        clientPlaceIsRequired,
+        clientFatherNameIsRequired,
+        clientMotherNameIsRequired
     }
 })

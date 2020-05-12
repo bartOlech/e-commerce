@@ -4,7 +4,7 @@ const initialState = {
     clientName: ''
 }
 
-const setClientNameReducer = (state = initialState, action) => {
+const setClientDataReducer = (state = initialState, action) => {
     switch(action.type) {
         case constants.SET_CLIENT_NAME_TO_PRODUCT:
             return {
@@ -18,4 +18,4 @@ const setClientNameReducer = (state = initialState, action) => {
     }
 }
 
-export default setClientNameReducer;
+export default setClientDataReducer;

@@ -46,7 +46,7 @@ const SetName = (props) => {
 }
 
 const mapStateToProps = state => ({
-    clientName: state.clientName.clientName
+    clientName: state.clientData.clientName
 })
 
 const mapDispatchToProps = {

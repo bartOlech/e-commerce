@@ -7,7 +7,7 @@ import formValidationReducer from './formValidationReducer';
 import basketReducer from './basketReducer';
 import productsReducer from './productsReducer';
 import shopReducer from './shopReducer';
-import setClientNameReducer from './setClientNameReducer';
+import setClientDataReducer from './setClientDataReducer';
 import getDataFromDatabaseReducer from './getDataFromDatabaseReducer';
 import {combineReducers} from 'redux';
 
@@ -21,7 +21,7 @@ const rootReducer = combineReducers({
     basket: basketReducer,
     product: productsReducer,
     shop: shopReducer,
-    clientName: setClientNameReducer,
+    clientData: setClientDataReducer,
     products: getDataFromDatabaseReducer
 });
 

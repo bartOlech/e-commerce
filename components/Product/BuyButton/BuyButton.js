@@ -145,7 +145,7 @@ const mapStateToProps = state => ({
     month: state.date.month,
     year: state.date.year,
     product: state.product.products,
-    clientName: state.clientName.clientName,
+    clientName: state.clientData.clientName,
     clientDateIsRequired: state.frameData.clientDateIsRequired,
     clientNameIsRequired: state.frameData.clientNameIsRequired
 })
