@@ -1,9 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import TittleText from './TittleText'
+import TittleText from './TittleText';
+import { connect } from 'react-redux';
 import SelectDate from './SelectDate/SelectDate';
 import SetName from './SetName/SetName';
-import { connect } from 'react-redux'
+import SetMotherDay from './SetMotherName/SetMotherDay';
+import SetFatherDay from './SetFatherName/SetFatherName';
+import SetPlace from './SetPlace/SetPlace';
+import SetGrowth from './SetGrowth/SetGrowth';
+import SetWeight from './SetWeight/SetWeight';
 
 const Container = styled.div`
     display: flex;
@@ -16,6 +21,11 @@ const ModifyProduct = (props) => {
             <TittleText text={'Dostosuj swoje zamówienie'}></TittleText>
             {props.clientNameIsRequired && <SetName nameIsFill={props.nameIsFill}></SetName>}
             {props.clientDateIsRequired && <SelectDate dateIsSelected={props.dateIsSelected}></SelectDate>}
+            {props.clientGrowthIsRequired && <SetGrowth></SetGrowth>}
+            {props.clientWeightIsRequired && <SetWeight></SetWeight>}
+            {props.clientMotherNameIsRequired && <SetMotherDay></SetMotherDay>}
+            {props.clientFatherNameIsRequired && <SetFatherDay></SetFatherDay>}
+            {props.clientPlaceIsRequired && <SetPlace></SetPlace>}
         </Container>
     )
 }
