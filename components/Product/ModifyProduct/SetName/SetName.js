@@ -23,7 +23,8 @@ const Input = styled.input`
     height: 35px;
     border: 1px solid #E3E7F1;
     background-color: #fff;
-    color: #3B475A;
+    color: #555555;
+    font-weight: 300;
     font-family: ${FontStyle.family};
     outline: none;
     font-size: 1.3em;

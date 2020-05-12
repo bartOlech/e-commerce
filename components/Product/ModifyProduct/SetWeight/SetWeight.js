@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { FontStyle } from '../../../../assets/style/style';
 import ToolTipMessage from '../ToolTip/ToolTip';
 import { connect } from 'react-redux';
-import { setClientNameToProduct } from '../../../../redux/actions/Product/setClientNameToProduct';
+import { setWeight } from '../../../../redux/actions/Product/setWeight';
 
 const Container = styled.div`
     display: flex;
@@ -23,7 +23,8 @@ const Input = styled.input`
     height: 35px;
     border: 1px solid #E3E7F1;
     background-color: #fff;
-    color: #3B475A;
+    color: #555555;
+    font-weight: 300;
     font-family: ${FontStyle.family};
     outline: none;
     font-size: 1.3em;
@@ -34,7 +35,7 @@ const Input = styled.input`
 const SetWeight = (props) => {
 
     const handleName = (e) => {
-        props.setClientNameToProduct(e.target.value);
+        props.setWeight(e.target.value);
     }
 
     return (
@@ -47,11 +48,10 @@ const SetWeight = (props) => {
 }
 
 const mapStateToProps = state => ({
-    clientName: state.clientData.clientName
 })
 
 const mapDispatchToProps = {
-    setClientNameToProduct
+    setWeight
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SetWeight);

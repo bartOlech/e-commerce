@@ -54,6 +54,12 @@ const BuyButton = (props) => {
     const addToBasket = () => {
         const date = `${day.length == 1 ? `0${day}` : day}.${month.length == 1 ? `0${month}` : month}.${year}`;
 
+        console.log(props.clientMotherName)
+            console.log(props.clientFatherName)
+            console.log(props.clientPlace)
+            console.log(props.clientGrowth)
+            console.log(props.clientWeight)
+
         let obj = {
             id,
             name,
@@ -128,6 +134,7 @@ const BuyButton = (props) => {
 
     return (
         <Container>
+            
             <Button onClick={addToBasket}>Dodaj do koszyka</Button>
         </Container>
     )
@@ -145,7 +152,14 @@ const mapStateToProps = state => ({
     month: state.date.month,
     year: state.date.year,
     product: state.product.products,
+    // client data
     clientName: state.clientData.clientName,
+    clientMotherName: state.clientData.clientMotherName,
+    clientFatherName: state.clientData.clientFatherName,
+    clientPlace: state.clientData.clientPlace,
+    clientGrowth: state.clientData.clientGrowth,
+    clientWeight: state.clientData.clientWeight,
+
     clientDateIsRequired: state.frameData.clientDateIsRequired,
     clientNameIsRequired: state.frameData.clientNameIsRequired
 })

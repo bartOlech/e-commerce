@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { FontStyle } from '../../../../assets/style/style';
 import ToolTipMessage from '../ToolTip/ToolTip';
 import { connect } from 'react-redux';
-import { setClientNameToProduct } from '../../../../redux/actions/Product/setClientNameToProduct';
+import { setPlace } from '../../../../redux/actions/Product/setPlace';
 
 const Container = styled.div`
     display: flex;
@@ -23,7 +23,8 @@ const Input = styled.input`
     height: 35px;
     border: 1px solid #E3E7F1;
     background-color: #fff;
-    color: #3B475A;
+    color: #555555;
+    font-weight: 300;
     font-family: ${FontStyle.family};
     outline: none;
     font-size: 1.3em;
@@ -41,7 +42,7 @@ const Input = styled.input`
 const SetPlace = (props) => {
 
     const handleName = (e) => {
-        props.setClientNameToProduct(e.target.value);
+        props.setPlace(e.target.value);
     }
 
     return (
@@ -54,11 +55,10 @@ const SetPlace = (props) => {
 }
 
 const mapStateToProps = state => ({
-    clientName: state.clientData.clientName
 })
 
 const mapDispatchToProps = {
-    setClientNameToProduct
+    setPlace
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SetPlace);

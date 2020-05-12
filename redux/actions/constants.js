@@ -22,6 +22,11 @@ export const INCREASE_QUANTITY = 'INCREASE_QUANTITY';
 // Shop
 export const SET_SHOP_SECTION = 'SET_SHOP_SECTION';
 export const SET_CLIENT_NAME_TO_PRODUCT = 'SET_CLIENT_NAME_TO_PRODUCT';
+export const SET_MOTHER_NAME = 'SET_MOTHER_NAME';
+export const SET_FATHER_NAME = 'SET_FATHER_NAME';
+export const SET_PLACE = 'SET_PLACE';
+export const SET_GROWTH = 'SET_GROWTH';
+export const SET_WEIGHT = 'SET_WEIGHT';
 // Database
 export const GET_BIRTHDAY_DATA = 'GET_BIRTHDAY_DATA';
 export const GET_BIRTH_DATA = 'GET_BIRTH_DATA';
