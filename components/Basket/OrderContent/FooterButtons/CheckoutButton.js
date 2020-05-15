@@ -79,7 +79,7 @@ const mapStateToProps = state => ({
     image: state.frameData.image,
     frameColor: state.frameData.color,
     size: state.size.size,
-    clientName: state.clientName.clientName,
+    clientName: state.clientData.clientName,
     day: state.date.day,
     month: state.date.month,
     year: state.date.year,
