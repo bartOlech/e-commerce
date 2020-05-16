@@ -52,7 +52,7 @@ const BuyButton = (props) => {
     const{ day, month, year, id, name, image, price, initialPrice, size} = props;
 
 
-
+    // ZROB WALIDACJE INPUTOW USERA!!!
 
     const addToBasket = () => {
         const date = `${day.length == 1 ? `0${day}` : day}.${month.length == 1 ? `0${month}` : month}.${year}`;

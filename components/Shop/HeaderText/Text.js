@@ -10,6 +10,9 @@ const Container = styled.div`
    text-align: center;
    font-weight: 300;
    font-size: .9em;
+   @media (min-width: 1000px) {
+        max-width: 950px;
+   }
 `
 
 const Text = (props) => {

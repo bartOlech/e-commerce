@@ -12,6 +12,9 @@ const Container = styled.div`
     align-items: center;  
     margin-top: 10px;
     margin-bottom: 20px;
+    @media (min-width: 1000px) {
+        display: none;
+    }
 `
 const List = styled.div`
     display: flex;
@@ -55,24 +58,24 @@ const Menu = (props) => {
         <Container>
             <List>
                 <Li 
-                    display={props.category === 'birthday' ? 'inline' : 'none'}
-                    color={props.category === 'birthday' ? '#1C1C1C' : '#A5A5A5'} 
-                    onClick={() => setCategory('birthday')}
+                    display={props.category === 'URODZINY' ? 'inline' : 'none'}
+                    color={props.category === 'URODZINY' ? '#1C1C1C' : '#A5A5A5'} 
+                    onClick={() => setCategory('URODZINY')}
                 >Urodziny</Li>
                 <Li 
-                    display={props.category === 'anniversary' ? 'inline' : 'none'}
-                    color={props.category === 'anniversary' ? '#1C1C1C' : '#A5A5A5'} 
-                    onClick={() => setCategory('anniversary')}
+                    display={props.category === 'ROCZNICA' ? 'inline' : 'none'}
+                    color={props.category === 'ROCZNICA' ? '#1C1C1C' : '#A5A5A5'} 
+                    onClick={() => setCategory('ROCZNICA')}
                 >Rocznica</Li>
                 <Li 
-                    display={props.category === 'birth' ? 'inline' : 'none'}
-                    color={props.category === 'birth' ? '#1C1C1C' : '#A5A5A5'} 
-                    onClick={() => setCategory('birth')}
+                    display={props.category === 'NARODZINY' ? 'inline' : 'none'}
+                    color={props.category === 'NARODZINY' ? '#1C1C1C' : '#A5A5A5'} 
+                    onClick={() => setCategory('NARODZINY')}
                 >Narodziny</Li>
                 <Li 
-                    display={props.category === 'wedding' ? 'inline' : 'none'}
-                    color={props.category === 'wedding' ? '#1C1C1C' : '#A5A5A5'} 
-                    onClick={() => setCategory('wedding')}
+                    display={props.category === 'ŚLUB' ? 'inline' : 'none'}
+                    color={props.category === 'ŚLUB' ? '#1C1C1C' : '#A5A5A5'} 
+                    onClick={() => setCategory('ŚLUB')}
                 >Ślub</Li>
             </List>
             <MoreCategory></MoreCategory>

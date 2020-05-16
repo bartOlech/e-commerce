@@ -1,7 +1,7 @@
 import * as constants from '../actions/constants';
 
 const initialState = {
-    category: 'birthday'
+    category: 'URODZINY'
 }
 
 const shopReducer = (state = initialState, action) => {
