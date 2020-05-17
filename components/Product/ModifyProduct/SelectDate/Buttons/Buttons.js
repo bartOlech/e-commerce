@@ -19,6 +19,7 @@ const Container = styled.div`
     flex-direction: column;
     align-items: left;
     margin-top: 10px;
+    max-width: 450px;
 `
 const Text = styled.span`
     font-family: ${FontStyle.family};

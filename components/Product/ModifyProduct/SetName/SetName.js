@@ -19,7 +19,7 @@ const Label = styled.label`
 `
 const Input = styled.input`
     width: 90%;
-    max-width: 300px;
+    max-width: 400px;
     height: 35px;
     border: 1px solid #E3E7F1;
     background-color: #fff;
