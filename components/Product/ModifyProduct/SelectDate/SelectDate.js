@@ -16,7 +16,7 @@ const SelectDate = (props) => {
     return (
         <Container>
             <Buttons dateIsSelected={props.dateIsSelected}></Buttons>
-            <DateResult availableYears={['2001', '2020']} day={props.day} month={props.month} year={props.year}></DateResult>
+            {/* <DateResult availableYears={['2001', '2020']} day={props.day} month={props.month} year={props.year}></DateResult> */}
         </Container>
     )
 }

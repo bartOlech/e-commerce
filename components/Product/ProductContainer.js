@@ -66,9 +66,11 @@ const HorizontalLineHeader = styled.div`
 const Product = (props) => {
     const {query: {id, type}} = useRouter();
     const [sizeWithPrice, setSizeWithPrice] = useState('');
-    const [initialPrice, setInitialPrice] = useState('')
-    const [dateIsSelected, setDateIsSelected] = useState(true)
-    const [nameIsFill, setNameIsFill] = useState(true)
+    const [initialPrice, setInitialPrice] = useState('');
+    const [dateIsSelected, setDateIsSelected] = useState(true);
+    const [nameIsFill, setNameIsFill] = useState(true);
+    const [growthIsFill, setGrowthIsFill] = useState(true);
+    const [weightIsFill, setWeightIsFill] = useState(true);
 
 
     const setDateAlert = (val) => {
@@ -77,6 +79,13 @@ const Product = (props) => {
 
     const setNameFieldAlert = (val) => {
         setNameIsFill(val)
+    }
+
+    const setGrowthAlert = (val) => {
+        setGrowthIsFill(val)
+    }
+    const setWeightAlert = (val) => {
+        setWeightIsFill(val)
     }
 
     useEffect(() => {
@@ -154,8 +163,8 @@ const Product = (props) => {
                     <Description></Description>
                     <HorizontalLine></HorizontalLine>
                     <Box>
-                        <ModifyProduct nameIsFill={nameIsFill} dateIsSelected={dateIsSelected}></ModifyProduct>
-                        <BuyButton setNameFieldAlert={setNameFieldAlert} setDateAlert={setDateAlert}></BuyButton>
+                        <ModifyProduct weightIsFill={weightIsFill} growthIsFill={growthIsFill} nameIsFill={nameIsFill} dateIsSelected={dateIsSelected}></ModifyProduct>
+                        <BuyButton setWeightAlert={setWeightAlert} setGrowthAlert={setGrowthAlert} setNameFieldAlert={setNameFieldAlert} setDateAlert={setDateAlert}></BuyButton>
                     </Box>
                 </BottomContent>
             </ContentBox>

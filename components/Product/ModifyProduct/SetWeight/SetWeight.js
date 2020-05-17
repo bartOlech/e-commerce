@@ -41,7 +41,7 @@ const SetWeight = (props) => {
     return (
         <Container>
             {/* <ToolTipMessage marginLeft='72px' msg='Zakupiony produkt będzie miał podane imię'></ToolTipMessage> */}
-            <Label color={props.nameIsFill ? '#3B475A' : 'red'}>Waga</Label>
+            <Label color={props.weightIsFill ? '#3B475A' : 'red'}>Waga</Label>
             <Input onChange={handleName}></Input>
         </Container>
     )

@@ -57,12 +57,6 @@ const BuyButton = (props) => {
     const addToBasket = () => {
         const date = `${day.length == 1 ? `0${day}` : day}.${month.length == 1 ? `0${month}` : month}.${year}`;
 
-        console.log(props.clientMotherName)
-            console.log(props.clientFatherName)
-            console.log(props.clientPlace)
-            console.log(props.clientGrowth)
-            console.log(props.clientWeight)
-
         let obj = {
             id,
             name,
@@ -93,6 +87,24 @@ const BuyButton = (props) => {
             return;
         }
        }
+        // validate growth field
+        if(props.clientGrowthIsRequired) {
+            if(props.clientGrowth) {
+                props.setGrowthAlert(true)
+            } else {
+                props.setGrowthAlert(false)
+                return;
+            }
+        }
+        // validate weight field
+        if(props.clientWeightIsRequired) {
+            if(props.clientWeight) {
+                props.setWeightAlert(true)
+            } else {
+                props.setWeightAlert(false)
+                return;
+            }
+        }
        
     //    EVERYTHING IS VALIDATE, GO TO BASKET
         props.setBasket(true)
@@ -164,7 +176,9 @@ const mapStateToProps = state => ({
     clientWeight: state.clientData.clientWeight,
 
     clientDateIsRequired: state.frameData.clientDateIsRequired,
-    clientNameIsRequired: state.frameData.clientNameIsRequired
+    clientNameIsRequired: state.frameData.clientNameIsRequired,
+    clientGrowthIsRequired: state.frameData.clientGrowthIsRequired,
+    clientWeightIsRequired: state.frameData.clientWeightIsRequired
 })
 const mapDispatchToProps = {
     setBasket,

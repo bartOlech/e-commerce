@@ -41,7 +41,7 @@ const SetGrowth = (props) => {
     return (
         <Container>
             {/* <ToolTipMessage marginLeft='72px' msg='Wzrost dziecka'></ToolTipMessage> */}
-            <Label color={props.nameIsFill ? '#3B475A' : 'red'}>Długość</Label>
+            <Label color={props.growthIsFill ? '#3B475A' : 'red'}>Długość</Label>
             <Input onChange={handleName}></Input>
         </Container>
     )

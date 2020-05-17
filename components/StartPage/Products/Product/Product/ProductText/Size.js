@@ -5,7 +5,7 @@ import { FontStyle } from '../../../../../../assets/style/style';
 const Container = styled.div`
     font-family: ${FontStyle.family};
     color: #5F5F5F;
-    font-size: 1.1em;
+    font-size: 1em;
     font-weight: 500;
     text-align: center;
     margin-bottom: 7px;

@@ -21,8 +21,8 @@ const ModifyProduct = (props) => {
             <TittleText text={'Dostosuj swoje zamówienie'}></TittleText>
             {props.clientNameIsRequired && <SetName nameIsFill={props.nameIsFill}></SetName>}
             {props.clientDateIsRequired && <SelectDate dateIsSelected={props.dateIsSelected}></SelectDate>}
-            {props.clientGrowthIsRequired && <SetGrowth></SetGrowth>}
-            {props.clientWeightIsRequired && <SetWeight></SetWeight>}
+            {props.clientGrowthIsRequired && <SetGrowth growthIsFill={props.growthIsFill}></SetGrowth>}
+            {props.clientWeightIsRequired && <SetWeight weightIsFill={props.weightIsFill}></SetWeight>}
             {props.clientMotherNameIsRequired && <SetMotherDay></SetMotherDay>}
             {props.clientFatherNameIsRequired && <SetFatherDay></SetFatherDay>}
             {props.clientPlaceIsRequired && <SetPlace></SetPlace>}
