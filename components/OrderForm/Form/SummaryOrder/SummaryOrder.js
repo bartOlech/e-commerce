@@ -13,7 +13,6 @@ const Container = styled.div`
 `
 const HorizontalLine = styled.div`
     width: 100%;
-    
     height: 1px;
     background-color: #AFAFAF;
 `

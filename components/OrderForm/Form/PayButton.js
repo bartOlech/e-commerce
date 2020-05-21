@@ -23,6 +23,7 @@ const Button = styled.button`
     @media (min-width: 1000px) {
         margin-top: 35px;
         width: 100%;
+        border-radius: 3px;
     }
 `
 

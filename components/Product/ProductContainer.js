@@ -38,6 +38,7 @@ const BottomContent = styled.div`
 const Box = styled.div`
     display: flex;
     flex-direction: column;
+    margin-top: 10px;
     @media(min-width: 1000px) {
         flex-direction: row;
         justify-content: space-between;

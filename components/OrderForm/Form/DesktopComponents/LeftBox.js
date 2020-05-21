@@ -15,7 +15,7 @@ const Container = styled.div`
 const Box = styled.div`
     width: 100%;
     height: 330px;
-    border: 1px solid #D9D9D9;
+    border: 1px solid rgba(217, 217, 217, .5);
     border-radius: 5px;
     padding: 10px;
     box-sizing: border-box;

@@ -22,6 +22,12 @@ const PayButtonBox = styled.div`
         display: none;
     }
 `
+const PhoneBox = styled.div`
+    display: inline;
+    @media (min-width: 1000px) {
+            display: none;
+        }
+`
 
 const OrderForm = (props) => {
     // validation
@@ -56,7 +62,9 @@ const OrderForm = (props) => {
                 nameValidate={nameValidate}
                 regulationsValidate={regulationsValidate}
             ></Form>
-            <SummaryOrder orderPrice={router.query.price}></SummaryOrder>
+            <PhoneBox>
+                <SummaryOrder orderPrice={router.query.price}></SummaryOrder>
+            </PhoneBox>
             <PayButtonBox>
                 <PayButton checkValidation={checkValidation}></PayButton>
             </PayButtonBox>

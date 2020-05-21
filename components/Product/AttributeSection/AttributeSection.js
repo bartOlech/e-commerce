@@ -7,6 +7,7 @@ import AttributeSize from './AttributeSize';
 import AttributeColor from './AttributeColor';
 import { connect } from 'react-redux';
 import { setPrice } from '../../../redux/actions/setPriceAction';
+import SaleCouponBtn from '../SaleCouponBtn/SaleCouponBtn';
 
 const Container = styled.div`
     width: 100%;
@@ -73,8 +74,6 @@ const HeartIco = styled.div`
         left: 17px;
         display: none;
     }
-    }
-;
 
 `
 
@@ -100,6 +99,7 @@ const AttributeSection = (props) => {
                 </TextDetails>
             </Details>
             <HeartIco></HeartIco>
+           <SaleCouponBtn></SaleCouponBtn>
         </Container>
     )
 }

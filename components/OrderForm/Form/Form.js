@@ -40,7 +40,7 @@ const LeftLeftBox = styled.div`
     display: flex;
     position: relative;
     border-radius: 5px;
-    border: 1px solid #D9D9D9;
+    border: 1px solid rgba(217, 217, 217, .5);
     padding: 10px;
     box-sizing: border-box;
     background-color: #fff;
@@ -56,6 +56,12 @@ const LeftSection = styled.div`
     padding-left: 10px;
     display: flex;
     flex-direction: column;
+`
+const PhoneBox = styled.div`
+    display: inline;
+    @media (min-width: 1000px) {
+            display: none;
+        }
 `
 
 const Form = (props) => {
@@ -92,15 +98,17 @@ const Form = (props) => {
                   
                 </LeftBox>
             </DesktopBox>
-            <Tittle></Tittle>
-            <Name nameValidate={props.nameValidate}></Name>
-            <Address streetValidate={props.streetValidate} numberValidate={props.numberValidate}></Address>
-            <City codeValidate={props.codeValidate} cityValidate={props.cityValidate}></City>
-            <Phone></Phone>
-            <Email emailValidate={props.emailValidate}></Email>
-            <Delivery deliveryData={StaticDeliveryData}></Delivery>
-            <ExtraMessage></ExtraMessage>
-            <Regulations regulationsValidate={props.regulationsValidate}></Regulations>
+            <PhoneBox>
+                <Tittle></Tittle>
+                <Name nameValidate={props.nameValidate}></Name>
+                <Address streetValidate={props.streetValidate} numberValidate={props.numberValidate}></Address>
+                <City codeValidate={props.codeValidate} cityValidate={props.cityValidate}></City>
+                <Phone></Phone>
+                <Email emailValidate={props.emailValidate}></Email>
+                <Delivery deliveryData={StaticDeliveryData}></Delivery>
+                <ExtraMessage></ExtraMessage>
+                <Regulations regulationsValidate={props.regulationsValidate}></Regulations>
+            </PhoneBox>
         </FormBox>
     )
 }
