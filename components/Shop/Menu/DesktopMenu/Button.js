@@ -19,7 +19,9 @@ const Button = (props) => {
     }
 
     return (
-        <TextButton color={props.category === props.selectedCategory ? '#1C1C1C' : '#A5A5A5'} onClick={changeCategory}>
+        <TextButton color={props.category === props.selectedCategory ? '#1C1C1C' : (
+            props.selectedCategory === 'PROMOCJE' ? '#f85959' : '#A5A5A5'
+        )} onClick={changeCategory}>
             {props.selectedCategory}
         </TextButton>
     )

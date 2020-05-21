@@ -10,6 +10,7 @@ const Container = styled.div`
     margin-top: 12px;
 `
 const UpperSection = styled.div`
+    width: 230px;;
     display: flex;
 `
 const BottomSection = styled.div`

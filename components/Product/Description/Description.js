@@ -32,7 +32,7 @@ const DesktopName = styled.div`
     font-family: ${FontStyle.family};
     color: #3B475A;
     font-size: 2em;
-    font-weight: 400;
+    font-weight: 300;
     margin-top: -7px;
     margin-bottom: 35px;
     display: none;

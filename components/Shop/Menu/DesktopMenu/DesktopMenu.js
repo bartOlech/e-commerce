@@ -45,6 +45,7 @@ const DesktopMenu = () => {
                 <Button selectedCategory='ROCZNICA'></Button>
                 <Button selectedCategory='ŚLUB'></Button>
                 <Button selectedCategory='ROCZNICA'></Button>
+                <Button selectedCategory='PROMOCJE'></Button>
             </CategoryBox>
         </Container>
     )
