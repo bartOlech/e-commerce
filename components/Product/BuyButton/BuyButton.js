@@ -51,9 +51,6 @@ const BuyButton = (props) => {
     const Router = useRouter();
     const{ day, month, year, id, name, image, price, initialPrice, size} = props;
 
-
-    // ZROB WALIDACJE INPUTOW USERA!!!
-
     const addToBasket = () => {
         const date = `${day.length == 1 ? `0${day}` : day}.${month.length == 1 ? `0${month}` : month}.${year}`;
 
@@ -149,7 +146,6 @@ const BuyButton = (props) => {
 
     return (
         <Container>
-            
             <Button onClick={addToBasket}>Dodaj do koszyka</Button>
         </Container>
     )

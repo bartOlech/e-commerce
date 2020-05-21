@@ -17,7 +17,6 @@ html, body {
     position: relative;
     outline: none;
     cursor: pointer;
-    margin-right: 14px;
 }
 
 .tooltip {

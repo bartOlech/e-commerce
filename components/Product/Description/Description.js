@@ -7,7 +7,7 @@ import RefundText from './RefundText';
 import ShipmentText from './ShipmentText';
 import AdditionalData from './AdditionalData';
 import { FontStyle } from '../../../assets/style/style';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 
 const Container = styled.div`
     width: 100%;

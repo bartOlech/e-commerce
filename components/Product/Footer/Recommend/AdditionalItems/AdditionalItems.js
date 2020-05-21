@@ -9,9 +9,10 @@ const Container = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin-left: 33px;
+    padding-left: 33px;
     margin-top: 45px;
     margin-bottom: 70px;
+    box-sizing: border-box;
     @media(max-width: 1000px) {
         display: none;
     }

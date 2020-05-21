@@ -13,7 +13,12 @@ import SetWeight from './SetWeight/SetWeight';
 const Container = styled.div`
     display: flex;
     flex-direction: column;
-  
+    /* background: rgba(91, 93, 194, .9); */
+    padding: 15px;
+    padding-top: 0;
+    @media (min-width: 1000px) {
+        width: 100%;
+    }
 `
 
 const ModifyProduct = (props) => {

@@ -19,7 +19,8 @@ const Container = styled.div`
     flex-direction: column;
     align-items: left;
     margin-top: 10px;
-    max-width: 450px;
+    width: 100%;
+    max-width: 460px;
 `
 const Text = styled.span`
     font-family: ${FontStyle.family};
@@ -44,7 +45,7 @@ const Buttons = (props) => {
 
     return (
         <Container>
-           <ToolTipMessage marginLeft='90px' msg='Zakupiona kartka z kalendarza będzie miała wybraną datę'></ToolTipMessage>
+           {/* <ToolTipMessage marginLeft='90px' msg='Zakupiona kartka z kalendarza będzie miała wybraną datę'></ToolTipMessage> */}
             <Text color={props.dateIsSelected ? '#3B475A' : 'red'}>Wybierz datę</Text>
             <DatePicker
                 selected={startDate}

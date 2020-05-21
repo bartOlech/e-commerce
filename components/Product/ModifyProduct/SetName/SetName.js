@@ -19,7 +19,7 @@ const Label = styled.label`
 `
 const Input = styled.input`
     width: 90%;
-    max-width: 400px;
+    max-width: 357px;
     height: 35px;
     border: 1px solid #E3E7F1;
     background-color: #fff;
@@ -39,7 +39,6 @@ const SetName = (props) => {
 
     return (
         <Container>
-            <ToolTipMessage marginLeft='72px' msg='Zakupiony produkt będzie miał podane imię'></ToolTipMessage>
             <Label color={props.nameIsFill ? '#3B475A' : 'red'}>Podaj imię</Label>
             <Input onChange={handleName}></Input>
         </Container>
