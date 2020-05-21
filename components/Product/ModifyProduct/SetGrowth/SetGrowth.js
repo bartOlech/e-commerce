@@ -22,7 +22,7 @@ const Input = styled.input`
     max-width: 357px;
     height: 35px;
     border: 1px solid #E3E7F1;
-    background-color: #fff;
+    background-color: rgba(228,231,235,.3);
     color: #555555;
     font-weight: 300;
     font-family: ${FontStyle.family};

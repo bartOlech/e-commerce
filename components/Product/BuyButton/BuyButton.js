@@ -25,7 +25,7 @@ const Button = styled.button`
     border: none;
     color: #fff;
     font-family: ${FontStyle.family};
-    font-size: 1.6em;
+    font-size: 1.1em;
     background-color: #1C1C1C;
     font-weight: 300;
     text-align: center;
@@ -146,7 +146,7 @@ const BuyButton = (props) => {
 
     return (
         <Container>
-            <Button onClick={addToBasket}>Dodaj do koszyka</Button>
+            <Button onClick={addToBasket}>DODAJ DO KOSZYKA</Button>
         </Container>
     )
 }
