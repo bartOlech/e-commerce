@@ -19,11 +19,11 @@ const Button = styled.button`
     margin-bottom: 40px;
     margin-top: 50px;
     font-size: 1.3em;
+    border-radius: 3px;
     cursor: pointer;
     @media (min-width: 1000px) {
         margin-top: 35px;
         width: 100%;
-        border-radius: 3px;
     }
 `
 

@@ -18,6 +18,11 @@ html, body {
     outline: none;
     cursor: pointer;
 }
+@media only screen and (max-width: 1000px) {
+  .data-picker {
+    max-width: 365px;
+  }
+}
 
 .tooltip {
     position: relative;

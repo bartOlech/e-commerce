@@ -8,7 +8,8 @@ const Container = styled.div`
     font-size: 1.6em;
     padding-top: 10px;
     margin-left: 10px;
-    font-weight: 500;
+    font-weight: 300;
+    padding-left: 3px;
     @media (min-width: 1000px) {
         display: none;
     }

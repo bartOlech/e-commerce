@@ -19,11 +19,26 @@ const Container = styled.div`
     @media (min-width: 1000px) {
         width: 100%;
     }
+    @media (max-width: 600px) {
+        padding: 0;
+    }
+`
+const HorizontalLine = styled.div`
+    width: 94%;
+    height: 1px;
+    margin: 0 auto;
+    background-color: rgba(228,231,235,.5);
+    margin-bottom: 18px;
+    margin-top: -5px;
+    @media (min-width: 1000px) {
+        display: none;
+    }
 `
 
 const ModifyProduct = (props) => {
     return (
         <Container>
+            <HorizontalLine></HorizontalLine>
             <TittleText text={'Dostosuj swoje zamówienie'}></TittleText>
             {props.clientNameIsRequired && <SetName nameIsFill={props.nameIsFill}></SetName>}
             {props.clientDateIsRequired && <SelectDate dateIsSelected={props.dateIsSelected}></SelectDate>}

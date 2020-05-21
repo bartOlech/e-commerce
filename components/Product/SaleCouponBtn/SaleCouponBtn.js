@@ -8,6 +8,9 @@ const Container = styled.div`
     align-items: left;
     margin-left: 32px;
     margin-top: 35px;
+    @media (max-width: 400px) {
+        margin-left: 10px;
+    }
 `
 const Text = styled.div`
     font-family: ${FontStyle.family};
