@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Regulations from '../FormFields/Regulations';
 import SummaryOrder from '../SummaryOrder/SummaryOrder';
 import {useRouter} from 'next/router';
-import PayButton from '../PayButton'
+import PayButton from '../PayButton';
 
 const Container = styled.div`
     width: 40%;

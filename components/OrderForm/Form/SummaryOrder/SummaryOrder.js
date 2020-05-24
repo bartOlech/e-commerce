@@ -5,7 +5,8 @@ import OrderCost from './OrderCost';
 import DeliveryCost from './DeliveryCost';
 import TotalCost from './TotalCost';
 import Name from './Name';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import CouponBox from '../../CouponBox/CouponBox';
 
 const Container = styled.div`
     margin: 20px 10px 20px 10px;
@@ -18,9 +19,15 @@ const HorizontalLine = styled.div`
 `
 
 const SummaryOrder = (props) => {
+    const [price, setPrice] = useState(0);
 
     let productCounter = 0;
     let productPrice = 0;
+
+    const getCoupon = (value) => {
+        // productPrice *= value;
+        console.log(price)
+    }
 
     return (
         <Container data-testid='summary-order-container'>
@@ -28,6 +35,7 @@ const SummaryOrder = (props) => {
             {props.product.map((el, index) => {
                 productCounter++
                 productPrice += +el.price;
+                setPrice(productPrice)
 
                 return (
                     <Name quantity={el.quantity} date={el.date} image={el.image} name={el.name} size={el.size} key={index}></Name>
@@ -37,6 +45,7 @@ const SummaryOrder = (props) => {
             <DeliveryCost deliveryPrice='12 zł'></DeliveryCost>
             <HorizontalLine></HorizontalLine>
             <TotalCost orderPrice={productPrice}></TotalCost>
+            <CouponBox getCoupon={getCoupon}></CouponBox>
         </Container>
     )
 }
