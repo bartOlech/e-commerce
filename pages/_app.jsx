@@ -3,11 +3,22 @@ import {Provider} from 'react-redux';
 import React from 'react';
 import withRedux from "next-redux-wrapper";
 import store from '../redux/store';
+import Router from 'next/router';
 
 import '../assets/style/style.css'
 import "react-datepicker/dist/react-datepicker.css";
 
 class MyApp extends App {
+
+    componentDidMount() {
+        Router.events.on('routeChangeComplete', () => {
+          window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+          });
+        });
+      }
 
     static async getInitialProps({Component, ctx}) {
         const pageProps = Component.getInitialProps ? await Component.getInitialProps(ctx) : {};

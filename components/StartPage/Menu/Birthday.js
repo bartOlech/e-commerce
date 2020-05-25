@@ -60,14 +60,14 @@ const Button = styled.button`
 
 const Birthday = () => {
 
-    const getData = () => {
+    const goToShopSection = () => {
         Router.push('/shop')
     }
 
     return (
         <Container>
             <Img src='../../../static/MenuPictures/instagram.jpg'></Img>
-            <Button onClick={getData}>URODZINY</Button>
+            <Button onClick={goToShopSection}>URODZINY</Button>
         </Container>
     )
 }

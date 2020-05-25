@@ -32,7 +32,7 @@ const UpperCategory = (props) => {
         <Container>
             <UpperSection>
                 <Text color='#b3b3b3'>PLAKATY /</Text>
-                <Text margin='5px' color='#555'>{props.category}</Text>
+                <Text margin='5px' color={FontStyle.logoColor}>{props.category}</Text>
             </UpperSection>
             <BottomSection>
                 <Button category='NOWOŚCI'></Button>
