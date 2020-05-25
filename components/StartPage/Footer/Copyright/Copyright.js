@@ -17,7 +17,7 @@ const Container = styled.div`
 const Copyright = () => {
     return (
         <Container>
-            Kartka © 2020. All Rights Reserved.
+            Cudnydzien inc. © 2020. All Rights Reserved.
         </Container>
     )
 }

@@ -6,7 +6,7 @@ const Button = styled.button`
     width: 150px;
     height: 40px;
     border: none;
-    background-color: ${FontStyle.color};
+    background-color: ${FontStyle.logoColor};
     font-family: ${FontStyle.family};
     color: #fff;
     display: flex;
@@ -20,7 +20,7 @@ const Button = styled.button`
     cursor: pointer;
     outline: none;
     transition: .3s;
-    border: 1px solid #000;
+    border: 1px solid ${FontStyle.logoColor};
     display: none;
     &&:hover {
         border: 1px solid ${FontStyle.color};

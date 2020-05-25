@@ -7,7 +7,7 @@ const Button = styled.div`
     width: 190px;
     height: 40px;
     border: none;
-    background-color: #fb5c43;
+    background-color: ${FontStyle.logoColor};
     font-family: ${FontStyle.family};
     font-size: 1.1em;
     font-weight: 300;
@@ -24,7 +24,7 @@ const Button = styled.div`
     color: #fff;
     opacity: .9;
     transition: .5s;
-    border: 1px solid #fff;
+    border: 1px solid ${FontStyle.logoColor};
     &&:hover {
         opacity: 1;
         background-color: #fff;

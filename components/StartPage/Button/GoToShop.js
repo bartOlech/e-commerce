@@ -12,11 +12,11 @@ const Button = styled.button`
     height: 50px;
     font-family: ${FontStyle.family};
     color: #fff;
-    background-color: ${FontStyle.color};
+    background-color: ${FontStyle.logoColor};
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #fff;
+    border: 1px solid ${FontStyle.logoColor};
     font-size: 1.3em;
     font-weight: 300;
     margin-top: -35px;

@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../assets/style/style';
+import Router from 'next/router';
+import { connect } from 'react-redux';
+import { setShopSection } from '../../../redux/actions/Shop/setShopSection';
 
 const Container = styled.div`
     width: 100%;
@@ -58,13 +61,23 @@ const Button = styled.button`
     }
 `
 
-const Birth = () => {
+const Birth = (props) => {
+
+    const goToShopSection = () => {
+        Router.push('/shop')
+        props.setShopSection('NARODZINY')
+    }
+
     return (
         <Container>
             <Img src='../../../static/MenuPictures/gadgets.jpg'></Img>
-            <Button>NARODZINY</Button>
+            <Button onClick={goToShopSection}>NARODZINY</Button>
         </Container>
     )
 }
 
-export default Birth;
+const mapDispatchToProps = {
+    setShopSection
+}
+
+export default connect(null, mapDispatchToProps)(Birth);

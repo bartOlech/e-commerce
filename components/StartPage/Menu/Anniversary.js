@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../assets/style/style';
-import Router from 'next/router'
+import Router from 'next/router';
+import { connect } from 'react-redux';
+import { setShopSection } from '../../../redux/actions/Shop/setShopSection';
 
 const Container = styled.div`
     width: 100%;
@@ -58,10 +60,11 @@ const Button = styled.button`
     }
 `
 
-const Anniversary = () => {
+const Anniversary = (props) => {
 
     const goToShopSection = () => {
-        Router.push('/cardshop')
+        Router.push('/shop')
+        props.setShopSection('ROCZNICA');
     }
     
     return (
@@ -72,4 +75,8 @@ const Anniversary = () => {
     )
 }
 
-export default Anniversary;
+const mapDispatchToProps = {
+    setShopSection
+}
+
+export default connect(null, mapDispatchToProps)(Anniversary);
