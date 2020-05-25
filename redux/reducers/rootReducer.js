@@ -9,6 +9,7 @@ import productsReducer from './productsReducer';
 import shopReducer from './shopReducer';
 import setClientDataReducer from './setClientDataReducer';
 import getDataFromDatabaseReducer from './getDataFromDatabaseReducer';
+import couponReducer from './couponReducer';
 import {combineReducers} from 'redux';
 
 const rootReducer = combineReducers({
@@ -22,7 +23,8 @@ const rootReducer = combineReducers({
     product: productsReducer,
     shop: shopReducer,
     clientData: setClientDataReducer,
-    products: getDataFromDatabaseReducer
+    products: getDataFromDatabaseReducer,
+    coupon: couponReducer
 });
 
 export default rootReducer;

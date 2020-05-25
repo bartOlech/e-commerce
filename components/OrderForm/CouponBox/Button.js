@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../assets/style/style';
+import { connect } from 'react-redux';
 
 const Container = styled.button`
     width: 100px;
@@ -22,7 +23,17 @@ const Container = styled.button`
 const Button = (props) => {
 
     const useCoupon = () => {
-        props.getCoupon(0.1)
+        console.log(props.couponIsActivated)
+        if(!props.couponIsActivated) {
+            if(props.couponValue === '3e5XqPle') {
+                props.getCoupon(0.1)
+                props.checkCouponAlert(false)
+            } else {
+                props.checkCouponAlert(true)
+            }
+        } else {
+            props.couponIsUsed(true)
+        }
     }
 
     return (
@@ -31,4 +42,10 @@ const Button = (props) => {
         </Container>
     )
 }
-export default Button;
+
+const mapStateToProps = state => ({
+    couponValue: state.coupon.couponValue,
+    couponIsActivated: state.price.couponIsActivated
+})
+
+export default connect(mapStateToProps)(Button);

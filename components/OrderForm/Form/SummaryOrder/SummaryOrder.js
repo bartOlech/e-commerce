@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Tittle from './Tittle';
 import OrderCost from './OrderCost';
@@ -7,6 +7,9 @@ import TotalCost from './TotalCost';
 import Name from './Name';
 import { connect } from 'react-redux';
 import CouponBox from '../../CouponBox/CouponBox';
+import { setTotalPrice } from '../../../../redux/actions/Basket/setTotalPrice';
+import { setClearPrice } from '../../../../redux/actions/Basket/setClearPrice';
+import { setCoupon } from '../../../../redux/actions/Coupon/setCoupon';
 
 const Container = styled.div`
     margin: 20px 10px 20px 10px;
@@ -19,39 +22,46 @@ const HorizontalLine = styled.div`
 `
 
 const SummaryOrder = (props) => {
-    const [price, setPrice] = useState(0);
-
-    let productCounter = 0;
-    let productPrice = 0;
 
     const getCoupon = (value) => {
-        // productPrice *= value;
-        console.log(price)
+        props.setCoupon(0.9)
     }
+
+    useEffect(() => {
+        // reset total price
+        props.setClearPrice();
+
+        props.product.map((el, index) => {
+            props.setTotalPrice(+el.price)
+        })
+    }, [])
 
     return (
         <Container data-testid='summary-order-container'>
             <Tittle></Tittle>
             {props.product.map((el, index) => {
-                productCounter++
-                productPrice += +el.price;
-                setPrice(productPrice)
-
                 return (
                     <Name quantity={el.quantity} date={el.date} image={el.image} name={el.name} size={el.size} key={index}></Name>
                 )
             })}
-            <OrderCost orderPrice={productPrice}></OrderCost>
-            <DeliveryCost deliveryPrice='12 zł'></DeliveryCost>
+            <OrderCost orderPrice={props.totalPrice}></OrderCost>
+            <DeliveryCost></DeliveryCost>
             <HorizontalLine></HorizontalLine>
-            <TotalCost orderPrice={productPrice}></TotalCost>
+            <TotalCost orderPrice={props.totalPrice}></TotalCost>
             <CouponBox getCoupon={getCoupon}></CouponBox>
         </Container>
     )
 }
 
 const mapStateToProps = state => ({
-    product: state.product.products
+    product: state.product.products,
+    totalPrice: state.price.totalPrice
 })
 
-export default connect(mapStateToProps)(SummaryOrder);
+const mapDispatchToProps = {
+    setTotalPrice,
+    setClearPrice,
+    setCoupon
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SummaryOrder);

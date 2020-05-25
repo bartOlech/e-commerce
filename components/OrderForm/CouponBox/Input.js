@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../assets/style/style';
+import { setCouponValue } from '../../../redux/actions/Coupon/setCouponValue';
+import { connect } from 'react-redux';
 
 const Container = styled.input`
     width: 200px;
@@ -24,11 +26,25 @@ const Container = styled.input`
     }
 `
 
-const Input = () => {
+const Input = (props) => {
+
+    const handleCouponText = (el) => {
+        props.setCouponValue(el.target.value)
+    }
+
     return (
-        <Container placeholder='Kupon rabatowy'>
+        <Container value={props.couponValue} onChange={handleCouponText} placeholder='Kupon rabatowy'>
 
         </Container>
     )
 }
-export default Input;
+
+const mapStateToProps = state => ({
+    couponValue: state.coupon.couponValue
+})
+
+const mapDispatchToProps = {
+    setCouponValue
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Input);
