@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 const Container = styled.button`
     width: 100px;
     height: 34px;
-    background-color: ${FontStyle.logoColor};
+    background-color: rgba(251, 180, 98,1);
     color: #fff;
     font-family: ${FontStyle.color};
     display: flex;

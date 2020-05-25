@@ -6,7 +6,7 @@ const Container = styled.div`
     font-family: ${FontStyle.family};
     color: ${FontStyle.color};
     font-weight: 300;
-    font-size: 1.3em;
+    font-size: 1em;
     margin-top: 10px;
     margin-bottom: 5px;
     width: 160px;

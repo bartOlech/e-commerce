@@ -5,8 +5,9 @@ import { FontStyle } from '../../../assets/style/style';
 const Text = styled.div`
     font-family: ${FontStyle.family};
     color: #3B475A;
-    font-size: 1.8em;
+    font-size: 1.7em;
     margin-top: 15px;
+    font-weight: 300;
 `
 
 const Form = () => {

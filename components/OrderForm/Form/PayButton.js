@@ -8,7 +8,7 @@ const Button = styled.button`
     height: 55px;
     font-family: ${FontStyle.family};
     color: #fff;
-    background-color: #FB5C43;
+    background: linear-gradient(45deg, rgba(251, 175, 98,1) 0%, rgba(242, 153, 74,1) 25%, rgba(251, 175, 98,1) 51%, rgba(242, 153, 74,1) 100%);
     border: none;
     outline: none;
     margin-left: auto;

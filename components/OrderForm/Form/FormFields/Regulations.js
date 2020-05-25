@@ -16,7 +16,7 @@ const Container = styled.div`
 const Label = styled.label`
     font-family: ${FontStyle.family};
     color: #3B475A;
-    font-size: 1.1em;
+    font-size: 1em;
     font-weight: 600;
     margin-bottom: 8px;
     padding-left: 4px;
@@ -51,10 +51,10 @@ const Regulations = (props) => {
         <Container>
             <CheckRegulationsSection>
                 <Checkbox onChange={handleCheckbox} id='regulations' type='checkbox'></Checkbox>
-                <Label style={{fontSize: '1.2em', paddingRight: '10px'}} htmlFor='regulations'>
+                <Label style={{fontSize: '1.1em', paddingRight: '10px'}} htmlFor='regulations'>
                     Zaakceptuj
                     <Link href='/regulations'>
-                        <a target="_blank"style={{color: '#FB5C43', cursor: 'pointer', textDecoration: 'none', margin: '0 5px 0 5px'}}>Regulamin</a>
+                        <a target="_blank"style={{color: '#FBAF62', cursor: 'pointer', textDecoration: 'none', margin: '0 5px 0 5px'}}>Regulamin</a>
                     </Link>  
                     sklepu
                 </Label>   

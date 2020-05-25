@@ -11,11 +11,14 @@ const Container = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-right: 190px;
 `
 const Text = styled.div`
     font-family: ${FontStyle.family};
     color: #3B475A;
-    font-size: 1.1em;
+    font-size: 1em;
+    font-weight: 300;
+    padding-top: 1px;
 `
 const Image = styled.div`
     width: 30px;
@@ -23,12 +26,13 @@ const Image = styled.div`
     background-image: url(${props => props.image});
     background-size: 30px 40px;
     background-repeat: no-repeat;
+
+   
 `
 const QuantityText = styled.div`
     font-family: ${FontStyle.family};
     color: #A8A8A8;
     font-size: 1em;
-    padding-top: 1px;
     padding-left: 4px;
 `
 
@@ -38,7 +42,8 @@ const Name = (props) => {
         <Container>
             <div style={{display: 'flex'}}>
             <Text data-testid='text-name'>          
-                {props.name} {props.size}
+                {props.name} 
+                {/* {props.size} */}
                 
             </Text>
             <QuantityText>({props.quantity} x)</QuantityText>

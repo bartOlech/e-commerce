@@ -29,11 +29,11 @@ const DesktopBox = styled.div`
 `
 const DesktopTittle = styled.div`
     font-family: ${FontStyle.family};
-    font-weight: 400;
+    font-weight: 300;
     color: #3B475A;
     font-size: 2em;
     position: absolute;
-    top: -60px;
+    top: -55px;
 `
 const LeftLeftBox = styled.div`
     width: 55%;
@@ -62,6 +62,19 @@ const PhoneBox = styled.div`
     @media (min-width: 1000px) {
             display: none;
         }
+`
+const PhoneHeader = styled.div`
+    display: flex;
+    justify-content: space-between;
+`
+const SmallLogo = styled.div`
+    width: 100px;
+    height: 60px;
+    background-image: url('../../../static/Logo/logo.svg');
+    background-repeat: no-repeat;
+    background-size: 100px 60px;
+    padding-left: 10px;
+    margin-top: 3px;
 `
 
 const Form = (props) => {
@@ -99,7 +112,10 @@ const Form = (props) => {
                 </LeftBox>
             </DesktopBox>
             <PhoneBox>
-                <Tittle></Tittle>
+                <PhoneHeader>
+                    <Tittle></Tittle>
+                    <SmallLogo></SmallLogo>
+                </PhoneHeader>
                 <Name nameValidate={props.nameValidate}></Name>
                 <Address streetValidate={props.streetValidate} numberValidate={props.numberValidate}></Address>
                 <City codeValidate={props.codeValidate} cityValidate={props.cityValidate}></City>
