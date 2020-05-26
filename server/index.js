@@ -8,7 +8,7 @@ const handle = nextApp.getRequestHandler() //part of next config
 const mongoose = require('mongoose')
 require('dotenv').config();
 
-mongoose.connect(process.env.MONGODB_LINK, {
+mongoose.connect('mongodb://bartgrj:W+B=dreamteams@51.210.97.140:27017/admin', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })

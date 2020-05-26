@@ -20,7 +20,7 @@ const BirthdayShop = (props) => {
     useEffect(() => {
         // get products from database if user refresh page
         // get birth products
-        fetch('http://localhost:3001/api/getBirthdayData').then(res => res.json()).then(json => {
+        fetch('http://cudnydzien.pl:8080/getBirthdayData').then(res => res.json()).then(json => {
            props.getBirthday(json)
         }).catch(err => console.log(err))
     }, [])

@@ -95,8 +95,7 @@ const Product = (props) => {
 // if product data is available in the store, get data. If not, fetch from database
          // fetch data from database
         //  this data can be available in the store if the page has not been refreshed. Use it!!!
-         console.log('get data from database!!!')
-         fetch(`http://localhost:3001/api/${type}`).then(res => res.json()).then(json => {
+         fetch(`http://cudnydzien.pl:8080/${type}`).then(res => res.json()).then(json => {
              Object.values(json).map(el => {
                  if(id == el.productId) {
                      const { 

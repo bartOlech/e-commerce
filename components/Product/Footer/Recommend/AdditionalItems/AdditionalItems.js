@@ -26,7 +26,7 @@ const AdditionalItems = (props) => {
 
     useEffect(() => {
         // in the future, create collection additionalItems in database
-        fetch('http://localhost:3001/api/getBirthData').then(res => res.json()).then(json => {
+        fetch('http://cudnydzien.pl:8080/getBirthData').then(res => res.json()).then(json => {
            props.getAddtionalItems(json)
         }).catch(err => console.log(err))
     }, [])
