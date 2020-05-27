@@ -4,8 +4,8 @@ import { FontStyle } from '../../../assets/style/style';
 
 const Container = styled.div`
     margin-bottom: 10px;
-    width: 99%;
-    max-width: 700px;
+    width: 100%;
+    max-width: 850px;
     display: flex;
     margin-top: -15px;
     position: relative;
@@ -30,9 +30,9 @@ const Tittle = styled.div`
     }
 `
 const Line = styled.div`
-    width: 99%;
+    width: 100%;
     height: 1px;
-    max-width: 700px;
+    max-width: 850px;
     background-color: #E4E7EB;
     position: absolute;
     bottom: 0;

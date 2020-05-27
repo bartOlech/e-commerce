@@ -22,6 +22,10 @@ const Ico = styled.div`
     &:hover {
         left: 25px;
     }
+    @media(max-width: 1000px) {
+        top: 16px;
+        left: 38px;
+    }
 `
 const Container = styled.div`
     width: 300px;

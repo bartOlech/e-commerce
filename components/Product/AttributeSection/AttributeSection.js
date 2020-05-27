@@ -13,7 +13,6 @@ const Container = styled.div`
     width: 100%;
     height: 100%;
     max-width: 500px;
-    background-color: #fff;
     padding-bottom: 20px;
     position: relative;
     /* box-shadow: 0 2px 12px -8px rgba(59, 71, 90, .2); */

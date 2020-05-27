@@ -33,7 +33,7 @@ const BottomContent = styled.div`
     flex-direction: column; 
     @media(min-width: 1000px) {
         margin-left: 50px;
-
+        padding-right: 70px;
     }
 `
 const Box = styled.div`
@@ -46,7 +46,7 @@ const Box = styled.div`
     }
 `
 const HorizontalLine = styled.div`
-    width: 100%;
+    width: 98%;
     height: 1px;
     margin-bottom: 15px;
     background: #E4E7EB;
@@ -165,9 +165,7 @@ const Product = (props) => {
             <ContentBox>
                 <AttributeSection initialPrice={initialPrice} sizeWithPrice={sizeWithPrice}></AttributeSection>
                 <BottomContent>
-                    <Description setWeightAlert={setWeightAlert} setGrowthAlert={setGrowthAlert} setNameFieldAlert={setNameFieldAlert} setDateAlert={setDateAlert}></Description>
-                    <HorizontalLine></HorizontalLine>
-                    <Box>
+                    <Description setWeightAlert={setWeightAlert} setGrowthAlert={setGrowthAlert} setNameFieldAlert={setNameFieldAlert} setDateAlert={setDateAlert}></Description>                    <Box>
                         <ModifyProduct weightIsFill={weightIsFill} growthIsFill={growthIsFill} nameIsFill={nameIsFill} dateIsSelected={dateIsSelected}></ModifyProduct>
                         <BuySection>
                             <BuyButton setWeightAlert={setWeightAlert} setGrowthAlert={setGrowthAlert} setNameFieldAlert={setNameFieldAlert} setDateAlert={setDateAlert}></BuyButton>
@@ -176,7 +174,7 @@ const Product = (props) => {
                     </Box>
                 </BottomContent>
             </ContentBox>
-            {/* <Footer></Footer> */}
+            <Footer></Footer>
             <Copyright></Copyright>
         </Container>
     )

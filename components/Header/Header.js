@@ -20,7 +20,7 @@ const Header = () => {
     return (
         <Conatiner>
             <Logo></Logo>
-            <HeaderMenu top='21px' left='170px'></HeaderMenu>
+            <HeaderMenu top='24px' left='170px'></HeaderMenu>
             <BasketIco></BasketIco>
             <CheckoutButton></CheckoutButton>
         </Conatiner>

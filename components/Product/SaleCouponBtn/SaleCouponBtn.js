@@ -30,7 +30,7 @@ const Button = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #FBAF62;
+    background-color: #f8d0b0;
     font-size: .9em;
     outline: none;
     cursor: pointer;

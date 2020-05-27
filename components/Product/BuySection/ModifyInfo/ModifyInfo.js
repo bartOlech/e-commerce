@@ -32,6 +32,9 @@ const Text = styled.div`
     font-family: ${FontStyle.family};
     color: ${FontStyle.color};
     font-size: 1.1em;
+    font-weight: 300;
+    padding-top: 10px;
+    margin-right: 10px;
 `
 const ButtonMsgBox = styled.div`
     width: 300px;
@@ -55,10 +58,11 @@ const MsgButton = styled.button`
     align-items: center;
     border: none;
     /* border-radius: 2px; */
-    background-color: #f8d0b0;
+    background-color: #FDAC6B;
     padding-left: 40px;
     cursor: pointer;
     outline: none;
+    margin-left: -4px;
 ` 
 const MsgIco = styled.div`
     width: 25px;

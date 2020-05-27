@@ -16,7 +16,7 @@ const Li = styled.div`
     font-family: ${FontStyle.family};
     color: ${FontStyle.color};
     font-weight: 300;
-    font-size: 1.3em;
+    font-size: 1.2em;
     cursor: pointer;
     transition: .1s;
     margin-right: 20px;
