@@ -2,10 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../assets/style/style';
 import ProductContainer from './Product/ProductContainer';
-// frames data
-import { Small } from '../../../assets/FramesData/Small';
-import { All } from '../../../assets/FramesData/All';
-import { Large } from '../../../assets/FramesData/Large';
+import { connect } from 'react-redux';
 
 const Container = styled.div`
     width: 100%;
@@ -21,34 +18,25 @@ const Container = styled.div`
        
     }
 `
-const ButtonsBoxPhone = styled.div`
-    width: 100%;
-    height: 45px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    border-top: 1px solid #F8AEA2;
-    border-bottom: 1px solid #F8AEA2;
-    @media (min-width: 1000px) {
-       display: none;
-    }
-`
-const ButtonsBoxDesktop = styled.div`
+const ButtonsBox = styled.div`
     height: 45px;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-left: 30px;
+    max-width: 400px;
+    
+    /* margin: 0 auto; */
     @media (min-width: 1000px) {
         display: flex;
         width: 30%;
         justify-content: flex-start;
+     
     }
 `
 const Button = styled.div`
     box-sizing: border-box;
-    width: 100%;
+    width: 100px;
     height: 100%;
     font-family: ${FontStyle.family};
     color: ${props => props.color};
@@ -64,43 +52,50 @@ const Button = styled.div`
         width: 120px;
     }
 `
+const Div = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 30px;
+`
 
-const Products = () => {
-    const[dimension, setDimension] = useState('all');
-    const [products, setProducts] = useState(All)
+const Products = (props) => {
+    const[dimension, setDimension] = useState('URODZINY');
     
 
     return (
-        <Container>
-         
-            {/* Only desktop */}
-            <ButtonsBoxDesktop>
-                <Button onClick={() => {
-                    setDimension('all')
-                    setProducts(All)
-                }} 
-                    borderBottom={dimension === 'all' ? '3px solid #202020' : 'none'} 
-                >Urodziny</Button>
-                <Button onClick={() => {
-                    setDimension('small')
-                    setProducts(Small)
-                }}
-                    borderBottom={dimension === 'small' ? '3px solid #202020' : 'none'} 
-                >Narodziny</Button>
-                <Button onClick={() => {
-                    setDimension('large')
-                    setProducts(Large)
-                }}
-                    borderBottom={dimension === 'large' ? '3px solid #202020' : 'none'} 
-                >Rocznica</Button>
-            </ButtonsBoxDesktop>
-
-
-
-            <ProductContainer products={products}></ProductContainer>
-            
+        <Container>     
+            <Div>
+                <ButtonsBox>
+                    <Button onClick={() => {
+                        setDimension('URODZINY')
+                    }} 
+                        borderBottom={dimension === 'URODZINY' ? '3px solid #202020' : 'none'} 
+                    >Urodziny</Button>
+                    <Button onClick={() => {
+                        setDimension('NARODZINY')
+                    }}
+                        borderBottom={dimension === 'NARODZINY' ? '3px solid #202020' : 'none'} 
+                    >Narodziny</Button>
+                    <Button onClick={() => {
+                        setDimension('ROCZNICA')
+                    }}
+                        borderBottom={dimension === 'ROCZNICA' ? '3px solid #202020' : 'none'} 
+                    >Rocznica</Button>
+                </ButtonsBox>
+            </Div>
+            <ProductContainer products={
+                dimension === 'URODZINY' ? props.birthdayProducts : (
+                dimension === 'NARODZINY' ? props.birthProducts : props.birthProducts
+                )
+            }></ProductContainer>
         </Container>
     )
 }
 
-export default Products;
+const mapStateToProps = state => ({
+    birthdayProducts: state.products.birthdayProducts,
+    birthProducts: state.products.birthProducts
+})
+
+export default connect(mapStateToProps)(Products);

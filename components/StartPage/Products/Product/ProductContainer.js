@@ -18,7 +18,7 @@ const ProductContainer = (props) => {
 
     return (
         <Container>
-            {props.products.map((val, index) => {
+            {Object.values(props.products).map((val, index) => {
                 return (
                     <Product 
                         margin='10px 10px 30px 10px' 

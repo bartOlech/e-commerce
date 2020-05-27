@@ -34,11 +34,11 @@ const StartPage = (props) => {
     useEffect(() => {
         // get products from database
         // get birthday products
-        fetch('http://localhost:3001/api/getBirthdayData').then(res => res.json()).then(json => {
+        fetch('http://cudnydzien.pl:8080/getBirthdayData').then(res => res.json()).then(json => {
            props.getBirthday(json)
         }).catch(err => console.log(err))
         // get birth products
-        fetch('http://localhost:3001/api/getBirthData').then(res => res.json()).then(json => {
+        fetch('http://cudnydzien.pl:8080/getBirthData').then(res => res.json()).then(json => {
            props.getBirth(json)
         }).catch(err => console.log(err))
     }, [])
