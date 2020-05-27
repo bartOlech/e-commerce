@@ -18,6 +18,7 @@ const Container = styled.div`
     padding-top: 0;
     @media (min-width: 1000px) {
         width: 100%;
+        padding-left: 0;
     }
     @media (max-width: 600px) {
         padding: 0;

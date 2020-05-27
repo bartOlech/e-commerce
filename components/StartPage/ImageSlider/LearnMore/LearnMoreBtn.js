@@ -40,7 +40,7 @@ const Button = styled.div`
 const LearnMoreBtn = () => {
 
     const getMoreInfo = () => {
-        Router.push(`/moreInformation`)
+        Router.push(`/about`)
     }
 
     return (

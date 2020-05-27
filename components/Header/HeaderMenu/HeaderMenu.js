@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../assets/style/style';
+import Router from 'next/router';
 
 const List = styled.div`
     display: flex;
@@ -27,8 +28,8 @@ const Li = styled.div`
 const HeaderMenu = (props) => {
     return (
         <List top={props.top} left={props.left}>
-            <Li>SKLEP</Li>
-            <Li>O NAS</Li>
+            <Li onClick={() => Router.push('/shop')}>SKLEP</Li>
+            <Li onClick={() => Router.push('/about')}>O NAS</Li>
             <Li>PROMOCJE</Li>
         </List>
     )

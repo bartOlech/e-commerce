@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import AttributeSection from './AttributeSection/AttributeSection';
 import Description from './Description/Description';
 import SelectDate from './ModifyProduct/SelectDate/SelectDate';
-import BuyButton from './BuyButton/BuyButton';
+import BuyButton from './BuySection/BuyButton/BuyButton';
 import Basket from '../Basket/Basket';
 import { connect } from 'react-redux';
 import { setFrameDetails } from '../../redux/actions/setFrameDetails';
@@ -15,6 +15,7 @@ import BlurScreen from '../BlurScreen/BlurScreen';
 import Header from '../Header/Header';
 import Footer from './Footer/Footer';
 import Copyright from '../StartPage/Footer/Copyright/Copyright';
+import ModifyInfo from './BuySection/ModifyInfo/ModifyInfo';
 
 const Container = styled.div`
     width: 100%;
@@ -62,6 +63,10 @@ const HorizontalLineHeader = styled.div`
     @media(max-width: 1000px) {
             display: none;
         }
+`
+const BuySection = styled.div`
+    display: flex;
+    flex-direction: column;
 `
 
 const Product = (props) => {
@@ -164,11 +169,14 @@ const Product = (props) => {
                     <HorizontalLine></HorizontalLine>
                     <Box>
                         <ModifyProduct weightIsFill={weightIsFill} growthIsFill={growthIsFill} nameIsFill={nameIsFill} dateIsSelected={dateIsSelected}></ModifyProduct>
-                        <BuyButton setWeightAlert={setWeightAlert} setGrowthAlert={setGrowthAlert} setNameFieldAlert={setNameFieldAlert} setDateAlert={setDateAlert}></BuyButton>
+                        <BuySection>
+                            <BuyButton setWeightAlert={setWeightAlert} setGrowthAlert={setGrowthAlert} setNameFieldAlert={setNameFieldAlert} setDateAlert={setDateAlert}></BuyButton>
+                            <ModifyInfo></ModifyInfo>
+                        </BuySection>
                     </Box>
                 </BottomContent>
             </ContentBox>
-            <Footer></Footer>
+            {/* <Footer></Footer> */}
             <Copyright></Copyright>
         </Container>
     )

@@ -1,18 +1,41 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { FontStyle } from '../../../assets/style/style';
+import { FontStyle } from '../../../../assets/style/style';
 import { connect } from 'react-redux';
-import { setBasket } from '../../../redux/actions/Basket/setBasket';
-import { setAddProduct } from '../../../redux/actions/Product/setAddProduct';
-import { setQuantity } from '../../../redux/actions/Product/setQuantity';
+import { setBasket } from '../../../../redux/actions/Basket/setBasket';
+import { setAddProduct } from '../../../../redux/actions/Product/setAddProduct';
+import { setQuantity } from '../../../../redux/actions/Product/setQuantity';
 import _ from 'lodash';
 import {useRouter} from 'next/router';
 
+const Ico = styled.div`
+    width: 23px;
+    height: 23px;
+    background-image: url('../../../static/cart.svg');
+    background-repeat: no-repeat;
+    background-size: 23px 23px;
+    position: absolute;
+    top: 12px;
+    left: 28px;
+    cursor: pointer;
+    transition: .5s;
+    &:hover {
+        left: 25px;
+    }
+`
 const Container = styled.div`
+    width: 300px;
     display: flex;
     justify-content: center;
+    margin: 0 auto;
     margin-top: 35px;
     margin-bottom: 40px;
+    position: relative;
+    background: orange;
+    
+    &:hover ${Ico} {
+        left: 38px;
+    }
     @media(min-width: 1000px) {
         margin-top: 5px;
     }
@@ -30,21 +53,21 @@ const Button = styled.button`
     font-weight: 300;
     text-align: center;
     cursor: pointer;
-    transition: .5s;
     border: 1px solid #fff;
     display: flex;
     justify-content: center;
     align-items: center;
-    &&:hover {
-        background-color: #fff;
-        border: 1px solid #1C1C1C;
-        color: #1C1C1C;
+    padding-left: 40px;
+    transition: .5s;
+    &:hover {
+        background-color: #4c5156;
     }
     @media(min-width: 1000px) {
-        width: 250px;
+        width: 300px;
         height: 50px;
     }
 `
+
 
 const BuyButton = (props) => {
     // const [counter, setCounter] = useState(true)
@@ -147,6 +170,7 @@ const BuyButton = (props) => {
     return (
         <Container>
             <Button onClick={addToBasket}>DODAJ DO KOSZYKA</Button>
+            <Ico onClick={addToBasket}></Ico>
         </Container>
     )
 }
