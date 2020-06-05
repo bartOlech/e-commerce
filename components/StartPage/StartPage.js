@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState} from 'react';
 import styled from 'styled-components';
 // import { FontStyle } from '../../assets/style/style';
 import Header from '../Header/Header';
@@ -11,6 +11,9 @@ import MenuLinks from './Menu/MenuLinks';
 import BenefitsInfo from '../BenefitsInfo/BenefitsInfo';
 import GoToShop from './Button/GoToShop';
 import BlurScreen from '../BlurScreen/BlurScreen';
+
+
+
 // redux
 import { connect } from 'react-redux';
 import { getBirthday } from '../../redux/actions/GetFromDatabase/getBirthday';
@@ -31,7 +34,7 @@ const HorizontalLine = styled.div`
 
 const StartPage = (props) => {
     
-    useEffect(() => {
+    useEffect(() => { 
         // get products from database
         // get birthday products
         fetch('http://cudnydzien.pl:8080/getBirthdayData').then(res => res.json()).then(json => {
@@ -57,6 +60,7 @@ const StartPage = (props) => {
             <BenefitsInfo margin='0 0 60px 0'></BenefitsInfo>
             <HorizontalLine margin='-45px 0 0 0'></HorizontalLine>
             <Footer></Footer>
+            
         </Container>
     )
 }
