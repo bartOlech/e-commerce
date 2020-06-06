@@ -12,6 +12,7 @@ const Container = styled.div`
     flex-wrap: wrap;
     margin-top: 35px;
     position: relative;
+    margin-bottom: 50px;
 `
 
 const ProductContainer = (props) => {
@@ -23,6 +24,24 @@ const ProductContainer = (props) => {
                 arrows 
                 slidesPerPage={5}
                 infinite
+                breakpoints={{
+                    500: {
+                        slidesPerPage: 1,
+                        arrows: true
+                      },
+                    800: {
+                      slidesPerPage: 2,
+                      arrows: true
+                    },
+                    1000: {
+                      slidesPerPage: 4,
+                      arrows: true
+                    },
+                    1200: {
+                        slidesPerPage: 5,
+                        arrows: true
+                      }
+                  }}
              >
              {Object.values(props.products).map((val, index) => {
                     return (

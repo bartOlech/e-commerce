@@ -8,6 +8,7 @@ const Container = styled.div`
     font-weight: 300;
     font-size: 1.4em;
     margin-bottom: 20px;
+    padding-left: 41px;
 `
 
 const Text = (props) => {

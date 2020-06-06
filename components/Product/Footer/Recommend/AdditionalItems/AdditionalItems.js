@@ -4,18 +4,15 @@ import Text from './Text'
 import ItemBox from '../ItemBox/ItemBox';
 import { connect } from 'react-redux';
 import { getAddtionalItems } from '../../../../../redux/actions/GetFromDatabase/getAdditionalItems';
+import Carousel from '@brainhubeu/react-carousel';
 
 const Container = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding-left: 33px;
     margin-top: 45px;
     margin-bottom: 70px;
     box-sizing: border-box;
-    @media(max-width: 1000px) {
-        display: none;
-    }
 `
 const Items = styled.div`
     display: flex;
@@ -35,11 +32,36 @@ const AdditionalItems = (props) => {
         <Container>
             <Text></Text>
             <Items>
+            <Carousel 
+                arrows 
+                slidesPerPage={5}
+                infinite
+                breakpoints={{
+                    500: {
+                        slidesPerPage: 1,
+                        arrows: true
+                      },
+                    800: {
+                      slidesPerPage: 2,
+                      arrows: true
+                    },
+                    1000: {
+                      slidesPerPage: 3,
+                      arrows: true
+                    },
+                    1200: {
+                        slidesPerPage: 5,
+                        arrows: true
+                      }
+                  }}
+             >
                 {Object.values(props.additionalItems).map((val, index) => {
                     return (
                         <ItemBox category='DODATKI' type={val.type} id={val.productId} hoverImage={val.hoverImage} key={index} image={val.image} name={val.name} price={val.price}></ItemBox>
                     )
                 })}
+            </Carousel>
+                
             </Items>
         </Container>
     )

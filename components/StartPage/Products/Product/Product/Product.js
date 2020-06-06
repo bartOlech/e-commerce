@@ -6,7 +6,7 @@ import Router from 'next/router'
 
 const Container = styled.div`
     width: 160px;
-    height: 350px;
+    
     display: flex;
     flex-direction: column;
     /* align-items: center; */
@@ -14,6 +14,7 @@ const Container = styled.div`
     position: relative;
     cursor: pointer;
     transition: 1s;
+
 `
 
 const Product = (props) => {
