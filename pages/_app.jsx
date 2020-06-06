@@ -8,6 +8,8 @@ import 'react-chat-widget/lib/styles.css';
 import dynamic from 'next/dynamic';
 import styled from 'styled-components';
 
+import '@brainhubeu/react-carousel/lib/style.css';
+
 const Chatbot = dynamic(() => import("react-chat-widget").then(mod => mod.Widget), {
   ssr: false
 });
