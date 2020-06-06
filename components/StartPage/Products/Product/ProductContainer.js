@@ -13,24 +13,25 @@ const Container = styled.div`
     position: relative;
 `
 
-
 const ProductContainer = (props) => {
 
     return (
         <Container>
-            {Object.values(props.products).slice(0, 6).map((val, index) => {
-                    return (
-                        <Product 
-                            margin='10px 10px 30px 10px' 
-                            id={val.id} 
-                            hoverImage={val.hoverImage} 
-                            key={index} 
-                            image={val.image} 
-                            name={val.name} 
-                            size={val.size} 
-                            price={val.price}></Product>
-                    )
-            })}
+            {Object.values(props.products).map((val, index) => {
+              
+             return (
+                <Product 
+                    margin='10px 10px 30px 10px' 
+                    id={val.productId} 
+                    hoverImage={val.hoverImage}
+                    type={val.type}  
+                    key={index} 
+                    image={val.image} 
+                    name={val.name} 
+                    size={val.size} 
+                    price={val.price}></Product>
+            )
+          })}
         </Container>
     )
 }

@@ -12,8 +12,6 @@ import BenefitsInfo from '../BenefitsInfo/BenefitsInfo';
 import GoToShop from './Button/GoToShop';
 import BlurScreen from '../BlurScreen/BlurScreen';
 
-
-
 // redux
 import { connect } from 'react-redux';
 import { getBirthday } from '../../redux/actions/GetFromDatabase/getBirthday';
@@ -31,6 +29,8 @@ const HorizontalLine = styled.div`
     background-color: #E0E0E0;
     margin: ${props => props.margin};
 `
+
+
 
 const StartPage = (props) => {
     
@@ -60,7 +60,6 @@ const StartPage = (props) => {
             <BenefitsInfo margin='0 0 60px 0'></BenefitsInfo>
             <HorizontalLine margin='-45px 0 0 0'></HorizontalLine>
             <Footer></Footer>
-            
         </Container>
     )
 }
