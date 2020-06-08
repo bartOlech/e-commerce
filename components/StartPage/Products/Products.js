@@ -56,7 +56,8 @@ const Div = styled.div`
     width: 100%;
     display: flex;
     justify-content: flex-start;
-    margin-left: 30px;
+    padding-left: 30px;
+    box-sizing: border-box;
 `
 
 const Products = (props) => {
