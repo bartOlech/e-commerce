@@ -7,6 +7,7 @@ import Router from 'next/router';
 import 'react-chat-widget/lib/styles.css';
 import dynamic from 'next/dynamic';
 import styled from 'styled-components';
+import { FontStyle } from '../assets/style/style'
 
 import '@brainhubeu/react-carousel/lib/style.css';
 
@@ -90,6 +91,7 @@ class MyApp extends App {
                   showTimeStamp={false}
                   profileAvatar={'../static/robot.svg'}
                   senderPlaceHolder='Napisz wiadomość'
+                  fullScreenMode={false}
                 />
             </Provider>
         );
