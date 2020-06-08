@@ -33,12 +33,13 @@ const ImageBox = styled.div`
 `
 const TextDetails = styled.div`
     width: 150px;
-    height: 300px;
+    height: 304px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
     margin-left: 20px;
+    margin-top: -4px;
 `
 const HeartIco = styled.div`
     width: 60px;

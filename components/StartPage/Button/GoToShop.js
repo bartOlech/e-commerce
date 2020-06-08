@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../assets/style/style';
+import Router from 'next/router'
 
 const Container = styled.div`
     width: 100%;
@@ -31,9 +32,13 @@ const Button = styled.button`
 `
 
 const GoToShop = () => {
+    const goToShop = () => {
+        Router.push('/shop')
+    }
+
     return (
         <Container>
-            <Button>Przejdź do sklepu</Button>
+            <Button onClick={goToShop}>Przejdź do sklepu</Button>
         </Container>
     )
 }
