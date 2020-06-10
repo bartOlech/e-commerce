@@ -19,7 +19,7 @@ const Label = styled.label`
 `
 const Input = styled.input`
     width: 90%;
-    max-width: 357px;
+    max-width: 545px;
     height: 35px;
     border: 1px solid #E3E7F1;
     background-color: rgba(228,231,235,.3);
@@ -49,13 +49,13 @@ const SetMotherDay = (props) => {
         <Container>
             {/* <ToolTipMessage marginLeft='72px' msg='Zakupiony produkt będzie posiadał '></ToolTipMessage> */}
             <Label>Imię mamy</Label>
-            <Input placeholder='(nie wymagany)' onChange={handleName}></Input>
+            <Input value={props.clientMotherName} placeholder='(nie wymagany)' onChange={handleName}></Input>
         </Container>
     )
 }
 
 const mapStateToProps = state => ({
-    
+    clientMotherName: state.clientData.clientMotherName
 })
 
 const mapDispatchToProps = {

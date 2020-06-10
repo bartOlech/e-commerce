@@ -18,8 +18,8 @@ const Image = styled.div`
 
     @media (min-width: 1000px) {
         width: 430px;
-        height: 485px;
-        background-size: 430px 485px;
+        height: 540px;
+        background-size: 430px 540px;
     }
 `
 const ImagesBox = styled.div`

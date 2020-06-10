@@ -30,8 +30,10 @@ const ContentBox = styled.div`
     }
 `
 const BottomContent = styled.div`
+    width: 100%;
     display: flex;
     flex-direction: column; 
+   
     @media(min-width: 1000px) {
         padding-right: 0px;
     }
@@ -186,7 +188,6 @@ const Product = (props) => {
             <ContentBox>
                 <AttributeSection initialPrice={initialPrice} sizeWithPrice={sizeWithPrice}></AttributeSection>
                 <BottomContent>
-               
                     <Description 
                         setWeightAlert={setWeightAlert} 
                         setGrowthAlert={setGrowthAlert} 

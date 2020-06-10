@@ -11,6 +11,7 @@ import SetGrowth from './SetGrowth/SetGrowth';
 import SetWeight from './SetWeight/SetWeight';
 
 const Container = styled.div`
+    width: 100%;
     display: flex;
     flex-direction: column;
     /* background: rgba(91, 93, 194, .9); */
@@ -39,7 +40,7 @@ const HorizontalLine = styled.div`
 const ModifyProduct = (props) => {
     return (
         <Container>
-            <HorizontalLine></HorizontalLine>
+            {/* <HorizontalLine></HorizontalLine> */}
             <TittleText text={'Dostosuj swoje zamówienie'}></TittleText>
             {props.clientNameIsRequired && <SetName nameIsFill={props.nameIsFill}></SetName>}
             {props.clientDateIsRequired && <SelectDate dateIsSelected={props.dateIsSelected}></SelectDate>}

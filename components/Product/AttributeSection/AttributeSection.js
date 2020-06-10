@@ -42,7 +42,7 @@ const TextDetails = styled.div`
    
     margin-top: -1px;
     @media (min-width: 1000px) {
-        height: 485px;
+        height: 540px;
         margin-left: 28px;
     }
    
@@ -111,7 +111,7 @@ const AttributeSection = (props) => {
                 </TextDetails>
             </Details>
             {/* <HeartIco></HeartIco> */}
-           <SaleCouponBtn></SaleCouponBtn>
+           {/* <SaleCouponBtn></SaleCouponBtn> */}
         </Container>
     )
 }

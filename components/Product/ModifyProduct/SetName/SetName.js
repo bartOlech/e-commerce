@@ -19,7 +19,7 @@ const Label = styled.label`
 `
 const Input = styled.input`
     width: 90%;
-    max-width: 357px;
+    max-width: 545px;
     height: 35px;
     border: 1px solid #E3E7F1;
     background-color: rgba(228,231,235,.3);
@@ -40,7 +40,7 @@ const SetName = (props) => {
     return (
         <Container>
             <Label color={props.nameIsFill ? '#3B475A' : 'red'}>Podaj imię</Label>
-            <Input onChange={handleName}></Input>
+            <Input value={props.clientName} onChange={handleName}></Input>
         </Container>
     )
 }

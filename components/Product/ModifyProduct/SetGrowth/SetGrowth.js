@@ -19,7 +19,7 @@ const Label = styled.label`
 `
 const Input = styled.input`
     width: 90%;
-    max-width: 357px;
+    max-width: 545px;
     height: 35px;
     border: 1px solid #E3E7F1;
     background-color: rgba(228,231,235,.3);
@@ -42,13 +42,13 @@ const SetGrowth = (props) => {
         <Container>
             {/* <ToolTipMessage marginLeft='72px' msg='Wzrost dziecka'></ToolTipMessage> */}
             <Label color={props.growthIsFill ? '#3B475A' : 'red'}>Długość</Label>
-            <Input onChange={handleName}></Input>
+            <Input value={props.clientGrowth} onChange={handleName}></Input>
         </Container>
     )
 }
 
 const mapStateToProps = state => ({
-    clientName: state.clientData.clientName
+    clientGrowth: state.clientData.clientGrowth
 })
 
 const mapDispatchToProps = {

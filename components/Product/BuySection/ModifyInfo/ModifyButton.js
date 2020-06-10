@@ -50,12 +50,13 @@ const TextInfo = styled.div`
 const Text = styled.div`
     height: 100px;
     width: 68%;
+    font-size: ${props => props.fontSize};
     font-family: ${FontStyle.family};
-    color: ${FontStyle.color};
-    font-size: 1.1em;
+    color: ${props => props.color};
+    /* font-size: 1.1em; */
     font-weight: 300;
     padding-top: 10px;
-    margin-right: 10px;
+    transition: .3s;
 `
 const ButtonMsgBox = styled.div`
     width: 300px;
@@ -68,15 +69,13 @@ const ButtonMsgBox = styled.div`
 
 `
 const Ico = styled.div`
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     background-image: url('../../../../static/pencil.svg');
     background-repeat: no-repeat;
-    background-size: 50px 50px;
-    @media (max-width: 600px) {
-       margin-left: 5px;
-       margin-top: 5px;
-    }
+    background-size: 45px 45px;
+    margin-left: 10px;
+    margin-top: 8px;
 `
 
 
@@ -86,7 +85,7 @@ const ModifyButton = (props) => {
         <Container>
             <TextInfo>
                 <Ico></Ico>
-                <Text>Przed zakupem dowolnie spersonalizuj swój plakat</Text>
+                <Text fontSize={props.allIsValidate ? '1.1em' : '1.2em'} color={props.allIsValidate ? FontStyle.color : 'red'}>Przed zakupem dowolnie spersonalizuj swój plakat</Text>
             </TextInfo>
             <ButtonMsgBox onClick={() => props.setModifyProductIsVisible(true)}>
                 <Button>PERSONALIZUJ</Button>
@@ -94,10 +93,13 @@ const ModifyButton = (props) => {
         </Container>
     )
 }
+const mapStateToProps = state => ({
+    allIsValidate: state.clientData.allIsValidate
+})
 
 const mapDispatchToProps = {
     setModifyProductIsVisible
 }
 
 
-export default connect(null, mapDispatchToProps)(ModifyButton);
+export default connect(mapStateToProps, mapDispatchToProps)(ModifyButton);

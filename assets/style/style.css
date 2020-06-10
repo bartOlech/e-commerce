@@ -7,6 +7,7 @@ html, body {
 .data-picker {
     box-sizing: border-box;
     width: 90%;
+    max-width: 545px;
     height: 40px;
     border: 1px solid #E3E7F1;
     /* border-radius: px; */
@@ -17,10 +18,11 @@ html, body {
     position: relative;
     outline: none;
     cursor: pointer;
+    
 }
 @media only screen and (max-width: 1000px) {
   .data-picker {
-    max-width: 365px;
+    max-width: 545px;
   }
 }
 

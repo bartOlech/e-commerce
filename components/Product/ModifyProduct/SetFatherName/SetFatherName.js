@@ -19,7 +19,7 @@ const Label = styled.label`
 `
 const Input = styled.input`
     width: 90%;
-    max-width: 357px;
+    max-width: 545px;
     height: 35px;
     border: 1px solid #E3E7F1;
     background-color: rgba(228,231,235,.3);
@@ -49,13 +49,13 @@ const SetFatherName = (props) => {
         <Container>
             {/* <ToolTipMessage marginLeft='72px' msg='Zakupiony produkt będzie miał podane imię'></ToolTipMessage> */}
             <Label>Imię taty</Label>
-            <Input placeholder='(nie wymagany)'  onChange={handleName}></Input>
+            <Input value={props.clientFatherName} placeholder='(nie wymagany)'  onChange={handleName}></Input>
         </Container>
     )
 }
 
 const mapStateToProps = state => ({
-    
+    clientFatherName: state.clientData.clientFatherName
 })
 
 const mapDispatchToProps = {

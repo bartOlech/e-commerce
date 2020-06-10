@@ -20,6 +20,7 @@ const Container = styled.div`
     padding: 15px 15px 20px 15px;
     box-sizing: border-box;
     position: relative;
+    
     @media(min-width: 1000px) {
         padding: 15px 15px 20px 0px;
     }
@@ -91,7 +92,13 @@ const Description = (props) => {
                 weightIsFill={props.weightIsFill} 
                 growthIsFill={props.growthIsFill} 
                 nameIsFill={props.nameIsFill} 
-                dateIsSelected={props.dateIsSelected}>
+                dateIsSelected={props.dateIsSelected}
+                
+                setWeightAlert={setWeightAlert}
+                setGrowthAlert={setGrowthAlert} 
+                setNameFieldAlert={setNameFieldAlert} 
+                setDateAlert={setDateAlert}
+            >
             </ModifyContainer>}
             
             <ProductData display={!props.modifySectionIsVisible ? 'inline' : 'none'}>

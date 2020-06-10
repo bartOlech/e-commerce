@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { setBasket } from '../../../../redux/actions/Basket/setBasket';
 import { setAddProduct } from '../../../../redux/actions/Product/setAddProduct';
 import { setQuantity } from '../../../../redux/actions/Product/setQuantity';
+import { setClientDataValidate } from '../../../../redux/actions/Product/setClientDataValidate';
 import _ from 'lodash';
 import {useRouter} from 'next/router';
 
@@ -101,8 +102,10 @@ const BuyButton = (props) => {
        if(props.clientNameIsRequired) {
         if(props.clientName) {
             props.setNameFieldAlert(true)
+            props.setClientDataValidate(true)
         } else {
             props.setNameFieldAlert(false)
+            props.setClientDataValidate(false)
             return;
         }
        }
@@ -110,8 +113,10 @@ const BuyButton = (props) => {
        if(props.clientDateIsRequired) {
         if(props.day) {
             props.setDateAlert(true)
+            props.setClientDataValidate(true)
         } else {
             props.setDateAlert(false)
+            props.setClientDataValidate(false)
             return;
         }
        }
@@ -119,8 +124,10 @@ const BuyButton = (props) => {
         if(props.clientGrowthIsRequired) {
             if(props.clientGrowth) {
                 props.setGrowthAlert(true)
+                props.setClientDataValidate(true)
             } else {
                 props.setGrowthAlert(false)
+                props.setClientDataValidate(false)
                 return;
             }
         }
@@ -128,8 +135,10 @@ const BuyButton = (props) => {
         if(props.clientWeightIsRequired) {
             if(props.clientWeight) {
                 props.setWeightAlert(true)
+                props.setClientDataValidate(true)
             } else {
                 props.setWeightAlert(false)
+                props.setClientDataValidate(false)
                 return;
             }
         }
@@ -212,6 +221,8 @@ const mapDispatchToProps = {
     setBasket,
     setAddProduct,
     setQuantity,
+    setClientDataValidate
+    
 }
 
 

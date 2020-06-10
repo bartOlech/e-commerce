@@ -11,6 +11,7 @@ const Container = styled.div`
     align-items: center;
     margin: 0 auto;
     margin-top: 40px;
+    margin-bottom: -80px;
     @media (min-width: 1000px) {
         margin: 0;
         margin-right: 7px;
@@ -85,6 +86,9 @@ const MsgIco = styled.div`
     background-image: url('../../../../static/messenger.svg');
     background-repeat: no-repeat;
     background-size: 25px 25px;
+    @media(min-width: 1000px) {
+        top: 13px;
+    }
 `
 
 const ModifyInfo = () => {

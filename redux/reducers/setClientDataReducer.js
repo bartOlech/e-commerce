@@ -2,6 +2,7 @@ import * as constants from '../actions/constants';
 
 const initialState = {
     modifySectionIsVisible: false,
+    allIsValidate: true,
     clientName: '',
     clientMotherName: '',
     clientFatherName: '',
@@ -47,6 +48,11 @@ const setClientDataReducer = (state = initialState, action) => {
                 ...state,
                 modifySectionIsVisible: action.payload.val
             }   
+        case constants.SET_CLIENT_DATA_VALIDATE:
+            return {
+                ...state,
+                allIsValidate: action.payload.val
+            }  
         default: 
             return {
                 ...state

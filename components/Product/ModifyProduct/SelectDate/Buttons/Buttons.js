@@ -20,7 +20,7 @@ const Container = styled.div`
     align-items: left;
     margin-top: 10px;
     width: 100%;
-    max-width: 460px;
+    max-width: 620px;
 `
 const Text = styled.span`
     font-family: ${FontStyle.family};
