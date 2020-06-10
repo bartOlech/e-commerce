@@ -35,13 +35,17 @@ const Container = styled.div`
     margin-top: 35px;
     margin-bottom: 40px;
     position: relative;
-    background: orange;
     
     &:hover ${Ico} {
         left: 38px;
     }
     @media(min-width: 1000px) {
         margin-top: 5px;
+        margin-top: 0;
+        margin-bottom: 0;
+        margin: 0;
+        margin-top: -5px;
+        margin-right: -6px;
     }
 `
 

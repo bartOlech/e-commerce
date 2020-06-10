@@ -16,6 +16,7 @@ import Header from '../Header/Header';
 import Footer from './Footer/Footer';
 import Copyright from '../StartPage/Footer/Copyright/Copyright';
 import ModifyInfo from './BuySection/ModifyInfo/ModifyInfo';
+import ModifyButton from './BuySection/ModifyInfo/ModifyButton';
 
 const Container = styled.div`
     width: 100%;
@@ -32,8 +33,7 @@ const BottomContent = styled.div`
     display: flex;
     flex-direction: column; 
     @media(min-width: 1000px) {
-        margin-left: 50px;
-        padding-right: 70px;
+        padding-right: 0px;
     }
 `
 const Box = styled.div`
@@ -43,6 +43,7 @@ const Box = styled.div`
     @media(min-width: 1000px) {
         flex-direction: row;
         justify-content: space-between;
+        margin-top: 0;
     }
 `
 const HorizontalLine = styled.div`
@@ -64,9 +65,29 @@ const HorizontalLineHeader = styled.div`
             display: none;
         }
 `
-const BuySection = styled.div`
-    display: flex;
+const BottomSection = styled.div`
+    width: 100%;
+    display: ${props => props.display};
     flex-direction: column;
+    align-items: center;
+    @media(min-width: 1000px) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+`
+const Line = styled.div`
+    width: 300px;
+    height: 1px;
+    background-color: rgba(228,231,235,.5);
+    margin-top: 38px;
+    @media(min-width: 1000px) {
+            display: none;
+        }
+`
+const BuyButtonContainer = styled.div`
+    @media(min-width: 1000px) {
+        display: none;
+    }
 `
 
 const Product = (props) => {
@@ -165,12 +186,27 @@ const Product = (props) => {
             <ContentBox>
                 <AttributeSection initialPrice={initialPrice} sizeWithPrice={sizeWithPrice}></AttributeSection>
                 <BottomContent>
-                    <Description setWeightAlert={setWeightAlert} setGrowthAlert={setGrowthAlert} setNameFieldAlert={setNameFieldAlert} setDateAlert={setDateAlert}></Description>                    <Box>
-                        <ModifyProduct weightIsFill={weightIsFill} growthIsFill={growthIsFill} nameIsFill={nameIsFill} dateIsSelected={dateIsSelected}></ModifyProduct>
-                        <BuySection>
-                            <BuyButton setWeightAlert={setWeightAlert} setGrowthAlert={setGrowthAlert} setNameFieldAlert={setNameFieldAlert} setDateAlert={setDateAlert}></BuyButton>
+               
+                    <Description 
+                        setWeightAlert={setWeightAlert} 
+                        setGrowthAlert={setGrowthAlert} 
+                        setNameFieldAlert={setNameFieldAlert} 
+                        setDateAlert={setDateAlert}
+                        weightIsFill={weightIsFill} 
+                        growthIsFill={growthIsFill} 
+                        nameIsFill={nameIsFill} 
+                        dateIsSelected={dateIsSelected}
+                    ></Description>                    
+                    <Box>
+                       
+                        <BottomSection display={!props.modifySectionIsVisible ? 'flex' : 'none'}>
+                            <ModifyButton></ModifyButton>
+                            <Line></Line>
+                            <BuyButtonContainer>
+                                <BuyButton setWeightAlert={setWeightAlert} setGrowthAlert={setGrowthAlert} setNameFieldAlert={setNameFieldAlert} setDateAlert={setDateAlert}></BuyButton>
+                            </BuyButtonContainer>
                             <ModifyInfo></ModifyInfo>
-                        </BuySection>
+                        </BottomSection>
                     </Box>
                 </BottomContent>
             </ContentBox>
@@ -184,6 +220,7 @@ const mapStateToProps = state => ({
     birthday: state.products.birthdayProducts,
     birthProducts: state.products.birthProducts,
     frameColor: state.frameData.frameColor,
+    modifySectionIsVisible: state.clientData.modifySectionIsVisible
 })
 
 const mapDispatchToProps = {

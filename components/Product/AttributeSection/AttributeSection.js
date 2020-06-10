@@ -12,7 +12,7 @@ import SaleCouponBtn from '../SaleCouponBtn/SaleCouponBtn';
 const Container = styled.div`
     width: 100%;
     height: 100%;
-    max-width: 500px;
+    max-width: 600px;
     padding-bottom: 20px;
     position: relative;
     /* box-shadow: 0 2px 12px -8px rgba(59, 71, 90, .2); */
@@ -23,7 +23,7 @@ const Container = styled.div`
 `
 const Details = styled.div`
     width: 100%;
-    margin-top: 30px;
+    margin-top: 15px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -32,14 +32,20 @@ const ImageBox = styled.div`
 
 `
 const TextDetails = styled.div`
-    width: 150px;
-    height: 304px;
+    width: 100%;
+    height: 300px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
     margin-left: 20px;
-    margin-top: -4px;
+   
+    margin-top: -1px;
+    @media (min-width: 1000px) {
+        height: 485px;
+        margin-left: 28px;
+    }
+   
 `
 const HeartIco = styled.div`
     width: 60px;
@@ -74,7 +80,12 @@ const HeartIco = styled.div`
         left: 17px;
         display: none;
     }
-
+`
+const Hr = styled.hr`
+    opacity: .1;
+    @media (min-width: 1000px) {
+       display: none;
+    }
 `
 
 const AttributeSection = (props) => {
@@ -87,6 +98,7 @@ const AttributeSection = (props) => {
    
     return (
         <Container>
+            <Hr></Hr>
             <AttributeName name={props.name}></AttributeName>
             <Details>
                 <ImageBox>
@@ -98,7 +110,7 @@ const AttributeSection = (props) => {
                     <AttributeSize setPrice={setPrice} sizeWithPrice={props.sizeWithPrice}></AttributeSize>
                 </TextDetails>
             </Details>
-            <HeartIco></HeartIco>
+            {/* <HeartIco></HeartIco> */}
            <SaleCouponBtn></SaleCouponBtn>
         </Container>
     )

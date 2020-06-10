@@ -8,20 +8,25 @@ import ShipmentText from './ShipmentText';
 import AdditionalData from './AdditionalData';
 import { FontStyle } from '../../../assets/style/style';
 import { connect } from 'react-redux';
+import BuyButton from '../BuySection/BuyButton/BuyButton';
+import ModifyContainer from '../ModifyProduct/ModifyContainer/ModifyContainer';
 
 const Container = styled.div`
     width: 100%;
-    max-width: 1100px;
+    /* max-width: 1100px; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding: 30px 15px 20px 15px;
+    padding: 15px 15px 20px 15px;
     box-sizing: border-box;
     position: relative;
+    @media(min-width: 1000px) {
+        padding: 15px 15px 20px 0px;
+    }
     
 `
 const ProductData = styled.div`
-
+    display: ${props => props.display};
 `
 const Text = styled.div`
     font-family: ${FontStyle.family};
@@ -51,6 +56,13 @@ const HorizontalLine = styled.div`
             display: none;
         }
 `
+const HeaderBox = styled.div`
+    display: flex;
+    justify-content: space-between;
+    @media(max-width: 1000px) {
+            display: none;
+        }
+`
 
 const Description = (props) => {
     const [isClicked, setIsClicked] = useState('description')
@@ -59,10 +71,35 @@ const Description = (props) => {
         setIsClicked(val)
     }
 
+    const setWeightAlert = (val) => {
+        props.setWeightAlert(val)
+    }
+    const setGrowthAlert = (val) => {
+        props.setGrowthAlert(val)
+    }
+    const setNameFieldAlert = (val) => {
+        props.setNameFieldAlert(val)
+    }
+    const setDateAlert = (val) => {
+        props.setDateAlert(val)
+    }
+
     return (
         <Container data-testid='description'>
-            <ProductData>
-                <DesktopName>{props.name}</DesktopName>
+            {/* Modify section */}
+            {props.modifySectionIsVisible && <ModifyContainer 
+                weightIsFill={props.weightIsFill} 
+                growthIsFill={props.growthIsFill} 
+                nameIsFill={props.nameIsFill} 
+                dateIsSelected={props.dateIsSelected}>
+            </ModifyContainer>}
+            
+            <ProductData display={!props.modifySectionIsVisible ? 'inline' : 'none'}>
+                <HeaderBox>
+                    <DesktopName>{props.name}</DesktopName>
+                    <BuyButton setWeightAlert={setWeightAlert} setGrowthAlert={setGrowthAlert} setNameFieldAlert={setNameFieldAlert} setDateAlert={setDateAlert}></BuyButton>
+                </HeaderBox>
+                
                 <DescriptionMenu setText={setText} tittle='Opis'></DescriptionMenu>
                 {isClicked === 'description' ? (
                     <React.Fragment>
@@ -85,7 +122,8 @@ const mapStateToProps = state => ({
     description: state.frameData.description,
     name: state.frameData.name,
     additionalData: state.frameData.additionalData,
-    shipment: state.frameData.shipment
+    shipment: state.frameData.shipment,
+    modifySectionIsVisible: state.clientData.modifySectionIsVisible
 })
 
 export default connect(mapStateToProps)(Description);

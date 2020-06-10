@@ -29,6 +29,7 @@ export const SET_FATHER_NAME = 'SET_FATHER_NAME';
 export const SET_PLACE = 'SET_PLACE';
 export const SET_GROWTH = 'SET_GROWTH';
 export const SET_WEIGHT = 'SET_WEIGHT';
+export const SET_MODIFY_PRODUCT_VISIBLE = 'SET_MODIFY_PRODUCT_VISIBLE';
 // Database
 export const GET_BIRTHDAY_DATA = 'GET_BIRTHDAY_DATA';
 export const GET_BIRTH_DATA = 'GET_BIRTH_DATA';

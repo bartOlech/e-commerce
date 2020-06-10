@@ -15,6 +15,12 @@ const Image = styled.div`
     cursor: pointer;
     transition: .3s;
     border-radius: 2px;
+
+    @media (min-width: 1000px) {
+        width: 430px;
+        height: 485px;
+        background-size: 430px 485px;
+    }
 `
 const ImagesBox = styled.div`
     margin-top: 10px;

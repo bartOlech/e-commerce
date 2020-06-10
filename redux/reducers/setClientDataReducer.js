@@ -1,6 +1,7 @@
 import * as constants from '../actions/constants';
 
 const initialState = {
+    modifySectionIsVisible: false,
     clientName: '',
     clientMotherName: '',
     clientFatherName: '',
@@ -40,7 +41,12 @@ const setClientDataReducer = (state = initialState, action) => {
             return {
                 ...state,
                 clientWeight: action.payload.data
-            }         
+            }    
+        case constants.SET_MODIFY_PRODUCT_VISIBLE:
+            return {
+                ...state,
+                modifySectionIsVisible: action.payload.val
+            }   
         default: 
             return {
                 ...state

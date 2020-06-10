@@ -10,11 +10,19 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
+    margin-top: 40px;
+    @media (min-width: 1000px) {
+        margin: 0;
+        margin-right: 7px;
+    }
 `
 const TextInfo = styled.div`
     display: flex;
     justify-content: space-between;
     margin-bottom: -10px;
+    @media (max-width: 1000px) {
+        display: none;
+    }
 `
 const Ico = styled.div`
     width: 70px;
@@ -48,7 +56,7 @@ const ButtonMsgBox = styled.div`
 `
 const MsgButton = styled.button`
     width: 300px;
-    height: 45px;
+    height: 60px;
     font-family: ${FontStyle.family};
     margin: 0 auto;
     color: #fff;
@@ -63,12 +71,16 @@ const MsgButton = styled.button`
     cursor: pointer;
     outline: none;
     margin-left: -4px;
+    @media(min-width: 1000px) {
+        width: 300px;
+        height: 50px;
+    }
 ` 
 const MsgIco = styled.div`
     width: 25px;
     height: 25px;
     position: absolute;
-    top: 11px;
+    top: 18px;
     left: 13px;
     background-image: url('../../../../static/messenger.svg');
     background-repeat: no-repeat;
