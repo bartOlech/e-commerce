@@ -64,3 +64,19 @@ html, body {
     visibility: visible;
     opacity: 1;
   }
+
+  .loader-container{
+    background-color:#f4f7f9;
+    border-radius:10px;
+    padding:15px;
+    max-width:115px;
+    text-align:left
+}
+
+/* To get rid of too wide container */
+.rcw-launcher {
+  margin-top: -60px;
+}
+.rcw-conversation-container {
+  margin-bottom: 70px;
+}

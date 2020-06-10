@@ -84,15 +84,16 @@ class MyApp extends App {
         return (
             <Provider store={store}>
                 <Component {...pageProps}/>
-                <Chatbot  
-                  handleNewUserMessage={handleNewUserMessage}
-                  title="Osobisty asystent sklepu"
-                  subtitle={<ChatButton onClick={() => alert('go to contact page')}>Skontaktuj się z nami przez formularz</ChatButton>}
-                  showTimeStamp={false}
-                  profileAvatar={'../static/robot.svg'}
-                  senderPlaceHolder='Napisz wiadomość'
-                  fullScreenMode={false}
-                />
+                  <Chatbot  
+                    handleNewUserMessage={handleNewUserMessage}
+                    title="Osobisty asystent sklepu"
+                    subtitle={<ChatButton onClick={() => alert('go to contact page')}>Skontaktuj się z nami przez formularz</ChatButton>}
+                    showTimeStamp={false}
+                    profileAvatar={'../static/robot.svg'}
+                    senderPlaceHolder='Napisz wiadomość'
+                    fullScreenMode={false}
+                    className='classa'
+                  />
             </Provider>
         );
     }
