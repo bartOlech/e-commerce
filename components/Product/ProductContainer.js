@@ -62,7 +62,7 @@ const HorizontalLineHeader = styled.div`
     height: 1px;
     margin-bottom: 7px;
     margin-top: 7px;
-    background: rgba(228, 231, 235, .5);
+    background-color: rgba(228, 231, 235, .5);
     @media(max-width: 1000px) {
             display: none;
         }

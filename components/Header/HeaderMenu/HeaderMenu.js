@@ -31,6 +31,7 @@ const HeaderMenu = (props) => {
             <Li onClick={() => Router.push('/shop')}>SKLEP</Li>
             <Li onClick={() => Router.push('/about')}>O NAS</Li>
             <Li>PROMOCJE</Li>
+            <Li onClick={() => Router.push('/contact')}>KONTAKT</Li>
         </List>
     )
 }
