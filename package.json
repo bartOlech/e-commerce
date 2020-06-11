@@ -29,6 +29,7 @@
     "next-redux-wrapper": "^5.0.0",
     "react": "16.13.1",
     "react-animations": "^1.0.0",
+    "react-burger-menu": "^2.6.15",
     "react-chat-widget": "^3.0.5",
     "react-datepicker": "^2.14.1",
     "react-dom": "16.13.1",

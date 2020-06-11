@@ -4,6 +4,7 @@ import Logo from './Logo';
 import BasketIco from './BasketIco';
 import HeaderMenu from './HeaderMenu/HeaderMenu';
 import CheckoutButton from './CheckoutButton';
+import BurgerMenu from './BurgerMenu';
 
 const Conatiner = styled.div`
     width: 100%;
@@ -19,6 +20,7 @@ const Conatiner = styled.div`
 const Header = () => {
     return (
         <Conatiner>
+            <BurgerMenu></BurgerMenu>
             <Logo></Logo>
             <HeaderMenu top='24px' left='170px'></HeaderMenu>
             <BasketIco></BasketIco>

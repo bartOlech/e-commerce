@@ -16,7 +16,7 @@ import BlurScreen from '../BlurScreen/BlurScreen';
 import DesktopMenu from './Menu/DesktopMenu/DesktopMenu';
 
 const Container = styled.div`
-   
+    
 `
 const HorizontalLine = styled.div`
     width: 100%;

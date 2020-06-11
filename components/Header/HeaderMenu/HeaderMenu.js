@@ -8,7 +8,7 @@ const List = styled.div`
     position: absolute;
     left: ${props => props.left};
     top: ${props => props.top};
-    @media (max-width: 500px) {
+    @media (max-width: 1000px) {
         display: none;
     }
 `
@@ -21,7 +21,7 @@ const Li = styled.div`
     transition: .1s;
     margin-right: 20px;
     &&:hover {
-        border-bottom: 1px solid #000;
+        color: #DD9900;
     }
 `
 
