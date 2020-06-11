@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../../assets/style/style';
+import Router from 'next/router';
 
 const Container = styled.div`
     width: 300px;
@@ -78,16 +79,16 @@ const MsgButton = styled.button`
     }
 ` 
 const MsgIco = styled.div`
-    width: 25px;
-    height: 25px;
+    width: 33px;
+    height: 33px;
     position: absolute;
-    top: 18px;
-    left: 13px;
-    background-image: url('../../../../static/messenger.svg');
+    top: 13px;
+    left: 22px;
+    background-image: url('../../../../static/message.svg');
     background-repeat: no-repeat;
-    background-size: 25px 25px;
+    background-size: 33px 33px;
     @media(min-width: 1000px) {
-        top: 13px;
+        top: 9px;
     }
 `
 
@@ -98,7 +99,7 @@ const ModifyInfo = () => {
                 <Ico></Ico>
                 <Text>Możliwość dobrania własnych kolorów oraz czcionek</Text>
             </TextInfo>
-            <ButtonMsgBox onClick={() => alert('Send message')}>
+            <ButtonMsgBox onClick={() => Router.push('/contact')}>
                 <MsgIco></MsgIco>
                 <MsgButton>Napisz do nas wiadomość</MsgButton>
             </ButtonMsgBox>
