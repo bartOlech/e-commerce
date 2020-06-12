@@ -26,7 +26,6 @@ const Li = styled.div`
     }
 `
 const Img = styled.img`
-    
     outline: none;
 `
 

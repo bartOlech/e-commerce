@@ -31,15 +31,30 @@ const PayButton = (props) => {
 
     const goToPayment = () => {
         props.checkValidation()
-        // console.log(`street: ${props.street}`)
-        // console.log(`number: ${props.number}`)
-        // console.log(`code: ${props.code}`)
-        // console.log(`city: ${props.city}`)
-        // console.log(`email: ${props.email}`)
-        // console.log(`name: ${props.name}`)
-        // console.log(`phone: ${props.phone}`)
-        // console.log(`extraMessage: ${props.message}`)
-        // console.log(`delivery: ${props.delivery}`)
+        const { street, number, code, city, email, name, phone, message, delivery, regulationsValidation, product } = props;
+        if(street && number && code && city && email && name && regulationsValidation) {
+            // console.log(product)
+            fetch('http://localhost:8080/setOrder', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    products: product,
+                    street,
+                    number,
+                    code,
+                    city,
+                    email,
+                    name,
+                    phone,
+                    message,
+                    delivery,
+                })
+            })
+        } else {
+            console.log(false)
+        }
     }
 
     return (
@@ -57,6 +72,8 @@ const mapStateToProps = state => ({
     phone: state.validation.phone,
     message: state.validation.message,
     delivery: state.delivery.delivery,
+    regulationsValidation: state.validation.regulations,
+    product: state.product.products
 })
 
 export default connect(mapStateToProps)(PayButton);

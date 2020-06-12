@@ -17,3 +17,5 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+/nodeServerDebian/.env
+/nodeServerDebian/node_modules
