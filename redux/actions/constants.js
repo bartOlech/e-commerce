@@ -1,10 +1,12 @@
+// Product
 export const SELECT_DATE = "SELECT_DATE";
 export const SELECT_SIZE = "SELECT_SIZE";
 export const SET_FRAME_DETAILS = "SET_FRAME_DETAILS";
 export const SET_PRICE = "GET_PRICE_WITH_SIZE";
 export const SET_DELIVERY = 'SET_DELIVERY';
 export const SET_FRAME_COLOR = 'SET_FRAME_COLOR';
-// form validation
+export const ADD_FRAME_TO_ORDER = 'ADD_FRAME_TO_ORDER';
+// Form validation
 export const STREET_VALIDATION = 'STREET_VALIDATION';
 export const NUMBER_VALIDATION = 'NUMBER_VALIDATION';
 export const CITY_VALIDATION = 'CITY_VALIDATION';

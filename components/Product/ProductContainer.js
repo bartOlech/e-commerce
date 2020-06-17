@@ -17,6 +17,7 @@ import Footer from './Footer/Footer';
 import Copyright from '../StartPage/Footer/Copyright/Copyright';
 import ModifyInfo from './BuySection/ModifyInfo/ModifyInfo';
 import ModifyButton from './BuySection/ModifyInfo/ModifyButton';
+import FrameSelector from './FrameSelector/FrameSelector';
 
 const Container = styled.div`
     width: 100%;
@@ -144,7 +145,8 @@ const Product = (props) => {
                          clientGrowthIsRequired,
                          clientPlaceIsRequired,
                          clientFatherNameIsRequired,
-                         clientMotherNameIsRequired
+                         clientMotherNameIsRequired,
+                         productWithFrame
                      } = el;
      
                      const frameColorsArr = el.frameColors;
@@ -168,7 +170,8 @@ const Product = (props) => {
                          clientGrowthIsRequired,
                          clientPlaceIsRequired,
                          clientFatherNameIsRequired,
-                         clientMotherNameIsRequired
+                         clientMotherNameIsRequired,
+                         productWithFrame
                          );
                      setSizeWithPrice(priceWithSize);
                      setInitialPrice(price)
@@ -197,7 +200,8 @@ const Product = (props) => {
                         growthIsFill={growthIsFill} 
                         nameIsFill={nameIsFill} 
                         dateIsSelected={dateIsSelected}
-                    ></Description>                    
+                    ></Description>       
+                    <FrameSelector></FrameSelector>             
                     <Box>
                        
                         <BottomSection display={!props.modifySectionIsVisible ? 'flex' : 'none'}>

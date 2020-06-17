@@ -11,7 +11,7 @@ const Image = styled.div`
     background-image: url(${props => props.image});
     background-size: 225px 300px;
     background-repeat: no-repeat;
-    margin-left: 10px;
+    margin-left: 9px;
     cursor: pointer;
     transition: .3s;
     border-radius: 2px;

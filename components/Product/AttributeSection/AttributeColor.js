@@ -54,7 +54,7 @@ const AttributeColor = (props) => {
 
 const mapStateToProps = state => ({
     frameColorsArr: state.frameData.frameColorsArr,
-    frameColors: state.frameData.frameColors
+    // frameColors: state.frameData.frameColors
 })
 
 const mapDispatchToProps = {

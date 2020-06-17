@@ -9,6 +9,7 @@ const initialState = {
     shipment: '',
     additionalData: '',
     color: '',
+    productWithFrame: false,
     initialPrice: '',
     frameColorsArr: [],
     clientDateIsRequired: false,
@@ -42,11 +43,17 @@ const frameReducer = (state = initialState, action) => {
                 clientPlaceIsRequired: action.payload.clientPlaceIsRequired,
                 clientFatherNameIsRequired: action.payload.clientFatherNameIsRequired,
                 clientMotherNameIsRequired: action.payload.clientMotherNameIsRequired,
+                productWithFrame: action.payload.productWithFrame
             }
         case constants.SET_FRAME_COLOR: 
             return {
                 ...state,
                 color: action.payload.color
+            }
+        case constants.ADD_FRAME_TO_ORDER: 
+            return {
+                ...state,
+                productWithFrame: action.payload.bool
             }
         default: {
             return {

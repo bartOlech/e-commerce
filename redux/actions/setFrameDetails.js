@@ -18,7 +18,8 @@ export const setFrameDetails = (
     clientGrowthIsRequired,
     clientPlaceIsRequired,
     clientFatherNameIsRequired,
-    clientMotherNameIsRequired
+    clientMotherNameIsRequired,
+    productWithFrame
     ) => ({
     type: constants.SET_FRAME_DETAILS,
     payload: {
@@ -39,6 +40,7 @@ export const setFrameDetails = (
         clientGrowthIsRequired,
         clientPlaceIsRequired,
         clientFatherNameIsRequired,
-        clientMotherNameIsRequired
+        clientMotherNameIsRequired,
+        productWithFrame
     }
 })
