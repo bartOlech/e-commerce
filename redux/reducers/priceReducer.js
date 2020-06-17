@@ -1,7 +1,7 @@
 import * as constants from '../actions/constants';
 
 const initialState = {
-    price: '',
+    price: 0,
     totalPrice: 0,
     couponIsActivated: false
 }
@@ -28,6 +28,16 @@ const priceReducer = (state = initialState, action) => {
                 ...state,
                 totalPrice: state.totalPrice * action.payload.coupon,
                 couponIsActivated: true
+            }
+        case constants.REMOVE_FROM_PRICE:
+            return {
+                ...state,
+                price: state.price - action.payload.val
+            }
+        case constants.ADD_TO_PRICE:
+            return {
+                ...state,
+                price: +state.price + action.payload.val
             }
         default:
             return{...state}

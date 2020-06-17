@@ -135,7 +135,6 @@ const Product = (props) => {
                          description,
                          shipment,
                          additionalData,
-                         color,
                          size,
                          priceWithSize,
                          price,
@@ -149,9 +148,6 @@ const Product = (props) => {
                          productWithFrame
                      } = el;
      
-                     const frameColorsArr = el.frameColors;
-                     const frameColors = el.frameColors[0];
-     
                      props.setFrameDetails(
                          productId, 
                          name, 
@@ -160,10 +156,7 @@ const Product = (props) => {
                          description, 
                          shipment, 
                          additionalData, 
-                         color, 
                          price, 
-                         frameColors, 
-                         frameColorsArr, 
                          clientDateIsRequired, 
                          clientNameIsRequired,
                          clientWeightIsRequired,

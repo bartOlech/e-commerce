@@ -89,13 +89,6 @@ const Hr = styled.hr`
 `
 
 const AttributeSection = (props) => {
-    const [selectedPrice, setSelectedPrice] = useState('')
-
-    const setPrice = (val) => {
-        setSelectedPrice(val)
-        props.setPrice(val)
-    }
-   
     return (
         <Container>
             <Hr></Hr>
@@ -105,9 +98,9 @@ const AttributeSection = (props) => {
                     <AttributeImage images={props.images} image={props.image}></AttributeImage>
                 </ImageBox>
                 <TextDetails>
-                    <AttributePrice data-testid='attribute-section-price'  price={selectedPrice ? selectedPrice : props.initialPrice}></AttributePrice>
-                    <AttributeColor frameColors={props.frameColors} color={props.color}></AttributeColor>
-                    <AttributeSize setPrice={setPrice} sizeWithPrice={props.sizeWithPrice}></AttributeSize>
+                    <AttributePrice data-testid='attribute-section-price'  price={props.price}></AttributePrice>
+                    <AttributeColor></AttributeColor>
+                    <AttributeSize sizeWithPrice={props.sizeWithPrice}></AttributeSize>
                 </TextDetails>
             </Details>
             {/* <HeartIco></HeartIco> */}

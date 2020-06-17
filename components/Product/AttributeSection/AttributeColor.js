@@ -9,26 +9,18 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
 `
-const Label = styled.label`
+const Name = styled.div`
     font-family: ${FontStyle.family};
     color: #6E6E6E;
-    font-size: 1.1em;
+    font-size: 1.3em;
     font-weight: 300;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 `
-const Option = styled.option`
+const Text = styled.div`
     font-family: ${FontStyle.family};
     color: #3B475A;
-    font-size: 1.6em;
-`
-const Select = styled.select`
-    width: 110px;
-    height: 23px;
-    background: #e5e5e5;
-    border-radius: 1px;
-    border: none;
-    outline: none;
-    font-size: 1.001em;
+    font-size: 1.1em;
+    margin-left: 1px;
 `
 
 const AttributeColor = (props) => {
@@ -40,21 +32,17 @@ const AttributeColor = (props) => {
 
     return (
         <Container>
-           <Label htmlFor='color'>Kolor ramy</Label>
-            <Select data-testid='select-size' onChange={handleColor} id='color'>
-                {props.frameColorsArr.map((el, index) => {
-                    return (
-                        <Option key={index} value={el}>{el}</Option>
-                    )
-                })}
-            </Select>
+           <Name>Ramka</Name>
+           <Text>
+               {props.productWithFrame ? props.frameColor : 'Bez ramki'}
+           </Text>
         </Container>
     )
 }
 
 const mapStateToProps = state => ({
-    frameColorsArr: state.frameData.frameColorsArr,
-    // frameColors: state.frameData.frameColors
+    frameColor: state.frameData.color,
+    productWithFrame: state.frameData.productWithFrame
 })
 
 const mapDispatchToProps = {

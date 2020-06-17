@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { FontStyle } from '../../../assets/style/style';
 import { connect } from 'react-redux';
 import { setSize } from '../../../redux/actions/setSizeActions';
+import { setPrice } from '../../../redux/actions/setPriceAction';
 
 const Container = styled.div`
     display: flex;
@@ -11,7 +12,7 @@ const Container = styled.div`
 const Label = styled.label`
     font-family: ${FontStyle.family};
     color: #6E6E6E;
-    font-size: 1.1em;
+    font-size: 1.3em;
     font-weight: 300;
     margin-bottom: 5px;
 `
@@ -45,7 +46,17 @@ const AttributeSize = (props) => {
         // change the price if the size has been changed
         for (let [key, value] of Object.entries(props.sizeWithPrice)) {
             if(val.target.value === value) {
-                props.setPrice(key)
+                if(props.productWithFrame) {
+                    if(value === '30 x 40 cm') {
+                        props.setPrice(+key + 20)
+                    } else if(value === '21 x 30 cm') {
+                        props.setPrice(+key + 10)
+                    } else {
+                        alert('error with size!!!')
+                    }
+                } else {
+                    props.setPrice(+key)
+                }
                 props.setSize(val.target.value)
             }
         }
@@ -62,11 +73,14 @@ const AttributeSize = (props) => {
 }
 
 const mapDispatchToProps = {
-    setSize
+    setSize,
+    setPrice
 }
 
 const mapStateToProps = state => ({
-    size: state.size.size
+    size: state.size.size,
+    productWithFrame: state.frameData.productWithFrame,
+    price: state.price.price,
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(AttributeSize);

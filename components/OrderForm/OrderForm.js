@@ -53,6 +53,7 @@ const OrderForm = (props) => {
 
     return (
         <Container>
+            {console.log(props.product)}
             <Form 
                 streetValidate={streetValidate}
                 numberValidate={numberValidate}

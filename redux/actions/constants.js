@@ -6,6 +6,8 @@ export const SET_PRICE = "GET_PRICE_WITH_SIZE";
 export const SET_DELIVERY = 'SET_DELIVERY';
 export const SET_FRAME_COLOR = 'SET_FRAME_COLOR';
 export const ADD_FRAME_TO_ORDER = 'ADD_FRAME_TO_ORDER';
+export const REMOVE_FROM_PRICE = 'REMOVE_FROM_PRICE';
+export const ADD_TO_PRICE = 'ADD_TO_PRICE';
 // Form validation
 export const STREET_VALIDATION = 'STREET_VALIDATION';
 export const NUMBER_VALIDATION = 'NUMBER_VALIDATION';

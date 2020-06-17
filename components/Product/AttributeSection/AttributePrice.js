@@ -9,14 +9,15 @@ const Container = styled.div`
 const Name = styled.div`
     font-family: ${FontStyle.family};
     color: #6E6E6E;
-    font-size: 1.1em;
+    font-size: 1.3em;
     font-weight: 300;
     margin-bottom: 3px;
 `
 const Price = styled.div`
     font-family: ${FontStyle.family};
     color: #3B475A;
-    font-size: 1.2em;
+    font-size: 1.1em;
+    margin-left: 3px;
 `
 
 const AttributePrice = (props) => {
