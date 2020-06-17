@@ -81,7 +81,7 @@ const Button = styled.button`
 const BuyButton = (props) => {
     // const [counter, setCounter] = useState(true)
     const Router = useRouter();
-    const{ day, month, year, id, name, image, price, initialPrice, size} = props;
+    const{ day, month, year, id, name, image, price, initialPrice, size, productWithFrame, color} = props;
 
     const addToBasket = () => {
         const date = `${day.length == 1 ? `0${day}` : day}.${month.length == 1 ? `0${month}` : month}.${year}`;
@@ -96,7 +96,8 @@ const BuyButton = (props) => {
             color: [props.color],
             quantity: 1,
             additionalData: [],
-            date: [date]
+            date: [date],
+            productWithFrame
         };
         // validate a client name field
        if(props.clientNameIsRequired) {
@@ -160,7 +161,10 @@ const BuyButton = (props) => {
                     if(el.id === props.id) {
                         if(el.size === props.size) {
                             arr[index].quantity += 1
-                            arr[index].price = +arr[index].initialPrice + +arr[index].price
+                            
+                            arr[index].price = +price + +arr[index].price
+                            // arr[index].price = +arr[index].initialPrice + +arr[index].price
+
                             // add color
                             arr[index].color.push(props.color)
                             // add date
@@ -204,6 +208,7 @@ const mapStateToProps = state => ({
     month: state.date.month,
     year: state.date.year,
     product: state.product.products,
+    productWithFrame: state.frameData.productWithFrame,
     // client data
     clientName: state.clientData.clientName,
     clientMotherName: state.clientData.clientMotherName,

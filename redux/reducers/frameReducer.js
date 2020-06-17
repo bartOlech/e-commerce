@@ -8,7 +8,7 @@ const initialState = {
     description: '',
     shipment: '',
     additionalData: '',
-    color: 'Czarny',  //Default frame color
+    color: '', 
     productWithFrame: false,
     initialPrice: '',
     clientDateIsRequired: false,

@@ -6,6 +6,7 @@ import { addFrameToOrder } from '../../../redux/actions/Product/addFrameToOrder'
 import { connect } from 'react-redux';
 import { removeFromPrice } from '../../../redux/actions/Product/removeFromPrice';
 import { addToPrice } from '../../../redux/actions/Product/addToPrice';
+import { setFrameColor } from '../../../redux/actions/Product/setFrameColor';
 
 const Text = styled.div`
     font-family: ${FontStyle.family};
@@ -34,7 +35,9 @@ const FrameCheckbox = (props) => {
 
     const handleCheck = () => {
         // enhance the price of a frame if has been selected
+
         if(!props.productWithFrame) {
+            props.setFrameColor('Czarny')
             if(props.size === '30 x 40 cm') {
                 props.addToPrice(20)
             } else if(props.size === '21 x 30 cm') {
@@ -43,6 +46,7 @@ const FrameCheckbox = (props) => {
                 alert('error with size!!!')
             }
         } else {
+            props.setFrameColor('')
             if(props.size === '30 x 40 cm') {
                 props.removeFromPrice(20)
             } else if(props.size === '21 x 30 cm') {
@@ -79,12 +83,14 @@ const FrameCheckbox = (props) => {
 const mapStateToProps = (state) => ({
     productWithFrame: state.frameData.productWithFrame,
     size: state.size.size,
+    frameColor: state.frameData.color,
 })
 
 const mapDispatchToProps = {
     addFrameToOrder,
     addToPrice,
-    removeFromPrice
+    removeFromPrice,
+    setFrameColor
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(FrameCheckbox);
