@@ -151,40 +151,45 @@ const BuyButton = (props) => {
         if(props.product.length == 0) {
             props.setAddProduct(obj, false)
         } else {
+            props.setAddProduct(obj, false)
+
+            
             // Don't add to array, instead increase quantity
-            const arr = props.product;
+            // const arr = props.product;
             // array that include duplicate size of product
-            let ar = [];
+            // let ar = [];
 
-            props.product.map((el, index) => {
-                    //if id exists add quantity and price
-                    if(el.id === props.id) {
-                        if(el.size === props.size) {
-                            arr[index].quantity += 1
+            // console.log(props.product)
+
+            // props.product.map((el, index) => {
+            //         //if id exists add quantity and price
+            //         if(el.id === props.id) {
+            //             if(el.size === props.size) {
+            //                 arr[index].quantity += 1
                             
-                            arr[index].price = +price + +arr[index].price
-                            // arr[index].price = +arr[index].initialPrice + +arr[index].price
+            //                 arr[index].price = +price + +arr[index].price
+            //                 // arr[index].price = +arr[index].initialPrice + +arr[index].price
 
-                            // add color
-                            arr[index].color.push(props.color)
-                            // add date
-                            arr[index].date.push(date)
-                            props.setQuantity(arr)
-                            ar.push('arrayIncludeSize')
-                        } else {
-                            ar.push('ArrayDontIncludeSize')
-                            // props.setAddProduct(obj, false)
-                        }                                    
-                    } 
-            })
+            //                 // add color
+            //                 arr[index].color.push(props.color)
+            //                 // add date
+            //                 arr[index].date.push(date)
+            //                 props.setQuantity(arr)
+            //                 ar.push('arrayIncludeSize')
+            //             } else {
+            //                 ar.push('ArrayDontIncludeSize')
+            //                 // props.setAddProduct(obj, false)
+            //             }                                    
+            //         } 
+            // })
+            // const sizeIsInArray = ar.includes('arrayIncludeSize');
 
-            const sizeIsInArray = ar.includes('arrayIncludeSize');
             // If sizes is in basket, only add 1 quantity
-            if(!sizeIsInArray) {
-                props.setAddProduct(obj, false)
-            } else {
+            // if(!sizeIsInArray) {
+            //     props.setAddProduct(obj, false)
+            // } else {
 
-            }
+            // }
         }
     }
 
