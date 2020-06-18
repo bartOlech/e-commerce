@@ -38,12 +38,12 @@ const TextDetails = styled.div`
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
-    margin-left: 20px;
+    margin-left: 10px;
    
     margin-top: -1px;
     @media (min-width: 1000px) {
         height: 540px;
-        margin-left: 28px;
+        margin-left: 18px;
     }
    
 `
@@ -99,8 +99,8 @@ const AttributeSection = (props) => {
                 </ImageBox>
                 <TextDetails>
                     <AttributePrice data-testid='attribute-section-price'  price={props.price}></AttributePrice>
-                    <AttributeColor></AttributeColor>
                     <AttributeSize sizeWithPrice={props.sizeWithPrice}></AttributeSize>
+                    <AttributeColor></AttributeColor>
                 </TextDetails>
             </Details>
             {/* <HeartIco></HeartIco> */}

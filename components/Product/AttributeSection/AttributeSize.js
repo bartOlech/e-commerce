@@ -22,7 +22,7 @@ const Option = styled.option`
     font-size: 1.6em;
 `
 const Select = styled.select`
-    width: 110px;
+    width: 120px;
     height: 23px;
     background: #e5e5e5;
     border-radius: 1px;
@@ -64,7 +64,7 @@ const AttributeSize = (props) => {
 
     return (
         <Container>
-            <Label htmlFor='sizes'>Rozmiar</Label>
+            <Label htmlFor='sizes'>Format</Label>
             <Select data-testid='select-size' onChange={(val) => handlePrice(val)} id='sizes'>
                 {selectSize()}
             </Select>

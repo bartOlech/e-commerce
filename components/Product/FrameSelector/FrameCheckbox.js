@@ -38,18 +38,18 @@ const FrameCheckbox = (props) => {
 
         if(!props.productWithFrame) {
             props.setFrameColor('Czarny')
-            if(props.size === '30 x 40 cm') {
+            if(props.size === 'A3 (30x40cm)') {
                 props.addToPrice(20)
-            } else if(props.size === '21 x 30 cm') {
+            } else if(props.size === 'A4 (21x30cm)') {
                 props.addToPrice(10)
             } else {
                 alert('error with size!!!')
             }
         } else {
             props.setFrameColor('')
-            if(props.size === '30 x 40 cm') {
+            if(props.size === 'A3 (30x40cm)') {
                 props.removeFromPrice(20)
-            } else if(props.size === '21 x 30 cm') {
+            } else if(props.size === 'A4 (21x30cm)') {
                 props.removeFromPrice(10)
             } else {
                 alert('error with size!!!')

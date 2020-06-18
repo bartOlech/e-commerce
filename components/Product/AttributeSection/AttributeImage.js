@@ -6,10 +6,10 @@ const Container = styled.div`
     height: 100%;
 `
 const Image = styled.div`
-    width: 225px;
+    width: 215px;
     height: 300px;
     background-image: url(${props => props.image});
-    background-size: 225px 300px;
+    background-size: 215px 300px;
     background-repeat: no-repeat;
     margin-left: 9px;
     cursor: pointer;
