@@ -26,18 +26,20 @@ const Ico = styled.div`
     top: 0;
 `
 const Counter = styled.div`
-    width: 12px;
-    height: 12px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
-    border: 2px solid #2c3238;
-    color: #2c3238;
+    border: none;
+    /* color: #2c3238; */
+    color: #fff;
+    background-color: #303a52;
     font-size: .7em;
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
-    left: 18px;
-    top: 18px;
+    left: 15px;
+    top: 15px;
     font-family: ${FontStyle.family};
 `
 
