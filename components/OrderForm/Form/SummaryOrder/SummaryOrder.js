@@ -41,7 +41,7 @@ const SummaryOrder = (props) => {
             <Tittle></Tittle>
             {props.product.map((el, index) => {
                 return (
-                    <Name quantity={el.quantity} date={el.date} image={el.image} name={el.name} size={el.size} key={index}></Name>
+                    <Name productWithFrame={el.productWithFrame} quantity={el.quantity} date={el.date} image={el.image} name={el.name} size={el.size} key={index}></Name>
                 )
             })}
             <OrderCost orderPrice={props.totalPrice}></OrderCost>

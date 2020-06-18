@@ -31,7 +31,7 @@ const Image = styled.div`
 `
 const QuantityText = styled.div`
     font-family: ${FontStyle.family};
-    color: #A8A8A8;
+    color: grey;
     font-size: 1em;
     padding-left: 4px;
 `
@@ -43,7 +43,7 @@ const Name = (props) => {
             <div style={{display: 'flex'}}>
             <Text data-testid='text-name'>          
                 {props.name} 
-                {/* {props.size} */}
+                {props.productWithFrame ? ' + RAMA' : ''}
                 
             </Text>
             <QuantityText>({props.quantity} x)</QuantityText>

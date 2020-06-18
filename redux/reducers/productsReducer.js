@@ -14,7 +14,7 @@ const productsReducer = (state = initialState, action) => {
             }
         case constants.REMOVE_PRODUCT:
             return {
-                ...state, products: state.products.filter( el => el.id !== action.payload.id )
+                ...state, products: state.products.filter( el => el.uniqId !== action.payload.id )
             }
         case constants.INCREASE_QUANTITY:
             return {

@@ -45,6 +45,11 @@ const FooterButtons = (props) => {
 
     const payButton = () => {
         const date = props.day + props.month + props.year;
+        let counter = 0;
+
+        for(let i = 0; i<props.product.length; i++) {
+            counter++;
+        }
 
         Router.push({
             pathname: '/orderform',
@@ -60,6 +65,7 @@ const FooterButtons = (props) => {
                 // year: props.year,
                 // clientName: props.clientName,
                 // date: date,
+                quantity: counter,
                 product: props.product
              },
         })

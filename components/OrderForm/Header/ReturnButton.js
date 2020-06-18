@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FontStyle} from '../../../assets/style/style';
+import Router from 'next/router';
 
 const Container = styled.button`
    border: none;
@@ -12,6 +13,7 @@ const Container = styled.button`
    position: relative;
    margin-right: 20px;
    margin-top: -30px;
+   background: #fff;
 
    &&:after {
     position: absolute;
@@ -25,8 +27,14 @@ const Container = styled.button`
 `
 
 const Header = () => {
+
+    const backToShop = (e) => {
+        e.preventDefault()
+        Router.push('/shop')
+    }
+
     return (
-        <Container>
+        <Container onClick={backToShop}>
             Powrót do sklepu
         </Container>
     )

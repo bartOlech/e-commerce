@@ -14,12 +14,23 @@ const Container = styled.div`
         bottom: 0;
         left: 0;
         right: 0;
-        background-color: #F5F6F8
+        background-color: #F5F6F8;
     }
+    @media (max-width: 800px) {
+        margin-bottom: 100px;
+
+    }
+    @media (max-width: 1000px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
 `
 const PayButtonBox = styled.div`
-     @media (min-width: 1000px) {
-        display: none;
+    width: 100%;
+    @media (min-width: 1000px) {
+        display: ${props => props.display};
     }
 `
 const PhoneBox = styled.div`
@@ -53,7 +64,6 @@ const OrderForm = (props) => {
 
     return (
         <Container>
-            {console.log(props.product)}
             <Form 
                 streetValidate={streetValidate}
                 numberValidate={numberValidate}
@@ -66,7 +76,7 @@ const OrderForm = (props) => {
             <PhoneBox>
                 <SummaryOrder orderPrice={router.query.price}></SummaryOrder>
             </PhoneBox>
-            <PayButtonBox>
+            <PayButtonBox display={router.query.quantity <= 2 ? 'none' : 'inline'}>
                 <PayButton checkValidation={checkValidation}></PayButton>
             </PayButtonBox>
         </Container>

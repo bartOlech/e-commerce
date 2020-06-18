@@ -15,21 +15,8 @@ const Button = styled.div`
 const CloseButton = (props) => {
 
     const removeOrder = () => {
-        // const arr = [
-        //     {
-        //         id: 1,
-        //         name: 'bart'
-        //     },
-        //     {
-        //         id: 2,
-        //         name: 'Wer'
-        //     }
-        // ]
-
-        // const arr2 = arr.filter(el => el.id !== 1)
-        // console.log(arr2)
-
-        props.setRemoveProduct(props.id)
+        // console.log(props.uniqId)
+        props.setRemoveProduct(props.uniqId)
     }
 
     return (

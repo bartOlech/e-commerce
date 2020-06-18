@@ -8,6 +8,7 @@ import { setQuantity } from '../../../../redux/actions/Product/setQuantity';
 import { setClientDataValidate } from '../../../../redux/actions/Product/setClientDataValidate';
 import _ from 'lodash';
 import {useRouter} from 'next/router';
+import { v4 as uuidv4 } from 'uuid';
 
 const Ico = styled.div`
     width: 23px;
@@ -88,6 +89,7 @@ const BuyButton = (props) => {
 
         let obj = {
             id,
+            uniqId: uuidv4(),
             name,
             image,
             price,
@@ -146,51 +148,9 @@ const BuyButton = (props) => {
        
     //    EVERYTHING IS VALIDATE, GO TO BASKET
         props.setBasket(true)
+
         // add product data to store
-        // Check does the object exists already
-        if(props.product.length == 0) {
-            props.setAddProduct(obj, false)
-        } else {
-            props.setAddProduct(obj, false)
-
-            
-            // Don't add to array, instead increase quantity
-            // const arr = props.product;
-            // array that include duplicate size of product
-            // let ar = [];
-
-            // console.log(props.product)
-
-            // props.product.map((el, index) => {
-            //         //if id exists add quantity and price
-            //         if(el.id === props.id) {
-            //             if(el.size === props.size) {
-            //                 arr[index].quantity += 1
-                            
-            //                 arr[index].price = +price + +arr[index].price
-            //                 // arr[index].price = +arr[index].initialPrice + +arr[index].price
-
-            //                 // add color
-            //                 arr[index].color.push(props.color)
-            //                 // add date
-            //                 arr[index].date.push(date)
-            //                 props.setQuantity(arr)
-            //                 ar.push('arrayIncludeSize')
-            //             } else {
-            //                 ar.push('ArrayDontIncludeSize')
-            //                 // props.setAddProduct(obj, false)
-            //             }                                    
-            //         } 
-            // })
-            // const sizeIsInArray = ar.includes('arrayIncludeSize');
-
-            // If sizes is in basket, only add 1 quantity
-            // if(!sizeIsInArray) {
-            //     props.setAddProduct(obj, false)
-            // } else {
-
-            // }
-        }
+        props.setAddProduct(obj, false) 
     }
 
     return (

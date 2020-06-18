@@ -7,7 +7,6 @@ const Size = styled.div`
     font-family: ${FontStyle.family};
     color: grey;
     font-size: 1em;
-
 `
 
 const BasketSize = (props) => {

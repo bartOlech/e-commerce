@@ -42,7 +42,8 @@
     "react-switch": "^5.0.1",
     "redux": "^4.0.5",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^5.0.1"
+    "styled-components": "^5.0.1",
+    "uuid": "^8.1.0"
   },
   "devDependencies": {
     "@testing-library/react": "^10.0.1",

@@ -23,7 +23,7 @@ const Button = styled.button`
     cursor: pointer;
     @media (min-width: 1000px) {
         margin-top: 35px;
-        width: 100%;
+        width: 570px;
     }
 `
 
