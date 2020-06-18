@@ -20,6 +20,9 @@ const Container = styled.div`
     @media (min-width: 1000px) {
         box-shadow: none;
     }
+    @media (max-width: 1000px) {
+        display: ${props=>props.display};
+    }
 `
 const Details = styled.div`
     width: 100%;
@@ -90,7 +93,7 @@ const Hr = styled.hr`
 
 const AttributeSection = (props) => {
     return (
-        <Container>
+        <Container display={!props.modifySectionIsVisible ? 'inline' : 'none'}>
             <Hr></Hr>
             <AttributeName name={props.name}></AttributeName>
             <Details>
@@ -117,6 +120,7 @@ const mapStateToProps = state => ({
     size: state.size.size,
     price: state.price.price,
     id: state.frameData.id,
+    modifySectionIsVisible: state.clientData.modifySectionIsVisible
 })
 
 const mapDispatchToProps = {

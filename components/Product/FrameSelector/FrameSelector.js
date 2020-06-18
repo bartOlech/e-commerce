@@ -3,9 +3,10 @@ import styled from 'styled-components';
 import MainText from './MainText';
 import FrameCheckbox from './FrameCheckbox';
 import FrameColorCheckbox from './FrameColorCheckbox';
+import { connect } from 'react-redux';
 
 const Container = styled.div`
-
+    display: ${props => props.display};
 `
 const CheckboxSection = styled.div`
     display: flex;
@@ -36,9 +37,9 @@ const HorizontalLineDesktop = styled.div`
         }
 `
 
-const FrameSelector = () => {
+const FrameSelector = (props) => {
     return (
-        <Container>
+        <Container display={!props.modifySectionIsVisible ? 'inline' : 'none'}>
             <HorizontalLine></HorizontalLine>
             <MainText></MainText>
             <CheckboxSection>
@@ -51,4 +52,8 @@ const FrameSelector = () => {
     )
 }
 
-export default FrameSelector;
+const mapStateToProps = state => ({
+    modifySectionIsVisible: state.clientData.modifySectionIsVisible
+})
+
+export default connect(mapStateToProps)(FrameSelector);

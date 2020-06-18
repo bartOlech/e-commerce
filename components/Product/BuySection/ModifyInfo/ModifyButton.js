@@ -81,13 +81,21 @@ const Ico = styled.div`
 
 const ModifyButton = (props) => {
 
+    const setCustomize = () => {
+        props.setModifyProductIsVisible(true)
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+    }
+
     return (
         <Container>
             <TextInfo>
                 <Ico></Ico>
                 <Text fontSize={props.allIsValidate ? '1.1em' : '1.2em'} color={props.allIsValidate ? FontStyle.color : 'red'}>Przed zakupem dowolnie spersonalizuj swój plakat</Text>
             </TextInfo>
-            <ButtonMsgBox onClick={() => props.setModifyProductIsVisible(true)}>
+            <ButtonMsgBox onClick={setCustomize}>
                 <Button>PERSONALIZUJ</Button>
             </ButtonMsgBox>      
         </Container>
