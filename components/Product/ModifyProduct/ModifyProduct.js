@@ -10,6 +10,9 @@ import SetPlace from './SetPlace/SetPlace';
 import SetGrowth from './SetGrowth/SetGrowth';
 import SetWeight from './SetWeight/SetWeight';
 
+import { capitalizeFirstLetter } from './Functions/FirstLetterUpper';
+import InputText from './InputTemplates/InputText';
+
 const Container = styled.div`
     width: 100%;
     display: flex;
@@ -38,17 +41,27 @@ const HorizontalLine = styled.div`
 `
 
 const ModifyProduct = (props) => {
+
+    const getInputs = () => { 
+        let arr = [];
+
+        for(let [key, value] of Object.entries(props.clientInfo)) {
+            arr.push(<InputText keyV={key} key={key} name={capitalizeFirstLetter(key)}></InputText>)
+        }
+        return arr;
+    }
+
     return (
         <Container>
-            {/* <HorizontalLine></HorizontalLine> */}
             <TittleText text={'Dostosuj swoje zamówienie'}></TittleText>
-            {props.clientNameIsRequired && <SetName nameIsFill={props.nameIsFill}></SetName>}
+            {/* {props.clientNameIsRequired && <SetName nameIsFill={props.nameIsFill}></SetName>}
             {props.clientDateIsRequired && <SelectDate dateIsSelected={props.dateIsSelected}></SelectDate>}
             {props.clientGrowthIsRequired && <SetGrowth growthIsFill={props.growthIsFill}></SetGrowth>}
             {props.clientWeightIsRequired && <SetWeight weightIsFill={props.weightIsFill}></SetWeight>}
             {props.clientMotherNameIsRequired && <SetMotherDay></SetMotherDay>}
             {props.clientFatherNameIsRequired && <SetFatherDay></SetFatherDay>}
-            {props.clientPlaceIsRequired && <SetPlace></SetPlace>}
+            {props.clientPlaceIsRequired && <SetPlace></SetPlace>} */}
+            {getInputs()}
         </Container>
     )
 }
@@ -61,7 +74,7 @@ const mapStateToProps = state => ({
     clientPlaceIsRequired: state.frameData.clientPlaceIsRequired,
     clientFatherNameIsRequired: state.frameData.clientFatherNameIsRequired,
     clientMotherNameIsRequired: state.frameData.clientMotherNameIsRequired,
-
+    clientInfo: state.frameData.clientInfo,
 })
 
 export default connect(mapStateToProps)(ModifyProduct);

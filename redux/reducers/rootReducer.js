@@ -10,6 +10,7 @@ import shopReducer from './shopReducer';
 import setClientDataReducer from './setClientDataReducer';
 import getDataFromDatabaseReducer from './getDataFromDatabaseReducer';
 import couponReducer from './couponReducer';
+import clientInfoFromFormReducer from './clientInfoFromFormReducer';
 import {combineReducers} from 'redux';
 
 const rootReducer = combineReducers({
@@ -24,7 +25,8 @@ const rootReducer = combineReducers({
     shop: shopReducer,
     clientData: setClientDataReducer,
     products: getDataFromDatabaseReducer,
-    coupon: couponReducer
+    coupon: couponReducer,
+    clientInfo: clientInfoFromFormReducer
 });
 
 export default rootReducer;

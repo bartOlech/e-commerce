@@ -42,3 +42,5 @@ export const GET_ADDITIONAL_ITEMS = 'GET_ADDITIONAL_ITEMS';
 // Coupon
 export const SET_COUPON = 'SET_COUPON';
 export const SET_COUPON_VALUE = 'SET_COUPON_VALUE';
+// Client inputed info
+export const SET_NEW_INFO = 'SET_NEW_INFO';
