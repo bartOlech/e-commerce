@@ -85,10 +85,6 @@ const mapStateToProps = state => ({
     image: state.frameData.image,
     frameColor: state.frameData.color,
     size: state.size.size,
-    clientName: state.clientData.clientName,
-    day: state.date.day,
-    month: state.date.month,
-    year: state.date.year,
     price: state.price.price,
     product: state.product.products
 

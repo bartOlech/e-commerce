@@ -5,7 +5,7 @@ import ToolTipMessage from '../../ToolTip/ToolTip';
 
 // redux
 import {connect} from 'react-redux';
-import { setDate } from '../../../../../redux/actions/setDateActions';
+import { setNewInfo } from '../../../../../redux/actions/ClientInfo/setNewInfo';
 
 // calendar
 
@@ -40,13 +40,15 @@ const Buttons = (props) => {
         const month = String(date.getMonth() + 1);
         const year = date.getFullYear().toString();
 
-        props.setDate(day, month, year)
+        const dateToRedux = `${day}.${month}.${year}`
+
+        props.setNewInfo('data', dateToRedux)
       };
 
     return (
         <Container>
            {/* <ToolTipMessage marginLeft='90px' msg='Zakupiona kartka z kalendarza będzie miała wybraną datę'></ToolTipMessage> */}
-            <Text color={props.dateIsSelected ? '#3B475A' : 'red'}>Wybierz datę</Text>
+            <Text color={props.validate ? 'red' : '#3B475A'}>Wybierz datę</Text>
             <DatePicker
                 selected={startDate}
                 onChange={handleChange}
@@ -59,13 +61,11 @@ const Buttons = (props) => {
 }
 
 const mapDispatchToProps = {
-    setDate: setDate
+    setNewInfo: setNewInfo
 }
 
 const mapStateToProps = state => ({
-    day: state.date.day,
-    month: state.date.month,
-    year: state.date.year
+ 
 })
 
 export default connect( mapStateToProps, mapDispatchToProps)(Buttons);

@@ -102,7 +102,7 @@ const ModifyButton = (props) => {
     )
 }
 const mapStateToProps = state => ({
-    allIsValidate: state.clientData.allIsValidate
+    allIsValidate: state.clientValidation.allIsValidate
 })
 
 const mapDispatchToProps = {

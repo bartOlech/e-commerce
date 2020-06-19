@@ -53,7 +53,7 @@ const FrameSelector = (props) => {
 }
 
 const mapStateToProps = state => ({
-    modifySectionIsVisible: state.clientData.modifySectionIsVisible
+    modifySectionIsVisible: state.clientValidation.modifySectionIsVisible
 })
 
 export default connect(mapStateToProps)(FrameSelector);

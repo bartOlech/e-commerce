@@ -34,22 +34,21 @@ const Input = styled.input`
 const InputText = (props) => {
 
     const handleName = (e) => {
-        console.log(props.keyV)
+        // add a new key to object in redux
         props.setNewInfo(props.keyV, e.target.value)
-        {console.log(props.obj)}
+       
     }
 
     return (
         <Container>
-            
-            <Label color='#3B475A'>{props.name}</Label>
+            <Label color={props.validate ? 'red' : '#3B475A'}>{props.name}</Label>
             <Input onChange={handleName}></Input>
         </Container>
     )
 }
 
 const mapStateToProps = state => ({
-    obj: state.clientInfo
+    
 })
 
 const mapDispatchToProps = {

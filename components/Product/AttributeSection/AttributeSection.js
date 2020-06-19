@@ -120,7 +120,7 @@ const mapStateToProps = state => ({
     size: state.size.size,
     price: state.price.price,
     id: state.frameData.id,
-    modifySectionIsVisible: state.clientData.modifySectionIsVisible
+    modifySectionIsVisible: state.clientValidation.modifySectionIsVisible
 })
 
 const mapDispatchToProps = {

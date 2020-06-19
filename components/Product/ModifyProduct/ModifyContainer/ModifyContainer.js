@@ -18,30 +18,13 @@ const ButtonSection = styled.div`
 
 const ModifyContainer = (props) => {
 
-    const setWeightAlert = (val) => {
-        props.setWeightAlert(val)
-    }
-    const setGrowthAlert = (val) => {
-        props.setGrowthAlert(val)
-    }
-    const setNameFieldAlert = (val) => {
-        props.setNameFieldAlert(val)
-    }
-    const setDateAlert = (val) => {
-        props.setDateAlert(val)
-    }
-
     return (
         <Container>
             <CloseButton></CloseButton>
              <ModifyProduct 
-                weightIsFill={props.weightIsFill} 
-                growthIsFill={props.growthIsFill} 
-                nameIsFill={props.nameIsFill} 
-                dateIsSelected={props.dateIsSelected}
             ></ModifyProduct>
             <ButtonSection>
-                <BuyButton setWeightAlert={setWeightAlert} setGrowthAlert={setGrowthAlert} setNameFieldAlert={setNameFieldAlert} setDateAlert={setDateAlert}></BuyButton>
+                <BuyButton></BuyButton>
             </ButtonSection>
         </Container>
     )

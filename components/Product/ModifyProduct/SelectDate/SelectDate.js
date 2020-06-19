@@ -15,16 +15,14 @@ const SelectDate = (props) => {
 
     return (
         <Container>
-            <Buttons dateIsSelected={props.dateIsSelected}></Buttons>
+            <Buttons validate={props.validate}></Buttons>
             {/* <DateResult availableYears={['2001', '2020']} day={props.day} month={props.month} year={props.year}></DateResult> */}
         </Container>
     )
 }
 
 const mapStateToProps = state => ({
-    day: state.date.day,
-    month: state.date.month,
-    year: state.date.year
+   
 })
 
 export default connect(mapStateToProps)(SelectDate);

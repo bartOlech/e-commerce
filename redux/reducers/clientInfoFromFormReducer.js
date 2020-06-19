@@ -1,7 +1,7 @@
 import * as constants from '../actions/constants';
 
 const initialState = {
-   
+   validationArr: [],
 }
 
 const clientInfoFromFormReducer = (state = initialState, action) => {
@@ -10,6 +10,11 @@ const clientInfoFromFormReducer = (state = initialState, action) => {
             return {
                 ...state,
                 [action.payload.name]: action.payload.value,
+            }
+        case constants.SET_CLIENT_VALIDATION:
+            return {
+                ...state,
+                validationArr: action.payload.arr,
             }
         default :
             return {

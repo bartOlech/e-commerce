@@ -10,13 +10,6 @@ export const setFrameDetails = (
     additionalData, 
     initialPrice, 
     clientInfo,
-    clientDateIsRequired, 
-    clientNameIsRequired,
-    clientWeightIsRequired,
-    clientGrowthIsRequired,
-    clientPlaceIsRequired,
-    clientFatherNameIsRequired,
-    clientMotherNameIsRequired,
     productWithFrame
     ) => ({
     type: constants.SET_FRAME_DETAILS,
@@ -30,13 +23,6 @@ export const setFrameDetails = (
         additionalData,
         initialPrice,
         clientInfo,
-        clientDateIsRequired,
-        clientNameIsRequired,
-        clientWeightIsRequired,
-        clientGrowthIsRequired,
-        clientPlaceIsRequired,
-        clientFatherNameIsRequired,
-        clientMotherNameIsRequired,
         productWithFrame
     }
 })

@@ -89,22 +89,14 @@ const Description = (props) => {
         <Container data-testid='description'>
             {/* Modify section */}
             {props.modifySectionIsVisible && <ModifyContainer 
-                weightIsFill={props.weightIsFill} 
-                growthIsFill={props.growthIsFill} 
-                nameIsFill={props.nameIsFill} 
-                dateIsSelected={props.dateIsSelected}
-                
-                setWeightAlert={setWeightAlert}
-                setGrowthAlert={setGrowthAlert} 
-                setNameFieldAlert={setNameFieldAlert} 
-                setDateAlert={setDateAlert}
+               
             >
             </ModifyContainer>}
             
             <ProductData display={!props.modifySectionIsVisible ? 'inline' : 'none'}>
                 <HeaderBox>
                     <DesktopName>{props.name}</DesktopName>
-                    <BuyButton setWeightAlert={setWeightAlert} setGrowthAlert={setGrowthAlert} setNameFieldAlert={setNameFieldAlert} setDateAlert={setDateAlert}></BuyButton>
+                    <BuyButton></BuyButton>
                 </HeaderBox>
                 
                 <DescriptionMenu setText={setText} tittle='Opis'></DescriptionMenu>
@@ -130,7 +122,7 @@ const mapStateToProps = state => ({
     name: state.frameData.name,
     additionalData: state.frameData.additionalData,
     shipment: state.frameData.shipment,
-    modifySectionIsVisible: state.clientData.modifySectionIsVisible
+    modifySectionIsVisible: state.clientValidation.modifySectionIsVisible
 })
 
 export default connect(mapStateToProps)(Description);

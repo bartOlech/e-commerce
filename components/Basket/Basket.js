@@ -26,7 +26,6 @@ const Basket = (props) => {
     return (
         <Container data-testid='basket-container' display={props.isVisible ? 'inline' : 'none'}>
             <Header></Header>
-            {console.log(props.products)}
             {props.products.length > 0 ? (
                 <div>
                     <InfoText products={props.products}></InfoText>

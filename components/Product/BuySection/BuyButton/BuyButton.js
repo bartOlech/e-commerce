@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { FontStyle } from '../../../../assets/style/style';
 import { connect } from 'react-redux';
 import { setBasket } from '../../../../redux/actions/Basket/setBasket';
 import { setAddProduct } from '../../../../redux/actions/Product/setAddProduct';
 import { setQuantity } from '../../../../redux/actions/Product/setQuantity';
-import { setClientDataValidate } from '../../../../redux/actions/Product/setClientDataValidate';
+import { setAllValidate } from '../../../../redux/actions/Product/setAllValidate';
 import _ from 'lodash';
 import {useRouter} from 'next/router';
 import { v4 as uuidv4 } from 'uuid';
+import { setClientValidation } from '../../../../redux/actions/Product/setClientValidation';
+
+import { setNewInfo } from '../../../../redux/actions/ClientInfo/setNewInfo';
 
 const Ico = styled.div`
     width: 23px;
@@ -80,12 +83,31 @@ const Button = styled.button`
 
 
 const BuyButton = (props) => {
-    // const [counter, setCounter] = useState(true)
     const Router = useRouter();
-    const{ day, month, year, id, name, image, price, initialPrice, size, productWithFrame, color} = props;
+    const{ id, name, image, price, initialPrice, size, productWithFrame, color} = props;
 
     const addToBasket = () => {
-        const date = `${day.length == 1 ? `0${day}` : day}.${month.length == 1 ? `0${month}` : month}.${year}`;
+        // const date = `${day.length == 1 ? `0${day}` : day}.${month.length == 1 ? `0${month}` : month}.${year}`;
+        const arrayWithClientInfo = [];
+
+        // add value to array if the inputs is empty (is not validate)
+        for(let [key, value] of Object.entries(props.obj)) {
+            if(value === '') {
+                arrayWithClientInfo.push(key)
+            }
+        }
+
+        props.setClientValidation(arrayWithClientInfo)
+
+        if(arrayWithClientInfo.length > 0) {
+            props.setAllValidate(false)
+            return
+        } else {
+            props.setAllValidate(true)
+        }
+
+        // product all data in the one object:
+        // console.log(props.obj)
 
         let obj = {
             id,
@@ -98,53 +120,8 @@ const BuyButton = (props) => {
             color: [props.color],
             quantity: 1,
             additionalData: [],
-            date: [date],
             productWithFrame
         };
-        // validate a client name field
-       if(props.clientNameIsRequired) {
-        if(props.clientName) {
-            props.setNameFieldAlert(true)
-            props.setClientDataValidate(true)
-        } else {
-            props.setNameFieldAlert(false)
-            props.setClientDataValidate(false)
-            return;
-        }
-       }
-       // validate date field
-       if(props.clientDateIsRequired) {
-        if(props.day) {
-            props.setDateAlert(true)
-            props.setClientDataValidate(true)
-        } else {
-            props.setDateAlert(false)
-            props.setClientDataValidate(false)
-            return;
-        }
-       }
-        // validate growth field
-        if(props.clientGrowthIsRequired) {
-            if(props.clientGrowth) {
-                props.setGrowthAlert(true)
-                props.setClientDataValidate(true)
-            } else {
-                props.setGrowthAlert(false)
-                props.setClientDataValidate(false)
-                return;
-            }
-        }
-        // validate weight field
-        if(props.clientWeightIsRequired) {
-            if(props.clientWeight) {
-                props.setWeightAlert(true)
-                props.setClientDataValidate(true)
-            } else {
-                props.setWeightAlert(false)
-                props.setClientDataValidate(false)
-                return;
-            }
-        }
        
     //    EVERYTHING IS VALIDATE, GO TO BASKET
         props.setBasket(true)
@@ -169,30 +146,18 @@ const mapStateToProps = state => ({
     size: state.size.size,
     price: state.price.price,
     initialPrice: state.frameData.initialPrice,
-    day: state.date.day,
-    month: state.date.month,
-    year: state.date.year,
     product: state.product.products,
     productWithFrame: state.frameData.productWithFrame,
-    // client data
-    clientName: state.clientData.clientName,
-    clientMotherName: state.clientData.clientMotherName,
-    clientFatherName: state.clientData.clientFatherName,
-    clientPlace: state.clientData.clientPlace,
-    clientGrowth: state.clientData.clientGrowth,
-    clientWeight: state.clientData.clientWeight,
-
-    clientDateIsRequired: state.frameData.clientDateIsRequired,
-    clientNameIsRequired: state.frameData.clientNameIsRequired,
-    clientGrowthIsRequired: state.frameData.clientGrowthIsRequired,
-    clientWeightIsRequired: state.frameData.clientWeightIsRequired
+    obj: state.clientInfo,
+    clientInfo: state.frameData.clientInfo,
 })
 const mapDispatchToProps = {
     setBasket,
     setAddProduct,
     setQuantity,
-    setClientDataValidate
-    
+    setAllValidate,
+    setNewInfo,
+    setClientValidation
 }
 
 

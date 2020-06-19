@@ -18,6 +18,7 @@ import Copyright from '../StartPage/Footer/Copyright/Copyright';
 import ModifyInfo from './BuySection/ModifyInfo/ModifyInfo';
 import ModifyButton from './BuySection/ModifyInfo/ModifyButton';
 import FrameSelector from './FrameSelector/FrameSelector';
+import { setNewInfo } from '../../redux/actions/ClientInfo/setNewInfo';
 
 const Container = styled.div`
     width: 100%;
@@ -97,31 +98,11 @@ const Product = (props) => {
     const {query: {id, type}} = useRouter();
     const [sizeWithPrice, setSizeWithPrice] = useState('');
     const [initialPrice, setInitialPrice] = useState('');
-    const [dateIsSelected, setDateIsSelected] = useState(true);
-    const [nameIsFill, setNameIsFill] = useState(true);
-    const [growthIsFill, setGrowthIsFill] = useState(true);
-    const [weightIsFill, setWeightIsFill] = useState(true);
-
-
-    const setDateAlert = (val) => {
-        setDateIsSelected(val)
-    }
-
-    const setNameFieldAlert = (val) => {
-        setNameIsFill(val)
-    }
-
-    const setGrowthAlert = (val) => {
-        setGrowthIsFill(val)
-    }
-    const setWeightAlert = (val) => {
-        setWeightIsFill(val)
-    }
 
     useEffect(() => {
         // set initial data from selected product
 
-// if product data is available in the store, get data. If not, fetch from database
+        // if product data is available in the store, get data. If not, fetch from database
          // fetch data from database
         //  this data can be available in the store if the page has not been refreshed. Use it!!!
          fetch(`http://cudnydzien.pl:8080/${type}`).then(res => res.json()).then(json => {
@@ -139,15 +120,13 @@ const Product = (props) => {
                          priceWithSize,
                          price,
                          clientInfo,
-                         clientDateIsRequired,
-                         clientNameIsRequired,
-                         clientWeightIsRequired,
-                         clientGrowthIsRequired,
-                         clientPlaceIsRequired,
-                         clientFatherNameIsRequired,
-                         clientMotherNameIsRequired,
                          productWithFrame
                      } = el;
+
+                    // assign empty string to the each key
+                    for(let [key, value] of Object.entries(clientInfo)) {
+                        props.setNewInfo(key, '')  
+                    }
      
                      props.setFrameDetails(
                          productId, 
@@ -159,20 +138,13 @@ const Product = (props) => {
                          additionalData, 
                          price, 
                          clientInfo,
-                         clientDateIsRequired, 
-                         clientNameIsRequired,
-                         clientWeightIsRequired,
-                         clientGrowthIsRequired,
-                         clientPlaceIsRequired,
-                         clientFatherNameIsRequired,
-                         clientMotherNameIsRequired,
                          productWithFrame
                          );
                      setSizeWithPrice(priceWithSize);
                      setInitialPrice(price)
                      props.setPrice(price)
                      props.setSize(size)
-                 }
+                 }        
              })
          }).catch(err => console.log(err))
     }, [])
@@ -187,14 +159,7 @@ const Product = (props) => {
                 <AttributeSection initialPrice={initialPrice} sizeWithPrice={sizeWithPrice}></AttributeSection>
                 <BottomContent>
                     <Description 
-                        setWeightAlert={setWeightAlert} 
-                        setGrowthAlert={setGrowthAlert} 
-                        setNameFieldAlert={setNameFieldAlert} 
-                        setDateAlert={setDateAlert}
-                        weightIsFill={weightIsFill} 
-                        growthIsFill={growthIsFill} 
-                        nameIsFill={nameIsFill} 
-                        dateIsSelected={dateIsSelected}
+                     
                     ></Description>       
                     <FrameSelector></FrameSelector>             
                     <Box>
@@ -203,7 +168,7 @@ const Product = (props) => {
                             <ModifyButton></ModifyButton>
                             <Line></Line>
                             <BuyButtonContainer>
-                                <BuyButton setWeightAlert={setWeightAlert} setGrowthAlert={setGrowthAlert} setNameFieldAlert={setNameFieldAlert} setDateAlert={setDateAlert}></BuyButton>
+                                <BuyButton></BuyButton>
                             </BuyButtonContainer>
                             <ModifyInfo></ModifyInfo>
                         </BottomSection>
@@ -220,13 +185,16 @@ const mapStateToProps = state => ({
     birthday: state.products.birthdayProducts,
     birthProducts: state.products.birthProducts,
     frameColor: state.frameData.frameColor,
-    modifySectionIsVisible: state.clientData.modifySectionIsVisible
+    modifySectionIsVisible: state.clientValidation.modifySectionIsVisible,
+    clientInfo: state.frameData.clientInfo,
+    obj: state.clientInfo,
 })
 
 const mapDispatchToProps = {
     setFrameDetails,
     setPrice,
-    setSize
+    setSize,
+    setNewInfo
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Product);
