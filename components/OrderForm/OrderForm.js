@@ -5,6 +5,7 @@ import Form from './Form/Form';
 import SummaryOrder from './Form/SummaryOrder/SummaryOrder';
 import PayButton from './Form/PayButton';
 import { connect } from 'react-redux';
+import Inpost from './Inpost/Inpost';
 
 const Container = styled.div`
     width: 100%;

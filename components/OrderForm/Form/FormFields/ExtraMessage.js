@@ -9,7 +9,8 @@ const Container = styled.div`
     height: 80px;
     margin-top: 20px;
     @media (min-width: 1000px) {
-        margin-top: 30px;
+        margin-top: 17px;
+        height: 60px;
     }
 `   
 const ExtraMessageBox = styled.div`
@@ -28,7 +29,7 @@ const Label = styled.label`
 const Textarea = styled.textarea`
     width: 95%;
     max-width: 450px;
-    height: 60px;
+    height: 90px;
     background-color: #F0F0F0;
     border: none; 
     border-radius: 1px;
@@ -39,8 +40,15 @@ const Textarea = styled.textarea`
     padding-left: 5px;
     border: 1px solid rgba(217, 217, 217, .5);
     border-radius: 4px;
+    padding: 10px;
+    box-sizing: border-box;
+    &&::placeholder {
+        font-family: ${FontStyle.family};
+        font-weight: 300;
+        
+    }
     @media (min-width: 1000px) {
-        height: 147px;
+        height: 154px;
     }
 `
 
@@ -53,8 +61,8 @@ const ExtraMessage = (props) => {
     return (
         <Container>
             <ExtraMessageBox>
-                <Label htmlFor='extra message'>Dodatkowe informacje</Label>
-                <Textarea onChange={handleMessage} id='extra message'></Textarea>
+                {/* <Label htmlFor='extra message'>Dodatkowe informacje</Label> */}
+                <Textarea onChange={handleMessage} placeholder='Wiadomość dla sprzedawcy' id='extra message'></Textarea>
             </ExtraMessageBox>
         </Container>
     )

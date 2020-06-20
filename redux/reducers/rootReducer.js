@@ -10,6 +10,7 @@ import setClientValidationReducer from './setClientValidationReducer';
 import getDataFromDatabaseReducer from './getDataFromDatabaseReducer';
 import couponReducer from './couponReducer';
 import clientInfoFromFormReducer from './clientInfoFromFormReducer';
+import inpostReducer from './inpostReducer';
 import {combineReducers} from 'redux';
 
 const rootReducer = combineReducers({
@@ -24,7 +25,8 @@ const rootReducer = combineReducers({
     clientValidation: setClientValidationReducer,
     products: getDataFromDatabaseReducer,
     coupon: couponReducer,
-    clientInfo: clientInfoFromFormReducer
+    clientInfo: clientInfoFromFormReducer,
+    inpost: inpostReducer
 });
 
 export default rootReducer;
