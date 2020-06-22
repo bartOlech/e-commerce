@@ -1,7 +1,8 @@
 import * as constants from '../actions/constants';
 
 const initialState = {
-    ipostVisible: false
+    ipostVisible: false,
+    lockerAddress: ''
 }
 
 const inpostReducer = (state = initialState, action) => {
@@ -10,6 +11,11 @@ const inpostReducer = (state = initialState, action) => {
             return {
                 ...state,
                 ipostVisible: !state.ipostVisible
+            }
+        case constants.SET_PARCEL_LOCKER:
+            return {
+                ...state,
+                lockerAddress: action.payload.lockerAddress
             }
         default:
             return{...state}

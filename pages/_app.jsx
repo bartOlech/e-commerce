@@ -8,6 +8,7 @@ import 'react-chat-widget/lib/styles.css';
 import dynamic from 'next/dynamic';
 import styled from 'styled-components';
 import { FontStyle } from '../assets/style/style';
+// import Head from 'next/head';
 
 import '@brainhubeu/react-carousel/lib/style.css';
 
@@ -83,6 +84,7 @@ class MyApp extends App {
 
         return (
             <Provider store={store}>
+             
                 <Component {...pageProps}/>
                   <Chatbot  
                     handleNewUserMessage={handleNewUserMessage}

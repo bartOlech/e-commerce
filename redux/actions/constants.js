@@ -40,3 +40,4 @@ export const SET_COUPON_VALUE = 'SET_COUPON_VALUE';
 export const SET_NEW_INFO = 'SET_NEW_INFO';
 // Inpost
 export const SET_INPOST_VISIBLE = 'SET_INPOST_VISIBLE';
+export const SET_PARCEL_LOCKER = 'SET_PARCEL_LOCKER';

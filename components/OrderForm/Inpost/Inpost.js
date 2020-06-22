@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import Head from 'next/head';
+import { connect } from 'react-redux';
+import { setParcelLocker } from '../../../redux/actions/Inpost/setParcelLocker';
 
 const Container = styled.div`
    width: 100%;
@@ -12,38 +13,57 @@ const Div = styled.div`
     left: 0;
 `
 
+
+
 const Inpost = (props) => {
+
+    useEffect(() => {
+        const script = document.createElement('script');
+
+        script.src = "https://geowidget.easypack24.net/js/sdk-for-javascript.js";
+        script.async = true;
+
+        document.body.appendChild(script);
+
+        const link = document.createElement('link');
+
+        link.href = "https://geowidget.easypack24.net/css/easypack.css";
+        link.rel = 'stylesheet';
+
+        document.body.appendChild(link);
+
+        window.easyPackAsyncInit = function () {         
+            easyPack.init({
+                defaultLocale: 'pl',
+                mapType: 'osm',
+                searchType: 'osm',
+                points: {
+                    types: ['parcel_locker']
+                },
+                map: {
+                    initialTypes: ['parcel_locker']
+                }
+            });
+            var map = easyPack.mapWidget('easypack-map', function(point) {
+                props.setParcelLocker(point.name)
+                
+            });
+        };
+        return () => {
+            document.body.removeChild(script);
+            document.body.removeChild(link);
+        }
+    }, [])
+
     return (
         <Container>
-                <Head>
-                    <script
-                        dangerouslySetInnerHTML={{
-                        __html: `
-                        window.easyPackAsyncInit = function () {
-                            easyPack.init({
-                                defaultLocale: 'pl',
-                                mapType: 'osm',
-                                searchType: 'osm',
-                                points: {
-                                    types: ['parcel_locker']
-                                },
-                                map: {
-                                    initialTypes: ['parcel_locker']
-                                }
-                            });
-                            var map = easyPack.mapWidget('easypack-map', function(point) {
-                            alert(point.name);
-                            });
-                        };
-                            `,
-                        }}
-                    ></script>
-                    <script async src="https://geowidget.easypack24.net/js/sdk-for-javascript.js"></script>
-                    <link rel="stylesheet" href="https://geowidget.easypack24.net/css/easypack.css"/>  
-                </Head>
-                <Div id="easypack-map"></Div>
+            <Div id="easypack-map"></Div>
         </Container>
     )
 }
 
-export default Inpost;
+const mapDispatchToProps = {
+    setParcelLocker
+}
+
+export default connect(null, mapDispatchToProps)(Inpost);

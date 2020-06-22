@@ -18,6 +18,7 @@ import { connect } from 'react-redux';
 import Inpost from '../Inpost/Inpost';
 import SelectInpost from '../Inpost/SelectInpost';
 
+
 const FormBox = styled.form`
     margin-left: 10px;
 `
