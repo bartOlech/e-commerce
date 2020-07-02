@@ -19,3 +19,4 @@ yarn-debug.log*
 yarn-error.log*
 /nodeServerDebian/.env
 /nodeServerDebian/node_modules
+/config.js
